@@ -1,8 +1,10 @@
 # noise-killer
 
-**uBlock Origin Filterliste** zur Entschlackung deutschsprachiger Nachrichtenseiten und anderer Webseiten.
+**Adblock-Filterliste** zur Entschlackung deutschsprachiger Nachrichtenseiten und anderer Webseiten.
 
 Ziel: Den Artikeltext in den Vordergrund stellen – und alles wegräumen, was nur vom Lesen ablenkt.
+
+Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 
 ---
 
@@ -76,15 +78,27 @@ Ziel: Den Artikeltext in den Vordergrund stellen – und alles wegräumen, was n
 
 ## Installation
 
-1. [uBlock Origin](https://ublockorigin.com/) installieren (Chrome, Firefox, Edge)
-2. uBlock Origin öffnen → Zahnrad → **Filterlisten** → ganz unten: **Eigene**
-3. Folgende URL in das Textfeld eintragen:
+### uBlock Origin
+1. [uBlock Origin](https://ublockorigin.com/) installieren
+2. Dashboard öffnen → **Filterlisten** → ganz unten: **Eigene**
+3. URL eintragen, **Jetzt aktualisieren** klicken
 
+### AdBlock Plus
+1. [AdBlock Plus](https://adblockplus.org/) installieren
+2. Optionen → **Erweitert** → **Eigene Filterlisten** → URL eintragen
+
+### AdGuard
+1. [AdGuard](https://adguard.com/) installieren
+2. Einstellungen → **Filter** → **Eigene** → URL eintragen
+
+### Brave
+1. `brave://settings/shields/filters` öffnen
+2. URL unter **Eigene Filterlisten** eintragen
+
+**URL für alle:**
 ```
 https://raw.githubusercontent.com/Plexma/noise-killer/main/noise-killer.txt
 ```
-
-4. **Jetzt aktualisieren** klicken – fertig.
 
 ---
 
