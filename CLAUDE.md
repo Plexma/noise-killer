@@ -15,6 +15,14 @@ Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
 7. Bei Bugs: BUGFIX-Kommentar wie bereits in der Liste vorhanden
 8. CHANGELOG.md aktualisieren
 9. git add, commit, push zu main
+10. GitHub Release erstellen mit:
+    `gh release create vX.Y --title "vX.Y - DATUM" --notes "CHANGELOG-INHALT"`
+
+    Versionierung:
+    - Erste Version = v1.0
+    - Normale Ergänzungen (1-3 Domains) = Patch +0.1 (v1.1, v1.2...)
+    - Viele Änderungen auf einmal = Minor +1.0 (v2.0, v3.0...)
+    - Aktuelle Versionsnummer immer aus dem letzten Git-Tag lesen: `git describe --tags --abbrev=0`
 ## CHANGELOG.md Format
 ## [DATUM] - Kurzbeschreibung
 ### Hinzugefügt
