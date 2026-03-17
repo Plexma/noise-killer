@@ -119,6 +119,13 @@ www.derstandard.de##div.story-community-postings
 www.derstandard.de##footer.site-footer
 
 ! --------------------------------------------------------------------------
+! Deutschlandfunk
+! Hinzugefügt: 2026-03-17
+! --------------------------------------------------------------------------
+! Site-Footer ("Entdecken Sie den Deutschlandfunk" + Nav-Links)
+www.deutschlandfunk.de##footer.b-footer
+
+! --------------------------------------------------------------------------
 ! DHL
 ! --------------------------------------------------------------------------
 www.dhl.de##div.stripe.bg--grey

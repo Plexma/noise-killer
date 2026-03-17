@@ -56,6 +56,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 | stadt-bremerhaven.de | Autor, Sidebar, Kommentare, Affiliate, Footer |
 | tarnkappe.info | Newsletter-Modal, Sidebar, Footer |
 | www.derstandard.de | Kommentare, Aside, Footer |
+| www.deutschlandfunk.de | Footer |
 | www.macrumors.com | Footer |
 | www.theverge.com | Recirc, Footer |
 | www.tomsguide.com | Kommentare, Newsletter, Affiliate-Disclaimer, Footer |
