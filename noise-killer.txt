@@ -283,6 +283,11 @@ www.pcgameshardware.de##div.swiper-slide[data-swiper-slide-index][style]
 !         section[data-sara-click-el][data-area][data-pos]) haben den
 !         Live-Ticker (tickaroo) mitgeblockt, da dieser dieselben
 !         data-Attribute nutzt. Jetzt gezielte data-area-Selektoren.
+! BUGFIX 2026-03-17: section:has(> h3:has-text(/^Mehr lesen über$/)) hat nur
+!         die innere <section> (direkter H3-Parent) geblockt, nicht aber den
+!         äußeren Container. Folge: "Mehr lesen über"-Box blieb sichtbar +
+!         großer Whitespace darunter. Fix: data-smartfeed-id="further-reads"
+!         blockiert den kompletten Container sauber.
 ! --------------------------------------------------------------------------
 ! "Mehr zum Thema" - Inline-Aside UND End-Section im Artikel
 www.spiegel.de##aside[data-area="related_articles"]
@@ -291,8 +296,8 @@ www.spiegel.de##section[data-area="related_articles"]
 www.spiegel.de##div.tik4-link-list
 ! "Verwandte Artikel" Liste am Artikelende (Procedural Filter)
 www.spiegel.de##section:has(> h3:has-text(/^Verwandte Artikel$/))
-! "Mehr lesen über" Tag-Links am Artikelende (Procedural Filter)
-www.spiegel.de##section:has(> h3:has-text(/^Mehr lesen über$/))
+! "Mehr lesen über" Tag-Box am Artikelende inkl. Whitespace-Fix
+www.spiegel.de##section[data-smartfeed-id="further-reads"]
 ! Empfehlungsfeed am Artikelende
 www.spiegel.de##div[data-area="smartfeed"]
 ! Artikelfooter (Feedback-Link etc.)
