@@ -1,0 +1,473 @@
+! ==========================================================================
+! Adblock-Filterliste (kompatibel mit uBlock Origin, AdBlock Plus, AdGuard, Brave)
+! Zweck: Entschlackung von Nachrichtenseiten & anderen Webseiten
+! Entfernt: Inline-Eigenwerbung, "Mehr zum Thema", Artikel-Empfehlungen,
+!           Footer, Newsletter-Boxen, Kommentarbereiche, Social-Bars
+! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-03-15 (Browser-DOM-Analyse)
+! ==========================================================================
+
+! --------------------------------------------------------------------------
+! Ars Technica
+! --------------------------------------------------------------------------
+arstechnica.com##footer
+arstechnica.com##main > div
+
+! --------------------------------------------------------------------------
+! iFixit
+! --------------------------------------------------------------------------
+de.ifixit.com##.component-WPCampaignBanner
+
+! --------------------------------------------------------------------------
+! Wikipedia (DE)
+! --------------------------------------------------------------------------
+de.m.wikipedia.org##div.post-content.footer-content
+de.wikipedia.org##div.post-content.footer-content
+
+! --------------------------------------------------------------------------
+! HSReplay
+! --------------------------------------------------------------------------
+hsreplay.net##footer
+
+! --------------------------------------------------------------------------
+! Imgur
+! --------------------------------------------------------------------------
+imgur.com##div.BottomRecirc
+
+! --------------------------------------------------------------------------
+! DPD
+! --------------------------------------------------------------------------
+my.dpd.de###ContentPlaceHolder1_panParcelControl
+my.dpd.de##.footerContainer
+
+! --------------------------------------------------------------------------
+! SteamDB
+! --------------------------------------------------------------------------
+steamdb.info##footer
+
+! --------------------------------------------------------------------------
+! SZ-Magazin
+! --------------------------------------------------------------------------
+sz-magazin.sueddeutsche.de##aside.article-further-reading
+sz-magazin.sueddeutsche.de##div.related
+sz-magazin.sueddeutsche.de##div.sz-global-footer
+sz-magazin.sueddeutsche.de##main > div > div > section
+sz-magazin.sueddeutsche.de##nav.article-ending-nav
+sz-magazin.sueddeutsche.de##section.inline-teaser
+
+! --------------------------------------------------------------------------
+! Tarnkappe
+! --------------------------------------------------------------------------
+tarnkappe.info###bottom-navigation
+tarnkappe.info###newsletter-modal-overlay
+tarnkappe.info##div > div > div[data-nosnippet]
+tarnkappe.info##div.column.is-one-third
+
+! --------------------------------------------------------------------------
+! taz
+! --------------------------------------------------------------------------
+taz.de###tzi-paywahl-fg
+taz.de##article[x-data] > div[x-data]
+taz.de##footer
+taz.de##section > section
+
+! --------------------------------------------------------------------------
+! Tracker.gg
+! --------------------------------------------------------------------------
+tracker.gg##div.footer-content
+tracker.gg##div.upsell
+
+! --------------------------------------------------------------------------
+! Amazon DE
+! --------------------------------------------------------------------------
+www.amazon.de###mobile-dp-ilm_feature_div_01
+www.amazon.de###nav-ftr-gototop
+www.amazon.de###nav-ftr-links
+
+! --------------------------------------------------------------------------
+! Buffed
+! --------------------------------------------------------------------------
+www.buffed.de###article_comment_box
+www.buffed.de###commentbox
+www.buffed.de##a.fontIcon.social_facebook
+www.buffed.de##aside
+www.buffed.de##div.pgnWrapper
+www.buffed.de##div.rpi-progress-bar
+www.buffed.de##footer
+www.buffed.de##header.mainHeader
+www.buffed.de##span[data-nosnippet]
+
+! --------------------------------------------------------------------------
+! ComputerBase
+! --------------------------------------------------------------------------
+www.computerbase.de##.podigee-podcast-player
+www.computerbase.de##aside
+www.computerbase.de##div.adbox.adbox-rectangle.adbox--with-label
+www.computerbase.de##div.block1.block1--breakout
+www.computerbase.de##div.text-asset.text-width.shoutbox-container.shoutbox-container--article-view
+www.computerbase.de##div.text-asset.text-width.support-plea
+www.computerbase.de##div[data-widget-id][data-widget-key][data-widget-definition]
+www.computerbase.de##footer
+
+! --------------------------------------------------------------------------
+! Der Standard
+! BUGFIX: footer (ohne Klasse) hat Bildunterschriften/Fotocredits geblockt,
+!         da <footer> auch innerhalb von <figure>-Elementen genutzt wird.
+!         Fix: footer.site-footer ist der echte Seiten-Footer.
+! --------------------------------------------------------------------------
+www.derstandard.de##aside
+www.derstandard.de##div.story-community-postings
+www.derstandard.de##footer.site-footer
+
+! --------------------------------------------------------------------------
+! DHL
+! --------------------------------------------------------------------------
+www.dhl.de##div.stripe.bg--grey
+www.dhl.de##footer.footer
+
+! --------------------------------------------------------------------------
+! FAZ
+! BUGFIX: aside[data-external-selector] (ohne Attributwert) und
+!         article > aside[data-external-selector] haben den Artikel-Toolbar
+!         (Anhören/Merken/Kommentare/Teilen) geblockt.
+!         Fix: Nur data-external-selector="related-articles" blockieren.
+! --------------------------------------------------------------------------
+! "Mehr zum Thema" Empfehlungen im Artikel
+www.faz.net##aside[data-external-selector="related-articles"]
+! Empfehlungs-Slot in der Sidebar
+www.faz.net##div.aside-slot
+www.faz.net##footer
+
+! --------------------------------------------------------------------------
+! GameStar
+! --------------------------------------------------------------------------
+www.gamestar.de##.dailymotion-player
+www.gamestar.de##.plus-202508-banner-content
+www.gamestar.de##div.contentteaser.row.box.contentmediaitem-box
+www.gamestar.de##footer
+www.gamestar.de##iframe.wbd-toolbox.js-ga-view
+
+! --------------------------------------------------------------------------
+! Golem
+! --------------------------------------------------------------------------
+www.golem.de###cmts
+www.golem.de##aside
+www.golem.de##div.go-button-bar[style]
+www.golem.de##div.go-newsletter-box-container
+www.golem.de##div.go-teaser-block
+www.golem.de##div.go-toolbar
+www.golem.de##footer
+www.golem.de##main > div.go-tag-list
+
+! --------------------------------------------------------------------------
+! Handelsblatt
+! --------------------------------------------------------------------------
+www.handelsblatt.com##app-commercial-teaser-group
+www.handelsblatt.com##app-embed.ng-star-inserted > app-iframe > iframe
+www.handelsblatt.com##app-footer
+www.handelsblatt.com##app-related-content-teaser-group
+www.handelsblatt.com##app-storyline-related-topics.ng-star-inserted
+
+! --------------------------------------------------------------------------
+! Heise
+! BUGFIX: div[data-adserver-position] > div[data-content-id][data-module-name]
+!         hat TopNaviModule UND HeaderModule geblockt (= gesamte Navigation!).
+!         Fix: Nur AdModule gezielt blockieren.
+! --------------------------------------------------------------------------
+www.heise.de###article-page-upscore
+www.heise.de###wtma_teaser_ho_vertrieb_inline_branding
+www.heise.de##.nav-bottom
+www.heise.de##a-opt-in.a-u-inline
+www.heise.de##a.a-button
+www.heise.de##aside.affiliate-info
+www.heise.de##div.a-article-header__service.a-article-header__service--right
+! Nur Werbe-Module blockieren (nicht TopNaviModule/HeaderModule)
+www.heise.de##div[data-module-name="AdModule"]
+! "Beliebte Bestenlisten" / Teaser-Empfehlungen am Artikelende
+www.heise.de##div[data-module-name="TeasersModule"]
+www.heise.de##footer
+! Inline-Teaser und Empfehlungen
+www.heise.de##div.teaser-list-inline
+www.heise.de##aside.related-articles
+! "Lesen Sie auch" Inline-Box im Artikeltext
+www.heise.de##div.article-content > div.a-u-inline
+! Outbrain-Empfehlungswidget nach dem Artikel
+www.heise.de##aside.recommendations
+! Newsletter-Abo-Box in der Artikel-Sidebar
+www.heise.de##aside.article-newsletter-subscription
+
+! --------------------------------------------------------------------------
+! iFun
+! --------------------------------------------------------------------------
+www.ifun.de##div > div > div > form[action][method]
+www.ifun.de##footer
+
+! --------------------------------------------------------------------------
+! iPhone-Ticker
+! --------------------------------------------------------------------------
+www.iphone-ticker.de###verbraucherhinweis-mobile-300x250
+www.iphone-ticker.de##div > div > div > form[action][method]
+www.iphone-ticker.de##footer
+
+! --------------------------------------------------------------------------
+! LTO (Legal Tribune Online)
+! --------------------------------------------------------------------------
+www.lto.de##.ad_career_banner
+www.lto.de##.ad_transfer_banner
+www.lto.de##.article-teaser-list
+www.lto.de##.jobwidget
+www.lto.de##.toolbar.boxed
+www.lto.de##.tx-lto-events
+www.lto.de##div[novalidate][x-data]
+www.lto.de##footer
+www.lto.de##section.content__related
+
+! --------------------------------------------------------------------------
+! MacRumors
+! --------------------------------------------------------------------------
+www.macrumors.com##div[role="main"] > div
+www.macrumors.com##footer
+
+! --------------------------------------------------------------------------
+! MyDealz
+! --------------------------------------------------------------------------
+www.mydealz.de###footer-container
+www.mydealz.de##div.stickyBar-bottom.aGrid-item--b-menu.zIndex--fixed.will-transform.forceLayer
+www.mydealz.de##section[role][data-t]
+
+! --------------------------------------------------------------------------
+! MyHermes
+! --------------------------------------------------------------------------
+www.myhermes.de##footer
+
+! --------------------------------------------------------------------------
+! n-tv
+! BUGFIX: div.row.phide, div.teaser--related, aside.aside nicht gefunden.
+!         aside (die Video-Sidebar) korrekt blockieren.
+! --------------------------------------------------------------------------
+www.n-tv.de##aside
+www.n-tv.de##footer
+
+! --------------------------------------------------------------------------
+! NDR
+! --------------------------------------------------------------------------
+www.ndr.de##div.campaign-banner
+www.ndr.de##div.contentbox.list
+www.ndr.de##div.teaser
+www.ndr.de##footer
+www.ndr.de##nav.sharebox
+www.ndr.de##section.contentbox
+www.ndr.de##section[data-showdefault]
+
+! --------------------------------------------------------------------------
+! PC Games Hardware
+! --------------------------------------------------------------------------
+www.pcgameshardware.de###comment
+www.pcgameshardware.de##div.QuickMenuFade.posRel
+www.pcgameshardware.de##div.breadcrumb.mt-1.mb-1
+www.pcgameshardware.de##div.shopLinkButtonsWrapper.cxenseignore
+www.pcgameshardware.de##div[data-rpi-area] > aside
+www.pcgameshardware.de##footer
+! Swiper-Slides konsolidiert (Karussell-Teaser)
+www.pcgameshardware.de##div.swiper-slide[data-swiper-slide-index][style]
+
+! --------------------------------------------------------------------------
+! Spiegel
+! BUGFIX: Alte Filter (div:nth-of-type(3) > div, nav[role],
+!         section[data-sara-click-el][data-area][data-pos]) haben den
+!         Live-Ticker (tickaroo) mitgeblockt, da dieser dieselben
+!         data-Attribute nutzt. Jetzt gezielte data-area-Selektoren.
+! --------------------------------------------------------------------------
+! "Mehr zum Thema" - Inline-Aside UND End-Section im Artikel
+www.spiegel.de##aside[data-area="related_articles"]
+www.spiegel.de##section[data-area="related_articles"]
+! "Empfehlungen aus der Redaktion" im Tickaroo-Liveblog
+www.spiegel.de##div.tik4-link-list
+! "Verwandte Artikel" Liste am Artikelende (Procedural Filter)
+www.spiegel.de##section:has(> h3:has-text(/^Verwandte Artikel$/))
+! "Mehr lesen über" Tag-Links am Artikelende (Procedural Filter)
+www.spiegel.de##section:has(> h3:has-text(/^Mehr lesen über$/))
+! Empfehlungsfeed am Artikelende
+www.spiegel.de##div[data-area="smartfeed"]
+! Artikelfooter (Feedback-Link etc.)
+www.spiegel.de##footer[data-area="article-footer"]
+! Magazin-Slider, Services-Nav, Spiegel-Group-Eigenwerbung
+www.spiegel.de##div[data-area="magazine-slider"]
+www.spiegel.de##nav[data-area="services"]
+www.spiegel.de##div[data-area="spiegel-group"]
+www.spiegel.de##div[data-area="more-links"]
+! Site-Footer
+www.spiegel.de##footer[data-area="footer"]
+
+! --------------------------------------------------------------------------
+! Sportschau
+! --------------------------------------------------------------------------
+www.sportschau.de##a.teaser-absatz__link
+www.sportschau.de##aside
+www.sportschau.de##div.copytext-element-wrapper.columns.twelve
+www.sportschau.de##div.copytext-element-wrapper.columns.twelve.copytext-element-wrapper--overlap
+www.sportschau.de##div.copytext__audio
+www.sportschau.de##div.endline
+www.sportschau.de##div.layout-content.scrolled > div.columns.twelve.content-wrapper__group
+www.sportschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
+www.sportschau.de##footer
+www.sportschau.de##ul.buttongroup.buttongroup--copytext
+
+! --------------------------------------------------------------------------
+! Sueddeutsche Zeitung
+! BUGFIX: li > div entfernt (hat Audio-Player im Artikel-Toolbar geblockt).
+!         CSS-Hash-Klassen (.css-*) weiterhin weggelassen (instabil).
+! --------------------------------------------------------------------------
+www.sueddeutsche.de###reader-discussion-button
+www.sueddeutsche.de##.module-primaryteaser
+www.sueddeutsche.de##a[href][data-track-teaser-click] > div
+www.sueddeutsche.de##button[title][data-testid]
+! Inline-Newsletter-Widget im Artikeltext (Shadow DOM, via data-newsletter-id)
+www.sueddeutsche.de##div[data-newsletter-id]
+! Autorenzeile ("Von Bernd Kastner")
+www.sueddeutsche.de##[data-testid="byline"]
+! Urheberrechtszeile am Artikelende ("© SZ - Rechte am Artikel können Sie hier erwerben.")
+www.sueddeutsche.de##[data-testid="closing-line"]
+www.sueddeutsche.de##div.teaser-list
+www.sueddeutsche.de##div[data-article-wrapper] > div
+www.sueddeutsche.de##div[data-manual-remove]
+www.sueddeutsche.de##div[data-test]
+www.sueddeutsche.de##div[data-testid="topics"]
+www.sueddeutsche.de##div[data-testid] > div[aria-hidden]
+www.sueddeutsche.de##er-footer
+www.sueddeutsche.de##er-newsletter
+www.sueddeutsche.de##er-recommendations[excludelist][data-active]
+www.sueddeutsche.de##footer
+
+! --------------------------------------------------------------------------
+! t-online
+! BUGFIX: div.z-article-sharing-bar-overlay... nicht gefunden (veraltet).
+!         main > article > div:nth-of-type(2) fragil (positional) entfernt.
+!         ul[data-testid] präzisiert auf testId="RelatedArticles.List".
+! --------------------------------------------------------------------------
+! Schlagzeilen-Ticker-Box
+www.t-online.de##div.rounded-8.bg-alpine.p-12
+! Verwandte Artikel Sidebar-Liste
+www.t-online.de##ul[data-testid="RelatedArticles.List"]
+! Empfehlungsboxen
+www.t-online.de##div[data-testid="recommendation"]
+
+! --------------------------------------------------------------------------
+! Tagesschau
+! --------------------------------------------------------------------------
+www.tagesschau.de##a.btn.btn--text.btn--standard-secondary.btn--fullwidth
+www.tagesschau.de##aside
+www.tagesschau.de##div.back-to-top.show
+www.tagesschau.de##div.columns.twelve.infobox.color--tongue
+www.tagesschau.de##div.copytext-element-wrapper.columns.twelve.copytext-element-wrapper--overlap
+www.tagesschau.de##div.copytext__video.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
+www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.mediaplayer--lazy-loading.mediaplayer--loaded
+www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
+www.tagesschau.de##footer
+
+! --------------------------------------------------------------------------
+! Tagesspiegel
+! --------------------------------------------------------------------------
+www.tagesspiegel.de###sitefooter-container
+www.tagesspiegel.de##aside
+
+! --------------------------------------------------------------------------
+! The Verge
+! --------------------------------------------------------------------------
+www.theverge.com##div.duet--layout--article-recirc-color-container
+www.theverge.com##footer
+
+! --------------------------------------------------------------------------
+! Tom's Guide
+! --------------------------------------------------------------------------
+www.tomsguide.com###affiliate-disclaimer
+www.tomsguide.com###document-footer
+www.tomsguide.com###ogy-ad-slot
+www.tomsguide.com###popular-data
+www.tomsguide.com###viafoura-comments-container
+www.tomsguide.com##.socialite-widget
+www.tomsguide.com##a.block-link.full
+www.tomsguide.com##div > a[data-mrf-recirculation]
+www.tomsguide.com##div > aside[data-component-name][data-nosnippet]
+www.tomsguide.com##div > ul
+www.tomsguide.com##div.exit-intent.exit-intent__background
+www.tomsguide.com##div.newsletter-form__wrapper
+www.tomsguide.com##section.mx-2.my-5
+
+! --------------------------------------------------------------------------
+! Transfermarkt
+! --------------------------------------------------------------------------
+www.transfermarkt.de##a[href][target][onclick]
+www.transfermarkt.de##footer
+www.transfermarkt.de##main > div > div > section
+
+! --------------------------------------------------------------------------
+! Wowhead
+! --------------------------------------------------------------------------
+www.wowhead.com###endofpost
+www.wowhead.com##div.author-bio
+www.wowhead.com##footer
+
+! --------------------------------------------------------------------------
+! ZDF heute
+! BUGFIX: article hat den Artikelinhalt selbst geblockt (KRITISCH!).
+!         main > div[data-testid][style] und section[style] waren zu fragil
+!         (inline style-Attribut ändert sich). Ersetzt durch data-testid.
+! --------------------------------------------------------------------------
+! Site-Footer
+www.zdfheute.de##footer[data-testid="footer"]
+! "Mehr zum Thema" Empfehlungsmodul
+www.zdfheute.de##div[data-testid="heute-übersichtmodul"]
+! Themen-Tag-Links unter dem Artikel
+www.zdfheute.de##div[data-testid="topic-tags"]
+! Empfehlungssektion (außerhalb article, kein data-testid)
+www.zdfheute.de##section:not(article section):has(> div > div[data-testid="heute-übersichtmodul"])
+
+! --------------------------------------------------------------------------
+! Stadt-Bremerhaven (Caschys Blog)
+! Radikal-Entschlackung: kein Autor, keine Kommentare, keine Sidebar
+! Bestätigte Selektoren via DOM-Analyse
+! --------------------------------------------------------------------------
+! Autor-Metazeile im Artikel (von / Datum / Kommentieren-Link)
+stadt-bremerhaven.de##p.post-byline
+! Autor-Bio unterhalb des Artikels (Avatar + Kurzbiografie)
+stadt-bremerhaven.de##div.author-bio
+! Post-Navigation (Nächster/Vorheriger Beitrag)
+stadt-bremerhaven.de##ul.post-nav
+! Share-Buttons-Liste
+stadt-bremerhaven.de###shr-btns
+! "Gefällt dir der Artikel?" - strong.highlight direkt in article (kein p-Element!)
+stadt-bremerhaven.de##article > strong.highlight
+! "Dann teile ihn mit deinen Freunden." ist ein nackter Textknoten in article -
+! per CSS nicht einzeln targetierbar. strong.highlight + #shr-btns werden oben
+! bereits geblockt; der nackte Textknoten bleibt mangels CSS-Selector sichtbar.
+! Affiliate-Transparenzhinweis (Partnerlinks) - BUGFIX: war p:has(...), ist aber p.aawp-disclaimer
+stadt-bremerhaven.de##p.aawp-disclaimer
+! Amazon-Affiliate-Produkttabellen
+stadt-bremerhaven.de##article table
+! "Neueste Beiträge" Überschrift + Liste (im Hauptinhalt-Bereich, nicht Sidebar)
+stadt-bremerhaven.de##div.recent-posts__heading
+stadt-bremerhaven.de##ul.recent-posts
+! Einzelner "Datenschutzerklärung"-Link zwischen Neueste Beiträge und Kommentaren
+stadt-bremerhaven.de##div.pad.group > a
+! Kommentare (Formular komplett)
+stadt-bremerhaven.de###comments
+! Kommentarregeln / Moderationshinweis (außerhalb von #comments!)
+stadt-bremerhaven.de##div.comment-abo
+! Sidebar (Umfrage des Monats, Beliebt, Kategorien, Werbung)
+stadt-bremerhaven.de##.sidebar
+! Site-Footer
+stadt-bremerhaven.de##footer
+
+! --------------------------------------------------------------------------
+! ZEIT Online
+! --------------------------------------------------------------------------
+www.zeit.de##aside.topicbox
+www.zeit.de##aside.volume-teaser
+www.zeit.de##div.article-actions.article__item
+www.zeit.de##div.article-footer.article__item
+www.zeit.de##div.comments-service.comments-service--article
+www.zeit.de##div[data-page-number] > aside[aria-label]
+www.zeit.de##div[itemprop] > aside[aria-label]
+www.zeit.de##footer.footer
+www.zeit.de##section#comments
+www.zeit.de##section[data-page-number][data-restricted-access] > aside[aria-label]
