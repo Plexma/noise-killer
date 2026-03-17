@@ -81,7 +81,7 @@ Ziel: Den Artikeltext in den Vordergrund stellen – und alles wegräumen, was n
 3. Folgende URL in das Textfeld eintragen:
 
 ```
-https://raw.githubusercontent.com/Plexma/noise-killer/main/ublock-filters-consolidated.txt
+https://raw.githubusercontent.com/Plexma/noise-killer/main/noise-killer.txt
 ```
 
 4. **Jetzt aktualisieren** klicken – fertig.

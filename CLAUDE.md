@@ -4,13 +4,13 @@ uBlock Origin Filterliste zur Entschlackung von Nachrichtenseiten.
 Ziel: Inline-Eigenwerbung, Artikel-Empfehlungen, Footer, Newsletter-Boxen,
 Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
 ## Datei
-`ublock-filters-consolidated.txt` – das ist die einzige Filterliste.
+`noise-killer.txt` – das ist die einzige Filterliste.
 ## Workflow bei neuen URLs
 1. URL im Browser öffnen
 2. DOM analysieren – welches CSS-Element ist störend?
 3. Selector so präzise wie nötig formulieren
 4. Testen ob der Selector funktioniert und nichts Wichtiges blockiert
-5. Eintrag in ublock-filters-consolidated.txt einfügen, alphabetisch nach Domain
+5. Eintrag in noise-killer.txt einfügen, alphabetisch nach Domain
 6. Kommentar darüber: `! Hinzugefügt: DATUM`
 7. Bei Bugs: BUGFIX-Kommentar wie bereits in der Liste vorhanden
 8. CHANGELOG.md aktualisieren
