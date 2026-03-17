@@ -14,14 +14,15 @@ Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
 6. Kommentar darüber: `! Hinzugefügt: DATUM`
 7. Bei Bugs: BUGFIX-Kommentar wie bereits in der Liste vorhanden
 8. CHANGELOG.md aktualisieren
-9. git add, commit, push zu main
-10. GitHub Release erstellen mit:
-    `gh release create vX.Y --title "vX.Y - DATUM" --notes "CHANGELOG-INHALT"`
+9. README.md aktualisieren – Tabelle „Unterstützte Seiten" synchron halten (bei jeder Änderung, auch Bugfixes)
+10. git add, commit, push zu main
+11. GitHub Release erstellen mit:
+    `gh release create vX.Y.Z --title "vX.Y.Z - DATUM" --notes "CHANGELOG-INHALT"`
 
-    Versionierung:
-    - Erste Version = v1.0
-    - Normale Ergänzungen (1-3 Domains) = Patch +0.1 (v1.1, v1.2...)
-    - Viele Änderungen auf einmal = Minor +1.0 (v2.0, v3.0...)
+    Versionierung (Semantic Versioning):
+    - Patch +0.0.1 = Bugfixes an bestehenden Filtern (v1.0.1, v1.0.2...)
+    - Minor +0.1.0 = Neue Domain hinzugefügt (v1.1.0, v1.2.0...)
+    - Major +1.0.0 = Mehrere Domains gleichzeitig oder umfangreiche Überarbeitungen (v2.0.0, v3.0.0...)
     - Aktuelle Versionsnummer immer aus dem letzten Git-Tag lesen: `git describe --tags --abbrev=0`
 ## CHANGELOG.md Format
 ## [DATUM] - Kurzbeschreibung
