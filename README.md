@@ -8,6 +8,8 @@ Der Artikeltext, Bildunterschriften und Multimedia-Inhalte bleiben dabei vollstÃ
 
 Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 
+> Hobbyprojekt, gepflegt per Vibe Coding mit [Claude](https://claude.ai).
+
 ---
 
 ## Was wird blockiert?
