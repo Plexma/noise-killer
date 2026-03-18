@@ -399,9 +399,19 @@ www.tagesspiegel.de##aside
 
 ! --------------------------------------------------------------------------
 ! The Verge
+! Hinzugefügt: 2026-03-18
 ! --------------------------------------------------------------------------
-www.theverge.com##div.duet--layout--article-recirc-color-container
-www.theverge.com##footer
+! Native Inline-Anzeigen und Rail-Anzeigen
+www.theverge.com##.duet--ad--native-ad-linkset
+www.theverge.com##.duet--ad--native-ad-rail
+! "Most Popular" Sidebar
+www.theverge.com##.duet--layout--rail
+! Artikel-Empfehlungen am Artikelende ("More in Transportation")
+www.theverge.com##.duet--layout--article-recirc-color-container
+! Newsletter-Abo-Box ("The Verge Daily")
+www.theverge.com##.duet--cta--newsletter
+! Site-Footer
+www.theverge.com##.duet--navigation--footer
 
 ! --------------------------------------------------------------------------
 ! Tom's Guide

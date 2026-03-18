@@ -1,3 +1,10 @@
+## [2026-03-18] - The Verge erweitert
+
+### Hinzugefügt
+- **www.theverge.com**: Native Anzeigen (`duet--ad--native-ad-linkset`, `duet--ad--native-ad-rail`),
+  „Most Popular"-Sidebar (`duet--layout--rail`) und Newsletter-Abo-Box (`duet--cta--newsletter`)
+  blockiert. Footer-Selector auf semantisches `duet--navigation--footer` präzisiert.
+
 ## [2026-03-18] - Spiegel Mobile-Bugfix Leerraum am Artikelende
 
 ### Behoben
