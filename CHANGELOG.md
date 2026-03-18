@@ -1,3 +1,10 @@
+## [2026-03-18] - Bugfixes: tarnkappe.info, tagesspiegel.de, t-online.de
+
+### Behoben
+- **tarnkappe.info**: `div.sonderwerbemittel` hat den gesamten Artikelbereich blockiert (wraps `#primary`). Entfernt.
+- **www.tagesspiegel.de**: Floating Share-/Mail-Button (sticky `ul`) blockiert via `ul:has([data-gtm-class="article-social-link"])`; Themen-Buttons am Artikelende blockiert via `p:has(> a[data-gtm-class="article-home-link"]) ~ ul`; P mit „Zur Startseite"-Link nun komplett blockiert statt nur das A-Element.
+- **www.t-online.de**: `div[data-testid="Page.PageStages"]` blockiert – enthält „Neueste Artikel"-Teaser, „Themen"-Pills und „Internationale Politik von A bis Z"-Navigation am Artikelende.
+
 ## [2026-03-18] - Umfangreiche Überarbeitung: 15 Sites gefixt und erweitert
 
 ### Behoben

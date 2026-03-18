@@ -74,7 +74,7 @@ tarnkappe.info###newsletter-modal-overlay
 tarnkappe.info##div.column:has(> .card.banner-post)
 tarnkappe.info##div.column.sidebar-sticky
 tarnkappe.info##div.columns.related-underpost
-tarnkappe.info##div.sonderwerbemittel
+
 tarnkappe.info##footer.content.entry-footer
 tarnkappe.info##footer.site-footer
 tarnkappe.info##section.desktop-only
@@ -426,6 +426,9 @@ www.sueddeutsche.de##footer
 ! Hinzugefügt 2026-03-18: StreamLayout.Companion (rechte Sidebar),
 !         nativendo-container (Native Ads), Commercial.SDI (Werbeplatz),
 !         PageFooter (Seiten-Footer).
+! BUGFIX 2026-03-18: Page.PageStages blockiert – enthält „Neueste Artikel",
+!         „Themen"-Buttons und „Internationale Politik von A bis Z"-Navigation
+!         am Artikelende.
 ! --------------------------------------------------------------------------
 ! Schlagzeilen-Ticker-Box
 www.t-online.de##div.rounded-8.bg-alpine.p-12
@@ -441,6 +444,8 @@ www.t-online.de##div[data-testid="nativendo-container"]
 www.t-online.de##div[data-testid="Commercial.SDI"]
 ! Seiten-Footer
 www.t-online.de##div[data-testid="PageFooter"]
+! Artikelende-Abschnitte: Neueste Artikel, Themen, Themennavigation
+www.t-online.de##div[data-testid="Page.PageStages"]
 
 ! --------------------------------------------------------------------------
 ! Tagesschau
@@ -466,14 +471,19 @@ www.tagesschau.de##footer
 !         Kommentare-Button (data-gtm-class="open-community"),
 !         Artikel-Startseiten-Link (data-gtm-class="article-home-link"),
 !         Footer.
+! BUGFIX 2026-03-18: Floating Share-/Mail-Button (sticky UL) blockiert;
+!         Themen-Buttons am Artikelende (UL nach P[article-home-link]) blockiert;
+!         P[article-home-link] komplett blockiert statt nur das A-Element.
 ! --------------------------------------------------------------------------
 www.tagesspiegel.de###opinary-automation-placeholder
 www.tagesspiegel.de###outbrain-container
 www.tagesspiegel.de###sitefooter-container
 www.tagesspiegel.de##aside
-www.tagesspiegel.de##a[data-gtm-class="article-home-link"]
 www.tagesspiegel.de##button[data-gtm-class="open-community"]
 www.tagesspiegel.de##footer
+www.tagesspiegel.de##p:has(> a[data-gtm-class="article-home-link"])
+www.tagesspiegel.de##p:has(> a[data-gtm-class="article-home-link"]) ~ ul
+www.tagesspiegel.de##ul:has([data-gtm-class="article-social-link"])
 
 ! --------------------------------------------------------------------------
 ! The Verge
