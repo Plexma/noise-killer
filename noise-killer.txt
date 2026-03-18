@@ -7,6 +7,17 @@
 ! ==========================================================================
 
 ! --------------------------------------------------------------------------
+! Globale Drittanbieter-Blocker (siteübergreifend, kein Artikelinhalt möglich)
+! Hinzugefügt 2026-03-18
+! --------------------------------------------------------------------------
+! Outbrain – Empfehlungswidget (standardisierte Klasse/ID über alle Sites)
+##div.OUTBRAIN
+##[id^="outbrain"]
+! Taboola – Empfehlungswidget (standardisierte ID/Klasse über alle Sites)
+##[id^="taboola"]
+##div[class^="trc_"]
+
+! --------------------------------------------------------------------------
 ! Ars Technica
 ! Hinzugefügt 2026-03-18: Kommentar-Buttons (a.view-comments oben und unten),
 !         Author-Box (div:has(> a[href*="/author/"])), Navigation

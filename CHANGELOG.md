@@ -1,3 +1,9 @@
+## [2026-03-18] - Globale Outbrain- und Taboola-Blocker
+
+### Hinzugefügt
+- **Global**: Outbrain-Widget (`div.OUTBRAIN`, `[id^="outbrain"]`) siteübergreifend blockiert.
+- **Global**: Taboola-Widget (`[id^="taboola"]`, `div[class^="trc_"]`) siteübergreifend blockiert.
+
 ## [2026-03-18] - gamestar.de: Inline Affiliate-Produkt-Slider blockiert
 
 ### Hinzugefügt
