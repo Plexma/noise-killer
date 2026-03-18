@@ -1,10 +1,11 @@
-## [2026-03-18] - Bugfixes: arstechnica, tagesschau, pcgameshardware, gamestar
+## [2026-03-18] - Bugfixes: arstechnica, tagesschau, pcgameshardware, gamestar (Affiliate/Shop)
 
 ### Behoben
 - **arstechnica.com**: Author-Box blockiert nicht vollständig. Selector geändert von `div:has(> a[href*="/author/"])` zu `div.author-mini-bio` (blockiert komplette Bio-Box inkl. Avatar und Text).
 - **www.tagesschau.de**: "Zur Startseite"-Button nicht blockiert. Selector war `ul.buttongroup`, aber Element ist `div.buttongroup`.
 - **www.pcgameshardware.de**: Comment-Sprechblase am Anfang und Ende nicht blockiert. `div.commentIcon` ergänzt.
 - **www.gamestar.de**: Inline-Werbung "Auch spannend" nicht blockiert. `div:has(> h3:has-text(/auch spannend/i))` ergänzt.
+- **www.gamestar.de** (erweitert): Affiliate- und Shop-Werbung auf Produktseiten (z.B. Crimson Desert). `div.offerteaser-box` (GameStar PC Shop-Box) und `div.affiliate-buttons` (GamesPlanet Affiliate-Links) ergänzt.
 
 ## [2026-03-18] - Bugfixes: mydealz.de, n-tv.de, ndr.de, stadt-bremerhaven.de
 

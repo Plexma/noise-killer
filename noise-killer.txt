@@ -210,6 +210,10 @@ www.gamestar.de##a.do-toggle-comments
 www.gamestar.de##div.contentteaser.row.box
 www.gamestar.de##div:has(> h3:has-text(/auch spannend/i))
 www.gamestar.de##div.row:has(> .newsletter-form-container)
+! GameStar PC Shop-Box (Affiliate-Werbung für PCs mit "zum Shop" Button)
+www.gamestar.de##div.offerteaser-box
+! Affiliate-Buttons (GamesPlanet, Gamesplanet Links mit Preisen)
+www.gamestar.de##div.affiliate-buttons
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
 www.gamestar.de##ul.taglist
