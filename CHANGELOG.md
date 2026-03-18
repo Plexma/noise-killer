@@ -1,3 +1,8 @@
+## [2026-03-18] - gamestar.de: Inline Affiliate-Produkt-Slider blockiert
+
+### Hinzugefügt
+- **www.gamestar.de**: Inline Affiliate-Produkt-Slider (`div.wp-block-wbd-affiliate-widget`) blockiert – WordPress-Blöcke mit Preisen und grünen „Zum Shop"-Buttons, direkt im Artikeltext eingebettet.
+
 ## [2026-03-18] - Bugfixes + Erweiterung gamestar.de
 
 ### Behoben

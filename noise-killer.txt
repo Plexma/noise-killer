@@ -224,6 +224,8 @@ www.gamestar.de##div.row:has(> .newsletter-form-container)
 www.gamestar.de##div.offerteaser-box
 ! Affiliate-Buttons (GamesPlanet, Gamesplanet Links mit Preisen)
 www.gamestar.de##div.affiliate-buttons
+! Inline Affiliate-Produkt-Slider (WordPress-Block mit Preisen + grünen Shop-Buttons)
+www.gamestar.de##div.wp-block-wbd-affiliate-widget
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
 www.gamestar.de##ul.taglist
