@@ -37,19 +37,20 @@ Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
     - Major +1.0.0 = Mehrere Domains gleichzeitig oder umfangreiche Überarbeitungen (v2.0.0, v3.0.0...)
     - Aktuelle Versionsnummer immer aus dem letzten Git-Tag lesen: `git describe --tags --abbrev=0`
 
-## Schreibweise von Domains
-In CHANGELOG.md, Release Notes und Kommentaren in noise-killer.txt Domains immer
-**ohne „www."** schreiben – also `gamestar.de`, nicht `www.gamestar.de`.
-Die Domain-Präfixe in den Filterregeln selbst (`www.gamestar.de##selector`) bleiben
-unverändert – dort ist `www.` Teil der technischen Syntax.
+## Schreibweise und Formatierung von Domains
+In CHANGELOG.md, Release Notes und Kommentaren in noise-killer.txt gilt:
+- Domains immer **ohne „www."** – also `gamestar.de`, nicht `www.gamestar.de`
+- Domains in Listeneinträgen immer **fettgedruckt** – also `- **gamestar.de**: …`
+- Die Domain-Präfixe in den Filterregeln selbst (`www.gamestar.de##selector`) bleiben
+  unverändert – dort ist `www.` Teil der technischen Syntax
 
 ## CHANGELOG.md Format
 ```
 ## [DATUM] - Kurzbeschreibung
 ### Hinzugefügt
-- domain.com: was wurde blockiert
+- **domain.com**: was wurde blockiert
 ### Behoben
-- domain.com: was wurde gefixt
+- **domain.com**: was wurde gefixt
 ```
 
 ## Kritische Regeln – NIEMALS blockieren
