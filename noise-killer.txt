@@ -227,7 +227,11 @@ www.gamestar.de###inactivity-popup
 www.gamestar.de##a.do-toggle-comments
 www.gamestar.de##a[href="#comments"]
 www.gamestar.de##div.author-box
-www.gamestar.de##div.contentteaser.row.box
+! BUGFIX 2026-03-18: div.contentteaser.row.box war zu breit – hat auch contentnewsitem-box
+!         geblockt (Artikel-Listings auf Unter-Startseiten wie /news/spiele/).
+!         Aufgeteilt auf die zwei konkreten Noise-Varianten:
+www.gamestar.de##div.contentteaser.row.box.chartteaser-box
+www.gamestar.de##div.contentteaser.row.box.contentmediaitem-box
 www.gamestar.de##div.OUTBRAIN
 www.gamestar.de##div.recirculation-box
 www.gamestar.de##div.row:has(> .newsletter-form-container)

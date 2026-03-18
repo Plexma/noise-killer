@@ -1,3 +1,8 @@
+## [2026-03-18] - Bugfix gamestar.de: Unter-Startseiten leer
+
+### Behoben
+- **gamestar.de**: `div.contentteaser.row.box` hat auch `contentnewsitem-box` geblockt – Artikel-Listings auf Unter-Startseiten (z.B. `/news/spiele/`) wurden komplett geleert. Aufgeteilt auf `div.contentteaser.row.box.chartteaser-box` (Top-Artikel) und `div.contentteaser.row.box.contentmediaitem-box` (Aktuelle Artikel).
+
 ## [2026-03-18] - Bugfix gamestar.de: BoostBoxx-Buttons und Werbeboxen
 
 ### Behoben
