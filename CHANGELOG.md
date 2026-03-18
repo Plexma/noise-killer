@@ -1,3 +1,9 @@
+## [2026-03-18] - Bugfixes: ifun.de, iphone-ticker.de, mydealz.de komplett neu
+
+### Behoben
+- **www.ifun.de / www.iphone-ticker.de**: `#article-single-stats` ergänzt – enthält Kommentar-Link und Mastodon-Share-Button am Artikelanfang.
+- **www.mydealz.de**: Kompletter Neuaufbau. `div.stickyBar-bottom` und `section[role][data-t]` nicht mehr gefunden (Redesign). Neue Selektoren auf Basis stabiler `data-t`-Attribute: Kommentare, Related Deals, Share-Button, Subscribe, Keyword-Widget, Vote-Erklärung, internalLinking, App-Download und Footer blockiert.
+
 ## [2026-03-18] - Bugfixes: pcgameshardware.de, gamestar.de, derstandard.de, handelsblatt.com
 
 ### Behoben

@@ -275,16 +275,22 @@ www.heise.de##div[data-component="PreisvergleichModule"]
 ! --------------------------------------------------------------------------
 ! iFun
 ! Hinzugefügt 2026-03-18: #article-single-comments (Kommentarsektion).
+! BUGFIX 2026-03-18: #article-single-stats ergänzt – enthält Kommentar-Link
+!         ("2 Kommentare") und Mastodon-Share-Button am Artikelanfang.
 ! --------------------------------------------------------------------------
 www.ifun.de###article-single-comments
+www.ifun.de###article-single-stats
 www.ifun.de##div > div > div > form[action][method]
 www.ifun.de##footer
 
 ! --------------------------------------------------------------------------
 ! iPhone-Ticker
 ! Hinzugefügt 2026-03-18: #article-single-comments (Kommentarsektion).
+! BUGFIX 2026-03-18: #article-single-stats ergänzt – enthält Kommentar-Link
+!         ("13 Kommentare") und Mastodon-Share-Button am Artikelanfang.
 ! --------------------------------------------------------------------------
 www.iphone-ticker.de###article-single-comments
+www.iphone-ticker.de###article-single-stats
 www.iphone-ticker.de###verbraucherhinweis-mobile-300x250
 www.iphone-ticker.de##div > div > div > form[action][method]
 www.iphone-ticker.de##footer
@@ -310,10 +316,43 @@ www.macrumors.com##footer
 
 ! --------------------------------------------------------------------------
 ! MyDealz
+! BUGFIX 2026-03-18: Kompletter Neuaufbau. div.stickyBar-bottom und
+!         section[role][data-t] nicht mehr gefunden (Redesign).
+!         Neue Selektoren basieren auf stabilen data-t-Attributen.
+!         Behalten: thread, clickOut, voteCard, description, merchant,
+!                   copyAndRedirect, firstPostUpdate, remainingPostUpdate,
+!                   disclaimer, addBookmark.
+!         Blockiert: Kommentare, Related Deals, Share-Button, Subscribe,
+!                    Keyword-Widget, "Deine Votes"-Box, internalLinking,
+!                    App-Download, Footer.
 ! --------------------------------------------------------------------------
+! Kommentar-Link am Dealanfang (Anzahl-Button)
+www.mydealz.de##[data-t="commentsLink"]
+! Teilen-Button
+www.mydealz.de##[data-t="shareBtn"]
+! "Zum Seitenbeginn"-Button
+www.mydealz.de##[data-t="scrollTop"]
+! "Deine Votes helfen uns..." – Voting-Erklärungsbox
+www.mydealz.de##[data-t="voteSecondary"]
+! "Sag was dazu / Speichern"-Aktionsleiste
+www.mydealz.de##[data-t="userOptions"]
+! Kommentar-Formular (Neuer Kommentar)
+www.mydealz.de##[data-t="newComment"]
+! Keyword-Vorschläge-Widget
+www.mydealz.de##[data-t="keywordSuggestionsWidget"]
+www.mydealz.de##[data-t="keyword"]
+! "Auch interessant"-Abschnitt (verwandte Deals)
+www.mydealz.de##[data-t="relatedThreads"]
+! Komplette Kommentarsektion
+www.mydealz.de##[data-t="comments"]
+! Deal-Alarm / Subscribe-Button
+www.mydealz.de##[data-t="subscribe"]
+! "Beste Auswahl / Verwandte Diskussionen"-Box
+www.mydealz.de##[data-t="internalLinking"]
+! App-Download-Banner
+www.mydealz.de##[data-t="appDownload"]
+! Footer
 www.mydealz.de###footer-container
-www.mydealz.de##div.stickyBar-bottom.aGrid-item--b-menu.zIndex--fixed.will-transform.forceLayer
-www.mydealz.de##section[role][data-t]
 
 ! --------------------------------------------------------------------------
 ! MyHermes
