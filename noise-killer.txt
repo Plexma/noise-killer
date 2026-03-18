@@ -313,7 +313,12 @@ www.spiegel.de##div[data-area="more-links"]
 www.spiegel.de##footer[data-area="footer"]
 ! BUGFIX 2026-03-18: Mobile Anzeigen-Platzhalter haben sm:min-h-352/492/632 – reservieren auf
 !         Mobile bis zu 632px Leerraum am Artikelende wenn keine Werbung lädt (z. B. Brave).
+!         [data-advertisement~="mobile"] greift auf Attribute, die drei sm:min-h-Klassen
+!         als Fallback für Brave (adblock-rust) und Elemente ohne data-advertisement.
 www.spiegel.de##[data-advertisement~="mobile"]
+www.spiegel.de##[class~="sm:min-h-352"]
+www.spiegel.de##[class~="sm:min-h-492"]
+www.spiegel.de##[class~="sm:min-h-632"]
 
 ! --------------------------------------------------------------------------
 ! Sportschau

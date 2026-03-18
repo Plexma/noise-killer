@@ -5,6 +5,9 @@
   Mobilgeräten per CSS-Klasse `sm:min-h-632` bis zu 632px Leerraum, wenn keine Werbung lädt
   (z. B. bei Brave). Auf Desktop sind sie bereits durch Spiegels CSS verborgen. Filter
   `[data-advertisement~="mobile"]` entfernt die Platzhalter nun auch auf Mobile.
+  Zusätzlich drei Klassen-Selektoren als Fallback für Brave (adblock-rust verarbeitet
+  `data-advertisement`-Filter evtl. zu spät) und für ein Platzhalter-Div ohne Attribut:
+  `[class~="sm:min-h-352"]`, `[class~="sm:min-h-492"]`, `[class~="sm:min-h-632"]`.
 
 ## [2026-03-18] - Spiegel Mobile-Bugfix "Mehr lesen über" / "Verwandte Artikel"
 
