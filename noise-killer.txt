@@ -8,6 +8,10 @@
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
+! Hinzugefügt 2026-03-18: Kommentar-Buttons (a.view-comments oben und unten),
+!         Author-Box (div:has(> a[href*="/author/"])), Navigation
+!         (a.post-navigation-link für PREV/NEXT Story),
+!         Artikel-Empfehlungen (div.single-most-read / .component-most-read).
 ! BUGFIX 2026-03-18: main > div war zu breit – hat alle Artikelgruppen auf der
 !         Startseite geblockt. Ersetzt durch div.ad-wrapper (nur Werbeblöcke).
 !         #comments ergänzt (Kommentarsektion am Artikelende).
@@ -15,6 +19,14 @@
 arstechnica.com##footer
 arstechnica.com##div.ad-wrapper
 arstechnica.com###comments
+! Kommentar-Buttons ("114 comments") oben und unten im Artikel
+arstechnica.com##a.view-comments
+! Author-Box (Autoren-Bio, Credits)
+arstechnica.com##div:has(> a[href*="/author/"])
+! Navigation Buttons (PREV STORY / NEXT STORY)
+arstechnica.com##a.post-navigation-link
+! Artikel-Empfehlungen ("Most Read") Block am Artikelende
+arstechnica.com##div.single-most-read
 
 ! --------------------------------------------------------------------------
 ! iFixit

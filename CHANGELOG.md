@@ -1,3 +1,8 @@
+## [2026-03-18] - arstechnica.com: Kommentar-Buttons, Author-Box, Navigation, Artikel-Empfehlungen
+
+### Hinzugefügt
+- **arstechnica.com**: `a.view-comments` (Kommentar-Buttons oben und unten im Artikel), `div:has(> a[href*="/author/"])` (Author-Box mit Bio), `a.post-navigation-link` (PREV/NEXT Story Navigation), `div.single-most-read` (Most Read/Article-Empfehlungen am Artikelende).
+
 ## [2026-03-18] - Bugfixes: mydealz.de, n-tv.de, ndr.de, stadt-bremerhaven.de
 
 ### Behoben

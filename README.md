@@ -39,7 +39,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | Seite | Was entfernt wird |
 |---|---|
 | amazon.de | 🦶 |
-| arstechnica.com | 💬 📢 🦶 |
+| arstechnica.com | 💬 📰 📢 🦶 |
 | buffed.de | 📢 |
 | computerbase.de | 📢 📬 🦶 |
 | de.ifixit.com | 🪧 |
