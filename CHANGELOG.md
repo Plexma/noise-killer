@@ -1,3 +1,14 @@
+## [2026-03-18] - Bugfixes + Erweiterung gamestar.de
+
+### Behoben
+- **www.gamestar.de**: `div:has(> h3:has-text(/auch spannend/i))` hat nie gegriffen – Titel steht in `div.title`, nicht `h3`. Ersetzt durch `div.recirculation-box` (deckt alle Varianten: „Auch spannend", „Mehr zum Thema", „Aktuelle GameStar PC-Highlights", „Zu allen Special Editions" u.a.).
+
+### Hinzugefügt
+- **www.gamestar.de**: Author-Bio-Box (`div.author-box`) blockiert.
+- **www.gamestar.de**: Eigenwerbungs-Popup „GameStar hat noch mehr für dich!" (`#inactivity-popup`) blockiert.
+- **www.gamestar.de**: Outbrain-Empfehlungswidget (`div.OUTBRAIN`) blockiert.
+- **www.gamestar.de**: Unterer „zu den Kommentaren"-Link (`a[href="#comments"]`) blockiert.
+
 ## [2026-03-18] - Bugfix mydealz.de: Ähnliche Gutscheine
 
 ### Behoben

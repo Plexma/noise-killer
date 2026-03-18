@@ -202,13 +202,23 @@ www.faz.net##footer
 !         vereinfacht auf div.contentteaser.row.box (deckt alle Varianten).
 !         a.do-toggle-comments ergänzt (Kommentar-Link im Artikelkopf, außerhalb
 !         von #comments). ul.taglist ergänzt (Artikel-Tags am Artikelende).
+! BUGFIX 2026-03-18: div:has(> h3:has-text(/auch spannend/i)) hat nie funktioniert –
+!         Titel steht in div.title, nicht h3. Ersetzt durch div.recirculation-box
+!         (deckt alle Varianten: "Auch spannend", "Mehr zum Thema",
+!         "Aktuelle GameStar PC-Highlights", "Zu allen Special Editions" u.a.).
+! Hinzugefügt 2026-03-18: author-box, inactivity-popup (Eigenwerbungs-Popup),
+!         div.OUTBRAIN (Outbrain-Widget), a[href="#comments"] (unterer Kommentar-Link).
 ! --------------------------------------------------------------------------
 www.gamestar.de##.dailymotion-player
 www.gamestar.de##.plus-202508-banner-content
 www.gamestar.de###comments
+www.gamestar.de###inactivity-popup
 www.gamestar.de##a.do-toggle-comments
+www.gamestar.de##a[href="#comments"]
+www.gamestar.de##div.author-box
 www.gamestar.de##div.contentteaser.row.box
-www.gamestar.de##div:has(> h3:has-text(/auch spannend/i))
+www.gamestar.de##div.OUTBRAIN
+www.gamestar.de##div.recirculation-box
 www.gamestar.de##div.row:has(> .newsletter-form-container)
 ! GameStar PC Shop-Box (Affiliate-Werbung für PCs mit "zum Shop" Button)
 www.gamestar.de##div.offerteaser-box
