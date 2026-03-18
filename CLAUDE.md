@@ -50,3 +50,13 @@ Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
 - CSS-Hash-Klassen (.css-abc123) vermeiden
 - Positionale Selektoren (nth-of-type) vermeiden
 - Inline-style-Attribute als Selector vermeiden
+## Engine-Unterschiede: uBlock Origin vs. Brave (adblock-rust)
+Bekanntes Problem (aufgetreten 2026-03-18, spiegel.de Mobile-Leerraum):
+- **uBlock Origin** (IronFox, Firefox, Chrome-Extension) setzt einen MutationObserver –
+  Elemente die per JS nachträglich ins DOM eingefügt werden, werden noch erwischt.
+- **Brave Shields** (adblock-rust) injiziert Cosmetic-Filter nur einmal beim Seitenaufbau –
+  dynamisch hinzugefügte Attribute (z. B. `data-advertisement`) können zu spät kommen.
+- **Lösung**: Bei Selektoren die auf JS-gesetzte Attribute zielen (`[data-advertisement~="…"]`)
+  immer einen zweiten, CSS-klassen-basierten Fallback-Selector ergänzen, der direkt auf
+  die Klasse trifft, die den unerwünschten Effekt erzeugt (z. B. `[class~="sm:min-h-632"]`).
+  Klassen-Selektoren sind robuster, weil sie im statischen HTML stehen.
