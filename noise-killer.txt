@@ -369,7 +369,9 @@ www.mydealz.de##[data-t="internalLinking"]
 ! App-Download-Banner
 www.mydealz.de##[data-t="appDownload"]
 ! "Ähnliche Gutscheine"-Abschnitt
-www.mydealz.de##div.bRad--a.bg--main:has(h3:has-text(/Ähnliche Gutscheine/))
+! BUGFIX 2026-03-18: :has-text() mit Umlaut wurde nicht zuverlässig ausgewertet.
+!         Ersetzt durch direkten Klassen-Selector (space--mt-2 ist exklusiv für diese Box).
+www.mydealz.de##div.bRad--a.bg--main.space--mt-2
 ! Footer
 www.mydealz.de###footer-container
 

@@ -1,3 +1,8 @@
+## [2026-03-18] - Bugfix mydealz.de: Ähnliche Gutscheine
+
+### Behoben
+- **www.mydealz.de**: „Ähnliche Gutscheine"-Box wurde nicht blockiert. `has-text()` mit Umlaut war unzuverlässig. Selector auf `div.bRad--a.bg--main.space--mt-2` umgestellt (exklusive Klasse dieser Box).
+
 ## [2026-03-18] - ndr.de: Sendungshinweis und untere Breadcrumb blockiert
 
 ### Behoben
