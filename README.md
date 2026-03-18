@@ -6,7 +6,7 @@ Das eigentliche Problem moderner Nachrichtenseiten ist längst nicht mehr klassi
 
 **noise-killer** ist eine Adblock-Filterliste, die genau diesen Lärm beseitigt. Entstanden aus dem Wunsch, Nachrichtenartikel einfach ungestört lesen zu können, wurde die Liste mit der Zeit um weitere störende Elemente und auch abseits von reinen Nachrichtenseiten erweitert – Footer, Social-Bars, Teaser –, die auf Seiten nichts verloren haben, wenn man nur den Content möchte. Dabei gilt: Seiten werden entschlackt, nicht kaputt gemacht. Bilder, Videos, Audio-Player und alle anderen Medieninhalte, die zum Artikel gehören, bleiben selbstverständlich unangetastet – genau wie der gesamte Artikeltext und alle Funktionen.
 
-Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
+Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** – jeweils auf Desktop und Mobile. Grundsätzlich funktioniert die Liste mit jedem Browser oder Adblocker, der das Adblock-Filterlistenformat (ABP-Syntax) verarbeiten kann.
 
 > Hobbyprojekt, gepflegt per Vibe Coding mit [Claude](https://claude.ai).
 
