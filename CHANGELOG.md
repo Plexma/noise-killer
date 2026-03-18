@@ -1,3 +1,8 @@
+## [2026-03-18] - Bugfix gamestar.de: Empfohlen-Box nicht blockiert
+
+### Behoben
+- **gamestar.de**: „Empfohlen"-Box oben rechts (`div.contentteaser.row.box.contentitem-box`) nicht blockiert – dritte contentteaser-Variante ergänzt.
+
 ## [2026-03-18] - Bugfix gamestar.de: Unter-Startseiten leer
 
 ### Behoben

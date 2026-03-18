@@ -231,6 +231,7 @@ www.gamestar.de##div.author-box
 !         geblockt (Artikel-Listings auf Unter-Startseiten wie /news/spiele/).
 !         Aufgeteilt auf die zwei konkreten Noise-Varianten:
 www.gamestar.de##div.contentteaser.row.box.chartteaser-box
+www.gamestar.de##div.contentteaser.row.box.contentitem-box
 www.gamestar.de##div.contentteaser.row.box.contentmediaitem-box
 www.gamestar.de##div.OUTBRAIN
 www.gamestar.de##div.recirculation-box
