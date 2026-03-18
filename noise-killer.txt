@@ -134,11 +134,21 @@ www.computerbase.de##footer
 ! BUGFIX 2026-03-18: Domain war www.derstandard.de – korrekt ist www.derstandard.at.
 !         div.story-community-postings nicht gefunden; ersetzt durch #story-community.
 !         section.story-recommended (Taboola) ergänzt.
+! BUGFIX 2026-03-18: www.derstandard.de ergänzt (identische Struktur wie .at,
+!         aber eigenständige Domain – URLs landen nicht immer auf .at).
+!         a.article-postingcount ergänzt (Posting-Count-Button im Artikelkopf,
+!         verlinkt auf #story-community – beide Domains betroffen).
 ! --------------------------------------------------------------------------
 www.derstandard.at##aside
+www.derstandard.at##a.article-postingcount
 www.derstandard.at##section.story-community
 www.derstandard.at##section.story-recommended
 www.derstandard.at##footer.site-footer
+www.derstandard.de##aside
+www.derstandard.de##a.article-postingcount
+www.derstandard.de##section.story-community
+www.derstandard.de##section.story-recommended
+www.derstandard.de##footer.site-footer
 
 ! --------------------------------------------------------------------------
 ! Deutschlandfunk
@@ -169,14 +179,21 @@ www.faz.net##footer
 ! --------------------------------------------------------------------------
 ! GameStar
 ! Hinzugefügt 2026-03-18: #comments (Kommentarsektion), Newsletter-Container.
+! BUGFIX 2026-03-18: div.contentteaser.row.box.contentmediaitem-box deckte nur
+!         "Beliebt"/"Aktuell" ab, nicht "Empfohlen" (contentitem-box). Selector
+!         vereinfacht auf div.contentteaser.row.box (deckt alle Varianten).
+!         a.do-toggle-comments ergänzt (Kommentar-Link im Artikelkopf, außerhalb
+!         von #comments). ul.taglist ergänzt (Artikel-Tags am Artikelende).
 ! --------------------------------------------------------------------------
 www.gamestar.de##.dailymotion-player
 www.gamestar.de##.plus-202508-banner-content
 www.gamestar.de###comments
-www.gamestar.de##div.contentteaser.row.box.contentmediaitem-box
+www.gamestar.de##a.do-toggle-comments
+www.gamestar.de##div.contentteaser.row.box
 www.gamestar.de##div.row:has(> .newsletter-form-container)
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
+www.gamestar.de##ul.taglist
 
 ! --------------------------------------------------------------------------
 ! Golem
@@ -200,13 +217,18 @@ www.golem.de##main > div.go-tag-list
 ! Handelsblatt
 ! Hinzugefügt 2026-03-18: app-advertisement, app-content-advertisement
 !         (Display- und Inline-Werbung), app-detail-page-footer
-!         (Artikelfooter mit Outbrain-Empfehlungen).
+!         (Artikelfooter mit Outbrain-Empfehlungen, Newsletter-Box,
+!         "Zur Startseite"-Link, "Nachricht an die Redaktion"-Link).
+! BUGFIX 2026-03-18: app-embed.ng-star-inserted > app-iframe > iframe hat nur
+!         den iframe versteckt, der äußere app-embed-Container blieb sichtbar
+!         und hinterließ einen Leerraum (leere Newsletter-Box). Vereinfacht
+!         auf app-embed (blockiert den ganzen Embed-Container).
 ! --------------------------------------------------------------------------
 www.handelsblatt.com##app-advertisement
 www.handelsblatt.com##app-commercial-teaser-group
 www.handelsblatt.com##app-content-advertisement
 www.handelsblatt.com##app-detail-page-footer
-www.handelsblatt.com##app-embed.ng-star-inserted > app-iframe > iframe
+www.handelsblatt.com##app-embed
 www.handelsblatt.com##app-footer
 www.handelsblatt.com##app-related-content-teaser-group
 www.handelsblatt.com##app-storyline-related-topics.ng-star-inserted
@@ -328,12 +350,16 @@ www.ndr.de##section[data-showdefault]
 !         aside.innerArticleModule (In-Artikel-Werbung),
 !         aside.column.right ("Mehr zum Thema"-Sidebar),
 !         aside.rec_box_bottom (Outbrain-Empfehlungen).
+! BUGFIX 2026-03-18: footer (ohne <footer>-Tag) – kein semantisches <footer>-
+!         Element vorhanden. Echter Footer ist div.header2.footer3 (Impressum,
+!         Datenschutz etc.). Print/Abo-Werbung steckt in ul.rowAlt.footer2.
 ! --------------------------------------------------------------------------
 www.pcgameshardware.de###comment
 www.pcgameshardware.de##aside.column.right
 www.pcgameshardware.de##aside.innerArticleModule
 www.pcgameshardware.de##aside.rec_box_bottom
-www.pcgameshardware.de##footer
+www.pcgameshardware.de##div.header2.footer3
+www.pcgameshardware.de##ul.rowAlt.footer2
 
 ! --------------------------------------------------------------------------
 ! Spiegel

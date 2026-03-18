@@ -44,11 +44,11 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | computerbase.de | 📢 📬 🦶 |
 | de.ifixit.com | 🪧 |
 | de.wikipedia.org / de.m.wikipedia.org | 🦶 |
-| derstandard.at | 💬 📢 🦶 |
+| derstandard.at / derstandard.de | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 |
 | dhl.de | 🪧 🦶 |
 | faz.net | 📰 📢 🦶 |
-| gamestar.de | 💬 📬 📢 🦶 |
+| gamestar.de | 💬 📬 📰 📢 🦶 |
 | golem.de | 💬 📬 📢 🦶 |
 | handelsblatt.com | 📰 📢 🦶 |
 | heise.de | 📰 📬 📢 🦶 |

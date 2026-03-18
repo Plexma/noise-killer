@@ -1,3 +1,11 @@
+## [2026-03-18] - Bugfixes: pcgameshardware.de, gamestar.de, derstandard.de, handelsblatt.com
+
+### Behoben
+- **www.pcgameshardware.de**: `##footer` blockierte nichts (kein `<footer>`-Element vorhanden). Footer ist `div.header2.footer3`; Print/Abo-Werbung in `ul.rowAlt.footer2` ergänzt.
+- **www.gamestar.de**: `div.contentteaser.row.box.contentmediaitem-box` deckte nur „Beliebt"/„Aktuell" ab, nicht „Empfohlen" (`contentitem-box`). Selector vereinfacht auf `div.contentteaser.row.box`. `a.do-toggle-comments` (Kommentar-Link im Artikelkopf, außerhalb `#comments`) und `ul.taglist` (Artikel-Tags) ergänzt.
+- **www.derstandard.de**: Eigenständige Domain (`.de`) hatte keine Filter. Alle Selektoren von `www.derstandard.at` gespiegelt. `a.article-postingcount` (Posting-Count-Button im Artikelkopf) für beide Domains ergänzt.
+- **www.handelsblatt.com**: `app-embed.ng-star-inserted > app-iframe > iframe` ließ den äußeren Container sichtbar (leere Newsletter-Box). Vereinfacht auf `app-embed`.
+
 ## [2026-03-18] - Bugfix: tagesspiegel.de Opinary-Widget
 
 ### Behoben
