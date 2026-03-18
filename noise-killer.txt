@@ -350,7 +350,7 @@ www.mydealz.de##[data-t="internalLinking"]
 ! App-Download-Banner
 www.mydealz.de##[data-t="appDownload"]
 ! "Ähnliche Gutscheine"-Abschnitt
-www.mydealz.de##[data-t="main"] div:has(> h3:has-text(/Gutschein/))
+www.mydealz.de##div.bRad--a.bg--main:has(h3:has-text(/Ähnliche Gutscheine/))
 ! Footer
 www.mydealz.de###footer-container
 
