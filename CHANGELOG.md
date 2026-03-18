@@ -1,3 +1,8 @@
+## [2026-03-18] - Bugfix: tagesspiegel.de Opinary-Widget
+
+### Behoben
+- **www.tagesspiegel.de**: Opinary-Widget renderte sich trotz geblockem `#opinary-automation-placeholder` neu in `#opinary-root` + `#opinary-iframe`. Beide IDs ergänzt.
+
 ## [2026-03-18] - Bugfixes: tarnkappe.info, tagesspiegel.de, t-online.de
 
 ### Behoben

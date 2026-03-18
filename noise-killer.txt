@@ -476,6 +476,8 @@ www.tagesschau.de##footer
 !         P[article-home-link] komplett blockiert statt nur das A-Element.
 ! --------------------------------------------------------------------------
 www.tagesspiegel.de###opinary-automation-placeholder
+www.tagesspiegel.de###opinary-root
+www.tagesspiegel.de###opinary-iframe
 www.tagesspiegel.de###outbrain-container
 www.tagesspiegel.de###sitefooter-container
 www.tagesspiegel.de##aside
