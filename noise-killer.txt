@@ -284,20 +284,22 @@ www.pcgameshardware.de##div.swiper-slide[data-swiper-slide-index][style]
 !         Live-Ticker (tickaroo) mitgeblockt, da dieser dieselben
 !         data-Attribute nutzt. Jetzt gezielte data-area-Selektoren.
 ! BUGFIX 2026-03-17: section:has(> h3:has-text(/^Mehr lesen über$/)) hat nur
-!         die innere <section> (direkter H3-Parent) geblockt, nicht aber den
-!         äußeren Container. Folge: "Mehr lesen über"-Box blieb sichtbar +
-!         großer Whitespace darunter. Fix: data-smartfeed-id="further-reads"
-!         blockiert den kompletten Container sauber.
+!         die innere <section> geblockt, nicht den äußeren Container.
+!         Fix: [data-smartfeed-id="further-reads"] (element-agnostisch) blockiert
+!         den kompletten Container sauber.
+! BUGFIX 2026-03-18: Auf Mobile (eingeloggt) zeigte Alpine.js den Container.
+!         Filter auf element-agnostisch geändert + innere Sections als Fallback.
 ! --------------------------------------------------------------------------
 ! "Mehr zum Thema" - Inline-Aside UND End-Section im Artikel
 www.spiegel.de##aside[data-area="related_articles"]
 www.spiegel.de##section[data-area="related_articles"]
 ! "Empfehlungen aus der Redaktion" im Tickaroo-Liveblog
 www.spiegel.de##div.tik4-link-list
-! "Verwandte Artikel" Liste am Artikelende (Procedural Filter)
+! "Mehr lesen über" + "Verwandte Artikel" Container (äußere Section, element-agnostisch)
+www.spiegel.de##[data-smartfeed-id="further-reads"]
+! Fallback: innere Sections direkt blockieren (falls äußerer Container-Filter greift nicht)
+www.spiegel.de##section:has(> h3:has-text(/^Mehr lesen über$/))
 www.spiegel.de##section:has(> h3:has-text(/^Verwandte Artikel$/))
-! "Mehr lesen über" Tag-Box am Artikelende inkl. Whitespace-Fix
-www.spiegel.de##section[data-smartfeed-id="further-reads"]
 ! Empfehlungsfeed am Artikelende
 www.spiegel.de##div[data-area="smartfeed"]
 ! Artikelfooter (Feedback-Link etc.)
