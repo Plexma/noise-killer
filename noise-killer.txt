@@ -401,11 +401,15 @@ www.n-tv.de##div[class*="group-grid-wrapper_article-cols"]:style(display: block 
 !         geblockt (55 Elemente). Entfernt – Noise wird durch übergeordnete
 !         Container-Filter (div.contentbox.list, section.contentbox) erfasst.
 ! Hinzugefügt 2026-03-18: Artikel-Tags (div.tagbox) am Artikelende blockiert.
+! Hinzugefügt 2026-03-18: Sendungshinweis (div.relatedbroadcast) und untere
+!         Breadcrumb-Navigation (nav#breadcrumb) blockiert.
 ! --------------------------------------------------------------------------
 www.ndr.de##div.campaign-banner
 www.ndr.de##div.contentbox.list
+www.ndr.de##div.relatedbroadcast
 www.ndr.de##div.tagbox
 www.ndr.de##footer
+www.ndr.de##nav#breadcrumb
 www.ndr.de##nav.sharebox
 www.ndr.de##section.contentbox
 www.ndr.de##section[data-showdefault]

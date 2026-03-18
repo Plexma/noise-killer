@@ -1,3 +1,8 @@
+## [2026-03-18] - ndr.de: Sendungshinweis und untere Breadcrumb blockiert
+
+### Behoben
+- **www.ndr.de**: Sendungshinweis „Dieses Thema im Programm" (`div.relatedbroadcast`) und untere Breadcrumb-Navigation (`nav#breadcrumb`) am Artikelende blockiert.
+
 ## [2026-03-18] - Bugfixes: arstechnica, tagesschau, pcgameshardware, gamestar (Affiliate/Shop)
 
 ### Behoben
