@@ -1,10 +1,10 @@
 # noise-killer
 
-> Lies den Artikel. Nicht den Lärm drumherum.
+> Einfach nur der relevante Content. Nicht der Lärm drumherum und mittendrin.
 
-Das eigentliche Problem moderner Nachrichtenseiten ist längst nicht mehr klassische Werbung – dafür gibt es zuverlässige Blocker. Das Problem ist die **redaktionelle Eigenwerbung mitten im Artikeltext**: Boxen, die den Lesefluss unterbrechen und auf andere Artikel verweisen, „Mehr lesen"-Empfehlungen, Newsletter-Anmeldeformulare, die plötzlich auftauchen, und Kommentarsektionen, die niemand gefragt hat. Das nervt – besonders auf Mobile, wo all das die Seiten endlos lang macht.
+Das eigentliche Problem moderner Nachrichtenseiten ist längst nicht mehr klassische Werbung – dafür gibt es unzählige zuverlässige Blocker. Ein großes Problem ist mittlerweile die **redaktionelle Eigenwerbung mitten im Artikeltext**: Boxen, die den Lesefluss unterbrechen und auf andere Artikel verweisen, „Mehr lesen"-Empfehlungen, Newsletter-Anmeldeformulare, die plötzlich auftauchen, und Kommentarsektionen, die niemand gefragt hat. Das nervt – besonders auf Mobile, wo all das die Seiten endlos lang macht und man aufgrund dieser ganzen Unterbrechungen viel mehr scrollen muss, als eigentlich nötig ist.
 
-**noise-killer** ist eine Adblock-Filterliste, die genau diesen Lärm beseitigt. Entstanden aus dem Wunsch, Nachrichtenartikel einfach ungestört lesen zu können, wurde die Liste mit der Zeit um weitere störende Elemente erweitert – Footer, Social-Bars, Teaser –, die auf Seiten nichts verloren haben, wenn man nur den Inhalt möchte. Dabei gilt: Seiten werden entschlackt, nicht kaputt gemacht. Artikeltext, Bildunterschriften, Audio-Player und Funktionen bleiben vollständig erhalten.
+**noise-killer** ist eine Adblock-Filterliste, die genau diesen Lärm beseitigt. Entstanden aus dem Wunsch, Nachrichtenartikel einfach ungestört lesen zu können, wurde die Liste mit der Zeit um weitere störende Elemente und auch abseits von reinen Nachrichtenseiten erweitert – Footer, Social-Bars, Teaser –, die auf Seiten nichts verloren haben, wenn man nur den Content möchte. Dabei gilt: Seiten werden entschlackt, nicht kaputt gemacht. Bilder, Videos, Audio-Player und alle anderen Medieninhalte, die zum Artikel gehören, bleiben selbstverständlich unangetastet – genau wie der gesamte Artikeltext und alle Funktionen.
 
 Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 
@@ -16,7 +16,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 
 - Inline-Eigenwerbung und redaktionelle Werbeboxen
 - „Mehr zum Thema"- und Artikel-Empfehlungen
-- Newsletter-Anmeldebox im Artikel
+- Newsletter-Anmeldeboxen im Artikel
 - Kommentarbereiche
 - Social-Share-Leisten
 - Footer
@@ -24,6 +24,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 ## Was bleibt immer sichtbar?
 
 - Der eigentliche Artikeltext
+- Bilder, Videos und alle Medieninhalte, die zum Artikel gehören
 - Bildunterschriften und Fotocredits
 - Artikel-Toolbar (Anhören, Merken, Teilen)
 - Audio-Player im Artikel
@@ -33,51 +34,53 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 
 ## Unterstützte Seiten
 
-| Site | Was blockiert wird |
+**Legende:** 📰 Artikelempfehlungen · 📬 Newsletter-Box · 💬 Kommentare · 🔗 Social-/Share-Leiste · 🦶 Footer · 📢 Eigenwerbung/Teaser · 🛍️ Affiliate/Shop-Links · 🪧 Banner/Overlays
+
+| Seite | Was entfernt wird |
 |---|---|
-| arstechnica.com | Footer, Seitenrauschen |
-| de.ifixit.com | Campaign-Banner |
-| de.wikipedia.org / de.m.wikipedia.org | Footer |
-| faz.net | Empfehlungen, Sidebar, Footer |
-| golem.de | Kommentare, Newsletter, Teaser, Footer |
-| handelsblatt.com | Teaser, Empfehlungen, Footer |
-| heise.de | Ads, Teaser, Newsletter, Empfehlungen, Footer |
-| n-tv.de | Aside, Footer |
-| ndr.de | Teaser, Social-Box, Footer |
-| spiegel.de | Empfehlungen, Verwandte Artikel, Footer |
-| sueddeutsche.de | Newsletter, Teaser, Empfehlungen, Footer |
-| sz-magazin.sueddeutsche.de | Related, Footer |
-| taz.de | Paywall-Overlay, Footer |
-| t-online.de | Schlagzeilen-Ticker, Empfehlungen |
-| tagesschau.de | Aside, Video-Teaser, Kommentare-Button, Footer |
-| tagesspiegel.de | Aside, Footer |
-| zeit.de | Kommentare, Teaser, Footer |
-| zdfheute.de | Mehr-zum-Thema, Tag-Links, Footer |
-| computerbase.de | Ads, Aside, Newsletter, Footer |
-| gamestar.de | Teaser, Footer |
-| pcgameshardware.de | Kommentare, Shop-Links, Karussell, Footer |
-| buffed.de | Kommentare, Social, Aside, Footer |
-| stadt-bremerhaven.de | Autor, Sidebar, Kommentare, Affiliate, Footer |
-| tarnkappe.info | Newsletter-Modal, Sidebar, Footer |
-| derstandard.de | Kommentare, Aside, Footer |
-| deutschlandfunk.de | Footer |
-| macrumors.com | Footer |
-| theverge.com | Recirc, Footer |
-| tomsguide.com | Kommentare, Newsletter, Affiliate-Disclaimer, Footer |
-| tracker.gg | Upsell-Boxen, Footer |
-| wowhead.com | Autor-Bio, Footer |
-| imgur.com | Bottom-Recirc |
-| amazon.de | Footer-Navigation |
-| my.dpd.de | Pakettracking-Seitenelemente, Footer |
-| dhl.de | Werbestreifen, Footer |
-| myhermes.de | Footer |
-| mydealz.de | Sticky-Bar, Footer |
-| transfermarkt.de | Werbeklicks, Footer |
-| hsreplay.net | Footer |
-| steamdb.info | Footer |
-| sportschau.de | Teaser, Aside, Footer |
-| lto.de | Job-Widget, Teaser, Toolbar, Footer |
-| ifun.de / iphone-ticker.de | Newsletter-Form, Footer |
+| amazon.de | 🦶 |
+| arstechnica.com | 📢 🦶 |
+| buffed.de | 💬 🔗 📢 🦶 |
+| computerbase.de | 📢 📬 🦶 |
+| de.ifixit.com | 🪧 |
+| de.wikipedia.org / de.m.wikipedia.org | 🦶 |
+| derstandard.de | 💬 📢 🦶 |
+| deutschlandfunk.de | 🦶 |
+| dhl.de | 🪧 🦶 |
+| faz.net | 📰 📢 🦶 |
+| gamestar.de | 📢 🦶 |
+| golem.de | 💬 📬 📢 🦶 |
+| handelsblatt.com | 📰 📢 🦶 |
+| heise.de | 📰 📬 📢 🦶 |
+| hsreplay.net | 🦶 |
+| ifun.de / iphone-ticker.de | 📬 🦶 |
+| imgur.com | 📰 |
+| lto.de | 📰 📢 🦶 |
+| macrumors.com | 🦶 |
+| my.dpd.de | 📢 🦶 |
+| mydealz.de | 🪧 🦶 |
+| myhermes.de | 🦶 |
+| n-tv.de | 📢 🦶 |
+| ndr.de | 🔗 📢 🦶 |
+| pcgameshardware.de | 💬 🛍️ 📢 🦶 |
+| spiegel.de | 📰 🦶 |
+| sportschau.de | 📢 🦶 |
+| stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
+| steamdb.info | 🦶 |
+| sueddeutsche.de | 📰 📬 📢 🦶 |
+| sz-magazin.sueddeutsche.de | 📰 🦶 |
+| t-online.de | 📰 📢 |
+| tagesschau.de | 💬 📢 🦶 |
+| tagesspiegel.de | 📢 🦶 |
+| tarnkappe.info | 📬 📢 🦶 |
+| taz.de | 🪧 🦶 |
+| theverge.com | 📰 🦶 |
+| tomsguide.com | 💬 📬 🛍️ 🦶 |
+| tracker.gg | 📢 🦶 |
+| transfermarkt.de | 📢 🦶 |
+| wowhead.com | 📢 🦶 |
+| zdfheute.de | 📰 🔗 🦶 |
+| zeit.de | 💬 📢 🦶 |
 
 ---
 
