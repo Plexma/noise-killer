@@ -1,3 +1,11 @@
+## [2026-03-18] - Tagesschau Bugfix Kommentare-Button
+
+### Behoben
+- www.tagesschau.de: `a.btn.btn--text.btn--standard-secondary.btn--fullwidth` hat nur
+  den sekundären „Zur Startseite"-Button geblockt. Der primäre „Kommentare zur Meldung"-Button
+  (`btn--standard-primary`) blieb sichtbar. Ersetzt durch `ul.buttongroup`, der die
+  gesamte Buttongroup am Artikelende sauber entfernt.
+
 ## [2026-03-17] - Spiegel Bugfix "Mehr lesen über"
 
 ### Behoben

@@ -365,8 +365,13 @@ www.t-online.de##div[data-testid="recommendation"]
 
 ! --------------------------------------------------------------------------
 ! Tagesschau
+! BUGFIX: a.btn.btn--text.btn--standard-secondary.btn--fullwidth hat nur den
+!         sekundären "Zur Startseite"-Button geblockt. Der primäre
+!         "Kommentare zur Meldung"-Button (btn--standard-primary) blieb sichtbar.
+!         Fix: ul.buttongroup blockiert die gesamte Buttongroup am Artikelende.
 ! --------------------------------------------------------------------------
-www.tagesschau.de##a.btn.btn--text.btn--standard-secondary.btn--fullwidth
+! Hinzugefügt: 2026-03-18
+www.tagesschau.de##ul.buttongroup
 www.tagesschau.de##aside
 www.tagesschau.de##div.back-to-top.show
 www.tagesschau.de##div.columns.twelve.infobox.color--tongue

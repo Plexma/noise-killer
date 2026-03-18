@@ -45,7 +45,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 | sz-magazin.sueddeutsche.de | Related, Footer |
 | taz.de | Paywall-Overlay, Footer |
 | www.t-online.de | Schlagzeilen-Ticker, Empfehlungen |
-| www.tagesschau.de | Aside, Video-Teaser, Footer |
+| www.tagesschau.de | Aside, Video-Teaser, Kommentare-Button, Footer |
 | www.tagesspiegel.de | Aside, Footer |
 | www.zeit.de | Kommentare, Teaser, Footer |
 | www.zdfheute.de | Mehr-zum-Thema, Tag-Links, Footer |
