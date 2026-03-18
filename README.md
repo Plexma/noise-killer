@@ -39,39 +39,39 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | Seite | Was entfernt wird |
 |---|---|
 | amazon.de | 🦶 |
-| arstechnica.com | 📢 🦶 |
-| buffed.de | 💬 🔗 📢 🦶 |
+| arstechnica.com | 💬 📢 🦶 |
+| buffed.de | 📢 |
 | computerbase.de | 📢 📬 🦶 |
 | de.ifixit.com | 🪧 |
 | de.wikipedia.org / de.m.wikipedia.org | 🦶 |
-| derstandard.de | 💬 📢 🦶 |
+| derstandard.at | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 |
 | dhl.de | 🪧 🦶 |
 | faz.net | 📰 📢 🦶 |
-| gamestar.de | 📢 🦶 |
+| gamestar.de | 💬 📬 📢 🦶 |
 | golem.de | 💬 📬 📢 🦶 |
 | handelsblatt.com | 📰 📢 🦶 |
 | heise.de | 📰 📬 📢 🦶 |
 | hsreplay.net | 🦶 |
-| ifun.de / iphone-ticker.de | 📬 🦶 |
+| ifun.de / iphone-ticker.de | 💬 📬 🦶 |
 | imgur.com | 📰 |
 | lto.de | 📰 📢 🦶 |
 | macrumors.com | 🦶 |
 | my.dpd.de | 📢 🦶 |
 | mydealz.de | 🪧 🦶 |
 | myhermes.de | 🦶 |
-| n-tv.de | 📢 🦶 |
+| n-tv.de | 🔗 📢 🦶 |
 | ndr.de | 🔗 📢 🦶 |
-| pcgameshardware.de | 💬 🛍️ 📢 🦶 |
+| pcgameshardware.de | 💬 📢 🦶 |
 | spiegel.de | 📰 🦶 |
 | sportschau.de | 📢 🦶 |
 | stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
-| steamdb.info | 🦶 |
+| steamdb.info | 📢 🦶 |
 | sueddeutsche.de | 📰 📬 📢 🦶 |
 | sz-magazin.sueddeutsche.de | 📰 🦶 |
-| t-online.de | 📰 📢 |
+| t-online.de | 📰 📢 🦶 |
 | tagesschau.de | 💬 📢 🦶 |
-| tagesspiegel.de | 📢 🦶 |
+| tagesspiegel.de | 💬 📰 📢 🦶 |
 | tarnkappe.info | 📬 📢 🦶 |
 | taz.de | 🪧 🦶 |
 | theverge.com | 💬 📰 📬 📢 🦶 |

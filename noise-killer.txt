@@ -3,14 +3,18 @@
 ! Zweck: Entschlackung von Nachrichtenseiten & anderen Webseiten
 ! Entfernt: Inline-Eigenwerbung, "Mehr zum Thema", Artikel-Empfehlungen,
 !           Footer, Newsletter-Boxen, Kommentarbereiche, Social-Bars
-! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-03-15 (Browser-DOM-Analyse)
+! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-03-18 (Browser-DOM-Analyse)
 ! ==========================================================================
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
+! BUGFIX 2026-03-18: main > div war zu breit – hat alle Artikelgruppen auf der
+!         Startseite geblockt. Ersetzt durch div.ad-wrapper (nur Werbeblöcke).
+!         #comments ergänzt (Kommentarsektion am Artikelende).
 ! --------------------------------------------------------------------------
 arstechnica.com##footer
-arstechnica.com##main > div
+arstechnica.com##div.ad-wrapper
+arstechnica.com###comments
 
 ! --------------------------------------------------------------------------
 ! iFixit
@@ -41,7 +45,10 @@ my.dpd.de##.footerContainer
 
 ! --------------------------------------------------------------------------
 ! SteamDB
+! Hinzugefügt 2026-03-18: a.support-above-footer (fetter Support-Button
+!         über dem Footer auf App/Game-Seiten).
 ! --------------------------------------------------------------------------
+steamdb.info##a.support-above-footer
 steamdb.info##footer
 
 ! --------------------------------------------------------------------------
@@ -56,19 +63,34 @@ sz-magazin.sueddeutsche.de##section.inline-teaser
 
 ! --------------------------------------------------------------------------
 ! Tarnkappe
+! BUGFIX 2026-03-18: div > div > div[data-nosnippet] war zu breit –
+!         hat auch Navigationsleisten geblockt (.tk-nav-topbar-wrapper, .navbar-menu).
+!         div.column.is-one-third hat alle Artikel-Grid-Cards auf der Startseite
+!         geblockt (Struktur: .columns.is-multiline > .column.is-one-third > article.card).
+!         Ersetzt durch präzise Selektoren.
 ! --------------------------------------------------------------------------
 tarnkappe.info###bottom-navigation
 tarnkappe.info###newsletter-modal-overlay
-tarnkappe.info##div > div > div[data-nosnippet]
-tarnkappe.info##div.column.is-one-third
+tarnkappe.info##div.column:has(> .card.banner-post)
+tarnkappe.info##div.column.sidebar-sticky
+tarnkappe.info##div.columns.related-underpost
+tarnkappe.info##div.sonderwerbemittel
+tarnkappe.info##footer.content.entry-footer
+tarnkappe.info##footer.site-footer
+tarnkappe.info##section.desktop-only
+tarnkappe.info##section.mobile-only
 
 ! --------------------------------------------------------------------------
 ! taz
+! BUGFIX 2026-03-18: section > section hat Artikel-Teaser-Sections auf der
+!         Startseite geblockt (Struktur: section.outerwrapper > section[x-data].module).
+!         Ersetzt durch präzisen Selector: Nur noise-Sections innerhalb von
+!         contains-module-article-Outerwrappern, die kein x-data haben.
 ! --------------------------------------------------------------------------
 taz.de###tzi-paywahl-fg
 taz.de##article[x-data] > div[x-data]
 taz.de##footer
-taz.de##section > section
+taz.de##section.outerwrapper.contains-module-article > section:not([x-data])
 
 ! --------------------------------------------------------------------------
 ! Tracker.gg
@@ -85,16 +107,12 @@ www.amazon.de###nav-ftr-links
 
 ! --------------------------------------------------------------------------
 ! Buffed
+! BUGFIX 2026-03-18: Alle Selektoren außer aside nicht mehr gefunden (Redesign).
+!         header.mainHeader wäre kritisch (blockiert Site-Navigation) – entfernt.
+!         Nur bestätigte Selektoren via DOM-Analyse behalten + WAD-Ad-Container.
 ! --------------------------------------------------------------------------
-www.buffed.de###article_comment_box
-www.buffed.de###commentbox
-www.buffed.de##a.fontIcon.social_facebook
 www.buffed.de##aside
-www.buffed.de##div.pgnWrapper
-www.buffed.de##div.rpi-progress-bar
-www.buffed.de##footer
-www.buffed.de##header.mainHeader
-www.buffed.de##span[data-nosnippet]
+www.buffed.de##div.wadtag
 
 ! --------------------------------------------------------------------------
 ! ComputerBase
@@ -113,10 +131,14 @@ www.computerbase.de##footer
 ! BUGFIX: footer (ohne Klasse) hat Bildunterschriften/Fotocredits geblockt,
 !         da <footer> auch innerhalb von <figure>-Elementen genutzt wird.
 !         Fix: footer.site-footer ist der echte Seiten-Footer.
+! BUGFIX 2026-03-18: Domain war www.derstandard.de – korrekt ist www.derstandard.at.
+!         div.story-community-postings nicht gefunden; ersetzt durch #story-community.
+!         section.story-recommended (Taboola) ergänzt.
 ! --------------------------------------------------------------------------
-www.derstandard.de##aside
-www.derstandard.de##div.story-community-postings
-www.derstandard.de##footer.site-footer
+www.derstandard.at##aside
+www.derstandard.at##section.story-community
+www.derstandard.at##section.story-recommended
+www.derstandard.at##footer.site-footer
 
 ! --------------------------------------------------------------------------
 ! Deutschlandfunk
@@ -146,29 +168,44 @@ www.faz.net##footer
 
 ! --------------------------------------------------------------------------
 ! GameStar
+! Hinzugefügt 2026-03-18: #comments (Kommentarsektion), Newsletter-Container.
 ! --------------------------------------------------------------------------
 www.gamestar.de##.dailymotion-player
 www.gamestar.de##.plus-202508-banner-content
+www.gamestar.de###comments
 www.gamestar.de##div.contentteaser.row.box.contentmediaitem-box
+www.gamestar.de##div.row:has(> .newsletter-form-container)
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
 
 ! --------------------------------------------------------------------------
 ! Golem
+! BUGFIX 2026-03-18: div.go-teaser-block war zu breit – hat alle 25 Artikelgruppen
+!         auf der Startseite geblockt. Ersetzt durch gezielte Modifier-Selektoren:
+!         --career (Stellenmarkt), --carousel (Podcast/Kurse/Lesetipps),
+!         --small-text (Meistgelesen/Meistkommentiert).
 ! --------------------------------------------------------------------------
 www.golem.de###cmts
 www.golem.de##aside
 www.golem.de##div.go-button-bar[style]
 www.golem.de##div.go-newsletter-box-container
-www.golem.de##div.go-teaser-block
+www.golem.de##div.go-teaser-block.go-teaser-block--career
+www.golem.de##div.go-teaser-block.go-teaser-block--carousel
+www.golem.de##div.go-teaser-block.go-teaser-block--small-text
 www.golem.de##div.go-toolbar
 www.golem.de##footer
 www.golem.de##main > div.go-tag-list
 
 ! --------------------------------------------------------------------------
 ! Handelsblatt
+! Hinzugefügt 2026-03-18: app-advertisement, app-content-advertisement
+!         (Display- und Inline-Werbung), app-detail-page-footer
+!         (Artikelfooter mit Outbrain-Empfehlungen).
 ! --------------------------------------------------------------------------
+www.handelsblatt.com##app-advertisement
 www.handelsblatt.com##app-commercial-teaser-group
+www.handelsblatt.com##app-content-advertisement
+www.handelsblatt.com##app-detail-page-footer
 www.handelsblatt.com##app-embed.ng-star-inserted > app-iframe > iframe
 www.handelsblatt.com##app-footer
 www.handelsblatt.com##app-related-content-teaser-group
@@ -179,6 +216,8 @@ www.handelsblatt.com##app-storyline-related-topics.ng-star-inserted
 ! BUGFIX: div[data-adserver-position] > div[data-content-id][data-module-name]
 !         hat TopNaviModule UND HeaderModule geblockt (= gesamte Navigation!).
 !         Fix: Nur AdModule gezielt blockieren.
+! Hinzugefügt 2026-03-18: data-component-basierte Selektoren für Startseiten-Noise
+!         (NewAdModule, MarketingTeaserModule, HeiseJobsModule, PreisvergleichModule).
 ! --------------------------------------------------------------------------
 www.heise.de###article-page-upscore
 www.heise.de###wtma_teaser_ho_vertrieb_inline_branding
@@ -201,16 +240,25 @@ www.heise.de##div.article-content > div.a-u-inline
 www.heise.de##aside.recommendations
 ! Newsletter-Abo-Box in der Artikel-Sidebar
 www.heise.de##aside.article-newsletter-subscription
+! Startseite: Werbe-Module (data-component-basiert, Redesign 2026)
+www.heise.de##div[data-component="NewAdModule"]
+www.heise.de##div[data-component="MarketingTeaserModule"]
+www.heise.de##div[data-component="HeiseJobsModule"]
+www.heise.de##div[data-component="PreisvergleichModule"]
 
 ! --------------------------------------------------------------------------
 ! iFun
+! Hinzugefügt 2026-03-18: #article-single-comments (Kommentarsektion).
 ! --------------------------------------------------------------------------
+www.ifun.de###article-single-comments
 www.ifun.de##div > div > div > form[action][method]
 www.ifun.de##footer
 
 ! --------------------------------------------------------------------------
 ! iPhone-Ticker
+! Hinzugefügt 2026-03-18: #article-single-comments (Kommentarsektion).
 ! --------------------------------------------------------------------------
+www.iphone-ticker.de###article-single-comments
 www.iphone-ticker.de###verbraucherhinweis-mobile-300x250
 www.iphone-ticker.de##div > div > div > form[action][method]
 www.iphone-ticker.de##footer
@@ -250,16 +298,22 @@ www.myhermes.de##footer
 ! n-tv
 ! BUGFIX: div.row.phide, div.teaser--related, aside.aside nicht gefunden.
 !         aside (die Video-Sidebar) korrekt blockieren.
+! Hinzugefügt 2026-03-18: Teaser-Widgets und Social-Share-Bar (CSS Modules,
+!         [class*=] wegen Hash-Suffixen bei CSS Modules).
 ! --------------------------------------------------------------------------
 www.n-tv.de##aside
 www.n-tv.de##footer
+www.n-tv.de##section[class*="widget-teaser"]
+www.n-tv.de##div[class*="social-share"]
 
 ! --------------------------------------------------------------------------
 ! NDR
+! BUGFIX 2026-03-18: div.teaser hat alle Artikel-Cards auf der Startseite
+!         geblockt (55 Elemente). Entfernt – Noise wird durch übergeordnete
+!         Container-Filter (div.contentbox.list, section.contentbox) erfasst.
 ! --------------------------------------------------------------------------
 www.ndr.de##div.campaign-banner
 www.ndr.de##div.contentbox.list
-www.ndr.de##div.teaser
 www.ndr.de##footer
 www.ndr.de##nav.sharebox
 www.ndr.de##section.contentbox
@@ -267,15 +321,19 @@ www.ndr.de##section[data-showdefault]
 
 ! --------------------------------------------------------------------------
 ! PC Games Hardware
+! BUGFIX 2026-03-18: div.QuickMenuFade.posRel, div.breadcrumb.mt-1.mb-1,
+!         div.shopLinkButtonsWrapper.cxenseignore, div[data-rpi-area] > aside
+!         und div.swiper-slide[...] nicht mehr gefunden (Redesign).
+!         Ersetzt durch bestätigte Selektoren:
+!         aside.innerArticleModule (In-Artikel-Werbung),
+!         aside.column.right ("Mehr zum Thema"-Sidebar),
+!         aside.rec_box_bottom (Outbrain-Empfehlungen).
 ! --------------------------------------------------------------------------
 www.pcgameshardware.de###comment
-www.pcgameshardware.de##div.QuickMenuFade.posRel
-www.pcgameshardware.de##div.breadcrumb.mt-1.mb-1
-www.pcgameshardware.de##div.shopLinkButtonsWrapper.cxenseignore
-www.pcgameshardware.de##div[data-rpi-area] > aside
+www.pcgameshardware.de##aside.column.right
+www.pcgameshardware.de##aside.innerArticleModule
+www.pcgameshardware.de##aside.rec_box_bottom
 www.pcgameshardware.de##footer
-! Swiper-Slides konsolidiert (Karussell-Teaser)
-www.pcgameshardware.de##div.swiper-slide[data-swiper-slide-index][style]
 
 ! --------------------------------------------------------------------------
 ! Spiegel
@@ -365,6 +423,9 @@ www.sueddeutsche.de##footer
 ! BUGFIX: div.z-article-sharing-bar-overlay... nicht gefunden (veraltet).
 !         main > article > div:nth-of-type(2) fragil (positional) entfernt.
 !         ul[data-testid] präzisiert auf testId="RelatedArticles.List".
+! Hinzugefügt 2026-03-18: StreamLayout.Companion (rechte Sidebar),
+!         nativendo-container (Native Ads), Commercial.SDI (Werbeplatz),
+!         PageFooter (Seiten-Footer).
 ! --------------------------------------------------------------------------
 ! Schlagzeilen-Ticker-Box
 www.t-online.de##div.rounded-8.bg-alpine.p-12
@@ -372,6 +433,14 @@ www.t-online.de##div.rounded-8.bg-alpine.p-12
 www.t-online.de##ul[data-testid="RelatedArticles.List"]
 ! Empfehlungsboxen
 www.t-online.de##div[data-testid="recommendation"]
+! Rechte Inhalts-Sidebar (Empfehlungen, Werbung)
+www.t-online.de##aside[data-testid="StreamLayout.Companion"]
+! Native Advertising Container
+www.t-online.de##div[data-testid="nativendo-container"]
+! Werbeplatz SDI
+www.t-online.de##div[data-testid="Commercial.SDI"]
+! Seiten-Footer
+www.t-online.de##div[data-testid="PageFooter"]
 
 ! --------------------------------------------------------------------------
 ! Tagesschau
@@ -393,9 +462,18 @@ www.tagesschau.de##footer
 
 ! --------------------------------------------------------------------------
 ! Tagesspiegel
+! Hinzugefügt 2026-03-18: Opinary-Meinungsumfrage-Widget, Outbrain-Empfehlungen,
+!         Kommentare-Button (data-gtm-class="open-community"),
+!         Artikel-Startseiten-Link (data-gtm-class="article-home-link"),
+!         Footer.
 ! --------------------------------------------------------------------------
+www.tagesspiegel.de###opinary-automation-placeholder
+www.tagesspiegel.de###outbrain-container
 www.tagesspiegel.de###sitefooter-container
 www.tagesspiegel.de##aside
+www.tagesspiegel.de##a[data-gtm-class="article-home-link"]
+www.tagesspiegel.de##button[data-gtm-class="open-community"]
+www.tagesspiegel.de##footer
 
 ! --------------------------------------------------------------------------
 ! The Verge
@@ -498,6 +576,10 @@ stadt-bremerhaven.de###comments
 stadt-bremerhaven.de##div.comment-abo
 ! Sidebar (Umfrage des Monats, Beliebt, Kategorien, Werbung)
 stadt-bremerhaven.de##.sidebar
+! BUGFIX 2026-03-18: .sidebar (340px, float:left) verstecken hinterlässt Leeraum
+!         rechts, da .content float:left + width:890px hardcoded ist.
+!         Fix: .content auf 100% Breite strecken (uBlock Origin :style()-Injection).
+stadt-bremerhaven.de##div.main-inner.group > div.content:style(width: 100% !important; float: none !important)
 ! Site-Footer
 stadt-bremerhaven.de##footer
 
