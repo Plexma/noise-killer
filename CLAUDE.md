@@ -20,6 +20,15 @@ Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
 11. GitHub Release erstellen mit:
     `gh release create vX.Y.Z --title "vX.Y.Z - DATUM" --notes "CHANGELOG-INHALT"`
 
+    Die `--notes` müssen immer mit der CHANGELOG-Überschrift beginnen:
+    ```
+    ## [DATUM] - Kurzbeschreibung
+
+    ### Hinzugefügt / Behoben
+    - domain.com: was wurde geändert
+    ```
+    Beispiel: `--notes "## [2026-03-17] - Deutschlandfunk hinzugefügt\n\n### Hinzugefügt\n- ..."`
+
     Versionierung (Semantic Versioning):
     - Patch +0.0.1 = Bugfixes an bestehenden Filtern (v1.0.1, v1.0.2...)
     - Minor +0.1.0 = Neue Domain hinzugefügt (v1.1.0, v1.2.0...)
