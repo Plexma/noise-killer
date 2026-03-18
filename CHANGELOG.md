@@ -1,7 +1,10 @@
-## [2026-03-18] - arstechnica.com: Kommentar-Buttons, Author-Box, Navigation, Artikel-Empfehlungen
+## [2026-03-18] - Bugfixes: arstechnica, tagesschau, pcgameshardware, gamestar
 
-### Hinzugefügt
-- **arstechnica.com**: `a.view-comments` (Kommentar-Buttons oben und unten im Artikel), `div:has(> a[href*="/author/"])` (Author-Box mit Bio), `a.post-navigation-link` (PREV/NEXT Story Navigation), `div.single-most-read` (Most Read/Article-Empfehlungen am Artikelende).
+### Behoben
+- **arstechnica.com**: Author-Box blockiert nicht vollständig. Selector geändert von `div:has(> a[href*="/author/"])` zu `div.author-mini-bio` (blockiert komplette Bio-Box inkl. Avatar und Text).
+- **www.tagesschau.de**: "Zur Startseite"-Button nicht blockiert. Selector war `ul.buttongroup`, aber Element ist `div.buttongroup`.
+- **www.pcgameshardware.de**: Comment-Sprechblase am Anfang und Ende nicht blockiert. `div.commentIcon` ergänzt.
+- **www.gamestar.de**: Inline-Werbung "Auch spannend" nicht blockiert. `div:has(> h3:has-text(/auch spannend/i))` ergänzt.
 
 ## [2026-03-18] - Bugfixes: mydealz.de, n-tv.de, ndr.de, stadt-bremerhaven.de
 

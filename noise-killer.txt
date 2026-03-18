@@ -21,8 +21,8 @@ arstechnica.com##div.ad-wrapper
 arstechnica.com###comments
 ! Kommentar-Buttons ("114 comments") oben und unten im Artikel
 arstechnica.com##a.view-comments
-! Author-Box (Autoren-Bio, Credits)
-arstechnica.com##div:has(> a[href*="/author/"])
+! Author-Box (Autoren-Bio, Credits) - komplette Box blockieren
+arstechnica.com##div.author-mini-bio
 ! Navigation Buttons (PREV STORY / NEXT STORY)
 arstechnica.com##a.post-navigation-link
 ! Artikel-Empfehlungen ("Most Read") Block am Artikelende
@@ -194,6 +194,8 @@ www.faz.net##footer
 
 ! --------------------------------------------------------------------------
 ! GameStar
+! BUGFIX 2026-03-18: Inline-Werbung "Auch spannend" (div:has(> h3:has-text(/auch spannend/i)))
+!         blockiert.
 ! Hinzugefügt 2026-03-18: #comments (Kommentarsektion), Newsletter-Container.
 ! BUGFIX 2026-03-18: div.contentteaser.row.box.contentmediaitem-box deckte nur
 !         "Beliebt"/"Aktuell" ab, nicht "Empfohlen" (contentitem-box). Selector
@@ -206,6 +208,7 @@ www.gamestar.de##.plus-202508-banner-content
 www.gamestar.de###comments
 www.gamestar.de##a.do-toggle-comments
 www.gamestar.de##div.contentteaser.row.box
+www.gamestar.de##div:has(> h3:has-text(/auch spannend/i))
 www.gamestar.de##div.row:has(> .newsletter-form-container)
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
@@ -415,7 +418,10 @@ www.ndr.de##section[data-showdefault]
 ! BUGFIX 2026-03-18: footer (ohne <footer>-Tag) – kein semantisches <footer>-
 !         Element vorhanden. Echter Footer ist div.header2.footer3 (Impressum,
 !         Datenschutz etc.). Print/Abo-Werbung steckt in ul.rowAlt.footer2.
+! Hinzugefügt 2026-03-18: div.commentIcon (Comment-Sprechblase am Anfang und Ende).
 ! --------------------------------------------------------------------------
+! Comment-Sprechblase (Sprechblase mit Kommentar-Zahl am Anfang und Ende)
+www.pcgameshardware.de##div.commentIcon
 www.pcgameshardware.de###comment
 www.pcgameshardware.de##aside.column.right
 www.pcgameshardware.de##aside.innerArticleModule
@@ -543,7 +549,8 @@ www.t-online.de##div[data-testid="Page.PageStages"]
 !         Fix: ul.buttongroup blockiert die gesamte Buttongroup am Artikelende.
 ! --------------------------------------------------------------------------
 ! Hinzugefügt: 2026-03-18
-www.tagesschau.de##ul.buttongroup
+! BUGFIX 2026-03-18: Selector war ul.buttongroup, aber Element ist div.buttongroup
+www.tagesschau.de##div.buttongroup
 www.tagesschau.de##aside
 www.tagesschau.de##div.back-to-top.show
 www.tagesschau.de##div.columns.twelve.infobox.color--tongue
