@@ -237,6 +237,12 @@ www.gamestar.de##div.offerteaser-box
 www.gamestar.de##div.affiliate-buttons
 ! Inline Affiliate-Produkt-Slider (WordPress-Block mit Preisen + grünen Shop-Buttons)
 www.gamestar.de##div.wp-block-wbd-affiliate-widget
+! Grüne BoostBoxx-Schaltflächen (nackte <a> direkt im Artikeltext)
+! BUGFIX 2026-03-18: div.wp-block-wbd-affiliate-widget deckte nur die Slider ab,
+!         nicht die einzelnen Button-Links direkt in .article-content.
+www.gamestar.de##a[href*="boostboxx"]
+! "Warum einen GameStar Gaming-PC von BoostBoxx?" + weitere BoostBoxx-Werbeboxen
+www.gamestar.de##div.custom-info
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
 www.gamestar.de##ul.taglist

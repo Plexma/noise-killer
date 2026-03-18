@@ -1,3 +1,8 @@
+## [2026-03-18] - Bugfix gamestar.de: BoostBoxx-Buttons und Werbeboxen
+
+### Behoben
+- **gamestar.de**: Grüne BoostBoxx-Schaltflächen (`a[href*="boostboxx"]`) und „Warum einen GameStar Gaming-PC von BoostBoxx?"-Werbeboxen (`div.custom-info`) blockiert. `div.wp-block-wbd-affiliate-widget` deckte nur die Produkt-Slider ab, nicht die einzelnen Button-Links im Artikeltext.
+
 ## [2026-03-18] - Globale Outbrain- und Taboola-Blocker
 
 ### Hinzugefügt
