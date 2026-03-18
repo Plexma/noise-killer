@@ -2,7 +2,8 @@
 
 ### Behoben
 - **www.spiegel.de**: `section[data-smartfeed-id="further-reads"]` blockierte auf Mobile
-  (eingeloggte User) nicht zuverlässig. Filter auf element-agnostisch geändert
+  nicht zuverlässig. Die Section ist im serverseitigen HTML sichtbar – Alpine.js versteckt
+  sie nur auf Desktop. Filter auf element-agnostisch geändert
   (`[data-smartfeed-id="further-reads"]`) + innere Sections als Fallback ergänzt:
   `section:has(> h3:has-text(/^Mehr lesen über$/))` und
   `section:has(> h3:has-text(/^Verwandte Artikel$/))`.
