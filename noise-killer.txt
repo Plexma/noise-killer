@@ -311,6 +311,9 @@ www.spiegel.de##div[data-area="spiegel-group"]
 www.spiegel.de##div[data-area="more-links"]
 ! Site-Footer
 www.spiegel.de##footer[data-area="footer"]
+! BUGFIX 2026-03-18: Mobile Anzeigen-Platzhalter haben sm:min-h-352/492/632 – reservieren auf
+!         Mobile bis zu 632px Leerraum am Artikelende wenn keine Werbung lädt (z. B. Brave).
+www.spiegel.de##[data-advertisement~="mobile"]
 
 ! --------------------------------------------------------------------------
 ! Sportschau

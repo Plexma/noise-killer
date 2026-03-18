@@ -1,3 +1,11 @@
+## [2026-03-18] - Spiegel Mobile-Bugfix Leerraum am Artikelende
+
+### Behoben
+- **www.spiegel.de**: Mobile Anzeigen-Container (`[data-advertisement~="mobile"]`) reservieren auf
+  Mobilgeräten per CSS-Klasse `sm:min-h-632` bis zu 632px Leerraum, wenn keine Werbung lädt
+  (z. B. bei Brave). Auf Desktop sind sie bereits durch Spiegels CSS verborgen. Filter
+  `[data-advertisement~="mobile"]` entfernt die Platzhalter nun auch auf Mobile.
+
 ## [2026-03-18] - Spiegel Mobile-Bugfix "Mehr lesen über" / "Verwandte Artikel"
 
 ### Behoben
