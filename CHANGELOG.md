@@ -1,3 +1,11 @@
+## [2026-03-18] - Bugfixes: mydealz.de, n-tv.de, ndr.de, stadt-bremerhaven.de
+
+### Behoben
+- **www.mydealz.de**: „Ähnliche Gutscheine"-Abschnitt blockiert via `[data-t="main"] div:has(> h3:has-text(/Gutschein/))`.
+- **www.n-tv.de**: Artikel-Tags am Artikelende blockiert (`[class*="article-detail-footer_tags"]`); CSS-Grid-Wrapper per `:style(display:block)` auf Block-Layout gesetzt, damit der rechte Leerraum (reservierte Grid-Spalte für die blockierte Aside) kollabiert.
+- **www.ndr.de**: Artikel-Tags am Artikelende blockiert (`div.tagbox`).
+- **stadt-bremerhaven.de**: Whitespace-Fix verbessert – `max-width: 100% !important` zur `:style()`-Injection ergänzt, um hartcodierten `max-width`-Wert zu überschreiben.
+
 ## [2026-03-18] - Bugfixes: ifun.de, iphone-ticker.de, mydealz.de komplett neu
 
 ### Behoben

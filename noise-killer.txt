@@ -343,14 +343,14 @@ www.mydealz.de##[data-t="keywordSuggestionsWidget"]
 www.mydealz.de##[data-t="keyword"]
 ! "Auch interessant"-Abschnitt (verwandte Deals)
 www.mydealz.de##[data-t="relatedThreads"]
-! Komplette Kommentarsektion
-www.mydealz.de##[data-t="comments"]
 ! Deal-Alarm / Subscribe-Button
 www.mydealz.de##[data-t="subscribe"]
 ! "Beste Auswahl / Verwandte Diskussionen"-Box
 www.mydealz.de##[data-t="internalLinking"]
 ! App-Download-Banner
 www.mydealz.de##[data-t="appDownload"]
+! "Ähnliche Gutscheine"-Abschnitt
+www.mydealz.de##[data-t="main"] div:has(> h3:has-text(/Gutschein/))
 ! Footer
 www.mydealz.de###footer-container
 
@@ -365,20 +365,27 @@ www.myhermes.de##footer
 !         aside (die Video-Sidebar) korrekt blockieren.
 ! Hinzugefügt 2026-03-18: Teaser-Widgets und Social-Share-Bar (CSS Modules,
 !         [class*=] wegen Hash-Suffixen bei CSS Modules).
+! BUGFIX 2026-03-18: Artikel-Tags am Artikelende ergänzt; CSS-Grid-Wrapper
+!         per :style()-Injection auf display:block gesetzt, damit der Leerraum
+!         rechts (reservierte Grid-Spalte für blockierte aside) kollabiert.
 ! --------------------------------------------------------------------------
 www.n-tv.de##aside
 www.n-tv.de##footer
 www.n-tv.de##section[class*="widget-teaser"]
 www.n-tv.de##div[class*="social-share"]
+www.n-tv.de##div[class*="article-detail-footer_tags"]
+www.n-tv.de##div[class*="group-grid-wrapper_article-cols"]:style(display: block !important)
 
 ! --------------------------------------------------------------------------
 ! NDR
 ! BUGFIX 2026-03-18: div.teaser hat alle Artikel-Cards auf der Startseite
 !         geblockt (55 Elemente). Entfernt – Noise wird durch übergeordnete
 !         Container-Filter (div.contentbox.list, section.contentbox) erfasst.
+! Hinzugefügt 2026-03-18: Artikel-Tags (div.tagbox) am Artikelende blockiert.
 ! --------------------------------------------------------------------------
 www.ndr.de##div.campaign-banner
 www.ndr.de##div.contentbox.list
+www.ndr.de##div.tagbox
 www.ndr.de##footer
 www.ndr.de##nav.sharebox
 www.ndr.de##section.contentbox
@@ -659,8 +666,8 @@ stadt-bremerhaven.de##div.comment-abo
 stadt-bremerhaven.de##.sidebar
 ! BUGFIX 2026-03-18: .sidebar (340px, float:left) verstecken hinterlässt Leeraum
 !         rechts, da .content float:left + width:890px hardcoded ist.
-!         Fix: .content auf 100% Breite strecken (uBlock Origin :style()-Injection).
-stadt-bremerhaven.de##div.main-inner.group > div.content:style(width: 100% !important; float: none !important)
+!         Fix: .content auf 100% Breite + max-width überschreiben (uBlock Origin :style()-Injection).
+stadt-bremerhaven.de##div.main-inner.group > div.content:style(width: 100% !important; max-width: 100% !important; float: none !important)
 ! Site-Footer
 stadt-bremerhaven.de##footer
 
