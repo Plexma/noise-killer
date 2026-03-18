@@ -138,14 +138,18 @@ www.computerbase.de##footer
 !         aber eigenständige Domain – URLs landen nicht immer auf .at).
 !         a.article-postingcount ergänzt (Posting-Count-Button im Artikelkopf,
 !         verlinkt auf #story-community – beide Domains betroffen).
+!         div.story-tool ergänzt (floating Panel links neben dem Artikel mit
+!         Posting-Count-Link + Social-Share-Buttons inkl. Bluesky).
 ! --------------------------------------------------------------------------
 www.derstandard.at##aside
 www.derstandard.at##a.article-postingcount
+www.derstandard.at##div.story-tool
 www.derstandard.at##section.story-community
 www.derstandard.at##section.story-recommended
 www.derstandard.at##footer.site-footer
 www.derstandard.de##aside
 www.derstandard.de##a.article-postingcount
+www.derstandard.de##div.story-tool
 www.derstandard.de##section.story-community
 www.derstandard.de##section.story-recommended
 www.derstandard.de##footer.site-footer
