@@ -410,6 +410,12 @@ www.theverge.com##.duet--layout--rail
 www.theverge.com##.duet--layout--article-recirc-color-container
 ! Newsletter-Abo-Box ("The Verge Daily")
 www.theverge.com##.duet--cta--newsletter
+! Kommentar-Links (Byline-Kopf, Artikel-Recirc)
+www.theverge.com##.duet--article--comments-link
+! "12 Comments"-Schaltfläche am Artikelende (Zephr-Wrapper-Span)
+www.theverge.com###zephr-anchor > span
+! "Follow topics and authors"-Widget (Zephr, struktureller Selector)
+www.theverge.com###zephr-anchor > div:has(> span + ul)
 ! Site-Footer
 www.theverge.com##.duet--navigation--footer
 

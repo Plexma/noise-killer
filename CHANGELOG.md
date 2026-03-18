@@ -1,3 +1,10 @@
+## [2026-03-18] - The Verge Kommentare + Follow-Widget
+
+### Hinzugefügt
+- **www.theverge.com**: Kommentar-Links (`duet--article--comments-link`), „12 Comments"-
+  Schaltfläche am Artikelende (`#zephr-anchor > span`) und „Follow topics and authors"-
+  Widget (`#zephr-anchor > div:has(> span + ul)`) blockiert.
+
 ## [2026-03-18] - The Verge erweitert
 
 ### Hinzugefügt

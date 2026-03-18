@@ -74,7 +74,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | tagesspiegel.de | 📢 🦶 |
 | tarnkappe.info | 📬 📢 🦶 |
 | taz.de | 🪧 🦶 |
-| theverge.com | 📰 📬 📢 🦶 |
+| theverge.com | 💬 📰 📬 📢 🦶 |
 | tomsguide.com | 💬 📬 🛍️ 🦶 |
 | tracker.gg | 📢 🦶 |
 | transfermarkt.de | 📢 🦶 |

@@ -46,6 +46,14 @@ Kommentarbereiche und Social-Bars entfernen – ohne Inhalt zu beschädigen.
 - Bildunterschriften und Fotocredits
 - Audio-Player im Artikel
 - Den eigentlichen Artikeltext
+## Immer entfernen – auf jeder Seite
+Diese Elemente sind grundsätzlich Noise und sollen auf jeder Seite blockiert werden,
+egal ob explizit erwähnt oder nicht:
+- **Kommentare-Buttons und -Links** – z. B. „12 Comments", „Zur Diskussion", auch
+  wenn sie im Artikelkopf/Byline erscheinen (nicht zu verwechseln mit der
+  Artikel-Toolbar Teilen/Merken – die bleibt)
+- **„Follow topics / Follow authors"-Widgets** – Zephr-basierte oder ähnliche
+  Abonnement-/Folgen-Boxen unter dem Artikel
 ## Selektoren-Regeln
 - CSS-Hash-Klassen (.css-abc123) vermeiden
 - Positionale Selektoren (nth-of-type) vermeiden
