@@ -2,9 +2,9 @@
 
 > Lies den Artikel. Nicht den Lärm drumherum.
 
-**noise-killer** ist eine Adblock-Filterliste, die auf Nachrichtenseiten und anderen Websites alles entfernt, was nicht zum eigentlichen Inhalt gehört – Empfehlungsboxen, Newsletter-Banner, Kommentarsektionen, Social-Bars und Seitenfooter.
+Das eigentliche Problem moderner Nachrichtenseiten ist längst nicht mehr klassische Werbung – dafür gibt es zuverlässige Blocker. Das Problem ist die **redaktionelle Eigenwerbung mitten im Artikeltext**: Boxen, die den Lesefluss unterbrechen und auf andere Artikel verweisen, „Mehr lesen"-Empfehlungen, Newsletter-Anmeldeformulare, die plötzlich auftauchen, und Kommentarsektionen, die niemand gefragt hat. Das nervt – besonders auf Mobile, wo all das die Seiten endlos lang macht.
 
-Der Artikeltext, Bildunterschriften und Multimedia-Inhalte bleiben dabei vollständig erhalten.
+**noise-killer** ist eine Adblock-Filterliste, die genau diesen Lärm beseitigt. Entstanden aus dem Wunsch, Nachrichtenartikel einfach ungestört lesen zu können, wurde die Liste mit der Zeit um weitere störende Elemente erweitert – Footer, Social-Bars, Teaser –, die auf Seiten nichts verloren haben, wenn man nur den Inhalt möchte. Dabei gilt: Seiten werden entschlackt, nicht kaputt gemacht. Artikeltext, Bildunterschriften, Audio-Player und Funktionen bleiben vollständig erhalten.
 
 Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave**.
 
