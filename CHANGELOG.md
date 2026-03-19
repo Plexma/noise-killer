@@ -1,8 +1,9 @@
-## [2026-03-19] - sueddeutsche.de: „Zur SZ-Startseite"-Button + IframelyEmbed-Leerraum
+## [2026-03-19] - sueddeutsche.de: „Zur SZ-Startseite"-Button
 
 ### Behoben
 - **sueddeutsche.de**: „Zur SZ-Startseite"-Button am Artikelende (`a.lp_is_end`) blockiert.
-- **sueddeutsche.de**: Leerer Iframely-Embed-Wrapper (`div[data-testid="IframelyEmbed"]:not(:has(iframe))`) erzeugte 120px Leerraum zwischen Textabsätzen (je 60px `margin-top` und `margin-bottom` trotz h:0). Nur ausgeblendet wenn kein `<iframe>` geladen wurde – bei funktionierenden Embeds bleibt der Inhalt sichtbar.
+
+## [2026-03-19] - sueddeutsche.de: IframelyEmbed-Leerraum im Artikel
 
 ### Behoben
 - **sueddeutsche.de**: Leerer Iframely-Embed-Wrapper (`div[data-testid="IframelyEmbed"]:not(:has(iframe))`) erzeugte 120px Leerraum zwischen Textabsätzen (je 60px `margin-top` und `margin-bottom` trotz h:0). Nur ausgeblendet wenn kein `<iframe>` geladen wurde – bei funktionierenden Embeds bleibt der Inhalt sichtbar.
