@@ -308,6 +308,8 @@ www.handelsblatt.com##app-detail-page-content-footer
 www.handelsblatt.com##app-detail-page-footer
 www.handelsblatt.com##app-embed
 www.handelsblatt.com##app-storyline-element:has(> app-storyline-embed)
+www.handelsblatt.com##app-storyline-element:has-text(/^Mehr:/)
+www.handelsblatt.com##app-storyline-element:not(:has(*))
 www.handelsblatt.com##app-follow-topic-button
 www.handelsblatt.com##app-footer
 www.handelsblatt.com##app-related-content-teaser-group

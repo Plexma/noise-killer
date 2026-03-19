@@ -1,3 +1,9 @@
+## [2026-03-19] - handelsblatt.com: Leerraum + „Mehr:"-Links
+
+### Behoben
+- **handelsblatt.com**: `app-storyline-element:not(:has(*))` – komplett leere Wrapper-Elemente (Angular rendert sie mit `<!---->` ohne Inhalt, aber `spacer-top-l` gibt 40px Margin) erzeugen Leerraum zwischen Absätzen.
+- **handelsblatt.com**: `app-storyline-element:has-text(/^Mehr:/)` – „Mehr:"-Eigenwerbungslinks (z. B. „Mehr: Verfolgen Sie alle Entwicklungen im Iran-Krieg hier im Newsblog") blockiert.
+
 ## [2026-03-19] - handelsblatt.com: Leerraum zwischen Absätzen (Embed-Wrapper)
 
 ### Behoben
