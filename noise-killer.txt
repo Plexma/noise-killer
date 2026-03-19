@@ -594,7 +594,9 @@ www.sueddeutsche.de##[data-testid="byline"]
 www.sueddeutsche.de##[data-testid="closing-line"]
 www.sueddeutsche.de##div.teaser-list
 www.sueddeutsche.de##div[data-article-wrapper] > div
-www.sueddeutsche.de##div[data-manual-remove]
+www.sueddeutsche.de##[data-manual-remove]
+! Outer-Separator-Wrapper ausblenden wenn Kind data-manual-remove trägt (Karussell-Sections, h:48 Leerraum)
+www.sueddeutsche.de##.szde-homie-page-content__separator-item--both:has(> [data-manual-remove])
 www.sueddeutsche.de##div[data-test]
 www.sueddeutsche.de##div[data-testid="topics"]
 www.sueddeutsche.de##div[data-testid] > div[aria-hidden]

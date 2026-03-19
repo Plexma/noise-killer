@@ -1,3 +1,9 @@
+## [2026-03-19] - sueddeutsche.de Bugfixes: Karussell-Leerräume + Trennlinien
+
+### Behoben
+- **sueddeutsche.de**: `div[data-manual-remove]` auf `[data-manual-remove]` erweitert – greift jetzt auch bei `section`-Karussell-Elementen, die SZ's eigenes JS via `data-manual-remove="true"` versteckt.
+- **sueddeutsche.de**: Äußere Separator-Wrapper (je h:48 + zwei Trennlinien) werden jetzt mitgeblockt: `.szde-homie-page-content__separator-item--both:has(> [data-manual-remove])` – vorher blieben die leeren Wrapper-Divs mit ihren CSS-Trennlinien als Freifläche sichtbar.
+
 ## [2026-03-19] - sueddeutsche.de Bugfixes: SZ-Shop + Leerraum-Freiflächen
 
 ### Behoben
