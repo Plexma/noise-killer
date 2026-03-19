@@ -1,3 +1,8 @@
+## [2026-03-19] - handelsblatt.com: Leerraum zwischen Absätzen (Embed-Wrapper)
+
+### Behoben
+- **handelsblatt.com**: `app-storyline-element:has(> app-storyline-embed)` – `app-embed` blockt bereits den Embed-Inhalt, aber der äußere `app-storyline-element`-Wrapper (`display: grid`, `marginTop: 40px`) blieb mit seinem Margin im Flow und erzeugte Leerraum zwischen Textabsätzen.
+
 ## [2026-03-19] - handelsblatt.com: Artikel-Noise-Ergänzungen
 
 ### Hinzugefügt

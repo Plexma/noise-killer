@@ -296,6 +296,9 @@ www.golem.de##main > div.go-tag-list
 !         app-storyline-advertisement (Inline-Werbung im Artikeltext),
 !         app-storyline-related-topics (vereinfacht, .ng-star-inserted entfernt),
 !         app-vg-wort (VG-Wort-Tracking-Pixel).
+! BUGFIX 2026-03-19: app-embed blockt den inneren Embed-Container, aber der äußere
+!         app-storyline-element-Wrapper (display:grid, marginTop:40px) blieb sichtbar
+!         und hinterließ Leerraum zwischen Absätzen. Fix: Wrapper via :has() mitblocken.
 ! --------------------------------------------------------------------------
 www.handelsblatt.com##app-advertisement
 www.handelsblatt.com##app-commercial-teaser
@@ -304,6 +307,7 @@ www.handelsblatt.com##app-content-advertisement
 www.handelsblatt.com##app-detail-page-content-footer
 www.handelsblatt.com##app-detail-page-footer
 www.handelsblatt.com##app-embed
+www.handelsblatt.com##app-storyline-element:has(> app-storyline-embed)
 www.handelsblatt.com##app-follow-topic-button
 www.handelsblatt.com##app-footer
 www.handelsblatt.com##app-related-content-teaser-group
