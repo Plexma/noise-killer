@@ -290,15 +290,28 @@ www.golem.de##main > div.go-tag-list
 !         den iframe versteckt, der äußere app-embed-Container blieb sichtbar
 !         und hinterließ einen Leerraum (leere Newsletter-Box). Vereinfacht
 !         auf app-embed (blockiert den ganzen Embed-Container).
+! Hinzugefügt 2026-03-19: app-commercial-teaser (Einzel-Teaser), app-detail-page-content-footer
+!         (Google-Preferred-Source-Promo + Redaktionskontakt-Link, h:105),
+!         app-follow-topic-button, app-related-topics, app-special-advertisement,
+!         app-storyline-advertisement (Inline-Werbung im Artikeltext),
+!         app-storyline-related-topics (vereinfacht, .ng-star-inserted entfernt),
+!         app-vg-wort (VG-Wort-Tracking-Pixel).
 ! --------------------------------------------------------------------------
 www.handelsblatt.com##app-advertisement
+www.handelsblatt.com##app-commercial-teaser
 www.handelsblatt.com##app-commercial-teaser-group
 www.handelsblatt.com##app-content-advertisement
+www.handelsblatt.com##app-detail-page-content-footer
 www.handelsblatt.com##app-detail-page-footer
 www.handelsblatt.com##app-embed
+www.handelsblatt.com##app-follow-topic-button
 www.handelsblatt.com##app-footer
 www.handelsblatt.com##app-related-content-teaser-group
-www.handelsblatt.com##app-storyline-related-topics.ng-star-inserted
+www.handelsblatt.com##app-related-topics
+www.handelsblatt.com##app-special-advertisement
+www.handelsblatt.com##app-storyline-advertisement
+www.handelsblatt.com##app-storyline-related-topics
+www.handelsblatt.com##app-vg-wort
 
 ! --------------------------------------------------------------------------
 ! Heise

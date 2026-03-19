@@ -1,3 +1,15 @@
+## [2026-03-19] - handelsblatt.com: Artikel-Noise-Ergänzungen
+
+### Hinzugefügt
+- **handelsblatt.com**: `app-commercial-teaser` (Einzel-Werbe-Teaser, bisher nur Group blockiert).
+- **handelsblatt.com**: `app-detail-page-content-footer` (sichtbar, h:105) – enthält Google-Preferred-Source-Eigenwerbung („Handelsblatt als Nachrichtenquelle bei Google") und Redaktionskontakt-Link.
+- **handelsblatt.com**: `app-follow-topic-button` – „Folgen"-Buttons unter Themen-Tags.
+- **handelsblatt.com**: `app-related-topics` – Verwandte-Themen-Box mit Follow-Buttons am Artikelende.
+- **handelsblatt.com**: `app-special-advertisement` – Sonderwerbeformat.
+- **handelsblatt.com**: `app-storyline-advertisement` – Inline-Werbung innerhalb des Artikeltexts.
+- **handelsblatt.com**: `app-storyline-related-topics` (vereinfacht von `.ng-star-inserted`-Variante).
+- **handelsblatt.com**: `app-vg-wort` – VG-Wort-Tracking-Pixel (h:105 durch CSS-Margins trotz unsichtbarem Inhalt).
+
 ## [2026-03-19] - sueddeutsche.de: „Zur SZ-Startseite"-Button
 
 ### Behoben
