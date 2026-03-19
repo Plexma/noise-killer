@@ -1,3 +1,9 @@
+## [2026-03-19] - sueddeutsche.de Bugfixes: SZ-Shop + Leerraum-Freiflächen
+
+### Behoben
+- **sueddeutsche.de**: SZ-Shop-Banner zusätzlich via `#meineSZ` (innere Div-ID) blockiert – Fallback falls `[data-qa="meine_sz"]`-Filter nicht greift.
+- **sueddeutsche.de**: Zwei h:168-Leerraum-Freiflächen behoben: `[data-qa="misch_teaser_group"]:not(:has(article))` blockiert Bild-only Teaser-Gruppen (SZ-Erleben-Shop-Promo + Streiflicht-Kolumnen-Promo) ohne redaktionellen Artikel-Inhalt.
+
 ## [2026-03-19] - sueddeutsche.de Deep-Audit Startseite
 
 ### Hinzugefügt

@@ -571,6 +571,7 @@ www.sportschau.de##ul.buttongroup.buttongroup--copytext
 www.sueddeutsche.de##aside.sz-disable-dark-mode
 ! SZ-Shop-Banner + Gutschein-Slider (h-include-lazy Fragment)
 www.sueddeutsche.de##[data-qa="meine_sz"]
+www.sueddeutsche.de###meineSZ
 ! Gutschein-Widget (Affiliate-Werbung, separates Element)
 www.sueddeutsche.de##[data-qa="voucher_widget"]
 ! SZ-Stellenmarkt-Eigenwerbung
@@ -579,6 +580,8 @@ www.sueddeutsche.de##[data-qa="stellenmarkt"]
 www.sueddeutsche.de##[data-qa^="personalization_group_hp_"]
 ! "Für Sie ausgewählt" innere Section (Fallback, falls data-qa-Wrapper fehlt)
 www.sueddeutsche.de##section[data-testid^="personalization-group"]
+! Bild-only Teaser-Gruppen ohne Artikel (SZ-Erleben-Shop, Streiflicht-Promo) → erzeugen h:168 Leeraum
+www.sueddeutsche.de##[data-qa="misch_teaser_group"]:not(:has(article))
 www.sueddeutsche.de###reader-discussion-button
 www.sueddeutsche.de##.module-primaryteaser
 www.sueddeutsche.de##a[href][data-track-teaser-click] > div
