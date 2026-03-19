@@ -1,3 +1,11 @@
+## [2026-03-19] - spiegel.de Toolbar + tagesschau.de Artikel-Link-Box
+
+### Hinzugefügt
+- **spiegel.de**: Artikel-Toolbar (Lesezeichen/Teilen, `[data-area="feature-bar"]`) blockiert – auf expliziten Nutzerwunsch.
+
+### Behoben
+- **tagesschau.de**: Artikel-Link-Box am Artikelende nicht blockiert. Element ist `ul.buttongroup.buttongroup--copytext` (ein `UL`, kein `DIV`) – bisheriger `div.buttongroup`-Filter griff nicht. Fix: `div.copytext-element-wrapper:has(ul.buttongroup--copytext)` blockiert den gesamten Wrapper inkl. Trennlinien.
+
 ## [2026-03-18] - Bugfix gamestar.de: Empfohlen-Box nicht blockiert
 
 ### Behoben

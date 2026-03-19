@@ -485,7 +485,12 @@ www.pcgameshardware.de##ul.rowAlt.footer2
 !         den kompletten Container sauber.
 ! BUGFIX 2026-03-18: Auf Mobile (eingeloggt) zeigte Alpine.js den Container.
 !         Filter auf element-agnostisch geändert + innere Sections als Fallback.
+! Hinzugefügt 2026-03-19: [data-area="feature-bar"] (Artikel-Toolbar mit
+!         Lesezeichen/Teilen) – auf expliziten Nutzerwunsch blockiert
+!         (Ausnahme von der CLAUDE.md-Regel „NIEMALS blockieren").
 ! --------------------------------------------------------------------------
+! Artikel-Toolbar (Lesezeichen + Teilen) – auf expliziten Nutzerwunsch blockiert
+www.spiegel.de##[data-area="feature-bar"]
 ! "Mehr zum Thema" - Inline-Aside UND End-Section im Artikel
 www.spiegel.de##aside[data-area="related_articles"]
 www.spiegel.de##section[data-area="related_articles"]
@@ -591,10 +596,18 @@ www.t-online.de##div[data-testid="Page.PageStages"]
 !         sekundären "Zur Startseite"-Button geblockt. Der primäre
 !         "Kommentare zur Meldung"-Button (btn--standard-primary) blieb sichtbar.
 !         Fix: ul.buttongroup blockiert die gesamte Buttongroup am Artikelende.
+! BUGFIX 2026-03-18: Selector war ul.buttongroup, aber Element ist div.buttongroup
+! BUGFIX 2026-03-19: Artikel-Link-Box am Artikelende (mehrere Buttons die auf
+!         weitere Artikel verlinken) nicht blockiert. Element ist UL.buttongroup--copytext,
+!         kein DIV – deshalb griff div.buttongroup nicht.
+!         Fix: div.copytext-element-wrapper:has(ul.buttongroup--copytext) blockiert
+!         den gesamten Wrapper inkl. Trennlinien.
 ! --------------------------------------------------------------------------
 ! Hinzugefügt: 2026-03-18
-! BUGFIX 2026-03-18: Selector war ul.buttongroup, aber Element ist div.buttongroup
 www.tagesschau.de##div.buttongroup
+! Artikel-Link-Box (UL-Variante, nicht DIV – daher separater Filter nötig)
+! Hinzugefügt: 2026-03-19
+www.tagesschau.de##div.copytext-element-wrapper:has(ul.buttongroup--copytext)
 www.tagesschau.de##aside
 www.tagesschau.de##div.back-to-top.show
 www.tagesschau.de##div.columns.twelve.infobox.color--tongue
