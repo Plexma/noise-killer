@@ -555,11 +555,29 @@ www.sportschau.de##ul.buttongroup.buttongroup--copytext
 ! Hinzugefügt 2026-03-19: aside.sz-disable-dark-mode (Stellenanzeigen-Eigenwerbung
 !         "Jobs bei der SZ Digitale Medien" auf der Startseite).
 !         section[data-testid^="personalization-group"] ("Für Sie ausgewählt" –
-!         personalisierte SZ+ Empfehlungsbox auf der Startseite).
+!         personalisierte SZ+ Empfehlungsbox, Fallback für data-qa-Filter).
+! Hinzugefügt 2026-03-19 (Deep-Audit Startseite via data-qa-Attribute):
+!         [data-qa="meine_sz"] – SZ-Shop-Banner + Gutschein-Slider
+!           (h-include-lazy lädt /meinesz/api/user/homepage-fragment).
+!         [data-qa="voucher_widget"] – separates Gutschein-Widget (Affiliate).
+!         [data-qa="stellenmarkt"] – SZ-Stellenmarkt-Eigenwerbung.
+!         [data-qa^="personalization_group_hp_"] – äußere Wrapper aller
+!           Personalisierungs-Gruppen (Empfehlungs-Boxen "Für Sie ausgewählt",
+!           "Gern gelesen", "Das Rezept" etc.); inner section bereits durch
+!           section[data-testid^="personalization-group"] geblockt, aber
+!           Outer-Wrapper mit Trennlinien (h:48) blieb sichtbar.
 ! --------------------------------------------------------------------------
 ! Stellenanzeigen-Eigenwerbungs-Box ("Jobs bei der SZ Digitale Medien")
 www.sueddeutsche.de##aside.sz-disable-dark-mode
-! "Für Sie ausgewählt" – personalisierte SZ+ Empfehlungsbox auf Startseite
+! SZ-Shop-Banner + Gutschein-Slider (h-include-lazy Fragment)
+www.sueddeutsche.de##[data-qa="meine_sz"]
+! Gutschein-Widget (Affiliate-Werbung, separates Element)
+www.sueddeutsche.de##[data-qa="voucher_widget"]
+! SZ-Stellenmarkt-Eigenwerbung
+www.sueddeutsche.de##[data-qa="stellenmarkt"]
+! Personalisierungs-Gruppen Outer-Wrapper (alle hp-Varianten)
+www.sueddeutsche.de##[data-qa^="personalization_group_hp_"]
+! "Für Sie ausgewählt" innere Section (Fallback, falls data-qa-Wrapper fehlt)
 www.sueddeutsche.de##section[data-testid^="personalization-group"]
 www.sueddeutsche.de###reader-discussion-button
 www.sueddeutsche.de##.module-primaryteaser

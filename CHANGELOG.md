@@ -1,3 +1,11 @@
+## [2026-03-19] - sueddeutsche.de Deep-Audit Startseite
+
+### Hinzugefügt
+- **sueddeutsche.de**: SZ-Shop-Banner + Gutschein-Slider (`[data-qa="meine_sz"]`) blockiert – lädt per `h-include-lazy` als Fragment und enthält SZ-Shop-Werbebanner sowie Affiliate-Gutschein-Slider.
+- **sueddeutsche.de**: Separates Gutschein-Widget (`[data-qa="voucher_widget"]`) blockiert.
+- **sueddeutsche.de**: SZ-Stellenmarkt-Eigenwerbung (`[data-qa="stellenmarkt"]`) blockiert.
+- **sueddeutsche.de**: Outer-Wrapper aller Personalisierungs-Gruppen (`[data-qa^="personalization_group_hp_"]`) blockiert – bisheriger Filter (`section[data-testid^="personalization-group"]`) entfernte nur den inneren Inhalt; der äußere Wrapper mit Trennlinien (h:48) blieb als Freifläche sichtbar.
+
 ## [2026-03-19] - Startseiten-Audit: 5 Sites
 
 ### Hinzugefügt
