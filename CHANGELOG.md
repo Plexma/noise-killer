@@ -1,3 +1,17 @@
+## [2026-03-19] - Startseiten-Audit: 5 Sites
+
+### Hinzugefügt
+- **sueddeutsche.de**: Stellenanzeigen-Eigenwerbungsbox (`aside.sz-disable-dark-mode`) blockiert.
+- **sueddeutsche.de**: „Für Sie ausgewählt"-Empfehlungsbox (`section[data-testid^="personalization-group"]`) blockiert.
+- **spiegel.de**: SPIEGEL+ Newsletter-Brief-Promo (`section[data-area="block>magletterarticles"]`) auf der Startseite blockiert.
+- **faz.net**: „Folgen Sie uns"-Social-Follow-Bar (`section.nw-htmlbar.social`) blockiert.
+- **faz.net**: Newsletter-Slider-Iframe (`#iframenewsletterslider`) blockiert.
+- **tagesschau.de**: „Ihr ARD-Konto"-Eigenwerbungsbox (`div.promo-box.promo-box--highlight`) blockiert.
+
+### Behoben
+- **tagesschau.de**: `div.buttongroup` war zu breit – blockierte auf der Startseite Navigations-Buttons wie „Weitere Inlandsnachrichten". Auf Artikel-Kontext beschränkt: `div.content-wrapper__group > div.buttongroup`.
+- **computerbase.de**: Shoutbox-Filter deckte nur Artikel-Variante (`--article-view`) ab. Vereinfacht auf `div.shoutbox-container` (deckt alle Varianten inkl. `--homepage`).
+
 ## [2026-03-19] - spiegel.de Toolbar + tagesschau.de Artikel-Link-Box
 
 ### Hinzugefügt

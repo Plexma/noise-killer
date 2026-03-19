@@ -139,12 +139,15 @@ www.buffed.de##div.wadtag
 
 ! --------------------------------------------------------------------------
 ! ComputerBase
+! BUGFIX 2026-03-19: div.text-asset.text-width.shoutbox-container.shoutbox-container--article-view
+!         deckte nur Artikel-Variante ab; Homepage-Variante (shoutbox-container--homepage)
+!         nicht blockiert. Vereinfacht auf div.shoutbox-container (deckt alle Varianten).
 ! --------------------------------------------------------------------------
 www.computerbase.de##.podigee-podcast-player
 www.computerbase.de##aside
 www.computerbase.de##div.adbox.adbox-rectangle.adbox--with-label
 www.computerbase.de##div.block1.block1--breakout
-www.computerbase.de##div.text-asset.text-width.shoutbox-container.shoutbox-container--article-view
+www.computerbase.de##div.shoutbox-container
 www.computerbase.de##div.text-asset.text-width.support-plea
 www.computerbase.de##div[data-widget-id][data-widget-key][data-widget-definition]
 www.computerbase.de##footer
@@ -196,11 +199,18 @@ www.dhl.de##footer.footer
 !         article > aside[data-external-selector] haben den Artikel-Toolbar
 !         (Anhören/Merken/Kommentare/Teilen) geblockt.
 !         Fix: Nur data-external-selector="related-articles" blockieren.
+! Hinzugefügt 2026-03-19: section.nw-htmlbar.social ("Folgen Sie uns"-Social-Bar
+!         mit Instagram/WhatsApp/TikTok/YouTube etc. auf der Startseite).
+!         #iframenewsletterslider (Newsletter-Slider-Iframe auf der Startseite).
 ! --------------------------------------------------------------------------
 ! "Mehr zum Thema" Empfehlungen im Artikel
 www.faz.net##aside[data-external-selector="related-articles"]
 ! Empfehlungs-Slot in der Sidebar
 www.faz.net##div.aside-slot
+! "Folgen Sie uns" Social-Follow-Bar (Startseite)
+www.faz.net##section.nw-htmlbar.social
+! Newsletter-Slider-Iframe (Startseite)
+www.faz.net###iframenewsletterslider
 www.faz.net##footer
 
 ! --------------------------------------------------------------------------
@@ -491,6 +501,9 @@ www.pcgameshardware.de##ul.rowAlt.footer2
 ! --------------------------------------------------------------------------
 ! Artikel-Toolbar (Lesezeichen + Teilen) – auf expliziten Nutzerwunsch blockiert
 www.spiegel.de##[data-area="feature-bar"]
+! SPIEGEL+ Newsletter-Brief-Promo auf Startseite ("Ihr tägliches Extra bei SPIEGEL+")
+! Hinzugefügt 2026-03-19
+www.spiegel.de##section[data-area="block>magletterarticles"]
 ! "Mehr zum Thema" - Inline-Aside UND End-Section im Artikel
 www.spiegel.de##aside[data-area="related_articles"]
 www.spiegel.de##section[data-area="related_articles"]
@@ -539,7 +552,15 @@ www.sportschau.de##ul.buttongroup.buttongroup--copytext
 ! Sueddeutsche Zeitung
 ! BUGFIX: li > div entfernt (hat Audio-Player im Artikel-Toolbar geblockt).
 !         CSS-Hash-Klassen (.css-*) weiterhin weggelassen (instabil).
+! Hinzugefügt 2026-03-19: aside.sz-disable-dark-mode (Stellenanzeigen-Eigenwerbung
+!         "Jobs bei der SZ Digitale Medien" auf der Startseite).
+!         section[data-testid^="personalization-group"] ("Für Sie ausgewählt" –
+!         personalisierte SZ+ Empfehlungsbox auf der Startseite).
 ! --------------------------------------------------------------------------
+! Stellenanzeigen-Eigenwerbungs-Box ("Jobs bei der SZ Digitale Medien")
+www.sueddeutsche.de##aside.sz-disable-dark-mode
+! "Für Sie ausgewählt" – personalisierte SZ+ Empfehlungsbox auf Startseite
+www.sueddeutsche.de##section[data-testid^="personalization-group"]
 www.sueddeutsche.de###reader-discussion-button
 www.sueddeutsche.de##.module-primaryteaser
 www.sueddeutsche.de##a[href][data-track-teaser-click] > div
@@ -602,12 +623,21 @@ www.t-online.de##div[data-testid="Page.PageStages"]
 !         kein DIV – deshalb griff div.buttongroup nicht.
 !         Fix: div.copytext-element-wrapper:has(ul.buttongroup--copytext) blockiert
 !         den gesamten Wrapper inkl. Trennlinien.
+! BUGFIX 2026-03-19: div.buttongroup war zu breit – hat auf der Startseite auch
+!         Navigations-Buttons geblockt ("Weitere Inlandsnachrichten", "weitere
+!         Bildergalerien" etc. in div.teasergroup). Auf Artikel-Kontext beschränkt:
+!         div.content-wrapper__group > div.buttongroup (nur Artikelende-Buttongroup).
+! Hinzugefügt 2026-03-19: div.promo-box.promo-box--highlight ("Ihr ARD-Konto"-
+!         Eigenwerbungs-Registrierungsbox auf der Startseite).
 ! --------------------------------------------------------------------------
 ! Hinzugefügt: 2026-03-18
-www.tagesschau.de##div.buttongroup
+! BUGFIX 2026-03-19: Auf Artikel-Kontext beschränkt (war: div.buttongroup)
+www.tagesschau.de##div.content-wrapper__group > div.buttongroup
 ! Artikel-Link-Box (UL-Variante, nicht DIV – daher separater Filter nötig)
 ! Hinzugefügt: 2026-03-19
 www.tagesschau.de##div.copytext-element-wrapper:has(ul.buttongroup--copytext)
+! "Ihr ARD-Konto" Eigenwerbungs-Registrierungsbox
+www.tagesschau.de##div.promo-box.promo-box--highlight
 www.tagesschau.de##aside
 www.tagesschau.de##div.back-to-top.show
 www.tagesschau.de##div.columns.twelve.infobox.color--tongue
