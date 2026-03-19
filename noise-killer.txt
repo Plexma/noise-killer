@@ -798,9 +798,14 @@ stadt-bremerhaven.de##ul.post-nav
 stadt-bremerhaven.de###shr-btns
 ! "Gefällt dir der Artikel?" - strong.highlight direkt in article (kein p-Element!)
 stadt-bremerhaven.de##article > strong.highlight
-! "Dann teile ihn mit deinen Freunden." ist ein nackter Textknoten in article -
-! per CSS nicht einzeln targetierbar. strong.highlight + #shr-btns werden oben
-! bereits geblockt; der nackte Textknoten bleibt mangels CSS-Selector sichtbar.
+! Zwei nackte Textknoten sind per CSS nicht targetierbar (weder uBlock noch Brave):
+! 1. " Dann teile ihn mit deinen Freunden." – direktes Kind von article.post,
+!    zwischen strong.highlight (geblockt) und #shr-btns (geblockt).
+! 2. "Mit dem Absenden eines Kommentars stimmst du unserer" +
+!    "und der Speicherung von dir angegebener, personenbezogener Daten zu." –
+!    direktes Kind von div.pad.group, vor div#comments (geblockt); das <a>
+!    dazwischen ist via div.pad.group > a bereits geblockt.
+! CSS kann nackte Textknoten grundsätzlich nicht selektieren – kein Fix möglich.
 ! Affiliate-Transparenzhinweis (Partnerlinks) - BUGFIX: war p:has(...), ist aber p.aawp-disclaimer
 stadt-bremerhaven.de##p.aawp-disclaimer
 ! Amazon-Affiliate-Produkttabellen
