@@ -1,3 +1,8 @@
+## [2026-03-19] - sueddeutsche.de Bugfixes: IframelyEmbed-Leerraum im Artikel
+
+### Behoben
+- **sueddeutsche.de**: Leerer Iframely-Embed-Wrapper (`div[data-testid="IframelyEmbed"]:not(:has(iframe))`) erzeugte 120px Leerraum zwischen Textabsätzen (je 60px `margin-top` und `margin-bottom` trotz h:0). Nur ausgeblendet wenn kein `<iframe>` geladen wurde – bei funktionierenden Embeds bleibt der Inhalt sichtbar.
+
 ## [2026-03-19] - sueddeutsche.de Bugfixes: Karussell-Leerräume + Trennlinien
 
 ### Behoben

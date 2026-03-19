@@ -586,6 +586,8 @@ www.sueddeutsche.de###reader-discussion-button
 www.sueddeutsche.de##.module-primaryteaser
 www.sueddeutsche.de##a[href][data-track-teaser-click] > div
 www.sueddeutsche.de##button[title][data-testid]
+! Iframely-Embed-Wrapper ohne geladenen Iframe (Embed geblockt → 120px Leerraum durch margin 60px top+bottom)
+www.sueddeutsche.de##div[data-testid="IframelyEmbed"]:not(:has(iframe))
 ! Inline-Newsletter-Widget im Artikeltext (Shadow DOM, via data-newsletter-id)
 www.sueddeutsche.de##div[data-newsletter-id]
 ! Autorenzeile ("Von Bernd Kastner")
