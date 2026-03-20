@@ -202,6 +202,8 @@ www.dhl.de##footer.footer
 ! Hinzugefügt 2026-03-19: section.nw-htmlbar.social ("Folgen Sie uns"-Social-Bar
 !         mit Instagram/WhatsApp/TikTok/YouTube etc. auf der Startseite).
 !         #iframenewsletterslider (Newsletter-Slider-Iframe auf der Startseite).
+! BUGFIX 2026-03-20: F.A.S.-Sonntagszeitung-Eigenwerbung im Artikeltext
+!         (nur für Abonnenten sichtbar; Selector via zeitung.faz.net-Link).
 ! --------------------------------------------------------------------------
 ! "Mehr zum Thema" Empfehlungen im Artikel
 www.faz.net##aside[data-external-selector="related-articles"]
@@ -212,6 +214,11 @@ www.faz.net##section.nw-htmlbar.social
 ! Newsletter-Slider-Iframe (Startseite)
 www.faz.net###iframenewsletterslider
 www.faz.net##footer
+! BUGFIX 2026-03-20: F.A.S.-Sonntagszeitung-Eigenwerbung im Artikeltext
+!   „Dieser Text stammt aus der Frankfurter Allgemeinen Sonntagszeitung" + „F.A.S. jetzt lesen"
+!   Element nur für Abonnenten sichtbar (SSR-seitig injiziert). Selector: direkte Kind-Elemente
+!   von body-elements-container, die einen Link zu zeitung.faz.net enthalten.
+www.faz.net##[data-external-selector="body-elements-container"] > *:has(a[href*="zeitung.faz.net"])
 
 ! --------------------------------------------------------------------------
 ! GameStar
@@ -514,6 +521,8 @@ www.pcgameshardware.de##ul.rowAlt.footer2
 !         den kompletten Container sauber.
 ! BUGFIX 2026-03-18: Auf Mobile (eingeloggt) zeigte Alpine.js den Container.
 !         Filter auf element-agnostisch geändert + innere Sections als Fallback.
+! BUGFIX 2026-03-20: Social-Share-Leiste (div.tik4-sharing) in Tickaroo-Liveblog-
+!         Einträgen fehlte bisher (nur div.tik4-link-list war geblockt).
 ! Hinzugefügt 2026-03-19: [data-area="feature-bar"] (Artikel-Toolbar mit
 !         Lesezeichen/Teilen) – auf expliziten Nutzerwunsch blockiert
 !         (Ausnahme von der CLAUDE.md-Regel „NIEMALS blockieren").
@@ -528,6 +537,9 @@ www.spiegel.de##aside[data-area="related_articles"]
 www.spiegel.de##section[data-area="related_articles"]
 ! "Empfehlungen aus der Redaktion" im Tickaroo-Liveblog
 www.spiegel.de##div.tik4-link-list
+! BUGFIX 2026-03-20: Social-Share-Leiste in Tickaroo-Liveblog-Einträgen
+!   „Teilen: [Link] [Facebook] [X] [Mail] [Teilen]" unter jedem Ticker-Eintrag
+www.spiegel.de##div.tik4-sharing
 ! "Mehr lesen über" + "Verwandte Artikel" Container (äußere Section, element-agnostisch)
 www.spiegel.de##[data-smartfeed-id="further-reads"]
 ! Fallback: innere Sections direkt blockieren (falls äußerer Container-Filter greift nicht)
@@ -571,6 +583,8 @@ www.sportschau.de##ul.buttongroup.buttongroup--copytext
 ! Sueddeutsche Zeitung
 ! BUGFIX: li > div entfernt (hat Audio-Player im Artikel-Toolbar geblockt).
 !         CSS-Hash-Klassen (.css-*) weiterhin weggelassen (instabil).
+! BUGFIX 2026-03-20: Tickaroo-Liveblog: div.tik4-link-list (redaktionelle Artikel-
+!         Links „Mehr zum Thema…") + div.tik4-sharing (Share-Leiste) ergänzt.
 ! Hinzugefügt 2026-03-19: aside.sz-disable-dark-mode (Stellenanzeigen-Eigenwerbung
 !         "Jobs bei der SZ Digitale Medien" auf der Startseite).
 !         section[data-testid^="personalization-group"] ("Für Sie ausgewählt" –
@@ -627,6 +641,11 @@ www.sueddeutsche.de##er-footer
 www.sueddeutsche.de##er-newsletter
 www.sueddeutsche.de##er-recommendations[excludelist][data-active]
 www.sueddeutsche.de##footer
+! BUGFIX 2026-03-20: Tickaroo-Liveblog: Redaktionelle Artikel-Links im Ticker
+!   „Mehr zum Krieg in der Ukraine" mit verlinkten Artikeln in Ticker-Einträgen
+www.sueddeutsche.de##div.tik4-link-list
+! BUGFIX 2026-03-20: Tickaroo-Liveblog: Social-Share-Leiste in Ticker-Einträgen
+www.sueddeutsche.de##div.tik4-sharing
 
 ! --------------------------------------------------------------------------
 ! t-online

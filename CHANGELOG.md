@@ -1,3 +1,11 @@
+## [2026-03-20] - faz.net / spiegel.de / sueddeutsche.de: Live-Ticker & FAZ-Promo
+
+### Behoben
+- **faz.net**: F.A.S.-Sonntagszeitung-Eigenwerbung im Artikeltext – „Dieser Text stammt aus der Frankfurter Allgemeinen Sonntagszeitung" + „F.A.S. jetzt lesen"-Button. Nur für Abonnenten sichtbar; Selector über `zeitung.faz.net`-Link innerhalb `body-elements-container`.
+- **spiegel.de**: Social-Share-Leiste (`div.tik4-sharing`) in Tickaroo-Liveblog-Einträgen – „Teilen: [Link] [Facebook] [X] [Mail]" unter jedem Ticker-Beitrag.
+- **sueddeutsche.de**: Redaktionelle Artikel-Links (`div.tik4-link-list`) im Tickaroo-Liveblog – „Mehr zum Krieg in der Ukraine" mit verlinkten Artikeln.
+- **sueddeutsche.de**: Social-Share-Leiste (`div.tik4-sharing`) in Tickaroo-Liveblog-Einträgen ergänzt (analog spiegel.de).
+
 ## [2026-03-19] - handelsblatt.com: Leerraum + „Mehr:"-Links
 
 ### Behoben
