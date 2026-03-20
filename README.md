@@ -1,5 +1,7 @@
 # noise-killer
 
+![noise-killer Vorschau](assets/preview.png)
+
 > Einfach nur der relevante Content. Nicht der Lärm drumherum und mittendrin.
 
 Das eigentliche Problem moderner Nachrichtenseiten ist längst nicht mehr klassische Werbung – dafür gibt es unzählige zuverlässige Blocker. Ein großes Problem ist mittlerweile die **redaktionelle Eigenwerbung mitten im Artikeltext**: Boxen, die den Lesefluss unterbrechen und auf andere Artikel verweisen, „Mehr lesen"-Empfehlungen, Newsletter-Anmeldeformulare, die plötzlich auftauchen, und Kommentarsektionen, nach denen niemand gefragt hat. Die redaktionelle Eigenwerbung trifft sogar zahlende Kunden und hat nicht selten überhaupt nichts mit dem eigentlichen Thema des Artikels zu tun, sondern ist willkürlich. Das nervt – besonders auf Mobile, wo all das die Seiten endlos lang macht und man aufgrund dieser ganzen Unterbrechungen viel mehr scrollen muss, als eigentlich nötig ist.
