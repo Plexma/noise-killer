@@ -1,6 +1,6 @@
 # noise-killer
 
-![noise-killer Vorschau](assets/preview.png)
+![noise-killer Vorschau](assets/preview.jpg)
 
 > Einfach nur der relevante Content. Nicht der Lärm drumherum und mittendrin.
 
