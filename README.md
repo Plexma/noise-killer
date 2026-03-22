@@ -40,12 +40,13 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 
 | Seite | Was entfernt wird |
 |---|---|
-| amazon.de | 🦶 |
+| 9to5google.com | 💬 📰 📢 |
+| amazon.de | 📢 🛍️ 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
 | buffed.de | 📢 |
 | computerbase.de | 📢 📬 🦶 |
 | de.ifixit.com | 🪧 |
-| de.wikipedia.org / de.m.wikipedia.org | 🦶 |
+| de.wikipedia.org / de.m.wikipedia.org / en.wikipedia.org | 🦶 |
 | derstandard.at / derstandard.de | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 |
 | dhl.de | 🪧 🦶 |
@@ -58,7 +59,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | ifun.de / iphone-ticker.de | 💬 📬 🦶 |
 | imgur.com | 📰 |
 | lto.de | 📰 📢 🦶 |
-| macrumors.com | 🦶 |
+| macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
 | mydealz.de | 🪧 🦶 |
 | myhermes.de | 🦶 |

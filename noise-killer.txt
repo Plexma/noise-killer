@@ -18,6 +18,24 @@
 ##div[class^="trc_"]
 
 ! --------------------------------------------------------------------------
+! 9to5Google
+! Hinzugefügt 2026-03-22: Featured-Sidebar (aside.sidebar), Kommentar-Link (a.comments),
+!         Kommentarsektion (#comments), Guides-Box (div.related-guides),
+!         Author-Bio (div.author-bio), YouTube-Kanal-Promo (div.article__youtube-video),
+!         Infinite-Scroll-Artikel ([id^="infinite-view-"]),
+!         „More on Android/Chrome/…"-Abschnitt (h2[id^="h-more-on-"] + ul).
+! --------------------------------------------------------------------------
+9to5google.com##aside.sidebar
+9to5google.com##a.comments
+9to5google.com###comments
+9to5google.com##div.related-guides
+9to5google.com##div.author-bio
+9to5google.com##div.article__youtube-video
+9to5google.com##[id^="infinite-view-"]
+9to5google.com##h2[id^="h-more-on-"]
+9to5google.com##h2[id^="h-more-on-"] + ul
+
+! --------------------------------------------------------------------------
 ! Ars Technica
 ! Hinzugefügt 2026-03-18: Kommentar-Buttons (a.view-comments oben und unten),
 !         Author-Box (div:has(> a[href*="/author/"])), Navigation
@@ -49,6 +67,13 @@ de.ifixit.com##.component-WPCampaignBanner
 ! --------------------------------------------------------------------------
 de.m.wikipedia.org##div.post-content.footer-content
 de.wikipedia.org##div.post-content.footer-content
+
+! --------------------------------------------------------------------------
+! Wikipedia (EN)
+! Hinzugefügt 2026-03-22: Footer (div.mw-footer-container) mit „This page was
+!         last edited…" + Links zu Privacy Policy, About, Disclaimers etc.
+! --------------------------------------------------------------------------
+en.wikipedia.org##div.mw-footer-container
 
 ! --------------------------------------------------------------------------
 ! HSReplay
@@ -123,10 +148,14 @@ tracker.gg##div.upsell
 
 ! --------------------------------------------------------------------------
 ! Amazon DE
+! Hinzugefügt 2026-03-22: Footer (#navFooter, ersetzt #nav-ftr-gototop/#nav-ftr-links),
+!         Empfehlungs-Carousels ([id^="sims-"]: „Wird oft zusammen gekauft", SIMS-Container),
+!         Prime-Video/Promo-Banner (#prime-desktop-dp_feature_div_01).
 ! --------------------------------------------------------------------------
 www.amazon.de###mobile-dp-ilm_feature_div_01
-www.amazon.de###nav-ftr-gototop
-www.amazon.de###nav-ftr-links
+www.amazon.de###navFooter
+www.amazon.de###prime-desktop-dp_feature_div_01
+www.amazon.de##[id^="sims-"]
 
 ! --------------------------------------------------------------------------
 ! Buffed
@@ -399,8 +428,17 @@ www.lto.de##section.content__related
 
 ! --------------------------------------------------------------------------
 ! MacRumors
+! BUGFIX 2026-03-22: div[role="main"] > div hat nie gegriffen – kein Element mit
+!         role="main" vorhanden (React-App, #maincontent ist das stabile MAIN-Element).
+!         Ersetzt durch #maincontent > div (Newsletter-Box, Popular Stories, #comments).
+! Hinzugefügt 2026-03-22: div.linkback („Related Roundups" / „Related Forum"),
+!         .js-article .noskim (Artikel-Footer mit „[ 100 comments ]"-Link),
+!         #canvas-sidebar (Slide-Panel mit Videos/Guides/Upcoming/Other Stories).
 ! --------------------------------------------------------------------------
-www.macrumors.com##div[role="main"] > div
+www.macrumors.com###maincontent > div
+www.macrumors.com##div.linkback
+www.macrumors.com##.js-article .noskim
+www.macrumors.com###canvas-sidebar
 www.macrumors.com##footer
 
 ! --------------------------------------------------------------------------

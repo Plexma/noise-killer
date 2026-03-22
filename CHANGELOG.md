@@ -1,3 +1,25 @@
+## [2026-03-22] - 9to5google.com / macrumors.com / amazon.de / en.wikipedia.org
+
+### Hinzugefügt
+- **9to5google.com**: Featured-Sidebar (`aside.sidebar`) blockiert – Artikel-Karussell rechts neben dem Artikel.
+- **9to5google.com**: Kommentar-Link in der Byline (`a.comments`) blockiert.
+- **9to5google.com**: Kommentarsektion (`#comments`) blockiert.
+- **9to5google.com**: „Guides"-Box (`div.related-guides`) blockiert.
+- **9to5google.com**: Author-Bio-Box (`div.author-bio`) blockiert.
+- **9to5google.com**: YouTube-Kanal-Promo (`div.article__youtube-video`) – „Check out 9to5Google on YouTube for more news" – blockiert.
+- **9to5google.com**: Infinite-Scroll-Artikel (`[id^="infinite-view-"]`) blockiert – weitere Artikel die unter dem aktuellen Artikel nachladen.
+- **9to5google.com**: „More on Android/Chrome/…"-Abschnitt (`h2[id^="h-more-on-"]` + folgende `ul`) blockiert.
+- **amazon.de**: Footer (`#navFooter`) blockiert – ersetzt die bisherigen Einzelfilter `#nav-ftr-gototop` und `#nav-ftr-links`.
+- **amazon.de**: Empfehlungs-Carousels (`[id^="sims-"]`) blockiert – „Wird oft zusammen gekauft", SIMS-Ähnlichkeits-Container.
+- **amazon.de**: Prime-Video/Promo-Banner (`#prime-desktop-dp_feature_div_01`) blockiert.
+- **en.wikipedia.org**: Footer (`div.mw-footer-container`) blockiert – „This page was last edited…" + Links zu Privacy Policy, About, Disclaimers.
+
+### Behoben
+- **macrumors.com**: `div[role="main"] > div` hat nie gegriffen – kein Element mit `role="main"` vorhanden (React-App). Ersetzt durch `#maincontent > div` (Newsletter-Box, „Popular Stories", Kommentarsektion).
+- **macrumors.com**: `div.linkback` ergänzt – „Related Roundups" / „Related Forum"-Links im Artikeltext.
+- **macrumors.com**: `.js-article .noskim` ergänzt – Artikel-Footer mit „[ 100 comments ]"-Link.
+- **macrumors.com**: `#canvas-sidebar` ergänzt – Slide-Panel mit Videos/Guides/Upcoming/Other-Stories-Widgets.
+
 ## [2026-03-20] - faz.net / spiegel.de / sueddeutsche.de: Live-Ticker & FAZ-Promo
 
 ### Behoben
