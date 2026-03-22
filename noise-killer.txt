@@ -24,6 +24,10 @@
 !         Author-Bio (div.author-bio), YouTube-Kanal-Promo (div.article__youtube-video),
 !         Infinite-Scroll-Artikel ([id^="infinite-view-"]),
 !         „More on Android/Chrome/…"-Abschnitt (h2[id^="h-more-on-"] + ul).
+! BUGFIX 2026-03-22: Infinite-Scroll-Trigger (#infinite-handle) blockiert –
+!         Scroll-Trigger der infinite-scroll-Bibliothek (im DOM nach erstem Laden abgetrennt).
+! BUGFIX 2026-03-22: „Follow Ben: Twitter/X, Threads, Bluesky, and Instagram" blockiert –
+!         p:has(> em:only-child) – Paragraph enthält ausschließlich ein einzelnes em-Element.
 ! --------------------------------------------------------------------------
 9to5google.com##aside.sidebar
 9to5google.com##a.comments
@@ -32,8 +36,10 @@
 9to5google.com##div.author-bio
 9to5google.com##div.article__youtube-video
 9to5google.com##[id^="infinite-view-"]
+9to5google.com###infinite-handle
 9to5google.com##h2[id^="h-more-on-"]
 9to5google.com##h2[id^="h-more-on-"] + ul
+9to5google.com##p:has(> em:only-child)
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
@@ -248,6 +254,12 @@ www.faz.net##footer
 !   Element nur für Abonnenten sichtbar (SSR-seitig injiziert). Selector: direkte Kind-Elemente
 !   von body-elements-container, die einen Link zu zeitung.faz.net enthalten.
 www.faz.net##[data-external-selector="body-elements-container"] > *:has(a[href*="zeitung.faz.net"])
+! BUGFIX 2026-03-22: Social-Share-Leiste in Tickaroo-Liveblog-Einträgen
+!   „[Link kopieren] [Facebook] [X] [Mail]" unter jedem einzelnen Ticker-Eintrag
+www.faz.net##div.tik4-sharing
+! BUGFIX 2026-03-22: Opinary-Inline-Umfrage-Widget im Artikeltext
+!   Eingebettet als iframe.opinary-iframe (src: compass.pressekompass.net)
+www.faz.net##iframe.opinary-iframe
 
 ! --------------------------------------------------------------------------
 ! GameStar
@@ -573,6 +585,11 @@ www.spiegel.de##section[data-area="block>magletterarticles"]
 ! "Mehr zum Thema" - Inline-Aside UND End-Section im Artikel
 www.spiegel.de##aside[data-area="related_articles"]
 www.spiegel.de##section[data-area="related_articles"]
+! BUGFIX 2026-03-22: Affiliate-Produktboxen im Artikel
+!   aside[data-area="contentbox"] = Affiliate-Disclaimer-Box (bg-shade-lightest)
+!   section[data-area="contentbox"] = Produkt-Liste mit Affiliate-Links (bg-tertiary-base)
+www.spiegel.de##aside[data-area="contentbox"]
+www.spiegel.de##section[data-area="contentbox"]
 ! "Empfehlungen aus der Redaktion" im Tickaroo-Liveblog
 www.spiegel.de##div.tik4-link-list
 ! BUGFIX 2026-03-20: Social-Share-Leiste in Tickaroo-Liveblog-Einträgen
@@ -865,6 +882,10 @@ stadt-bremerhaven.de##article > strong.highlight
 ! CSS kann nackte Textknoten grundsätzlich nicht selektieren – kein Fix möglich.
 ! Affiliate-Transparenzhinweis (Partnerlinks) - BUGFIX: war p:has(...), ist aber p.aawp-disclaimer
 stadt-bremerhaven.de##p.aawp-disclaimer
+! BUGFIX 2026-03-22: Redaktionelle Inline-Werbung – WordPress-oEmbed-Artikel-Teaser
+!   div.video-container:has(> blockquote.wp-embedded-content) – eingebetteter WP-Artikel
+!   (div.video-container ist ein Klassenname-Missverständnis; enthält keine Videos)
+stadt-bremerhaven.de##div.video-container:has(> blockquote.wp-embedded-content)
 ! Amazon-Affiliate-Produkttabellen
 stadt-bremerhaven.de##article table
 ! "Neueste Beiträge" Überschrift + Liste (im Hauptinhalt-Bereich, nicht Sidebar)
