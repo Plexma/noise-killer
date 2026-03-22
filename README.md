@@ -41,12 +41,13 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | Seite | Was entfernt wird |
 |---|---|
 | 9to5google.com | 💬 📰 📢 |
+| 9to5mac.com | 💬 📰 📢 |
 | amazon.de | 📢 🛍️ 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
 | buffed.de | 📢 |
 | computerbase.de | 📢 📬 🦶 |
 | de.ifixit.com | 🪧 |
-| de.wikipedia.org / de.m.wikipedia.org / en.wikipedia.org | 🦶 |
+| wikipedia.org (alle Sprachversionen) | 🦶 |
 | derstandard.at / derstandard.de | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 |
 | dhl.de | 🪧 🦶 |

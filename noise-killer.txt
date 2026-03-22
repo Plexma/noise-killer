@@ -18,16 +18,14 @@
 ##div[class^="trc_"]
 
 ! --------------------------------------------------------------------------
-! 9to5Google
+! 9to5Google / 9to5Mac  (identisches Theme – identische Selektoren)
 ! Hinzugefügt 2026-03-22: Featured-Sidebar (aside.sidebar), Kommentar-Link (a.comments),
 !         Kommentarsektion (#comments), Guides-Box (div.related-guides),
 !         Author-Bio (div.author-bio), YouTube-Kanal-Promo (div.article__youtube-video),
 !         Infinite-Scroll-Artikel ([id^="infinite-view-"]),
 !         „More on Android/Chrome/…"-Abschnitt (h2[id^="h-more-on-"] + ul).
-! BUGFIX 2026-03-22: Infinite-Scroll-Trigger (#infinite-handle) blockiert –
-!         Scroll-Trigger der infinite-scroll-Bibliothek (im DOM nach erstem Laden abgetrennt).
-! BUGFIX 2026-03-22: „Follow Ben: Twitter/X, Threads, Bluesky, and Instagram" blockiert –
-!         p:has(> em:only-child) – Paragraph enthält ausschließlich ein einzelnes em-Element.
+! BUGFIX 2026-03-22: Infinite-Scroll-Trigger (#infinite-handle) + Lade-Spinner blockiert.
+! BUGFIX 2026-03-22: „Follow Ben/…: Twitter/X, Threads, …" blockiert (p:has(> em:only-child)).
 ! --------------------------------------------------------------------------
 9to5google.com##aside.sidebar
 9to5google.com##a.comments
@@ -41,6 +39,18 @@
 9to5google.com##h2[id^="h-more-on-"]
 9to5google.com##h2[id^="h-more-on-"] + ul
 9to5google.com##p:has(> em:only-child)
+9to5mac.com##aside.sidebar
+9to5mac.com##a.comments
+9to5mac.com###comments
+9to5mac.com##div.related-guides
+9to5mac.com##div.author-bio
+9to5mac.com##div.article__youtube-video
+9to5mac.com##[id^="infinite-view-"]
+9to5mac.com###infinite-handle
+9to5mac.com##div.infinite-loader
+9to5mac.com##h2[id^="h-more-on-"]
+9to5mac.com##h2[id^="h-more-on-"] + ul
+9to5mac.com##p:has(> em:only-child)
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
@@ -70,17 +80,13 @@ arstechnica.com##div.single-most-read
 de.ifixit.com##.component-WPCampaignBanner
 
 ! --------------------------------------------------------------------------
-! Wikipedia (DE)
+! Wikipedia (alle Sprachversionen)
+! Hinzugefügt 2026-03-22: Footer – gilt für alle *.wikipedia.org-Subdomains.
+!         div.mw-footer-container = Vector-Skin-Footer (EN und die meisten Sprachen)
+!         div.post-content.footer-content = alternativem Footer-Layout (z. B. DE)
 ! --------------------------------------------------------------------------
-de.m.wikipedia.org##div.post-content.footer-content
-de.wikipedia.org##div.post-content.footer-content
-
-! --------------------------------------------------------------------------
-! Wikipedia (EN)
-! Hinzugefügt 2026-03-22: Footer (div.mw-footer-container) mit „This page was
-!         last edited…" + Links zu Privacy Policy, About, Disclaimers etc.
-! --------------------------------------------------------------------------
-en.wikipedia.org##div.mw-footer-container
+wikipedia.org##div.mw-footer-container
+wikipedia.org##div.post-content.footer-content
 
 ! --------------------------------------------------------------------------
 ! HSReplay

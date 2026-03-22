@@ -1,3 +1,11 @@
+## [2026-03-22] - 9to5mac.com hinzugefügt / Wikipedia auf alle Sprachversionen erweitert
+
+### Hinzugefügt
+- **9to5mac.com**: Alle Filter von 9to5google.com übertragen (identisches Theme).
+- **wikipedia.org**: Regeln auf alle Sprachversionen ausgeweitet (`wikipedia.org` statt einzelner Subdomains).
+
+---
+
 ## [2026-03-22] - Bugfixes: 9to5google.com / stadt-bremerhaven.de / spiegel.de / faz.net
 
 ### Behoben
