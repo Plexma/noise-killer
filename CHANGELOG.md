@@ -1,10 +1,11 @@
 ## [2026-03-22] - Bugfixes: 9to5google.com / stadt-bremerhaven.de / spiegel.de / faz.net
 
 ### Behoben
-- **9to5google.com**: Infinite-Scroll-Trigger (`#infinite-handle`) blockiert – verhinderte, dass der Loader immer wieder neue Artikel nachlud.
+- **9to5google.com**: Infinite-Scroll-Trigger (`#infinite-handle`) und Lade-Spinner (`div.infinite-loader`) blockiert – verhinderte, dass der Loader immer wieder neue Artikel nachlud.
 - **9to5google.com**: „Follow Ben: Twitter/X, Threads, Bluesky, and Instagram" blockiert (`p:has(> em:only-child)`).
 - **stadt-bremerhaven.de**: Redaktionelle Inline-Werbung (WordPress-oEmbed-Artikel-Teaser) blockiert (`div.video-container:has(> blockquote.wp-embedded-content)`).
-- **spiegel.de**: Affiliate-Produktboxen im Artikeltext blockiert – Disclaimer-Box (`aside[data-area="contentbox"]`) und Produkt-Liste (`section[data-area="contentbox"]`) mit Affiliate-Links.
+- **stadt-bremerhaven.de**: Tag-Liste am Artikelende blockiert (`p.post-tags`).
+- **spiegel.de**: Affiliate-Produktboxen im Artikeltext blockiert – Disclaimer-Box (`aside[data-area="contentbox"]`), Produkt-Liste (`section[data-area="contentbox"]`) und individuelle ANZEIGE-Boxen pro Produkt (`div[data-area="heise-widget"]`).
 - **faz.net**: Social-Share-Leiste (`div.tik4-sharing`) unter einzelnen Live-Ticker-Einträgen blockiert.
 - **faz.net**: Opinary-Inline-Umfrage-Widget (`iframe.opinary-iframe`) im Artikeltext blockiert.
 

@@ -37,6 +37,7 @@
 9to5google.com##div.article__youtube-video
 9to5google.com##[id^="infinite-view-"]
 9to5google.com###infinite-handle
+9to5google.com##div.infinite-loader
 9to5google.com##h2[id^="h-more-on-"]
 9to5google.com##h2[id^="h-more-on-"] + ul
 9to5google.com##p:has(> em:only-child)
@@ -588,8 +589,10 @@ www.spiegel.de##section[data-area="related_articles"]
 ! BUGFIX 2026-03-22: Affiliate-Produktboxen im Artikel
 !   aside[data-area="contentbox"] = Affiliate-Disclaimer-Box (bg-shade-lightest)
 !   section[data-area="contentbox"] = Produkt-Liste mit Affiliate-Links (bg-tertiary-base)
+!   div[data-area="heise-widget"] = Individuelle ANZEIGE-Box pro Produkt im Artikeltext
 www.spiegel.de##aside[data-area="contentbox"]
 www.spiegel.de##section[data-area="contentbox"]
+www.spiegel.de##div[data-area="heise-widget"]
 ! "Empfehlungen aus der Redaktion" im Tickaroo-Liveblog
 www.spiegel.de##div.tik4-link-list
 ! BUGFIX 2026-03-20: Social-Share-Leiste in Tickaroo-Liveblog-Einträgen
@@ -886,6 +889,8 @@ stadt-bremerhaven.de##p.aawp-disclaimer
 !   div.video-container:has(> blockquote.wp-embedded-content) – eingebetteter WP-Artikel
 !   (div.video-container ist ein Klassenname-Missverständnis; enthält keine Videos)
 stadt-bremerhaven.de##div.video-container:has(> blockquote.wp-embedded-content)
+! BUGFIX 2026-03-22: Tag-Liste am Artikelende ("Tags: Testberichte")
+stadt-bremerhaven.de##p.post-tags
 ! Amazon-Affiliate-Produkttabellen
 stadt-bremerhaven.de##article table
 ! "Neueste Beiträge" Überschrift + Liste (im Hauptinhalt-Bereich, nicht Sidebar)
