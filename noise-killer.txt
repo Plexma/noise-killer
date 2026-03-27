@@ -811,12 +811,19 @@ www.t-online.de##div[data-testid="Page.PageStages"]
 !         Navigations-Buttons geblockt ("Weitere Inlandsnachrichten", "weitere
 !         Bildergalerien" etc. in div.teasergroup). Auf Artikel-Kontext beschränkt:
 !         div.content-wrapper__group > div.buttongroup (nur Artikelende-Buttongroup).
+! BUGFIX 2026-03-27: Direktkind-Selector (>) hat div.buttongroup am Artikelende
+!         nicht erfasst – der Button-Wrapper ist kein direktes Kind von
+!         content-wrapper__group, sondern über div.columns tiefer geschachtelt.
+!         Startseite- und Kommentare-Button blieben sichtbar.
+!         Fix: div.content-wrapper--article div.buttongroup (Nachfahren-Selector,
+!         auf Artikel-Kontext beschränkt über die Klasse content-wrapper--article).
 ! Hinzugefügt 2026-03-19: div.promo-box.promo-box--highlight ("Ihr ARD-Konto"-
 !         Eigenwerbungs-Registrierungsbox auf der Startseite).
 ! --------------------------------------------------------------------------
 ! Hinzugefügt: 2026-03-18
 ! BUGFIX 2026-03-19: Auf Artikel-Kontext beschränkt (war: div.buttongroup)
-www.tagesschau.de##div.content-wrapper__group > div.buttongroup
+! BUGFIX 2026-03-27: Nachfahren-Selector statt Direktkind (war: content-wrapper__group > div.buttongroup)
+www.tagesschau.de##div.content-wrapper--article div.buttongroup
 ! Artikel-Link-Box (UL-Variante, nicht DIV – daher separater Filter nötig)
 ! Hinzugefügt: 2026-03-19
 www.tagesschau.de##div.copytext-element-wrapper:has(ul.buttongroup--copytext)

@@ -1,3 +1,10 @@
+## [2026-03-27] - Bugfix: tagesschau.de Startseite- und Kommentare-Button
+
+### Behoben
+- **tagesschau.de**: Startseite- und Kommentare-Button am Artikelende waren weiterhin sichtbar. Der Direktkind-Selector (`div.content-wrapper__group > div.buttongroup`) erfasste die Buttongroup nicht, da sie über `div.columns` tiefer geschachtelt ist. Fix: Nachfahren-Selector `div.content-wrapper--article div.buttongroup` (auf Artikel-Kontext beschränkt).
+
+---
+
 ## [2026-03-27] - androidauthority.com / focus.de hinzugefügt
 
 ### Hinzugefügt
