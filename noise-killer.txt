@@ -53,6 +53,16 @@
 9to5mac.com##p:has(> em:only-child)
 
 ! --------------------------------------------------------------------------
+! Android Authority
+! Hinzugefügt 2026-03-27: Sidebar (aside), Footer (footer), Kommentarsektion
+!         (#comments-section, Viafoura-Widget). Alle übrigen Klassen sind Build-
+!         Zeit-Hashes (e_Xx-Muster) – kein stabiler Selector möglich.
+! --------------------------------------------------------------------------
+www.androidauthority.com##aside
+www.androidauthority.com##footer
+www.androidauthority.com###comments-section
+
+! --------------------------------------------------------------------------
 ! Ars Technica
 ! Hinzugefügt 2026-03-18: Kommentar-Buttons (a.view-comments oben und unten),
 !         Author-Box (div:has(> a[href*="/author/"])), Navigation
@@ -267,6 +277,20 @@ www.faz.net##div.tik4-sharing
 ! BUGFIX 2026-03-22: Opinary-Inline-Umfrage-Widget im Artikeltext
 !   Eingebettet als iframe.opinary-iframe (src: compass.pressekompass.net)
 www.faz.net##iframe.opinary-iframe
+
+! --------------------------------------------------------------------------
+! Focus.de
+! Hinzugefügt 2026-03-27: Kommentar-Button (div.Article-Comments-Button),
+!         Kommentarsektion (div.Article-Comments), Partnerangebote-LinkBox
+!         (div.Article-LinkBox – z. B. „Kostenlose Onlinespiele bei FOCUS.de"),
+!         Footer (footer).
+!         Live-Ticker-Einträge (div.Html-Block in div.Article-Content) bleiben
+!         unangetastet.
+! --------------------------------------------------------------------------
+www.focus.de##div.Article-Comments-Button
+www.focus.de##div.Article-Comments
+www.focus.de##div.Article-LinkBox
+www.focus.de##footer
 
 ! --------------------------------------------------------------------------
 ! GameStar

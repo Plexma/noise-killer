@@ -43,6 +43,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | 9to5google.com | 💬 📰 📢 |
 | 9to5mac.com | 💬 📰 📢 |
 | amazon.de | 📢 🛍️ 🦶 |
+| androidauthority.com | 💬 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
 | buffed.de | 📢 |
 | computerbase.de | 📢 📬 🦶 |
@@ -52,6 +53,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | deutschlandfunk.de | 🦶 |
 | dhl.de | 🪧 🦶 |
 | faz.net | 📰 📢 🦶 |
+| focus.de | 💬 📢 🦶 |
 | gamestar.de | 💬 📬 📰 📢 🦶 |
 | golem.de | 💬 📬 📢 🦶 |
 | handelsblatt.com | 📰 📢 🦶 |
