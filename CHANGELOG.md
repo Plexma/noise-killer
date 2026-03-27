@@ -2,7 +2,7 @@
 
 ### Hinzugefügt
 - **androidauthority.com**: Sidebar (`aside`), Footer (`footer`), Kommentarsektion (`#comments-section`), Deal-Promo-Bar (`#__next > div:has(a[href*="andauth.co"])`), Affiliate-Disclaimer, Tag-Liste, Follow-Widget und „Join the conversation"-Prompt (Viafoura) blockiert.
-- **focus.de**: Kommentar-Button (`div.Article-Comments-Button`), Kommentarsektion (`div.Article-Comments`), Partnerangebote-Box (`div.Article-LinkBox`) und Footer (`footer`) blockiert. Live-Ticker-Einträge bleiben unangetastet.
+- **focus.de**: Kommentar-Button (`div.Article-Comments-Button`), Kommentarsektion (`div.Article-Comments`), Partnerangebote-Box (`div.Article-LinkBox`), Opinary-Widget (`#opinary-root`) und Footer (`footer`) blockiert. Live-Ticker-Einträge bleiben unangetastet.
 
 ---
 

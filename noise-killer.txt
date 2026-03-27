@@ -300,6 +300,8 @@ www.faz.net##iframe.opinary-iframe
 !         Live-Ticker-Einträge (div.Html-Block in div.Article-Content) bleiben
 !         unangetastet.
 ! --------------------------------------------------------------------------
+! Opinary-Inline-Widget
+www.focus.de###opinary-root
 www.focus.de##div.Article-Comments-Button
 www.focus.de##div.Article-Comments
 www.focus.de##div.Article-LinkBox
