@@ -1,3 +1,10 @@
+## [2026-03-27] - nytimes.com hinzugefügt
+
+### Hinzugefügt
+- **nytimes.com**: Related-Content-Bereich (`section[data-testid="recirculation-placeholder"]`), Site-Index-Navigation (`nav#site-index`) und Footer (`footer`) blockiert.
+
+---
+
 ## [2026-03-22] - 9to5mac.com hinzugefügt / Wikipedia auf alle Sprachversionen erweitert
 
 ### Hinzugefügt

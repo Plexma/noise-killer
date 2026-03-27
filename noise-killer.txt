@@ -544,6 +544,17 @@ www.ndr.de##section.contentbox
 www.ndr.de##section[data-showdefault]
 
 ! --------------------------------------------------------------------------
+! New York Times
+! Hinzugefügt 2026-03-27: Recirculation/Related-Content-Bereich
+!         (section[data-testid="recirculation-placeholder"]), Site-Index-Navigation
+!         (nav#site-index) und Footer (footer) blockiert.
+!         Selektoren basieren auf stabilen data-testid-Attributen (NYT-React-App).
+! --------------------------------------------------------------------------
+www.nytimes.com##section[data-testid="recirculation-placeholder"]
+www.nytimes.com##nav#site-index
+www.nytimes.com##footer
+
+! --------------------------------------------------------------------------
 ! PC Games Hardware
 ! BUGFIX 2026-03-18: div.QuickMenuFade.posRel, div.breadcrumb.mt-1.mb-1,
 !         div.shopLinkButtonsWrapper.cxenseignore, div[data-rpi-area] > aside

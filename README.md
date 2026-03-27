@@ -66,6 +66,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | myhermes.de | 🦶 |
 | n-tv.de | 🔗 📢 🦶 |
 | ndr.de | 🔗 📢 🦶 |
+| nytimes.com | 📰 🦶 |
 | pcgameshardware.de | 💬 📢 🦶 |
 | spiegel.de | 📰 🦶 |
 | sportschau.de | 📢 🦶 |
