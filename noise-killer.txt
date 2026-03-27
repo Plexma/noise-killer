@@ -811,12 +811,15 @@ www.t-online.de##div[data-testid="Page.PageStages"]
 !         Navigations-Buttons geblockt ("Weitere Inlandsnachrichten", "weitere
 !         Bildergalerien" etc. in div.teasergroup). Auf Artikel-Kontext beschränkt:
 !         div.content-wrapper__group > div.buttongroup (nur Artikelende-Buttongroup).
+! BUGFIX 2026-03-27: buttongroup ist ein UL, kein DIV – div.buttongroup hat nie
+!         gematcht. Fix: ul.buttongroup (Tag korrigiert, > bleibt korrekt).
 ! Hinzugefügt 2026-03-19: div.promo-box.promo-box--highlight ("Ihr ARD-Konto"-
 !         Eigenwerbungs-Registrierungsbox auf der Startseite).
 ! --------------------------------------------------------------------------
 ! Hinzugefügt: 2026-03-18
 ! BUGFIX 2026-03-19: Auf Artikel-Kontext beschränkt (war: div.buttongroup)
-www.tagesschau.de##div.content-wrapper__group > div.buttongroup
+! BUGFIX 2026-03-27: div.buttongroup → ul.buttongroup (Element ist UL, nicht DIV)
+www.tagesschau.de##div.content-wrapper__group > ul.buttongroup
 ! Artikel-Link-Box (UL-Variante, nicht DIV – daher separater Filter nötig)
 ! Hinzugefügt: 2026-03-19
 www.tagesschau.de##div.copytext-element-wrapper:has(ul.buttongroup--copytext)

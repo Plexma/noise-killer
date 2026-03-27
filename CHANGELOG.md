@@ -1,3 +1,10 @@
+## [2026-03-27] - Bugfix tagesschau.de Startseite- und Kommentare-Button
+
+### Behoben
+- **tagesschau.de**: Startseite- und Kommentare-Button am Artikelende wurden nicht blockiert. `div.buttongroup` hat nie gematcht – das Element ist ein `ul`, kein `div`. Fix: `ul.buttongroup` (Tag korrigiert, `>` Direktkind-Selector bleibt korrekt).
+
+---
+
 ## [2026-03-27] - androidauthority.com / focus.de hinzugefügt
 
 ### Hinzugefügt
