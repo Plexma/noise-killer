@@ -1,7 +1,7 @@
 ## [2026-03-27] - nytimes.com hinzugefügt
 
 ### Hinzugefügt
-- **nytimes.com**: Related-Content-Bereich (`section[data-testid="recirculation-placeholder"]`), „More on…"-Themen-Guide (`section#styln-guide`), Site-Index-Navigation (`nav#site-index`) und Footer (`footer`) blockiert.
+- **nytimes.com**: Related-Content-Bereich (`section[data-testid="recirculation-placeholder"]`), „More on…"-Themen-Guide (`article#story > div:has(> div > section#styln-guide)`), Site-Index-Navigation (`nav#site-index`) und Footer (`footer`) blockiert.
 
 ---
 
