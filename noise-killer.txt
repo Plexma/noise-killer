@@ -828,8 +828,10 @@ www.tagesschau.de##div.promo-box.promo-box--highlight
 www.tagesschau.de##aside
 www.tagesschau.de##div.back-to-top.show
 www.tagesschau.de##div.columns.twelve.infobox.color--tongue
-www.tagesschau.de##div.copytext-element-wrapper.columns.twelve.copytext-element-wrapper--overlap
-www.tagesschau.de##div.copytext__video.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
+! BUGFIX 2026-03-27: copytext-element-wrapper--overlap und copytext__video sind keine
+!         Noise-Elemente, sondern Container für eingebettete Videoplayer im Artikelkörper.
+!         Ihre Blockierung verhindert korrekte Scroll-Positionsberechnung des ARD-Players
+!         → Player-Stacking über anderen Elementen beim Scrollen. Filter entfernt.
 www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.mediaplayer--lazy-loading.mediaplayer--loaded
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer

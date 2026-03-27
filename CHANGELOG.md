@@ -1,3 +1,10 @@
+## [2026-03-27] - Bugfix tagesschau.de Layout-Bug (Player-Stacking)
+
+### Behoben
+- **tagesschau.de**: `copytext-element-wrapper--overlap` und `copytext__video` sind keine Noise-Elemente, sondern Container für eingebettete Videoplayer im Artikelkörper. Ihre Blockierung verhinderte die korrekte Scroll-Positionsberechnung des ARD-Players und führte zu Player-Stacking über anderen Elementen beim Scrollen zum Ende des Artikels. Filter entfernt.
+
+---
+
 ## [2026-03-27] - Bugfix tagesschau.de Startseite- und Kommentare-Button
 
 ### Behoben
