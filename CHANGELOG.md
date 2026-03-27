@@ -1,7 +1,7 @@
 ## [2026-03-27] - androidauthority.com / focus.de hinzugefügt
 
 ### Hinzugefügt
-- **androidauthority.com**: Sidebar (`aside`), Footer (`footer`) und Kommentarsektion (`#comments-section`, Viafoura) blockiert. Alle übrigen Klassen sind Build-Zeit-Hashes – kein stabiler Selector möglich.
+- **androidauthority.com**: Sidebar (`aside`), Footer (`footer`), Kommentarsektion (`#comments-section`), Deal-Promo-Bar (`#__next > div:has(a[href*="andauth.co"])`), Affiliate-Disclaimer, Tag-Liste, Follow-Widget und „Join the conversation"-Prompt (Viafoura) blockiert.
 - **focus.de**: Kommentar-Button (`div.Article-Comments-Button`), Kommentarsektion (`div.Article-Comments`), Partnerangebote-Box (`div.Article-LinkBox`) und Footer (`footer`) blockiert. Live-Ticker-Einträge bleiben unangetastet.
 
 ---

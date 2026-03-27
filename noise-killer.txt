@@ -55,12 +55,25 @@
 ! --------------------------------------------------------------------------
 ! Android Authority
 ! Hinzugefügt 2026-03-27: Sidebar (aside), Footer (footer), Kommentarsektion
-!         (#comments-section, Viafoura-Widget). Alle übrigen Klassen sind Build-
-!         Zeit-Hashes (e_Xx-Muster) – kein stabiler Selector möglich.
+!         (#comments-section). Alle direkten CSS-Klassen sind Build-Zeit-Hashes
+!         (e_Xx-Muster) – stabile Selektoren nur via IDs, data-Attribute und
+!         stabile Drittanbieter-Klassen (Viafoura vf-*).
+! BUGFIX 2026-03-27: Deal-Promo-Bar, Affiliate-Disclaimer, Tag-Liste,
+!         Follow-Widget und „Join the conversation"-Prompt ergänzt.
 ! --------------------------------------------------------------------------
 www.androidauthority.com##aside
 www.androidauthority.com##footer
 www.androidauthority.com###comments-section
+! Deal-Promo-Bar ("🔥 Get X% off ...") – direktes Kind von #__next mit andauth.co-Link
+www.androidauthority.com###__next > div:has(a[href*="andauth.co"])
+! Affiliate-Disclaimer ("Affiliate links on Android Authority may earn us a commission")
+www.androidauthority.com##main > div:has(a[href*="/external-links/"])
+! Tag-Liste am Artikelende (Links zu /tag/…)
+www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="/tag/"])
+! Follow-Topics/Authors-Widget (Viafoura vf-topic-follow-button)
+www.androidauthority.com##[data-content-wrapper="true"] > div:has(button.vf-topic-follow-button)
+! „Join the conversation"-Prompt (Viafoura, oberhalb Kommentarsektion)
+www.androidauthority.com##[data-content-wrapper="true"] > div.viafoura
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
