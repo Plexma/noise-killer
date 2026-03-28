@@ -1,3 +1,13 @@
+## [2026-03-28] - Bugfixes: faz.net / spiegel.de / stadt-bremerhaven.de
+
+### Behoben
+- **faz.net**: Newsletter-Footer-Box (`#nl_footer_widget`) blockiert – via avenga.snacks dynamisch gerendert (`data-fsw="newsletterpromote"`).
+- **faz.net**: Artikel-Toolbar (`aside[data-external-selector="upper-toolbar"]`) blockiert – Anhören / Merken / Teilen / Drucken / Zusammenfassung – auf expliziten Nutzerwunsch.
+- **spiegel.de**: Inline-Newsletter-Box (`section[data-area="html-embed"]`) blockiert – Gruppenkonto-Iframe eingebettet im Artikeltext.
+- **stadt-bremerhaven.de**: Nackte Textknoten „Dann teile ihn mit deinen Freunden." und „Mit dem Absenden eines Kommentars stimmst du unserer … und der Speicherung … Daten zu." per uBlock Origin `+js(replace-node-text)` entfernt – CSS-seitig nicht targetierbar; Brave bleibt ohne Fix.
+
+---
+
 ## [2026-03-27] - Bugfix tagesschau.de Inline-Teaser und Buttongroup
 
 ### Behoben

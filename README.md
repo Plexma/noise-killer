@@ -52,7 +52,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | derstandard.at / derstandard.de | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 |
 | dhl.de | 🪧 🦶 |
-| faz.net | 📰 📢 🦶 |
+| faz.net | 📰 📬 📢 🦶 |
 | focus.de | 💬 📢 🦶 |
 | gamestar.de | 💬 📬 📰 📢 🦶 |
 | golem.de | 💬 📬 📢 🦶 |
@@ -70,7 +70,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | ndr.de | 🔗 📢 🦶 |
 | nytimes.com | 📰 🦶 |
 | pcgameshardware.de | 💬 📢 🦶 |
-| spiegel.de | 📰 🦶 |
+| spiegel.de | 📰 📬 🦶 |
 | sportschau.de | 📢 🦶 |
 | stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
 | steamdb.info | 📢 🦶 |

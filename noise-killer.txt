@@ -290,6 +290,12 @@ www.faz.net##div.tik4-sharing
 ! BUGFIX 2026-03-22: Opinary-Inline-Umfrage-Widget im Artikeltext
 !   Eingebettet als iframe.opinary-iframe (src: compass.pressekompass.net)
 www.faz.net##iframe.opinary-iframe
+! BUGFIX 2026-03-28: Newsletter-Footer-Box im Artikel
+!   Inline-Box via avenga.snacks (data-fsw="newsletterpromote") in div#nl_footer_widget
+www.faz.net###nl_footer_widget
+! BUGFIX 2026-03-28: Artikel-Toolbar (Anhören / Merken / Teilen / Drucken / Zusammenfassung)
+!   aside[data-external-selector="upper-toolbar"] – auf expliziten Nutzerwunsch blockiert
+www.faz.net##aside[data-external-selector="upper-toolbar"]
 
 ! --------------------------------------------------------------------------
 ! Focus.de
@@ -683,6 +689,10 @@ www.spiegel.de##[data-advertisement~="mobile"]
 www.spiegel.de##[class~="sm:min-h-352"]
 www.spiegel.de##[class~="sm:min-h-492"]
 www.spiegel.de##[class~="sm:min-h-632"]
+! BUGFIX 2026-03-28: Inline-Newsletter-Box im Artikel
+!   Iframe (src: gruppenkonto.spiegel.de/.../newsletter/box.html) eingebettet in
+!   section[data-area="html-embed"] – einzige html-embed-Section auf Artikelseiten
+www.spiegel.de##section[data-area="html-embed"]
 
 ! --------------------------------------------------------------------------
 ! Sportschau
@@ -943,14 +953,15 @@ stadt-bremerhaven.de##ul.post-nav
 stadt-bremerhaven.de###shr-btns
 ! "Gefällt dir der Artikel?" - strong.highlight direkt in article (kein p-Element!)
 stadt-bremerhaven.de##article > strong.highlight
-! Zwei nackte Textknoten sind per CSS nicht targetierbar (weder uBlock noch Brave):
-! 1. " Dann teile ihn mit deinen Freunden." – direktes Kind von article.post,
-!    zwischen strong.highlight (geblockt) und #shr-btns (geblockt).
-! 2. "Mit dem Absenden eines Kommentars stimmst du unserer" +
-!    "und der Speicherung von dir angegebener, personenbezogener Daten zu." –
-!    direktes Kind von div.pad.group, vor div#comments (geblockt); das <a>
-!    dazwischen ist via div.pad.group > a bereits geblockt.
-! CSS kann nackte Textknoten grundsätzlich nicht selektieren – kein Fix möglich.
+! BUGFIX 2026-03-28: Nackte Textknoten per uBlock Origin scriptlet entfernt
+!   (Brave/adblock-rust unterstützt +js() nicht – dort kein Fix möglich)
+! " Dann teile ihn mit deinen Freunden." – direktes Kind von article.post
+stadt-bremerhaven.de##+js(replace-node-text, article, Dann teile ihn mit deinen Freunden.)
+! "Mit dem Absenden eines Kommentars stimmst du unserer [a>Datenschutzerklärung</a]
+!  und der Speicherung von dir angegebener, personenbezogener Daten zu." –
+!  direktes Kind von div.pad.group; Regex für letzten Teil wegen Komma im Text
+stadt-bremerhaven.de##+js(replace-node-text, div, Mit dem Absenden eines Kommentars stimmst du unserer)
+stadt-bremerhaven.de##+js(replace-node-text, div, /und der Speicherung von dir angegebener/)
 ! Affiliate-Transparenzhinweis (Partnerlinks) - BUGFIX: war p:has(...), ist aber p.aawp-disclaimer
 stadt-bremerhaven.de##p.aawp-disclaimer
 ! BUGFIX 2026-03-22: Redaktionelle Inline-Werbung – WordPress-oEmbed-Artikel-Teaser
