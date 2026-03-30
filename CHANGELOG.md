@@ -1,3 +1,16 @@
+## [2026-03-30] - Bugfixes & neue Filter: 5 Domains
+
+### Behoben
+- **stadt-bremerhaven.de**: `replace-node-text`-Scriptlets entfernt – zerstören Seitenstruktur durch XPath-Auswertung auf Script-Inhalte. Bare-Text-Knoten bleiben ohne Fix (CSS-seitig nicht targetierbar).
+- **faz.net**: Inline-Newsletter-Box und „Verlagsangebot"-Marktplatz-Widget jetzt via äußerem Wrapper `[data-external-selector="html-element"]` blockiert (statt nur `#nl_footer_widget`).
+- **spiegel.de**: „Geschichten, die wir Ihnen heute empfehlen:" – redaktionelle Empfehlungsbox im Artikeltext blockiert.
+
+### Hinzugefügt
+- **heise.de**: Affiliate-Inline-Werbung auf Bestenlisten-Testberichten blockiert (`gridWidgetTypeAffiliateLink`, `gridWidgetTypeTrackonomics`, `gridWidgetTypeStoryPriceAndRating`, `gridWidgetTypeBestenlistenRelatedBox`).
+- **tagesschau.de**: Vorleseplayer („Artikel anhören", `div.mediaplayer--teaser-top.mediaplayer--audio`) blockiert.
+
+---
+
 ## [2026-03-28] - Bugfixes: faz.net / spiegel.de / stadt-bremerhaven.de
 
 ### Behoben

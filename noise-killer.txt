@@ -292,7 +292,9 @@ www.faz.net##div.tik4-sharing
 www.faz.net##iframe.opinary-iframe
 ! BUGFIX 2026-03-28: Newsletter-Footer-Box im Artikel
 !   Inline-Box via avenga.snacks (data-fsw="newsletterpromote") in div#nl_footer_widget
-www.faz.net###nl_footer_widget
+! BUGFIX 2026-03-30: Äußeren Wrapper [data-external-selector="html-element"] blockieren statt
+!   nur #nl_footer_widget – deckt Newsletter-Box UND "Verlagsangebot"-Marktplatz-Widget ab.
+www.faz.net##[data-external-selector="html-element"]
 ! BUGFIX 2026-03-28: Artikel-Toolbar (Anhören / Merken / Teilen / Drucken / Zusammenfassung)
 !   aside[data-external-selector="upper-toolbar"] – auf expliziten Nutzerwunsch blockiert
 www.faz.net##aside[data-external-selector="upper-toolbar"]
@@ -453,6 +455,15 @@ www.heise.de##div[data-component="NewAdModule"]
 www.heise.de##div[data-component="MarketingTeaserModule"]
 www.heise.de##div[data-component="HeiseJobsModule"]
 www.heise.de##div[data-component="PreisvergleichModule"]
+! Hinzugefügt 2026-03-30: Affiliate-Inline-Werbung auf heise bestenlisten/testbericht-Seiten
+!   gridWidgetTypeAffiliateLink = Inline-Affiliate-Link-Widget (Shops wie Amazon, Idealo etc.)
+!   gridWidgetTypeTrackonomics  = Trackonomics-Affiliate-Tracking-Widget im Artikelfooter
+!   gridWidgetTypeStoryPriceAndRating = Preis-Widget ("ab X,XX EUR") im Artikel-Kopf
+!   gridWidgetTypeBestenlistenRelatedBox = "Weitere Bestenlisten"-Empfehlungsbox
+www.heise.de##div.gridWidgetTypeAffiliateLink
+www.heise.de##div.gridWidgetTypeTrackonomics
+www.heise.de##div.gridWidgetTypeStoryPriceAndRating
+www.heise.de##div.gridWidgetTypeBestenlistenRelatedBox
 
 ! --------------------------------------------------------------------------
 ! iFun
@@ -693,6 +704,9 @@ www.spiegel.de##[class~="sm:min-h-632"]
 !   Iframe (src: gruppenkonto.spiegel.de/.../newsletter/box.html) eingebettet in
 !   section[data-area="html-embed"] – einzige html-embed-Section auf Artikelseiten
 www.spiegel.de##section[data-area="html-embed"]
+! BUGFIX 2026-03-30: „Geschichten, die wir Ihnen heute empfehlen:" – redaktionelle
+!   Empfehlungsbox (H3 + UL mit externen Links), eingebettet als body_element-Block
+www.spiegel.de##div[data-sara-click-el="body_element"]:has(> div > h3:has-text(/Geschichten/))
 
 ! --------------------------------------------------------------------------
 ! Sportschau
@@ -845,6 +859,9 @@ www.tagesschau.de##div.columns.twelve.infobox.color--tongue
 !         copytext__video (schema.org VideoObject, Inline-Video des Artikels) bleibt.
 www.tagesschau.de##div.copytext-element-wrapper--overlap
 www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.mediaplayer--lazy-loading.mediaplayer--loaded
+! Hinzugefügt 2026-03-30: Vorleseplayer ("Artikel anhören") im Artikelkopf
+!   div.mediaplayer--teaser-top.mediaplayer--audio – liest Artikeltext vor, kein Artikelinhalt
+www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer
 
@@ -953,15 +970,15 @@ stadt-bremerhaven.de##ul.post-nav
 stadt-bremerhaven.de###shr-btns
 ! "Gefällt dir der Artikel?" - strong.highlight direkt in article (kein p-Element!)
 stadt-bremerhaven.de##article > strong.highlight
-! BUGFIX 2026-03-28: Nackte Textknoten per uBlock Origin scriptlet entfernt
-!   (Brave/adblock-rust unterstützt +js() nicht – dort kein Fix möglich)
-! " Dann teile ihn mit deinen Freunden." – direktes Kind von article.post
-stadt-bremerhaven.de##+js(replace-node-text, article, Dann teile ihn mit deinen Freunden.)
-! "Mit dem Absenden eines Kommentars stimmst du unserer [a>Datenschutzerklärung</a]
-!  und der Speicherung von dir angegebener, personenbezogener Daten zu." –
-!  direktes Kind von div.pad.group; Regex für letzten Teil wegen Komma im Text
-stadt-bremerhaven.de##+js(replace-node-text, div, Mit dem Absenden eines Kommentars stimmst du unserer)
-stadt-bremerhaven.de##+js(replace-node-text, div, /und der Speicherung von dir angegebener/)
+! Zwei nackte Textknoten sind per CSS nicht targetierbar (weder uBlock noch Brave):
+! 1. " Dann teile ihn mit deinen Freunden." – direktes Kind von article.post,
+!    zwischen strong.highlight (geblockt) und #shr-btns (geblockt).
+! 2. "Mit dem Absenden eines Kommentars stimmst du unserer" +
+!    "und der Speicherung von dir angegebener, personenbezogener Daten zu." –
+!    direktes Kind von div.pad.group, vor div#comments (geblockt); das <a>
+!    dazwischen ist via div.pad.group > a bereits geblockt.
+! replace-node-text-Scriptlet getestet 2026-03-28: zerstört Seitenstruktur komplett
+! (XPath //text() erfasst Script-Inhalte und flacht DOM ab) – kein Fix möglich.
 ! Affiliate-Transparenzhinweis (Partnerlinks) - BUGFIX: war p:has(...), ist aber p.aawp-disclaimer
 stadt-bremerhaven.de##p.aawp-disclaimer
 ! BUGFIX 2026-03-22: Redaktionelle Inline-Werbung – WordPress-oEmbed-Artikel-Teaser

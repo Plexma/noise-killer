@@ -57,7 +57,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | gamestar.de | 💬 📬 📰 📢 🦶 |
 | golem.de | 💬 📬 📢 🦶 |
 | handelsblatt.com | 📰 📢 🦶 |
-| heise.de | 📰 📬 📢 🦶 |
+| heise.de | 📰 📬 📢 🛍️ 🦶 |
 | hsreplay.net | 🦶 |
 | ifun.de / iphone-ticker.de | 💬 📬 🦶 |
 | imgur.com | 📰 |
