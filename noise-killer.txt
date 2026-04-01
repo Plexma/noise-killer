@@ -852,7 +852,7 @@ www.tagesschau.de###content > div.columns.twelve.content-wrapper__group
 www.tagesschau.de##div.promo-box.promo-box--highlight
 
 ! Footer
-www.tagesschau.de##.endline
+www.tagesschau.de##footer.footer
 
 ! --------------------------------------------------------------------------
 ! Tagesspiegel
