@@ -1,9 +1,7 @@
-## [2026-04-01] - Bugfix tagesschau.de Bild-Overlap (Artikel + Startseite), lto.de "Mehr zum Thema"
-
-### Behoben
-- **tagesschau.de**: Artikel-Header-Bild und Top-Teaser-Bilder (Startseite) überlagern Titel und Text. Ursache: `.article-head__media` / `.teaser__media` haben `height:0`, das absolut positionierte Bild darin überragt alles darunter. Tagesschau setzt `padding-bottom` per JavaScript – läuft in Brave nicht. Fix: `:style(padding-bottom: 56.25%)` – entspricht dem `padding-top: 56.25%` des inneren `ts-picture--teaser-top`-Containers.
+## [2026-04-01] - tagesschau.de Neubau, lto.de "Mehr zum Thema"
 
 ### Hinzugefügt
+- **tagesschau.de**: Filter komplett neu aufgebaut. Bild-Overlap (Artikel + Startseite) behoben via `:style(padding-bottom: 56.25%)` auf `.article-head__media` / `.teaser__media`. Weitere Noise-Elemente blockiert: Inline-Video-Teaser (`.copytext-element-wrapper--overlap`), Sendungshinweis (`.meldungsfooter`), Backlink (`.backlink`), "Mehr zum Thema"-Aside, Artikel-End-Buttons, ARD-Konto-Promo, Footer.
 - **lto.de**: „Mehr zum Thema"-Tag-Links am Artikelende blockiert (`.article-text-wrapper > nav`).
 
 ---

@@ -823,55 +823,36 @@ www.t-online.de##div[data-testid="Page.PageStages"]
 
 ! --------------------------------------------------------------------------
 ! Tagesschau
-! BUGFIX: a.btn.btn--text.btn--standard-secondary.btn--fullwidth hat nur den
-!         sekundären "Zur Startseite"-Button geblockt. Der primäre
-!         "Kommentare zur Meldung"-Button (btn--standard-primary) blieb sichtbar.
-!         Fix: ul.buttongroup blockiert die gesamte Buttongroup am Artikelende.
-! BUGFIX 2026-03-18: Selector war ul.buttongroup, aber Element ist div.buttongroup
-! BUGFIX 2026-03-19: Artikel-Link-Box am Artikelende (mehrere Buttons die auf
-!         weitere Artikel verlinken) nicht blockiert. Element ist UL.buttongroup--copytext,
-!         kein DIV – deshalb griff div.buttongroup nicht.
-!         Fix: div.copytext-element-wrapper:has(ul.buttongroup--copytext) blockiert
-!         den gesamten Wrapper inkl. Trennlinien.
-! BUGFIX 2026-03-19: div.buttongroup war zu breit – hat auf der Startseite auch
-!         Navigations-Buttons geblockt ("Weitere Inlandsnachrichten", "weitere
-!         Bildergalerien" etc. in div.teasergroup). Auf Artikel-Kontext beschränkt:
-!         div.content-wrapper__group > div.buttongroup (nur Artikelende-Buttongroup).
-! BUGFIX 2026-03-27: buttongroup ist ein UL, kein DIV – div.buttongroup hat nie
-!         gematcht. Fix: ul.buttongroup (Tag korrigiert, > bleibt korrekt).
-! Hinzugefügt 2026-03-19: div.promo-box.promo-box--highlight ("Ihr ARD-Konto"-
-!         Eigenwerbungs-Registrierungsbox auf der Startseite).
+! Hinzugefügt: 2026-04-01
 ! --------------------------------------------------------------------------
-! Hinzugefügt: 2026-03-18
-! BUGFIX 2026-03-19: Auf Artikel-Kontext beschränkt (war: div.buttongroup)
-! BUGFIX 2026-03-27: div.buttongroup → ul.buttongroup (Element ist UL, nicht DIV)
-! BUGFIX 2026-03-27: Tag-Prefix entfernt – Element ist je nach Artikel DIV oder UL.
-!         Tag-agnostischer Selector .buttongroup trifft beide Varianten.
-www.tagesschau.de##div.content-wrapper__group > .buttongroup
-! Artikel-Link-Box (UL-Variante, nicht DIV – daher separater Filter nötig)
-! Hinzugefügt: 2026-03-19
-www.tagesschau.de##div.copytext-element-wrapper:has(ul.buttongroup--copytext)
-! "Ihr ARD-Konto" Eigenwerbungs-Registrierungsbox
-www.tagesschau.de##div.promo-box.promo-box--highlight
-www.tagesschau.de##aside
-www.tagesschau.de##div.back-to-top.show
-www.tagesschau.de##div.columns.twelve.infobox.color--tongue
-! Related-Content-Teaser-Player (audio/video anderer Artikel, inline zwischen Absätzen)
-! BUGFIX 2026-03-27: Fälschlicherweise entfernt – sind Noise, kein Artikelinhalt.
-!         copytext__video (schema.org VideoObject, Inline-Video des Artikels) bleibt.
-www.tagesschau.de##div.copytext-element-wrapper--overlap
-www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.mediaplayer--lazy-loading.mediaplayer--loaded
-! Hinzugefügt 2026-03-30: Vorleseplayer ("Artikel anhören") im Artikelkopf
-!   div.mediaplayer--teaser-top.mediaplayer--audio – liest Artikeltext vor, kein Artikelinhalt
-www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
-! BUGFIX 2026-04-01: Bild-Overlap auf Artikel- und Startseite
-!   .article-head__media / .teaser__media haben height:0; absolut positioniertes Bild
-!   überlappt Titel und Folgeinhalt. Tagesschau setzt padding-bottom per JS (läuft in Brave nicht).
-!   Fix: padding-bottom:56.25% via :style() – entspricht ts-picture--teaser-top padding-top.
+
+! Bild-Overlap: .article-head__media (Artikel) und .teaser__media (Startseite)
+! haben height:0 – das absolut positionierte Bild (position:absolute, ~448px)
+! darin überlappt Titel und Folgeinhalt. padding-bottom:56.25% gibt dem Container
+! die korrekte Höhe (= padding-top des inneren .ts-picture--teaser-top).
 www.tagesschau.de##.article-head__media:style(padding-bottom: 56.25%)
 www.tagesschau.de##.teaser__media:style(padding-bottom: 56.25%)
-www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
-www.tagesschau.de##footer
+
+! Inline Related-Content-Video-Teaser (zwischen Absätzen eingebettet)
+www.tagesschau.de##.copytext-element-wrapper--overlap
+
+! Sendungshinweis ("Dieses Thema im Programm: ...")
+www.tagesschau.de##.meldungsfooter
+
+! "Zur Startseite"-Backlink am Artikelende
+www.tagesschau.de##.backlink
+
+! "Mehr zum Thema"-Sektion (aside) am Artikelende
+www.tagesschau.de##aside.container
+
+! Artikel-End-Buttons ("Zur Startseite", "Zu den Kommentaren")
+www.tagesschau.de###content > div.columns.twelve.content-wrapper__group
+
+! "Ihr ARD-Konto" Eigenwerbungs-Box
+www.tagesschau.de##div.promo-box.promo-box--highlight
+
+! Footer
+www.tagesschau.de##.endline
 
 ! --------------------------------------------------------------------------
 ! Tagesspiegel
