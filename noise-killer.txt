@@ -494,6 +494,8 @@ www.iphone-ticker.de##footer
 www.lto.de##.ad_career_banner
 www.lto.de##.ad_transfer_banner
 www.lto.de##.article-teaser-list
+! Hinzugefügt: 2026-04-01: "Mehr zum Thema"-Tag-Links am Artikelende
+www.lto.de##.article-text-wrapper > nav
 www.lto.de##.jobwidget
 www.lto.de##.toolbar.boxed
 www.lto.de##.tx-lto-events
@@ -862,6 +864,13 @@ www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.med
 ! Hinzugefügt 2026-03-30: Vorleseplayer ("Artikel anhören") im Artikelkopf
 !   div.mediaplayer--teaser-top.mediaplayer--audio – liest Artikeltext vor, kein Artikelinhalt
 www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
+! BUGFIX 2026-04-01: Artikel-Header-Bild überlappt Titel und Artikeltext
+!   ts-picture__poster-wrapper (position:absolute, z-index:0) überdeckt article-head__data und
+!   erste Textabsätze, da article-head__media height:0 hat. Zwei Fixes via :style():
+!   1. article-head__data erhält z-index:1 → Titel/Teaser sichtbar über dem Bild
+!   2. article-head--accent erhält min-height:448px → Artikeltext startet unter dem Bild
+www.tagesschau.de##.article-head--accent .article-head__data:style(position: relative; z-index: 1)
+www.tagesschau.de##.article-head--accent:style(min-height: 448px)
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer
 
