@@ -865,13 +865,11 @@ www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.med
 !   div.mediaplayer--teaser-top.mediaplayer--audio – liest Artikeltext vor, kein Artikelinhalt
 www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
 ! BUGFIX 2026-04-01: Bild-Overlap auf Artikel- und Startseite
-!   .article-head__media / .teaser__media haben height:0 (nur absolut positioniertes Bild innen).
-!   Tagesschau setzt per JS padding-bottom auf den Container – dieses JS läuft in Brave nicht.
-!   Fix: padding-bottom:56.25% via set-style scriptlet (JS-Injektion, Brave-kompatibel).
-!   Gilt für alle Teaser-Typen – CSS-Regel .ts-picture--teaser-top/-teaser/-teaser-small
-!   verwendet einheitlich padding-top:56.25%.
-www.tagesschau.de##+js(set-style, .article-head__media, padding-bottom, 56.25%)
-www.tagesschau.de##+js(set-style, .teaser__media, padding-bottom, 56.25%)
+!   .article-head__media / .teaser__media haben height:0; Bild darin ist position:absolute →
+!   überlappt Titel und Folgeinhalt. Tagesschau setzt padding-bottom per JS; läuft in Brave nicht.
+!   set-style API: zweites Argument ist "property: value" als ein String (nicht kommagetrennt).
+www.tagesschau.de##+js(set-style, .article-head__media, padding-bottom: 56.25%)
+www.tagesschau.de##+js(set-style, .teaser__media, padding-bottom: 56.25%)
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer
 
