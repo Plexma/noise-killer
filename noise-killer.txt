@@ -864,12 +864,14 @@ www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.med
 ! Hinzugefügt 2026-03-30: Vorleseplayer ("Artikel anhören") im Artikelkopf
 !   div.mediaplayer--teaser-top.mediaplayer--audio – liest Artikeltext vor, kein Artikelinhalt
 www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
-! BUGFIX 2026-04-01: Artikel-Header-Bild überlappt Titel und Artikeltext
-!   article-head__media hat height:0; ts-picture__poster-wrapper darin ist position:absolute
-!   → Bild (448px) überdeckt Titel und Textabsätze darunter.
-!   Fix: Container komplett verstecken – height:0 ohnehin, kein Layout-Impact.
-!   :style()-Regeln funktionieren in Brave nicht (adblock-rust, einmalige Injektion).
-www.tagesschau.de##.article-head__media
+! BUGFIX 2026-04-01: Bild-Overlap auf Artikel- und Startseite
+!   .article-head__media / .teaser__media haben height:0 (nur absolut positioniertes Bild innen).
+!   Tagesschau setzt per JS padding-bottom auf den Container – dieses JS läuft in Brave nicht.
+!   Fix: padding-bottom:56.25% via set-style scriptlet (JS-Injektion, Brave-kompatibel).
+!   Gilt für alle Teaser-Typen – CSS-Regel .ts-picture--teaser-top/-teaser/-teaser-small
+!   verwendet einheitlich padding-top:56.25%.
+www.tagesschau.de##+js(set-style, .article-head__media, padding-bottom, 56.25%)
+www.tagesschau.de##+js(set-style, .teaser__media, padding-bottom, 56.25%)
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer
 
