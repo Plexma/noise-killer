@@ -866,9 +866,10 @@ www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.med
 www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
 ! BUGFIX 2026-04-01: Artikel-Header-Bild überlappt Titel und Artikeltext
 !   article-head__media hat height:0; ts-picture__poster-wrapper darin ist position:absolute
-!   → Bild überdeckt Titel und Textabsätze. Fix: padding-bottom:43.75% (= 448/1024, Seitenverhältnis
-!   des Bildes) gibt dem Container die korrekte Höhe und schiebt Titel + Text darunter.
-www.tagesschau.de##.article-head__media:style(padding-bottom: 43.75%)
+!   → Bild (448px) überdeckt Titel und Textabsätze darunter.
+!   Fix: Container komplett verstecken – height:0 ohnehin, kein Layout-Impact.
+!   :style()-Regeln funktionieren in Brave nicht (adblock-rust, einmalige Injektion).
+www.tagesschau.de##.article-head__media
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer
 
