@@ -1,7 +1,7 @@
 ## [2026-04-01] - Bugfix tagesschau.de Bild-Overlap, lto.de "Mehr zum Thema"
 
 ### Behoben
-- **tagesschau.de**: Artikel-Header-Bild überlappt Titel und Artikeltext – `ts-picture__poster-wrapper` (position:absolute, z-index:0) überdeckte `.article-head__data` und erste Textabsätze, weil `.article-head__media` height:0 hat. Fix via `:style()`: Titel/Teaser erhalten `z-index:1`, `.article-head--accent` erhält `min-height:448px`.
+- **tagesschau.de**: Artikel-Header-Bild überlappt Titel und Artikeltext – `.article-head__media` hat `height:0`, `ts-picture__poster-wrapper` darin ist `position:absolute` → Bild überdeckte Titel und erste Textabsätze. Fix: `.article-head__media:style(padding-bottom: 43.75%)` gibt dem Container das korrekte Seitenverhältnis (448/1024), Titel und Text erscheinen sauber unterhalb des Bildes.
 
 ### Hinzugefügt
 - **lto.de**: „Mehr zum Thema"-Tag-Links am Artikelende blockiert (`.article-text-wrapper > nav`).

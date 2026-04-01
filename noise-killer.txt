@@ -865,12 +865,10 @@ www.tagesschau.de##div.mediaplayer.mediaplayer--reduced-m.mediaplayer--audio.med
 !   div.mediaplayer--teaser-top.mediaplayer--audio – liest Artikeltext vor, kein Artikelinhalt
 www.tagesschau.de##div.mediaplayer--teaser-top.mediaplayer--audio
 ! BUGFIX 2026-04-01: Artikel-Header-Bild überlappt Titel und Artikeltext
-!   ts-picture__poster-wrapper (position:absolute, z-index:0) überdeckt article-head__data und
-!   erste Textabsätze, da article-head__media height:0 hat. Zwei Fixes via :style():
-!   1. article-head__data erhält z-index:1 → Titel/Teaser sichtbar über dem Bild
-!   2. article-head--accent erhält min-height:448px → Artikeltext startet unter dem Bild
-www.tagesschau.de##.article-head--accent .article-head__data:style(position: relative; z-index: 1)
-www.tagesschau.de##.article-head--accent:style(min-height: 448px)
+!   article-head__media hat height:0; ts-picture__poster-wrapper darin ist position:absolute
+!   → Bild überdeckt Titel und Textabsätze. Fix: padding-bottom:43.75% (= 448/1024, Seitenverhältnis
+!   des Bildes) gibt dem Container die korrekte Höhe und schiebt Titel + Text darunter.
+www.tagesschau.de##.article-head__media:style(padding-bottom: 43.75%)
 www.tagesschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.tagesschau.de##footer
 
