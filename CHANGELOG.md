@@ -1,4 +1,7 @@
-## [2026-04-03] - theverge.com: Follow-Buttons, Subscribe, Autoren-Bio, Inline-Related
+## [2026-04-03] - heise.de pvg-widget, theverge.com: Follow-Buttons, Subscribe, Autoren-Bio, Inline-Related
+
+### Behoben
+- **heise.de**: Inline-Preisvergleich-Shop-Box (PVG-Widget, `.pvg-widget`) blockiert – iframe-basierter Preisvergleich auf bestenlisten/testbericht-Seiten.
 
 ### Hinzugefügt
 - **theverge.com**: Topic/Autoren-Follow-Buttons (○-Kreise neben Themen-Tags und in der Byline) blockiert (`aside[id^="popover-"]`). Subscribe-Button in der Top-Navigation blockiert (`a[href="/subscribe"]`). Autoren-Bio-Box unterhalb des Artikel-Bildes blockiert (`.duet--ledes--standard-lede-bottom`). Inline-„Related"-Artikel-Box im Artikeltext blockiert (`.duet--article--related`).

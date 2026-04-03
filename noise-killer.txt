@@ -464,6 +464,9 @@ www.heise.de##div.gridWidgetTypeAffiliateLink
 www.heise.de##div.gridWidgetTypeTrackonomics
 www.heise.de##div.gridWidgetTypeStoryPriceAndRating
 www.heise.de##div.gridWidgetTypeBestenlistenRelatedBox
+! Hinzugefügt: 2026-04-03
+!   pvg-widget = Inline-Preisvergleich-/Shop-Box (PVG-Widget, iframe-basiert)
+www.heise.de##.pvg-widget
 
 ! --------------------------------------------------------------------------
 ! iFun
