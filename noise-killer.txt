@@ -895,6 +895,15 @@ www.theverge.com##.duet--article--comments-link
 www.theverge.com###zephr-anchor > span
 ! "Follow topics and authors"-Widget (Zephr, struktureller Selector)
 www.theverge.com###zephr-anchor > div:has(> span + ul)
+! Hinzugefügt: 2026-04-03
+! Topic/Autoren-Follow-Buttons (○-Kreise neben Themen-Tags und in der Byline)
+www.theverge.com##aside[id^="popover-"]
+! Subscribe-Button (Top-Navigation)
+www.theverge.com##a[href="/subscribe"]
+! Autoren-Bio-Box unterhalb des Artikel-Bildes
+www.theverge.com##.duet--ledes--standard-lede-bottom
+! Inline-"Related"-Artikel im Artikeltext
+www.theverge.com##.duet--article--related
 ! Site-Footer
 www.theverge.com##.duet--navigation--footer
 

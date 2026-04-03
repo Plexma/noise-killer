@@ -1,3 +1,10 @@
+## [2026-04-03] - theverge.com: Follow-Buttons, Subscribe, Autoren-Bio, Inline-Related
+
+### Hinzugefügt
+- **theverge.com**: Topic/Autoren-Follow-Buttons (○-Kreise neben Themen-Tags und in der Byline) blockiert (`aside[id^="popover-"]`). Subscribe-Button in der Top-Navigation blockiert (`a[href="/subscribe"]`). Autoren-Bio-Box unterhalb des Artikel-Bildes blockiert (`.duet--ledes--standard-lede-bottom`). Inline-„Related"-Artikel-Box im Artikeltext blockiert (`.duet--article--related`).
+
+---
+
 ## [2026-04-01] - tagesschau.de Neubau, lto.de "Mehr zum Thema"
 
 ### Hinzugefügt
