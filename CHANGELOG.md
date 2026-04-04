@@ -1,3 +1,10 @@
+## [2026-04-04] - startpage.com hinzugefügt
+
+### Hinzugefügt
+- **startpage.com**: App-Promo (Hamburger-Menü + Hero-Widget), Browser-Extension-Promo, Blog/Newsletter-Menü-Button, Marketing-Tagline und alle Marketing-Sektionen unterhalb der Suchleiste (Homepage) blockiert. Auf der Suchergebnisseite: Support-Banner, Feedback-Widget und Extension-Installations-Toast blockiert. Footer blockiert. Nur Suchleiste, Kategorien und Einstellungen bleiben sichtbar.
+
+---
+
 ## [2026-04-03] - heise.de pvg-widget, theverge.com: Follow-Buttons, Subscribe, Autoren-Bio, Inline-Related
 
 ### Behoben

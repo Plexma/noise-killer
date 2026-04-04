@@ -728,6 +728,34 @@ www.sportschau.de##footer
 www.sportschau.de##ul.buttongroup.buttongroup--copytext
 
 ! --------------------------------------------------------------------------
+! Startpage
+! Hinzugefügt 2026-04-04: App-Promo (Hamburger + Hero-Widget), Blog/Newsletter-
+!         Menü-Button, Marketing-Tagline, Below-Fold-Marketing-Sektionen (Homepage),
+!         Support-Banner, Feedback-Widget, Extension-Toast (Suchergebnisse), Footer.
+! --------------------------------------------------------------------------
+! Blog/Newsletter-Promo-Button im Nav ("Nix zu verbergen!"-Dropdown)
+www.startpage.com##div.blog-menu
+! App-Promo-Banner im Hamburger-Menü
+www.startpage.com##div.app-banner-promo-container
+! Extension + App-Widget im Hero
+www.startpage.com##div.privacy-extension-and-app-widget
+! Marketing-Tagline im Hero ("Die sicherste Suchmaschine der Welt")
+www.startpage.com##p.startpage-hero-tagline
+! Scroll-Down-Pfeil unter der Suchleiste
+www.startpage.com##div.home-hero-down-arrow
+! Alle Marketing-Sektionen unterhalb der Suchleiste (Homepage)
+www.startpage.com###home-below-the-fold-container
+! "Es ist einfach, Startpage zu unterstützen" – Promo auf Suchergebnisseite
+www.startpage.com##div.support-banner
+! Feedback-Widget auf Suchergebnisseite
+www.startpage.com##div.feedback-serp-container
+! Extension-Installations-Toast auf Suchergebnisseite
+www.startpage.com##div.extension-onboarding-serp-toast
+! Footer
+www.startpage.com##footer
+www.startpage.com##div.footer-container
+
+! --------------------------------------------------------------------------
 ! Sueddeutsche Zeitung
 ! BUGFIX: li > div entfernt (hat Audio-Player im Artikel-Toolbar geblockt).
 !         CSS-Hash-Klassen (.css-*) weiterhin weggelassen (instabil).

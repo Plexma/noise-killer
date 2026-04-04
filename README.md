@@ -73,6 +73,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | spiegel.de | 📰 📬 🦶 |
 | sportschau.de | 📢 🦶 |
 | stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
+| startpage.com | 📢 📬 🦶 |
 | steamdb.info | 📢 🦶 |
 | sueddeutsche.de | 📰 📬 📢 🦶 |
 | sz-magazin.sueddeutsche.de | 📰 🦶 |
