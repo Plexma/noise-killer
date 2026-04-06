@@ -644,6 +644,16 @@ www.pcgameshardware.de##div.header2.footer3
 www.pcgameshardware.de##ul.rowAlt.footer2
 
 ! --------------------------------------------------------------------------
+! Raider.IO
+! Hinzugefügt: 2026-04-06
+! Footer (Navigation, Links, Copyright, Socials)
+raider.io##.rio-footer--bg
+! Cookie-Consent-Banner
+raider.io##.cookie-footer--wrapper
+! Adblock-Erkennungs-Modal
+raider.io##.adblock-modal__overlay
+
+! --------------------------------------------------------------------------
 ! Spiegel
 ! BUGFIX: Alte Filter (div:nth-of-type(3) > div, nav[role],
 !         section[data-sara-click-el][data-area][data-pos]) haben den
@@ -835,8 +845,10 @@ www.sueddeutsche.de##div.tik4-sharing
 !         „Themen"-Buttons und „Internationale Politik von A bis Z"-Navigation
 !         am Artikelende.
 ! --------------------------------------------------------------------------
-! Schlagzeilen-Ticker-Box
-www.t-online.de##div.rounded-8.bg-alpine.p-12
+! Schlagzeilen-Ticker-Box (Inline im Artikel)
+! BUGFIX 2026-04-06: div.rounded-8.bg-alpine.p-12 traf falschen Tag (ist ein aside).
+!                   Ersetzt durch stabilen data-testid-Selektor.
+www.t-online.de##aside[data-testid="Stage.Schlagzeilen.Inline"]
 ! Verwandte Artikel Sidebar-Liste
 www.t-online.de##ul[data-testid="RelatedArticles.List"]
 ! Empfehlungsboxen

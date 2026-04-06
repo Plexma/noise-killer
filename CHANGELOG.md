@@ -1,3 +1,13 @@
+## [2026-04-06] - raider.io hinzugefügt, t-online.de Schlagzeilen-Fix
+
+### Hinzugefügt
+- **raider.io**: Footer (`.rio-footer--bg`), Cookie-Consent-Banner (`.cookie-footer--wrapper`) und Adblock-Erkennungs-Modal (`.adblock-modal__overlay`) blockiert.
+
+### Behoben
+- **t-online.de**: Schlagzeilen-Inline-Box war nicht blockiert – Selektor `div.rounded-8.bg-alpine.p-12` traf falschen Tag (Element ist ein `aside`). Ersetzt durch `aside[data-testid="Stage.Schlagzeilen.Inline"]`.
+
+---
+
 ## [2026-04-04] - startpage.com hinzugefügt
 
 ### Hinzugefügt
