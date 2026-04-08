@@ -473,9 +473,15 @@ www.heise.de##.pvg-widget
 ! Hinzugefügt 2026-03-18: #article-single-comments (Kommentarsektion).
 ! BUGFIX 2026-03-18: #article-single-stats ergänzt – enthält Kommentar-Link
 !         ("2 Kommentare") und Mastodon-Share-Button am Artikelanfang.
+! Hinzugefügt 2026-04-08: Startseiten-Noise – Share-Buttons (#viewport-share),
+!         Kommentar-Badges (.comments-block), Ad-Platzhalter (.consumernotice)
 ! --------------------------------------------------------------------------
 www.ifun.de###article-single-comments
 www.ifun.de###article-single-stats
+www.ifun.de###viewport-share
+www.ifun.de##.comments-block
+www.ifun.de##.comments-block-mobile
+www.ifun.de##.consumernotice
 www.ifun.de##div > div > div > form[action][method]
 www.ifun.de##footer
 
@@ -484,10 +490,16 @@ www.ifun.de##footer
 ! Hinzugefügt 2026-03-18: #article-single-comments (Kommentarsektion).
 ! BUGFIX 2026-03-18: #article-single-stats ergänzt – enthält Kommentar-Link
 !         ("13 Kommentare") und Mastodon-Share-Button am Artikelanfang.
+! Hinzugefügt 2026-04-08: Startseiten-Noise – Share-Buttons (#viewport-share),
+!         Kommentar-Badges (.comments-block), Ad-Platzhalter (.consumernotice)
 ! --------------------------------------------------------------------------
 www.iphone-ticker.de###article-single-comments
 www.iphone-ticker.de###article-single-stats
 www.iphone-ticker.de###verbraucherhinweis-mobile-300x250
+www.iphone-ticker.de###viewport-share
+www.iphone-ticker.de##.comments-block
+www.iphone-ticker.de##.comments-block-mobile
+www.iphone-ticker.de##.consumernotice
 www.iphone-ticker.de##div > div > div > form[action][method]
 www.iphone-ticker.de##footer
 
@@ -650,8 +662,14 @@ www.pcgameshardware.de##ul.rowAlt.footer2
 raider.io##.rio-footer--bg
 ! Cookie-Consent-Banner
 raider.io##.cookie-footer--wrapper
-! Adblock-Erkennungs-Modal
+! Adblock-Erkennungs-Modal (Overlay + Modal-Box)
 raider.io##.adblock-modal__overlay
+raider.io##.adblock-modal
+! Inline-Eigenwerbung: "Raider.IO News"-Sidebar + Support-Plea
+! Hinzugefügt: 2026-04-08
+raider.io##.rio-sidebar-section
+! "Get App & AddOn"-CTA-Button in der Navigation
+raider.io##button.slds-button--raiderio-gradient
 
 ! --------------------------------------------------------------------------
 ! Spiegel

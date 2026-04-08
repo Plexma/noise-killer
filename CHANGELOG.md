@@ -1,3 +1,12 @@
+## [2026-04-08] - iphone-ticker.de / ifun.de Startseiten-Noise, raider.io Eigenwerbung
+
+### Behoben / Erweitert
+- **iphone-ticker.de**: Startseiten-Noise ergänzt – Share-Buttons pro Artikel (`#viewport-share`), Kommentar-Badges (`.comments-block`, `.comments-block-mobile`), Google-Ad-Platzhalter (`.consumernotice`).
+- **ifun.de**: Gleiche Ergänzungen wie iphone-ticker.de (identische Plattform).
+- **raider.io**: Adblock-Modal-Box (`.adblock-modal`) ergänzt – Overlay war schon blockiert, aber die Modal-Box selbst noch nicht. Inline-Eigenwerbung blockiert: „Raider.IO News"-Sidebar + Support-Plea (`.rio-sidebar-section`), „Get App & AddOn"-CTA-Button (`button.slds-button--raiderio-gradient`).
+
+---
+
 ## [2026-04-06] - raider.io hinzugefügt, t-online.de Schlagzeilen-Fix
 
 ### Hinzugefügt
