@@ -670,6 +670,10 @@ raider.io##.adblock-modal
 raider.io##.rio-sidebar-section
 ! "Get App & AddOn"-CTA-Button in der Navigation
 raider.io##button.slds-button--raiderio-gradient
+! Inline-Promo-Zeilen in der Rankings-Tabelle ("Midnight"-Teaser, AddOns-Promo,
+! "Support Raider.IO"-Plea) – td.rio-simple-table-cell ist exklusiv für diese Zeilen
+! Hinzugefügt: 2026-04-08
+raider.io##td.rio-simple-table-cell
 
 ! --------------------------------------------------------------------------
 ! Spiegel
