@@ -1,16 +1,15 @@
-## [2026-04-08] - raider.io Startseiten-Noise
-
-### Hinzugefügt / Behoben
-- **raider.io**: Startseiten-Noise blockiert – Merch-Banner + YouTube-Embed in der rechten Sidebar (`.rio-right-pane > section`), 3× inline „Support Raider.IO"-Plea (`.slds-text-align--center.slds-m-vertical--large`), Guild-Recruitment-Sektion (`.rio-recruitment-pane`), „Midnight is upon us"-Promo-Banner 2× (`#content .slds-m-top--large:has(.slds-button--raiderio)`), Selbstbeschreibungs-Blurb (`.slds-grid.align-justify`).
-
----
-
 ## [2026-04-08] - iphone-ticker.de / ifun.de Startseiten-Noise, raider.io Eigenwerbung
 
-### Behoben / Erweitert
+### Hinzugefügt / Behoben
 - **iphone-ticker.de**: Startseiten-Noise ergänzt – Share-Buttons pro Artikel (`#viewport-share`), Kommentar-Badges (`.comments-block`, `.comments-block-mobile`), Google-Ad-Platzhalter (`.consumernotice`).
 - **ifun.de**: Gleiche Ergänzungen wie iphone-ticker.de (identische Plattform).
-- **raider.io**: Promo-Banner über der Rankings-Tabelle blockiert (`#content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small`). Adblock-Modal-Box (`.adblock-modal`) ergänzt – Overlay war schon blockiert, aber die Modal-Box selbst noch nicht. Inline-Eigenwerbung blockiert: „Raider.IO News"-Sidebar + Support-Plea (`.rio-sidebar-section`), „Get App & AddOn"-CTA-Button (`button.slds-button--raiderio-gradient`), Inline-Promo-Zeilen in der Rankings-Tabelle (`td.rio-simple-table-cell`) – „Midnight"-Teaser, AddOns-Promo, Support-Plea-Banner.
+- **raider.io**: Umfangreiche Erweiterung der bestehenden Filter –
+  - Adblock-Modal-Box (`.adblock-modal`) ergänzt (Overlay war schon blockiert)
+  - „Raider.IO News"-Sidebar + Support-Plea (`.rio-sidebar-section`)
+  - „Get App & AddOn"-CTA-Button (`button.slds-button--raiderio-gradient`)
+  - Inline-Promo-Zeilen in der Rankings-Tabelle (`tr:has(> td.rio-simple-table-cell)`)
+  - Promo-Banner über der Rankings-Tabelle (`#content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small`)
+  - Startseite: Merch-Banner + YouTube-Embed (`.rio-right-pane > section`), 3× „Support Raider.IO"-Plea (`.slds-text-align--center.slds-m-vertical--large`), Guild-Recruitment (`.rio-recruitment-pane`), „Midnight is upon us"-Promo 2× (`#content .slds-m-top--large:has(.slds-button--raiderio)`), Selbstbeschreibungs-Blurb (`.slds-grid.align-justify`)
 
 ---
 
