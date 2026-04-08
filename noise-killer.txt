@@ -677,6 +677,17 @@ raider.io##tr:has(> td.rio-simple-table-cell)
 ! Promo-Banner über der Rankings-Tabelle ("Midnight is upon us" etc.)
 ! Direkt-Kind des Content-Wrappers – slds-m-bottom--small ist hier exklusiv für Promo
 raider.io###content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small
+! Startseite – Hinzugefügt: 2026-04-08
+! Rechte Sidebar: Merch-Banner-Link + YouTube-Embed (section-Tags direkt in rio-right-pane)
+raider.io##.rio-right-pane > section
+! Inline „Support Raider.IO"-Pleas (3x zwischen den Ranking-Blöcken)
+raider.io##.slds-text-align--center.slds-m-vertical--large
+! Guild Recruitment-Sektion
+raider.io##.rio-recruitment-pane
+! „Midnight is upon us"-Promo-Banner (2 Instanzen auf der Startseite)
+raider.io###content .slds-m-top--large:has(.slds-button--raiderio)
+! „Raider.IO is a WoW site"-Selbstbeschreibungs-Blurb
+raider.io##.slds-grid.align-justify
 
 ! --------------------------------------------------------------------------
 ! Spiegel

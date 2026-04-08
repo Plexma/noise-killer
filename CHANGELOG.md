@@ -1,3 +1,10 @@
+## [2026-04-08] - raider.io Startseiten-Noise
+
+### Hinzugefügt / Behoben
+- **raider.io**: Startseiten-Noise blockiert – Merch-Banner + YouTube-Embed in der rechten Sidebar (`.rio-right-pane > section`), 3× inline „Support Raider.IO"-Plea (`.slds-text-align--center.slds-m-vertical--large`), Guild-Recruitment-Sektion (`.rio-recruitment-pane`), „Midnight is upon us"-Promo-Banner 2× (`#content .slds-m-top--large:has(.slds-button--raiderio)`), Selbstbeschreibungs-Blurb (`.slds-grid.align-justify`).
+
+---
+
 ## [2026-04-08] - iphone-ticker.de / ifun.de Startseiten-Noise, raider.io Eigenwerbung
 
 ### Behoben / Erweitert
