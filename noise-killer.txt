@@ -674,6 +674,9 @@ raider.io##button.slds-button--raiderio-gradient
 ! "Support Raider.IO"-Plea) – td.rio-simple-table-cell ist exklusiv für diese Zeilen
 ! Hinzugefügt: 2026-04-08
 raider.io##tr:has(> td.rio-simple-table-cell)
+! Promo-Banner über der Rankings-Tabelle ("Midnight is upon us" etc.)
+! Direkt-Kind des Content-Wrappers – slds-m-bottom--small ist hier exklusiv für Promo
+raider.io###content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small
 
 ! --------------------------------------------------------------------------
 ! Spiegel

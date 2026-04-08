@@ -3,7 +3,7 @@
 ### Behoben / Erweitert
 - **iphone-ticker.de**: Startseiten-Noise ergänzt – Share-Buttons pro Artikel (`#viewport-share`), Kommentar-Badges (`.comments-block`, `.comments-block-mobile`), Google-Ad-Platzhalter (`.consumernotice`).
 - **ifun.de**: Gleiche Ergänzungen wie iphone-ticker.de (identische Plattform).
-- **raider.io**: Adblock-Modal-Box (`.adblock-modal`) ergänzt – Overlay war schon blockiert, aber die Modal-Box selbst noch nicht. Inline-Eigenwerbung blockiert: „Raider.IO News"-Sidebar + Support-Plea (`.rio-sidebar-section`), „Get App & AddOn"-CTA-Button (`button.slds-button--raiderio-gradient`), Inline-Promo-Zeilen in der Rankings-Tabelle (`td.rio-simple-table-cell`) – „Midnight"-Teaser, AddOns-Promo, Support-Plea-Banner.
+- **raider.io**: Promo-Banner über der Rankings-Tabelle blockiert (`#content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small`). Adblock-Modal-Box (`.adblock-modal`) ergänzt – Overlay war schon blockiert, aber die Modal-Box selbst noch nicht. Inline-Eigenwerbung blockiert: „Raider.IO News"-Sidebar + Support-Plea (`.rio-sidebar-section`), „Get App & AddOn"-CTA-Button (`button.slds-button--raiderio-gradient`), Inline-Promo-Zeilen in der Rankings-Tabelle (`td.rio-simple-table-cell`) – „Midnight"-Teaser, AddOns-Promo, Support-Plea-Banner.
 
 ---
 
