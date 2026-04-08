@@ -673,7 +673,7 @@ raider.io##button.slds-button--raiderio-gradient
 ! Inline-Promo-Zeilen in der Rankings-Tabelle ("Midnight"-Teaser, AddOns-Promo,
 ! "Support Raider.IO"-Plea) – td.rio-simple-table-cell ist exklusiv für diese Zeilen
 ! Hinzugefügt: 2026-04-08
-raider.io##td.rio-simple-table-cell
+raider.io##tr:has(> td.rio-simple-table-cell)
 
 ! --------------------------------------------------------------------------
 ! Spiegel
