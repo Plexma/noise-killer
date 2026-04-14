@@ -512,11 +512,17 @@ www.lto.de##.article-teaser-list
 ! Hinzugefügt: 2026-04-01: "Mehr zum Thema"-Tag-Links am Artikelende
 www.lto.de##.article-text-wrapper > nav
 www.lto.de##.jobwidget
+! Hinzugefügt: 2026-04-14
+www.lto.de##.newsletter-subscription-block
+! Hinzugefügt: 2026-04-14: Inline-Podcast-Player (letscast.fm)
+www.lto.de##div:has(> script[src*="letscast.fm"])
 www.lto.de##.toolbar.boxed
 www.lto.de##.tx-lto-events
 www.lto.de##div[novalidate][x-data]
 www.lto.de##footer
 www.lto.de##section.content__related
+! Hinzugefügt: 2026-04-14: Schlagwort-Tags am Artikelende
+www.lto.de##ul.tags
 
 ! --------------------------------------------------------------------------
 ! MacRumors

@@ -1,3 +1,12 @@
+## [2026-04-14] - lto.de Podcast-Player, Newsletter, Tags
+
+### Hinzugefügt
+- **lto.de**: Inline-Podcast-Player (letscast.fm-Embed) blockiert (`div:has(> script[src*="letscast.fm"])`)
+- **lto.de**: Newsletter-Anmelde-Boxen (`.newsletter-subscription-block`)
+- **lto.de**: Schlagwort-Tags am Artikelende (`ul.tags`)
+
+---
+
 ## [2026-04-08] - iphone-ticker.de / ifun.de Startseiten-Noise, raider.io Eigenwerbung
 
 ### Hinzugefügt / Behoben

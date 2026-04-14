@@ -61,7 +61,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | hsreplay.net | 🦶 |
 | ifun.de / iphone-ticker.de | 💬 📬 🔗 🦶 |
 | imgur.com | 📰 |
-| lto.de | 📰 📢 🦶 |
+| lto.de | 📰 📬 📢 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
 | mydealz.de | 🪧 🦶 |
