@@ -1,3 +1,12 @@
+## [2026-04-14] - lto.de Podcast-Player, Newsletter, Tags; t-online.de Inline-Teaserboxen
+
+### Hinzugefügt
+- **t-online.de**: Inline-Artikelteaser im Fließtext (Magenta-Aufzählung mit Artikellinks, `StageLayout.StreamItem:has(> ul[class*="before:bg-magenta"])`)
+- **t-online.de**: Post-Artikel-Teaserboxen nach dem Artikelende (`StageLayout.StreamItem:has(> article)`)
+- **t-online.de**: Taboola-Feed (`TaboolaFeed`, `TaboolaFeeds.Feed`)
+
+---
+
 ## [2026-04-14] - lto.de Podcast-Player, Newsletter, Tags
 
 ### Hinzugefügt

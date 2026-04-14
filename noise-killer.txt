@@ -905,6 +905,13 @@ www.t-online.de##div[data-testid="Commercial.SDI"]
 www.t-online.de##div[data-testid="PageFooter"]
 ! Artikelende-Abschnitte: Neueste Artikel, Themen, Themennavigation
 www.t-online.de##div[data-testid="Page.PageStages"]
+! Hinzugefügt: 2026-04-14: Inline-Artikelteaser (Magenta-Aufzählung im Fließtext)
+www.t-online.de##[data-testid="StageLayout.StreamItem"]:has(> ul[class*="before:bg-magenta"])
+! Hinzugefügt: 2026-04-14: Post-Artikel-Teaserboxen nach dem Artikelende
+www.t-online.de##[data-testid="StageLayout.StreamItem"]:has(> article)
+! Hinzugefügt: 2026-04-14: Taboola-Feed
+www.t-online.de##[data-testid="TaboolaFeed"]
+www.t-online.de##[data-testid="TaboolaFeeds.Feed"]
 
 ! --------------------------------------------------------------------------
 ! Tagesschau
