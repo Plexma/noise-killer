@@ -1,3 +1,12 @@
+## [2026-04-15] - heise.de Autoren-Bio und Inline-Promo-Banner
+
+### Hinzugefügt
+- **heise.de**: Autoren-Bio-Box in der rechten Sidebar (`section.article-sidebar`)
+- **heise.de**: Inline-Autoren-Dossier im Artikeltext – Mobile-Ansicht (`.js-dossier`)
+- **heise.de**: Inline-Promo-/Hinweis-Banner im Artikelkopf (`details.notice-banner`)
+
+---
+
 ## [2026-04-14] - lto.de Podcast-Player, Newsletter, Tags; t-online.de Inline-Teaserboxen
 
 ### Hinzugefügt

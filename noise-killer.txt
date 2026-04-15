@@ -467,6 +467,13 @@ www.heise.de##div.gridWidgetTypeBestenlistenRelatedBox
 ! Hinzugefügt: 2026-04-03
 !   pvg-widget = Inline-Preisvergleich-/Shop-Box (PVG-Widget, iframe-basiert)
 www.heise.de##.pvg-widget
+! Hinzugefügt: 2026-04-15
+!   article-sidebar      = Autoren-Bio-Box in der rechten Sidebar (Desktop)
+!   js-dossier           = Inline-Autoren-Dossier im Artikeltext (Mobile)
+!   details.notice-banner = Inline-Promo-/Hinweis-Banner im Artikelkopf
+www.heise.de##section.article-sidebar
+www.heise.de##.js-dossier
+www.heise.de##details.notice-banner
 
 ! --------------------------------------------------------------------------
 ! iFun
