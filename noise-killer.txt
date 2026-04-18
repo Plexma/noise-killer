@@ -703,6 +703,26 @@ raider.io###content .slds-m-top--large:has(.slds-button--raiderio)
 raider.io##.slds-grid.align-justify
 
 ! --------------------------------------------------------------------------
+! rbb24
+! Hinzugefügt: 2026-04-18
+! Floating Social-Share-Bar (TikTok, Instagram, Facebook, YouTube etc.)
+www.rbb24.de##.bottom-nav-article
+! Kommentar-Link + Social-Share in Artikel (interaction-bar)
+www.rbb24.de##.interaction-bar
+! Inline Artikel-Empfehlung im Fließtext (clinker-Teaser)
+www.rbb24.de##.container__article-component--small
+! Sendungshinweis (kursiver Absatz am Artikelende)
+www.rbb24.de##.container__article-component:has(> .component-text > p > i)
+! Tag-Liste am Artikelende
+www.rbb24.de##.container__article-component.tags
+! Kommentarbereich
+www.rbb24.de##section.container.section--white.section--rounded
+! „Mehr bei rbb|24" Artikel-Empfehlungen
+www.rbb24.de##section.section__stacked
+! Footer
+www.rbb24.de##footer.footer
+
+! --------------------------------------------------------------------------
 ! Spiegel
 ! BUGFIX: Alte Filter (div:nth-of-type(3) > div, nav[role],
 !         section[data-sara-click-el][data-area][data-pos]) haben den

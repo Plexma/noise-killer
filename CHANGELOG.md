@@ -1,3 +1,17 @@
+## [2026-04-18] - rbb24.de hinzugefügt
+
+### Hinzugefügt
+- **rbb24.de**: Floating Social-Share-Bar (TikTok, Instagram, Facebook, YouTube etc., `.bottom-nav-article`)
+- **rbb24.de**: Kommentar-Link und Social-Share im Artikel (`.interaction-bar`)
+- **rbb24.de**: Inline Artikel-Empfehlung im Fließtext (`.container__article-component--small`)
+- **rbb24.de**: Sendungshinweis am Artikelende (`.container__article-component:has(> .component-text > p > i)`)
+- **rbb24.de**: Tag-Liste am Artikelende (`.container__article-component.tags`)
+- **rbb24.de**: Kommentarbereich (`section.container.section--white.section--rounded`)
+- **rbb24.de**: „Mehr bei rbb|24" Artikel-Empfehlungen (`section.section__stacked`)
+- **rbb24.de**: Footer (`footer.footer`)
+
+---
+
 ## [2026-04-15] - heise.de Autoren-Bio und Inline-Promo-Banner
 
 ### Hinzugefügt

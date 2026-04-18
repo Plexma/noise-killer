@@ -71,6 +71,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | nytimes.com | 📰 🦶 |
 | pcgameshardware.de | 💬 📢 🦶 |
 | raider.io | 📢 🪧 🦶 |
+| rbb24.de | 💬 📱 📰 📬 🏷️ 🦶 |
 | spiegel.de | 📰 📬 🦶 |
 | sportschau.de | 📢 🦶 |
 | stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
