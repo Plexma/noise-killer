@@ -298,6 +298,17 @@ www.faz.net##[data-external-selector="html-element"]
 ! BUGFIX 2026-03-28: Artikel-Toolbar (Anhören / Merken / Teilen / Drucken / Zusammenfassung)
 !   aside[data-external-selector="upper-toolbar"] – auf expliziten Nutzerwunsch blockiert
 www.faz.net##aside[data-external-selector="upper-toolbar"]
+! BUGFIX 2026-05-13: Auto-Sprung zu /aktuell/#overscroll-article auf Mobile
+!   FAZ.net Mobile hat eine "Overscroll → nächster Artikel"-Mechanik. Ein
+!   Sentinel-Element am Artikelende wird per IntersectionObserver beobachtet und
+!   triggert nach ~10-20 s scrollen die Navigation zur Aktuell-Übersicht.
+!   In Kombination mit unseren Cosmetic-Filtern (die Container nach dem Artikel-
+!   text entfernen und damit die Trigger-Zone in den sichtbaren Bereich ziehen)
+!   feuerte der Handler bereits beim normalen Scrollen.
+!   Fix: Sentinel direkt entfernen, bevor der Observer ihn beobachten kann.
+www.faz.net###overscroll-article
+www.faz.net##[data-external-selector="overscroll-article"]
+www.faz.net##[class*="overscroll-article"]
 
 ! --------------------------------------------------------------------------
 ! Focus.de

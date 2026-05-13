@@ -1,3 +1,10 @@
+## [2026-05-13] - faz.net Auto-Sprung zur Aktuell-Übersicht behoben
+
+### Behoben
+- **faz.net**: Auf Mobile sprang die Seite nach ca. 10–20 Sekunden ohne Nutzerinteraktion zur Aktuell-Übersicht (`/aktuell/#overscroll-article`), meist nach kurzem Scrollen im Artikel. Ursache: ein Overscroll-Sentinel am Artikelende wird per IntersectionObserver beobachtet; weil unsere Cosmetic-Filter Container unterhalb des Artikeltexts entfernen, rutschte der Trigger schon beim normalen Scrollen in den sichtbaren Bereich. Sentinel wird jetzt direkt entfernt (`#overscroll-article`, `[data-external-selector="overscroll-article"]`, `[class*="overscroll-article"]`).
+
+---
+
 ## [2026-04-18] - rbb24.de hinzugefügt
 
 ### Hinzugefügt
