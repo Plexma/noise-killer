@@ -413,6 +413,10 @@ www.golem.de##main > div.go-tag-list
 !         app-storyline-element-Wrapper (display:grid, marginTop:40px) blieb sichtbar
 !         und hinterließ Leerraum zwischen Absätzen. Fix: Wrapper via :has() mitblocken.
 ! --------------------------------------------------------------------------
+! Hinzugefügt 2026-05-13: app-google-preferred-source (Top-Ribbon „Legen Sie das
+!         Handelsblatt als Ihre wichtige Nachrichtenquelle fest"),
+!         app-storyline-element:has(> app-storyline-teaser) (Inline-Artikel-Teaser
+!         im Fließtext, Wrapper-Pattern wie app-storyline-embed).
 www.handelsblatt.com##app-advertisement
 www.handelsblatt.com##app-commercial-teaser
 www.handelsblatt.com##app-commercial-teaser-group
@@ -420,7 +424,9 @@ www.handelsblatt.com##app-content-advertisement
 www.handelsblatt.com##app-detail-page-content-footer
 www.handelsblatt.com##app-detail-page-footer
 www.handelsblatt.com##app-embed
+www.handelsblatt.com##app-google-preferred-source
 www.handelsblatt.com##app-storyline-element:has(> app-storyline-embed)
+www.handelsblatt.com##app-storyline-element:has(> app-storyline-teaser)
 www.handelsblatt.com##app-storyline-element:has-text(/^Mehr:/)
 www.handelsblatt.com##app-storyline-element:not(:has(*))
 www.handelsblatt.com##app-follow-topic-button
@@ -534,6 +540,8 @@ www.lto.de##.jobwidget
 www.lto.de##.newsletter-subscription-block
 ! Hinzugefügt: 2026-04-14: Inline-Podcast-Player (letscast.fm)
 www.lto.de##div:has(> script[src*="letscast.fm"])
+! Hinzugefügt: 2026-05-13: Opinary-Live-Abstimmungs-Widget (Inline-Umfrage im Artikel)
+www.lto.de##div#opinary-root
 www.lto.de##.toolbar.boxed
 www.lto.de##.tx-lto-events
 www.lto.de##div[novalidate][x-data]

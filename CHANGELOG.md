@@ -1,3 +1,12 @@
+## [2026-05-13] - handelsblatt.com Google-Preferred-Source-Ribbon, lto.de Opinary-Umfrage
+
+### Hinzugefügt
+- **handelsblatt.com**: Google-Preferred-Source-Top-Ribbon „Legen Sie das Handelsblatt als Ihre wichtige Nachrichtenquelle fest" (`app-google-preferred-source`)
+- **handelsblatt.com**: Inline-Artikel-Teaser im Fließtext (`app-storyline-element:has(> app-storyline-teaser)`)
+- **lto.de**: Opinary-Live-Abstimmungs-Widget im Artikel (`div#opinary-root`)
+
+---
+
 ## [2026-05-13] - faz.net Auto-Sprung zur Aktuell-Übersicht behoben
 
 ### Behoben
