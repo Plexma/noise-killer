@@ -8,7 +8,7 @@ Das eigentliche Problem moderner Nachrichtenseiten ist längst nicht mehr klassi
 
 **noise-killer** ist eine Adblock-Filterliste, die genau diesen Lärm beseitigt. Entstanden aus dem Wunsch, Nachrichtenartikel einfach ungestört lesen zu können, wurde die Liste mit der Zeit um weitere störende Elemente und auch abseits von reinen Nachrichtenseiten erweitert – Footer, Social-Bars, Teaser –, die auf Seiten nichts verloren haben, wenn man nur den Content möchte. Dabei gilt: Seiten werden entschlackt, nicht kaputt gemacht. Bilder, Videos, Audio-Player und alle anderen Medieninhalte, die zum Artikel gehören, bleiben selbstverständlich unangetastet – genau wie der gesamte Artikeltext und alle Funktionen.
 
-Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** – jeweils auf Desktop und Mobile. Grundsätzlich funktioniert die Liste mit jedem Browser oder Adblocker, der das Adblock-Filterlistenformat (ABP-Syntax) verarbeiten kann.
+Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und **Vivaldi** – jeweils auf Desktop und Mobile. Grundsätzlich funktioniert die Liste mit jedem Browser oder Adblocker, der das Adblock-Filterlistenformat (ABP-Syntax) verarbeiten kann.
 
 > Hobbyprojekt, gepflegt per Vibe Coding mit [Claude](https://claude.ai).
 
@@ -87,7 +87,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 | theverge.com | 💬 📰 📬 📢 🦶 |
 | tomsguide.com | 💬 📬 🛍️ 🦶 |
 | tracker.gg | 📢 🦶 |
-| transfermarkt.de | 📢 🦶 |
+| transfermarkt.de | 💬 📰 📢 🦶 |
 | wowhead.com | 📢 🦶 |
 | zdfheute.de | 📰 🔗 🦶 |
 | zeit.de | 💬 📢 🦶 |
@@ -112,6 +112,15 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard** und **Brave** �
 ### Brave
 1. `brave://settings/shields/filters` öffnen
 2. URL unter **Eigene Filterlisten** eintragen
+
+### Vivaldi
+Vivaldis eingebauter Tracker- und Werbeblocker basiert auf derselben adblock-rust-Engine wie Brave – die Liste funktioniert daher ohne Extension:
+
+1. `vivaldi://settings/blocker` öffnen
+2. Unter **Werbeblocker-Quellen** auf **Quelle hinzufügen** klicken
+3. URL eintragen
+
+Alternativ funktioniert in Vivaldi auch jede Chromium-Extension – also genauso uBlock Origin, AdBlock Plus oder AdGuard.
 
 **URL für alle:**
 ```

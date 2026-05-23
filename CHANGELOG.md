@@ -1,3 +1,16 @@
+## [2026-05-23] - heise.de Videos-Widget, transfermarkt.de Eigenwerbung & Kommentare, Vivaldi-Kompatibilität
+
+### Hinzugefügt
+- **heise.de**: „Videos by heise"-Eigenwerbungs-Widget im Artikeltext (Inline-Block mit „c't 3003 / heise & ct / Peertube"-Tabs und eingebetteten heise-Videos, `div.ad.ad--inread`)
+- **transfermarkt.de**: „Transfermarkt Videos"-Eigenwerbungs-Box auf Spielerprofilen (`section.box`)
+- **transfermarkt.de**: „Andere Spieler"-Empfehlungen in Hauptspalte und Sidebar (`#recommender`, `#recommender_sidebar`)
+- **transfermarkt.de**: Kommentar-/Diskussions-Box am Profilende (`.player-discussions`)
+
+### Geändert
+- **README.md**: Vivaldi als unterstützten Browser ergänzt (Installations-Abschnitt für den eingebauten Tracker- und Werbeblocker sowie Hinweis, dass die Liste auch via uBlock Origin / AdBlock Plus / AdGuard-Extension in Vivaldi funktioniert). Die Cosmetic-Filter selbst sind unverändert kompatibel, da Vivaldis Built-in-Blocker auf derselben adblock-rust-Engine wie Brave basiert.
+
+---
+
 ## [2026-05-13] - handelsblatt.com Google-Preferred-Source-Ribbon, lto.de Opinary-Umfrage
 
 ### Hinzugefügt

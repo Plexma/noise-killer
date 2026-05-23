@@ -491,6 +491,10 @@ www.heise.de##.pvg-widget
 www.heise.de##section.article-sidebar
 www.heise.de##.js-dossier
 www.heise.de##details.notice-banner
+! Hinzugefügt: 2026-05-23
+!   div.ad.ad--inread = „Videos by heise"-Eigenwerbungs-Widget im Artikeltext
+!     (Inline-Block mit „c't 3003 / heise & ct / Peertube"-Tabs, eingebettete heise-Videos)
+www.heise.de##div.ad.ad--inread
 
 ! --------------------------------------------------------------------------
 ! iFun
@@ -1064,10 +1068,18 @@ www.tomsguide.com##section.mx-2.my-5
 
 ! --------------------------------------------------------------------------
 ! Transfermarkt
+! Hinzugefügt: 2026-05-23 (Spielerprofil-Audit)
+!   section.box = „Transfermarkt Videos"-Eigenwerbungs-Box (einziges SECTION.box auf der Seite)
+!   #recommender / #recommender_sidebar = „Andere Spieler"-Empfehlungen (Hauptspalte + Sidebar)
+!   .player-discussions = Kommentar-/Diskussions-Box am Profilende
 ! --------------------------------------------------------------------------
 www.transfermarkt.de##a[href][target][onclick]
 www.transfermarkt.de##footer
 www.transfermarkt.de##main > div > div > section
+www.transfermarkt.de##section.box
+www.transfermarkt.de###recommender
+www.transfermarkt.de###recommender_sidebar
+www.transfermarkt.de##.player-discussions
 
 ! --------------------------------------------------------------------------
 ! Wowhead
