@@ -55,7 +55,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | faz.net | 📰 📬 📢 🦶 |
 | focus.de | 💬 📢 🦶 |
 | gamestar.de | 💬 📬 📰 📢 🦶 |
-| golem.de | 💬 📬 📢 🦶 |
+| golem.de | 💬 📬 📢 🪧 🦶 |
 | handelsblatt.com | 📰 📢 🪧 🦶 |
 | heise.de | 📰 📬 📢 🛍️ 🦶 |
 | hsreplay.net | 🦶 |

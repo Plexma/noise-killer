@@ -1,3 +1,10 @@
+## [2026-05-23] - golem.de Chat-Bubble
+
+### Hinzugefügt
+- **golem.de**: ZipChat-Chat-Bubble / Coaching-Chat-Widget (Floating-Widget unten rechts, AI-Chat mit Coaching-/Karriere-Greetings, `#zipchat-shadow-host`)
+
+---
+
 ## [2026-05-23] - heise.de Videos-Widget, transfermarkt.de Eigenwerbung & Kommentare, Vivaldi-Kompatibilität
 
 ### Hinzugefügt

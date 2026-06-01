@@ -392,6 +392,11 @@ www.golem.de##div.go-teaser-block.go-teaser-block--small-text
 www.golem.de##div.go-toolbar
 www.golem.de##footer
 www.golem.de##main > div.go-tag-list
+! Hinzugefügt: 2026-05-23
+!   #zipchat-shadow-host = ZipChat-Chat-Bubble (Floating-Widget mit Shadow-DOM, AI-Chat
+!     mit Coaching-/Karriere-Greetings; Host nutzt display:contents – die eigentliche
+!     Bubble + #widget-chat-button + #bubble-icon stecken im Shadow-DOM)
+www.golem.de###zipchat-shadow-host
 
 ! --------------------------------------------------------------------------
 ! Handelsblatt
