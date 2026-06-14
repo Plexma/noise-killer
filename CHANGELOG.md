@@ -1,3 +1,10 @@
+## [2026-06-14] - README: Vivaldi-Kompatibilität korrigiert
+
+### Behoben
+- **README.md**: Die Angabe, noise-killer funktioniere in Vivaldi über den eingebauten Werbeblocker ohne Extension, war falsch. Vivaldis eingebauter Blocker macht nur Netzwerk-Blocking plus eine automatische Heuristik gegen Leerräume; er wendet **keine** Cosmetic-/Element-Hiding-Regeln (`##selector`, `:has()`) aus abonnierten Listen an (Vivaldi folgt ABP-Syntax ohne Cosmetic-Filtering). Da noise-killer ausschließlich aus Cosmetic-Filtern besteht, funktioniert die Liste in Vivaldi nur über eine Chromium-Extension (uBlock Origin / AdBlock Plus / AdGuard). Vivaldi-Abschnitt umgeschrieben; die frühere Annahme „gleiche adblock-rust-Engine wie Brave, daher ohne Extension nutzbar" entfernt (Brave wendet Cosmetic-Filter an, Vivaldis eingebauter Blocker nicht).
+
+---
+
 ## [2026-06-14] - Google-Preferred-Source-Promos auf drei Seiten blockiert
 
 ### Hinzugefügt

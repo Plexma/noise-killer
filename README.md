@@ -114,13 +114,9 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 2. URL unter **Eigene Filterlisten** eintragen
 
 ### Vivaldi
-Vivaldis eingebauter Tracker- und Werbeblocker basiert auf derselben adblock-rust-Engine wie Brave – die Liste funktioniert daher ohne Extension:
+Vivaldis **eingebauter** Werbeblocker eignet sich **nicht** für diese Liste. Er blockiert nur Netzwerk-Requests (plus eine automatische Heuristik, die durch das Blocking entstandene Leerräume kaschiert) und wendet **keine** Cosmetic-/Element-Hiding-Regeln (`##selector`, `:has()`) aus abonnierten Listen an. Da noise-killer ausschließlich aus solchen Cosmetic-Filtern besteht, hätte das Eintragen der URL unter den Werbeblocker-Quellen praktisch keine Wirkung.
 
-1. `vivaldi://settings/blocker` öffnen
-2. Unter **Werbeblocker-Quellen** auf **Quelle hinzufügen** klicken
-3. URL eintragen
-
-Alternativ funktioniert in Vivaldi auch jede Chromium-Extension – also genauso uBlock Origin, AdBlock Plus oder AdGuard.
+Stattdessen in Vivaldi eine **Chromium-Extension** verwenden – uBlock Origin, AdBlock Plus oder AdGuard – und die Liste dort wie oben beschrieben als eigene Filterliste hinzufügen.
 
 **URL für alle:**
 ```
