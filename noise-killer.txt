@@ -74,6 +74,13 @@ www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="/tag/
 www.androidauthority.com##[data-content-wrapper="true"] > div:has(button.vf-topic-follow-button)
 ! „Join the conversation"-Prompt (Viafoura, oberhalb Kommentarsektion)
 www.androidauthority.com##[data-content-wrapper="true"] > div.viafoura
+! Hinzugefügt: 2026-06-14
+!   „Don't want to miss the best from Android Authority?" – Google-Discover-/
+!   Preferred-Source-Promo-Box (nc-disclosure-box) im Artikeltext. Direktes Kind des
+!   Content-Wrappers mit Links zu andauth.co/AAGoogleDiscoverSource bzw.
+!   AAGooglePreferredSource. Der Header-„Add on Google"-Button (AAGooglePrefSource)
+!   liegt außerhalb des Content-Wrappers und bleibt daher unberührt.
+www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="andauth.co/AAGoogle"])
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
@@ -648,6 +655,12 @@ www.n-tv.de##div[class*="group-grid-wrapper_article-cols"]:style(display: block 
 !         Breadcrumb-Navigation (nav#breadcrumb) blockiert.
 ! --------------------------------------------------------------------------
 www.ndr.de##div.campaign-banner
+! Hinzugefügt: 2026-06-14
+!   „Machen Sie NDR.de zu Ihrer bevorzugten Nachrichten-Quelle bei Google" –
+!   Google-Preferred-Source-Promo-Infobox am Artikelende. Auf den Link zur ARD-
+!   Einrichtungsseite (1.ard.de/ndr-bevorzugte-google-quelle) gepinnt, damit
+!   redaktionelle Infoboxen (div.contentbox.infobox) unangetastet bleiben.
+www.ndr.de##div.contentbox.infobox:has(a[href*="ndr-bevorzugte-google-quelle"])
 www.ndr.de##div.contentbox.list
 www.ndr.de##div.relatedbroadcast
 www.ndr.de##div.tagbox
@@ -924,6 +937,11 @@ www.sueddeutsche.de##er-footer
 www.sueddeutsche.de##er-newsletter
 www.sueddeutsche.de##er-recommendations[excludelist][data-active]
 www.sueddeutsche.de##footer
+! Hinzugefügt: 2026-06-14
+!   „SZ bei Google bevorzugen" – Google-Preferred-Source-Promo im Artikel (Link zu
+!   google.com/preferences/source). Der äußere Wrapper trägt 24px/16px Margin – daher
+!   den Wrapper blocken (> div > a), nicht nur die innere Box, sonst bleibt ~40px Leerraum.
+www.sueddeutsche.de##div:has(> div > a[href*="google.com/preferences/source"])
 ! BUGFIX 2026-03-20: Tickaroo-Liveblog: Redaktionelle Artikel-Links im Ticker
 !   „Mehr zum Krieg in der Ukraine" mit verlinkten Artikeln in Ticker-Einträgen
 www.sueddeutsche.de##div.tik4-link-list

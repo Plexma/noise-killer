@@ -1,3 +1,12 @@
+## [2026-06-14] - Google-Preferred-Source-Promos auf drei Seiten blockiert
+
+### Hinzugefügt
+- **sueddeutsche.de**: „SZ bei Google bevorzugen"-Promo im Artikel (Google-Preferred-Source-Link zu `google.com/preferences/source`). Der äußere Wrapper trägt 24px/16px-Margin und wird mitentfernt, damit kein Leerraum bleibt (`div:has(> div > a[href*="google.com/preferences/source"])`).
+- **androidauthority.com**: „Don't want to miss the best from Android Authority?"-Box (Google-Discover-/Preferred-Source-Promo, `nc-disclosure-box`) im Artikeltext. Auf die `andauth.co/AAGoogle…`-Links im Content-Wrapper gepinnt; der Header-„Add on Google"-Button bleibt unberührt (`[data-content-wrapper="true"] > div:has(a[href*="andauth.co/AAGoogle"])`).
+- **ndr.de**: „Machen Sie NDR.de zu Ihrer bevorzugten Nachrichten-Quelle bei Google"-Infobox am Artikelende. Auf den ARD-Einrichtungslink gepinnt, damit redaktionelle Infoboxen unangetastet bleiben (`div.contentbox.infobox:has(a[href*="ndr-bevorzugte-google-quelle"])`).
+
+---
+
 ## [2026-05-23] - golem.de Chat-Bubble
 
 ### Hinzugefügt
