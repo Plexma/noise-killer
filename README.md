@@ -72,7 +72,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | pcgameshardware.de | 💬 📢 🦶 |
 | raider.io | 📢 🪧 🦶 |
 | rbb24.de | 💬 📱 📰 📬 🏷️ 🦶 |
-| spiegel.de | 📰 📬 🦶 |
+| spiegel.de | 📰 📬 🔗 🦶 |
 | sportschau.de | 📢 🦶 |
 | stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
 | startpage.com | 📢 📬 🦶 |

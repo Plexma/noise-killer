@@ -1,3 +1,11 @@
+## [2026-06-16] - spiegel.de: Overblocking behoben, Verschenken-Button bleibt
+
+### Behoben
+- **spiegel.de**: Overblocking von `section[data-area="html-embed"]` behoben – die Regel (für die Newsletter-Box gedacht) hat auch legitime Inhalte versteckt: Scrollytelling-Bildstrecken mit eingeblendeten Bildunterschriften und Video-Embeds. Selektor jetzt auf das Newsletter-Iframe (Gruppenkonto) eingeschränkt (`section[data-area="html-embed"]:has(iframe[src*="gruppenkonto"])`); die Newsletter-Box bleibt geblockt.
+- **spiegel.de**: Artikel-Toolbar-Regel verfeinert – der „Artikel verschenken"-Button bleibt jetzt sichtbar, während die übrigen Toolbar-Items (Merkliste, Anhören, X, Facebook, E-Mail, Link kopieren, mobiles Share-Menü) weiterhin versteckt werden (`[data-area="feature-bar"] li:not(:has(button[title="Artikel verschenken"]))`).
+
+---
+
 ## [2026-06-14] - README: Vivaldi-Kompatibilität korrigiert
 
 ### Behoben

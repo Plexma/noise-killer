@@ -782,7 +782,11 @@ www.rbb24.de##footer.footer
 !         (Ausnahme von der CLAUDE.md-Regel „NIEMALS blockieren").
 ! --------------------------------------------------------------------------
 ! Artikel-Toolbar (Lesezeichen + Teilen) – auf expliziten Nutzerwunsch blockiert
-www.spiegel.de##[data-area="feature-bar"]
+! BUGFIX 2026-06-16: „Artikel verschenken"-Button bleibt erhalten (auf Nutzerwunsch),
+!   nur die übrigen Toolbar-Items (Merkliste, Anhören, X, Facebook, E-Mail, Link
+!   kopieren, mobiles Share-Menü) werden versteckt. Ein li:not(:has())-Selektor trifft
+!   alle Toolbar-li außer dem mit button[title="Artikel verschenken"].
+www.spiegel.de##[data-area="feature-bar"] li:not(:has(button[title="Artikel verschenken"]))
 ! SPIEGEL+ Newsletter-Brief-Promo auf Startseite ("Ihr tägliches Extra bei SPIEGEL+")
 ! Hinzugefügt 2026-03-19
 www.spiegel.de##section[data-area="block>magletterarticles"]
@@ -827,8 +831,12 @@ www.spiegel.de##[class~="sm:min-h-492"]
 www.spiegel.de##[class~="sm:min-h-632"]
 ! BUGFIX 2026-03-28: Inline-Newsletter-Box im Artikel
 !   Iframe (src: gruppenkonto.spiegel.de/.../newsletter/box.html) eingebettet in
-!   section[data-area="html-embed"] – einzige html-embed-Section auf Artikelseiten
-www.spiegel.de##section[data-area="html-embed"]
+!   section[data-area="html-embed"].
+! BUGFIX 2026-06-16: Overblocking behoben – section[data-area="html-embed"] wird auch für
+!   legitime Inhalte verwendet (Scrollytelling-Bildstrecken mit eingeblendeten Bild-
+!   unterschriften, Video-Embeds). Selektor jetzt auf das Newsletter-Iframe (Gruppenkonto)
+!   eingeschränkt, statt pauschal alle html-embed-Sections zu treffen.
+www.spiegel.de##section[data-area="html-embed"]:has(iframe[src*="gruppenkonto"])
 ! BUGFIX 2026-03-30: „Geschichten, die wir Ihnen heute empfehlen:" – redaktionelle
 !   Empfehlungsbox (H3 + UL mit externen Links), eingebettet als body_element-Block
 www.spiegel.de##div[data-sara-click-el="body_element"]:has(> div > h3:has-text(/Geschichten/))
