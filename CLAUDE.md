@@ -97,6 +97,11 @@ egal ob explizit erwähnt oder nicht:
 - **`:has-text()` mit Umlauten (ä, ö, ü, ß) ist unzuverlässig** und wird von einigen
   Engines nicht korrekt ausgewertet. Stattdessen: einen reinen CSS-Selector suchen,
   der das Element eindeutig identifiziert (z. B. eine exklusive CSS-Klasse)
+- **Generische Container-Attribute nie pauschal blocken** – ein Wrapper wie
+  `[data-area="html-embed"]` wird von der Seite über die Zeit für verschiedene
+  Inhaltstypen wiederverwendet (Newsletter-Box, aber auch Scrollytelling-Bildstrecken,
+  Video-Embeds). Auf ein unterscheidendes Kind-Element mit `:has()` einschränken
+  (z. B. `:has(iframe[src*="gruppenkonto"])`), sonst Overblocking.
 
 ## Engine-Unterschiede: uBlock Origin vs. Brave (adblock-rust)
 Bekanntes Problem (aufgetreten 2026-03-18, spiegel.de Mobile-Leerraum):
@@ -108,3 +113,19 @@ Bekanntes Problem (aufgetreten 2026-03-18, spiegel.de Mobile-Leerraum):
   immer einen zweiten, CSS-klassen-basierten Fallback-Selector ergänzen, der direkt auf
   die Klasse trifft, die den unerwünschten Effekt erzeugt (z. B. `[class~="sm:min-h-632"]`).
   Klassen-Selektoren sind robuster, weil sie im statischen HTML stehen.
+
+## Iframe-eingebettete Widgets (Cosmetic-Filter auf die Iframe-Domain scopen)
+Manche „Banner"/Widgets auf einer Seite sind in Wahrheit ein Iframe von einer anderen
+(Sub-)Domain. Beispiel (2026-06-16): das Spiegel-Spielbanner („Die nächsten Top-Spiele")
+ist ein Heimspiel-Widget-Iframe von `sportdaten.spiegel.de`, eingebettet auf `www.spiegel.de`.
+- **Scope auf die Iframe-Domain, nicht auf die einbettende Seite.** Cosmetic-Filter wirken
+  pro Frame anhand dessen *eigener* Domain. Um Elemente *im* Iframe zu treffen, muss die
+  Regel `sportdaten.spiegel.de##…` lauten – `www.spiegel.de##…` greift dort nicht, weil
+  die Elemente nicht im Eltern-Dokument liegen.
+- **Zum Inspizieren die Iframe-`src` direkt im Browser aufrufen.** Sie rendert i. d. R.
+  standalone den vollen Inhalt; der Cross-Origin-Iframe-DOM ist aus dem Eltern-Dokument
+  nicht per JS lesbar.
+- **Leerraum prüfen.** Ist die Iframe-Höhe inhaltsgesteuert (Auto-Resize, Container-Höhe
+  = Inhaltshöhe), schrumpft das Banner nach dem Entfernen von selbst. Ist die Höhe fix
+  (fester Container / `h-full`-Iframe), ggf. zusätzlich die Höhe auf der einbettenden
+  Seite reduzieren.
