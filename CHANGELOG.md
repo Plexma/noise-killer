@@ -1,3 +1,10 @@
+## [2026-06-16] - spiegel.de: Tipico-Sportwetten aus Spielbanner entfernt
+
+### Hinzugefügt
+- **spiegel.de**: Tipico-Sportwetten-Teile aus dem Spiel-/Match-Banner („Die nächsten Top-Spiele", bei WM oben, bei der Bundesliga mittig) entfernt. Das Banner ist ein Heimspiel-Widget-Iframe von `sportdaten.spiegel.de`; die Regeln sind auf diese Iframe-Domain gescoped. Entfernt werden die Tipico-Quoten-Boxen (`.hs-ad`, je ein Wett-Iframe pro Match) und der Glücksspiel-Disclaimer (`#legal-notice`, „10€ Einsatz | 18+ | … | Nur für Neukunden"). Das Banner selbst – Flaggen, Teamnamen, Anstoßzeiten – bleibt erhalten.
+
+---
+
 ## [2026-06-16] - spiegel.de: Overblocking behoben, Verschenken-Button bleibt
 
 ### Behoben

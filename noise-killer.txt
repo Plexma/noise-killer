@@ -842,6 +842,19 @@ www.spiegel.de##section[data-area="html-embed"]:has(iframe[src*="gruppenkonto"])
 www.spiegel.de##div[data-sara-click-el="body_element"]:has(> div > h3:has-text(/Geschichten/))
 
 ! --------------------------------------------------------------------------
+! sportdaten.spiegel.de (Spiegel-Spielbanner-Widget)
+! --------------------------------------------------------------------------
+! Hinzugefügt 2026-06-16: Das Spiel-/Match-Banner („Die nächsten Top-Spiele", bei WM
+!   prominent oben, bei der Bundesliga mittig) ist ein Heimspiel-Widget-Iframe von
+!   sportdaten.spiegel.de, eingebettet auf spiegel.de. Das Banner selbst (Flaggen,
+!   Teamnamen, Anstoßzeiten) soll bleiben – nur die Tipico-Sportwetten-Teile raus.
+!   Regeln auf die Iframe-Domain gescoped, da Cosmetic-Filter im Iframe anhand dessen
+!   eigener Domain greifen. .hs-ad = Tipico-Quoten-Iframe pro Match, #legal-notice =
+!   Glücksspiel-Disclaimer („10€ Einsatz | 18+ | … | Nur für Neukunden").
+sportdaten.spiegel.de##.hs-ad
+sportdaten.spiegel.de##div#legal-notice
+
+! --------------------------------------------------------------------------
 ! Sportschau
 ! --------------------------------------------------------------------------
 www.sportschau.de##a.teaser-absatz__link
