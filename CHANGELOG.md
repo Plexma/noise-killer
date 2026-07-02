@@ -1,3 +1,15 @@
+## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 2: androidauthority.com, deutschlandfunk.de
+
+### Hinzugefügt
+- **deutschlandfunk.de**: Artikel-Empfehlungs-Box am Artikelende (`article.b-thema-teaser-list`, „Mehr zu …"-Kachelreihe), Hörtipps-Empfehlungslinks im Artikel und Sendungshinweis („Diese Nachricht wurde am … gesendet") entfernt – bislang blockte nur der Footer.
+
+### Behoben
+- **androidauthority.com**: Follow-Topics-Widget lief an der bestehenden Regel vorbei – Viafoura rendert den Follow-Button jetzt als Custom-Element `<vf-topic-follow>` statt der alten Button-Klasse `vf-topic-follow-button`. Zusätzlich einen „Comment Policy"-Hinweistext direkt vor dem Kommentarbereich entfernt, der bislang nicht abgedeckt war.
+
+Zweite Runde des wöchentlichen Rotations-Checks: tarnkappe.info, taz.de, tracker.gg (übersprungen), wikipedia.org, amazon.de, androidauthority.com, buffed.de (übersprungen), computerbase.de, derstandard.at/de, deutschlandfunk.de, dhl.de geprüft.
+
+---
+
 ## [2026-07-02] - Wöchentlicher Rotations-Audit: 9to5google.com, iFixit, Spiegel-Spielbanner
 
 ### Hinzugefügt

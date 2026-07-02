@@ -80,10 +80,16 @@ www.androidauthority.com###__next > div:has(a[href*="andauth.co"])
 www.androidauthority.com##main > div:has(a[href*="/external-links/"])
 ! Tag-Liste am Artikelende (Links zu /tag/…)
 www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="/tag/"])
-! Follow-Topics/Authors-Widget (Viafoura vf-topic-follow-button)
-www.androidauthority.com##[data-content-wrapper="true"] > div:has(button.vf-topic-follow-button)
+! Follow-Topics/Authors-Widget (Viafoura)
+! BUGFIX 2026-07-02: button.vf-topic-follow-button griff nicht mehr – Viafoura
+!   rendert den Follow-Button jetzt als Custom-Element <vf-topic-follow> statt der
+!   alten Button-Klasse. Tag-Name statt Klasse verwendet (stabiler als Build-Hash).
+www.androidauthority.com##[data-content-wrapper="true"] > div:has(vf-topic-follow)
 ! „Join the conversation"-Prompt (Viafoura, oberhalb Kommentarsektion)
 www.androidauthority.com##[data-content-wrapper="true"] > div.viafoura
+! BUGFIX 2026-07-02: „Comment Policy"-Hinweistext direkt vor #comments-section, kein
+!   stabiles Attribut vorhanden – auf #comments-section als Ankersibling gepinnt.
+www.androidauthority.com##div:has(+ #comments-section)
 ! Hinzugefügt: 2026-06-14
 !   „Don't want to miss the best from Android Authority?" – Google-Discover-/
 !   Preferred-Source-Promo-Box (nc-disclosure-box) im Artikeltext. Direktes Kind des
@@ -281,9 +287,18 @@ www.derstandard.de##footer.site-footer
 ! --------------------------------------------------------------------------
 ! Deutschlandfunk
 ! Hinzugefügt: 2026-03-17
+! Hinzugefügt 2026-07-02: Artikel-Empfehlungs-Box am Artikelende (article.b-thema-teaser-list,
+!         "Mehr zu ..."-Kachelreihe), Hörtipps-Empfehlungslinks im Artikel (H2 + Divs, die
+!         nur einen Link enthalten – von echten Textabsätzen via :has(> a:only-child)
+!         unterschieden) und Sendungshinweis ("Diese Nachricht wurde am ... gesendet",
+!         exklusiv über u-text-italic von normalen Absätzen unterscheidbar).
 ! --------------------------------------------------------------------------
 ! Site-Footer ("Entdecken Sie den Deutschlandfunk" + Nav-Links)
 www.deutschlandfunk.de##footer.b-footer
+www.deutschlandfunk.de##article.b-thema-teaser-list
+www.deutschlandfunk.de##h2.article-details-title:has(+ div.article-details-text > a:only-child)
+www.deutschlandfunk.de##section.b-article-details div.article-details-text:has(> a:only-child)
+www.deutschlandfunk.de##div.article-details-text.u-text-italic
 
 ! --------------------------------------------------------------------------
 ! DHL

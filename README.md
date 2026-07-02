@@ -50,7 +50,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | de.ifixit.com | 🪧 💬 📰 🦶 |
 | wikipedia.org (alle Sprachversionen) | 🦶 |
 | derstandard.at / derstandard.de | 💬 📢 🦶 |
-| deutschlandfunk.de | 🦶 |
+| deutschlandfunk.de | 🦶 📰 |
 | dhl.de | 🪧 🦶 |
 | faz.net | 📰 📬 📢 🦶 |
 | focus.de | 💬 📢 🦶 |
