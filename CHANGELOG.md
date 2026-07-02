@@ -1,3 +1,19 @@
+## [2026-07-02] - Wöchentlicher Rotations-Audit: 9to5google.com, iFixit, Spiegel-Spielbanner
+
+### Hinzugefügt
+- **de.ifixit.com**: News-Artikel waren bis auf einen Campaign-Banner komplett ungeblockt. Neu: „Kommentar hinzufügen"-Link im Byline (`li.entry-meta-comments`), Artikel-Empfehlungen (`div.related-posts-wrap`), gesamter Kommentarbereich (`#wppost-comments-container`), Footer inkl. Newsletter-Box (`footer`).
+
+### Behoben
+- **9to5google.com**: Google-Preferred-Source-Badge und Werbe-Disclaimer, die inzwischen an den „More on …"-Abschnitt angehängt werden, liefen an der bestehenden Regel vorbei und blieben sichtbar (`div.google-preferred-source-badge`, `div.ad-disclaimer-container`) – analog zum 9to5mac.com-Fix aus der letzten Prüfung.
+- **spiegel.de** (Iframe `sportdaten.spiegel.de`): Glücksspiel-Disclaimer im Spiel-/Match-Banner war als ID `#legal-notice` adressiert – die Seite nutzt diese ID nicht mehr, der Disclaimer („10€ Einsatz | 18+ | … | Nur für Neukunden") leakte sichtbar durch. Selektor auf die neue Klasse `div.hs-legal-notice` umgestellt.
+
+### Geändert
+- **sueddeutsche.de**: `sz-magazin.sueddeutsche.de` wurde als eigenständige Subdomain aufgegeben und leitet komplett auf `www.sueddeutsche.de/magazin/...` um. Die alten subdomain-gescopeten Regeln greifen dadurch nie mehr (Cosmetic-Filter wirken pro Frame-Domain). Kein Ersatzbedarf: `/magazin`-Artikel laufen über dasselbe Template wie der Rest von sueddeutsche.de und sind durch das dortige Regelset bereits abgedeckt. Regeln als Doku im Quelltext belassen.
+
+Erste Runde des neuen wöchentlichen Rotations-Checks (siehe `noise-killer-weekly-audit`): 9to5google.com, arstechnica.com, de.ifixit.com, hsreplay.net (Cloudflare-Check, übersprungen), imgur.com, my.dpd.de, raider.io, sportdaten.spiegel.de, stadt-bremerhaven.de, steamdb.info (Cloudflare-Check, übersprungen), sz-magazin.sueddeutsche.de geprüft.
+
+---
+
 ## [2026-07-02] - wiwo.de hinzugefügt, 9to5mac.com Affiliate-Box entfernt
 
 ### Hinzugefügt

@@ -26,6 +26,9 @@
 !         „More on Android/Chrome/…"-Abschnitt (h2[id^="h-more-on-"] + ul).
 ! BUGFIX 2026-03-22: Infinite-Scroll-Trigger (#infinite-handle) + Lade-Spinner blockiert.
 ! BUGFIX 2026-03-22: „Follow Ben/…: Twitter/X, Threads, …" blockiert (p:has(> em:only-child)).
+! BUGFIX 2026-07-02: Google-Preferred-Source-Badge + Werbe-Disclaimer, die inzwischen an
+!         den „More on …"-Abschnitt angehängt werden, blockiert (div.google-preferred-source-badge,
+!         div.ad-disclaimer-container). Site hat seit Erstanlage neue Elemente ergänzt.
 ! --------------------------------------------------------------------------
 9to5google.com##aside.sidebar
 9to5google.com##a.comments
@@ -39,6 +42,8 @@
 9to5google.com##h2[id^="h-more-on-"]
 9to5google.com##h2[id^="h-more-on-"] + ul
 9to5google.com##p:has(> em:only-child)
+9to5google.com##div.google-preferred-source-badge
+9to5google.com##div.ad-disclaimer-container
 9to5mac.com##aside.sidebar
 9to5mac.com##a.comments
 9to5mac.com###comments
@@ -111,8 +116,17 @@ arstechnica.com##div.single-most-read
 
 ! --------------------------------------------------------------------------
 ! iFixit
+! Hinzugefügt 2026-07-02: News-Artikel waren bis auf den Campaign-Banner komplett
+!         ungeblockt. li.entry-meta-comments = "Kommentar hinzufügen"-Link im Byline,
+!         div.related-posts-wrap = Artikel-Empfehlungen, #wppost-comments-container =
+!         gesamter Kommentarbereich, footer = Footer inkl. Newsletter-Box ("Bleib auf
+!         dem Laufenden").
 ! --------------------------------------------------------------------------
 de.ifixit.com##.component-WPCampaignBanner
+de.ifixit.com##li.entry-meta-comments
+de.ifixit.com##div.related-posts-wrap
+de.ifixit.com###wppost-comments-container
+de.ifixit.com##footer
 
 ! --------------------------------------------------------------------------
 ! Wikipedia (alle Sprachversionen)
@@ -149,6 +163,13 @@ steamdb.info##footer
 
 ! --------------------------------------------------------------------------
 ! SZ-Magazin
+! BUGFIX 2026-07-02: sz-magazin.sueddeutsche.de redirected jetzt komplett auf
+!   www.sueddeutsche.de/magazin/... (Subdomain in Hauptdomain eingegliedert) – diese
+!   Regeln greifen nie mehr (Cosmetic-Filter wirken pro Frame-Domain, die Subdomain
+!   wird nie mehr gerendert). Kein Ersatzbedarf: /magazin-Artikel laufen über dasselbe
+!   Template wie der Rest von www.sueddeutsche.de und sind durch das dortige,
+!   umfangreiche Regelset bereits abgedeckt (Byline, Footer, Empfehlungen etc.).
+!   Regeln hier als Doku belassen, falls die Subdomain je reaktiviert wird.
 ! --------------------------------------------------------------------------
 sz-magazin.sueddeutsche.de##aside.article-further-reading
 sz-magazin.sueddeutsche.de##div.related
@@ -854,10 +875,12 @@ www.spiegel.de##div[data-sara-click-el="body_element"]:has(> div > h3:has-text(/
 !   sportdaten.spiegel.de, eingebettet auf spiegel.de. Das Banner selbst (Flaggen,
 !   Teamnamen, Anstoßzeiten) soll bleiben – nur die Tipico-Sportwetten-Teile raus.
 !   Regeln auf die Iframe-Domain gescoped, da Cosmetic-Filter im Iframe anhand dessen
-!   eigener Domain greifen. .hs-ad = Tipico-Quoten-Iframe pro Match, #legal-notice =
-!   Glücksspiel-Disclaimer („10€ Einsatz | 18+ | … | Nur für Neukunden").
+!   eigener Domain greifen. .hs-ad = Tipico-Quoten-Iframe pro Match.
+! BUGFIX 2026-07-02: Glücksspiel-Disclaimer („10€ Einsatz | 18+ | … | Nur für
+!   Neukunden") war als ID #legal-notice adressiert – Seite nutzt die ID nicht mehr,
+!   Disclaimer steckt jetzt in div.hs-legal-notice. Disclaimer leakte sichtbar durch.
 sportdaten.spiegel.de##.hs-ad
-sportdaten.spiegel.de##div#legal-notice
+sportdaten.spiegel.de##div.hs-legal-notice
 
 ! --------------------------------------------------------------------------
 ! Sportschau
