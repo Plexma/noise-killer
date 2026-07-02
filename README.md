@@ -59,7 +59,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | handelsblatt.com | 📰 📢 🪧 🦶 |
 | heise.de | 📰 📬 📢 🛍️ 🦶 |
 | hsreplay.net | 🦶 |
-| ifun.de / iphone-ticker.de | 💬 📬 🔗 🦶 |
+| ifun.de / iphone-ticker.de | 💬 📬 🔗 🏷️ 🦶 |
 | imgur.com | 📰 |
 | lto.de | 📰 📬 📢 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |

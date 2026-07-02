@@ -1,3 +1,14 @@
+## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 3: gamestar.de, ifun.de, iphone-ticker.de
+
+### Hinzugefügt
+- **gamestar.de**: „Zum Thema"-Empfehlungsbox (`div.contentteaser.row.box.contenttimelineitem-box`) entfernt – neue Variante des bekannten Teaser-Musters, bisher nicht erfasst.
+- **ifun.de**: Tag-Liste am Artikelende (`#article-single-footer-tags`) entfernt.
+- **iphone-ticker.de**: Tag-Liste am Artikelende (`#article-single-footer-tags`) entfernt – gleiches Muster wie ifun.de (identische Plattform).
+
+Dritte Runde des wöchentlichen Rotations-Checks: faz.net, focus.de, gamestar.de, golem.de, handelsblatt.com, heise.de, ifun.de, iphone-ticker.de, lto.de, macrumors.com, mydealz.de, myhermes.de geprüft – alle anderen sauber.
+
+---
+
 ## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 2: androidauthority.com, deutschlandfunk.de
 
 ### Hinzugefügt
