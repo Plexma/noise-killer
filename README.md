@@ -85,11 +85,11 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | tarnkappe.info | 📬 📢 🦶 |
 | taz.de | 🪧 🦶 |
 | theverge.com | 💬 📰 📬 📢 🦶 |
-| tomsguide.com | 💬 📬 🛍️ 🦶 |
+| tomsguide.com | 💬 📬 🛍️ 🦶 🏷️ |
 | tracker.gg | 📢 🦶 |
 | transfermarkt.de | 💬 📰 📢 🦶 |
 | wiwo.de | 📰 📢 🦶 |
-| wowhead.com | 📢 🦶 |
+| wowhead.com | 💬 📰 📢 🦶 |
 | zdfheute.de | 📰 🔗 🦶 |
 | zeit.de | 💬 📢 🦶 |
 

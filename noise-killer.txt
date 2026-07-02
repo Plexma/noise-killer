@@ -1146,6 +1146,12 @@ www.theverge.com##.duet--ledes--standard-lede-bottom
 www.theverge.com##.duet--article--related
 ! Site-Footer
 www.theverge.com##.duet--navigation--footer
+! BUGFIX 2026-07-02: .duet--article--related greift nicht mehr (0 Treffer) – Klasse
+!   umbenannt zu duet--layout--header-pattern. Dieselbe Klasse deckt zusätzlich
+!   "Most Popular"- und "Top Stories"-Sidebar-Widgets ab, die bisher ungeblockt waren.
+!   Auf der Testseite ausschließlich für Recirc-/Empfehlungs-Boxen verwendet, nicht
+!   für echte Artikel-Zwischenüberschriften.
+www.theverge.com##div.duet--layout--header-pattern
 
 ! --------------------------------------------------------------------------
 ! Tom's Guide
@@ -1163,6 +1169,9 @@ www.tomsguide.com##div > ul
 www.tomsguide.com##div.exit-intent.exit-intent__background
 www.tomsguide.com##div.newsletter-form__wrapper
 www.tomsguide.com##section.mx-2.my-5
+! Hinzugefügt 2026-07-02: Tag-Liste ("TOPICS") und Autoren-Bio-Box am Artikelende
+www.tomsguide.com###articleTag
+www.tomsguide.com##div.slice-author-bio
 
 ! --------------------------------------------------------------------------
 ! Transfermarkt
@@ -1170,11 +1179,17 @@ www.tomsguide.com##section.mx-2.my-5
 !   section.box = „Transfermarkt Videos"-Eigenwerbungs-Box (einziges SECTION.box auf der Seite)
 !   #recommender / #recommender_sidebar = „Andere Spieler"-Empfehlungen (Hauptspalte + Sidebar)
 !   .player-discussions = Kommentar-/Diskussions-Box am Profilende
+! BUGFIX 2026-07-02: Neue Spieltermine-Sektion (section#tm-matches, Svelte-Widget) bekam
+!   ebenfalls die Klasse .box – section.box war dadurch nicht mehr exklusiv für die
+!   Videos-Box und hätte legitime Spieltermine mitgeblockt. Ausschluss ergänzt.
 ! --------------------------------------------------------------------------
 www.transfermarkt.de##a[href][target][onclick]
 www.transfermarkt.de##footer
+! BUGFIX 2026-07-02: Zusätzlicher Footer außerhalb des <footer>-Tags (section.tm-footer__mobile,
+!   trotz "mobile" im Klassennamen auch auf Desktop gerendert), war bisher ungeblockt
+www.transfermarkt.de##section.tm-footer__mobile
 www.transfermarkt.de##main > div > div > section
-www.transfermarkt.de##section.box
+www.transfermarkt.de##section.box:not(#tm-matches)
 www.transfermarkt.de###recommender
 www.transfermarkt.de###recommender_sidebar
 www.transfermarkt.de##.player-discussions
@@ -1200,13 +1215,23 @@ www.wiwo.de##app-special-advertisement
 www.wiwo.de##app-storyline-advertisement
 www.wiwo.de##app-storyline-related-content
 www.wiwo.de##app-vg-wort
+! Hinzugefügt 2026-07-02: Inline-Artikel-Teaser im Fließtext, gleiches Muster wie
+!   handelsblatt.com (Wrapper-Pattern, damit kein Leerraum bleibt)
+www.wiwo.de##app-storyline-element:has(> app-storyline-teaser)
 
 ! --------------------------------------------------------------------------
 ! Wowhead
+! Hinzugefügt 2026-07-02: Artikel waren bis auf Autoren-Bio, endofpost und Footer
+!   komplett ungeblockt. #premium-house-block = "Drop the Ads"-Werbefrei-Eigenwerbung,
+!   div.news-recent = "Blue Tracker"/"Recent News"-Empfehlungsspalten,
+!   #news-comments-wrapper = gesamter Kommentarbereich inkl. "Show N Comments"-Button
 ! --------------------------------------------------------------------------
 www.wowhead.com###endofpost
 www.wowhead.com##div.author-bio
 www.wowhead.com##footer
+www.wowhead.com###premium-house-block
+www.wowhead.com##div.news-recent
+www.wowhead.com###news-comments-wrapper
 
 ! --------------------------------------------------------------------------
 ! ZDF heute

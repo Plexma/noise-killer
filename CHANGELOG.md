@@ -1,3 +1,18 @@
+## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 5: theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com
+
+### Hinzugefügt
+- **tomsguide.com**: Tag-Liste ("TOPICS") und Autoren-Bio-Box am Artikelende entfernt.
+- **wiwo.de**: Inline-Artikel-Teaser im Fließtext entfernt – gleiches Wrapper-Muster wie handelsblatt.com, bislang auf wiwo.de nicht übernommen.
+- **wowhead.com**: Artikel waren bis auf Autoren-Bio, endofpost und Footer komplett ungeblockt. Neu: „Drop the Ads"-Werbefrei-Eigenwerbung (`#premium-house-block`), „Blue Tracker"/„Recent News"-Empfehlungsspalten (`div.news-recent`), gesamter Kommentarbereich inkl. „Show N Comments"-Button (`#news-comments-wrapper`).
+
+### Behoben
+- **theverge.com**: `.duet--article--related` griff nicht mehr (0 Treffer) – Klasse umbenannt zu `duet--layout--header-pattern`. Neue Klasse deckt zusätzlich bislang ungeblockte „Most Popular"- und „Top Stories"-Sidebar-Widgets ab.
+- **transfermarkt.de**: Neue Spieltermine-Sektion (`section#tm-matches`, Svelte-Widget) bekam ebenfalls die Klasse `.box` – `section.box` war dadurch nicht mehr exklusiv für die Videos-Eigenwerbung und hätte legitime Spieltermine mitgeblockt (Overblocking-Prävention). Zusätzlich einen zweiten Footer außerhalb des `<footer>`-Tags ergänzt (`section.tm-footer__mobile`, trotz Namens auch auf Desktop gerendert), der bisher ungeblockt war.
+
+Fünfte und letzte Runde des ersten wöchentlichen Rotations-Durchlaufs: theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com, zdfheute.de, zeit.de geprüft. Damit sind erstmals alle 55 Domains der Liste einmal durchlaufen.
+
+---
+
 ## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 4: n-tv.de, t-online.de
 
 ### Behoben
