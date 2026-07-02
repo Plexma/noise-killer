@@ -689,8 +689,11 @@ www.myhermes.de##footer
 www.n-tv.de##aside
 www.n-tv.de##footer
 www.n-tv.de##section[class*="widget-teaser"]
-www.n-tv.de##div[class*="social-share"]
-www.n-tv.de##div[class*="article-detail-footer_tags"]
+! BUGFIX 2026-07-02: CSS-Modules-Klassennamen wurden bei Redesign umbenannt
+!         (social-share -> ShareBtn_share-*, article-detail-footer_tags ->
+!         ArticleDetailFooter_tags-*). Alte Selektoren griffen nicht mehr.
+www.n-tv.de##div[class*="ShareBtn_share"]
+www.n-tv.de##div[class*="ArticleDetailFooter_tags"]
 www.n-tv.de##div[class*="group-grid-wrapper_article-cols"]:style(display: block !important)
 
 ! --------------------------------------------------------------------------
@@ -1046,7 +1049,8 @@ www.t-online.de##div[data-testid="nativendo-container"]
 ! Werbeplatz SDI
 www.t-online.de##div[data-testid="Commercial.SDI"]
 ! Seiten-Footer
-www.t-online.de##div[data-testid="PageFooter"]
+! BUGFIX 2026-07-02: Element-Tag von div zu footer geändert, alte div-Regel griff nicht mehr
+www.t-online.de##[data-testid="PageFooter"]
 ! Artikelende-Abschnitte: Neueste Artikel, Themen, Themennavigation
 www.t-online.de##div[data-testid="Page.PageStages"]
 ! Hinzugefügt: 2026-04-14: Inline-Artikelteaser (Magenta-Aufzählung im Fließtext)

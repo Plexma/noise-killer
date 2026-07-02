@@ -1,3 +1,13 @@
+## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 4: n-tv.de, t-online.de
+
+### Behoben
+- **n-tv.de**: CSS-Modules-Klassennamen bei Redesign umbenannt (`social-share` → `ShareBtn_share-*`, `article-detail-footer_tags` → `ArticleDetailFooter_tags-*`) – alte Selektoren griffen nicht mehr, Share-Buttons und Tag-Liste blieben sichtbar.
+- **t-online.de**: Seiten-Footer wechselte von `<div data-testid="PageFooter">` zu `<footer data-testid="PageFooter">` (semantisches HTML-Tag) – die auf `div` eingeschränkte Regel griff nicht mehr, Footer blieb sichtbar.
+
+Vierte Runde des wöchentlichen Rotations-Checks: n-tv.de, ndr.de, nytimes.com, pcgameshardware.de (Cloudflare-Check, übersprungen), rbb24.de, spiegel.de, sportschau.de, startpage.com (Homepage-Check hing, SERP-Regeln bestätigt), sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de geprüft – alle anderen sauber.
+
+---
+
 ## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 3: gamestar.de, ifun.de, iphone-ticker.de
 
 ### Hinzugefügt
