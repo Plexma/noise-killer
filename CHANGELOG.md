@@ -1,3 +1,11 @@
+## [2026-07-02] - wiwo.de hinzugefügt, 9to5mac.com Affiliate-Box entfernt
+
+### Hinzugefügt
+- **wiwo.de**: Neue Domain. Läuft auf derselben Angular-Plattform wie **handelsblatt.com** (Handelsblatt Media Group), daher analoge `app-*`-Selektoren: Werbung (`app-advertisement`, `app-content-advertisement`, `app-special-advertisement`, `app-storyline-advertisement`), Commercial-Teaser (`app-commercial-teaser`, `app-commercial-teaser-group`), Artikel-Empfehlungen (`app-related-content-teaser-group`, `app-storyline-related-content`), Google-Preferred-Source-Promo (`app-google-preferred-source`), VG-Wort-Tracking (`app-vg-wort`), Footer (`app-footer`, `app-detail-page-footer`, `app-detail-page-content-footer`, enthält u. a. Outbrain-Empfehlungen). Bewusst **nicht** geblockt: `app-storyline-podcast` – im Testartikel ein zum Artikel gehöriger WiWo-Podcast-Beitrag (Audio-Player im Artikel bleibt laut Kernregel immer sichtbar).
+- **9to5mac.com**: „Best … accessories"-Affiliate-Box am Artikelende (Amazon-Produktliste mit Google-Preferred-Source-Badge und Werbe-Disclaimer) entfernt. Überschrift ist textabhängig auf das nachfolgende Muster gepinnt (`h3.wp-block-heading:has(+ ul.wp-block-list + div.google-preferred-source-badge)`), damit reguläre Zwischenüberschriften im Artikel nicht betroffen sind.
+
+---
+
 ## [2026-06-16] - spiegel.de: Tipico-Sportwetten aus Spielbanner entfernt
 
 ### Hinzugefügt

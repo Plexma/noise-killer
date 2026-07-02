@@ -41,7 +41,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | Seite | Was entfernt wird |
 |---|---|
 | 9to5google.com | 💬 📰 📢 |
-| 9to5mac.com | 💬 📰 📢 |
+| 9to5mac.com | 💬 📰 📢 🛍️ |
 | amazon.de | 📢 🛍️ 🦶 |
 | androidauthority.com | 💬 📢 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
@@ -88,6 +88,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | tomsguide.com | 💬 📬 🛍️ 🦶 |
 | tracker.gg | 📢 🦶 |
 | transfermarkt.de | 💬 📰 📢 🦶 |
+| wiwo.de | 📰 📢 🦶 |
 | wowhead.com | 📢 🦶 |
 | zdfheute.de | 📰 🔗 🦶 |
 | zeit.de | 💬 📢 🦶 |

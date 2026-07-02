@@ -51,6 +51,11 @@
 9to5mac.com##h2[id^="h-more-on-"]
 9to5mac.com##h2[id^="h-more-on-"] + ul
 9to5mac.com##p:has(> em:only-child)
+! Hinzugefügt: 2026-07-02
+9to5mac.com##h3.wp-block-heading:has(+ ul.wp-block-list + div.google-preferred-source-badge)
+9to5mac.com##ul.wp-block-list:has(+ div.google-preferred-source-badge)
+9to5mac.com##div.google-preferred-source-badge
+9to5mac.com##div.ad-disclaimer-container
 
 ! --------------------------------------------------------------------------
 ! Android Authority
@@ -1124,6 +1129,28 @@ www.transfermarkt.de##section.box
 www.transfermarkt.de###recommender
 www.transfermarkt.de###recommender_sidebar
 www.transfermarkt.de##.player-discussions
+
+! --------------------------------------------------------------------------
+! WirtschaftsWoche (wiwo.de)
+! Hinzugefügt: 2026-07-02
+!   Gleiche Angular-Plattform wie handelsblatt.com (Handelsblatt Media Group,
+!   hmg-theme), daher analoge app-*-Selektoren. app-storyline-podcast bewusst
+!   NICHT geblockt (Audio-Player im Artikel, hier ein zum Artikel gehöriger
+!   WiWo-Podcast-Beitrag) - Kritische Regel: Audio-Player nie blockieren.
+! --------------------------------------------------------------------------
+www.wiwo.de##app-advertisement
+www.wiwo.de##app-commercial-teaser
+www.wiwo.de##app-commercial-teaser-group
+www.wiwo.de##app-content-advertisement
+www.wiwo.de##app-detail-page-content-footer
+www.wiwo.de##app-detail-page-footer
+www.wiwo.de##app-footer
+www.wiwo.de##app-google-preferred-source
+www.wiwo.de##app-related-content-teaser-group
+www.wiwo.de##app-special-advertisement
+www.wiwo.de##app-storyline-advertisement
+www.wiwo.de##app-storyline-related-content
+www.wiwo.de##app-vg-wort
 
 ! --------------------------------------------------------------------------
 ! Wowhead
