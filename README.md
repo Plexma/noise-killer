@@ -66,14 +66,14 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | my.dpd.de | 📢 🦶 |
 | mydealz.de | 🪧 🦶 |
 | myhermes.de | 🦶 |
-| n-tv.de | 🔗 📢 🦶 |
+| n-tv.de | 🔗 📰 📢 🦶 |
 | ndr.de | 🔗 📢 🦶 |
 | nytimes.com | 📰 🦶 |
 | pcgameshardware.de | 💬 📢 🦶 |
 | raider.io | 📢 🪧 🦶 |
 | rbb24.de | 💬 📱 📰 📬 🏷️ 🦶 |
 | spiegel.de | 📰 📬 🔗 🛍️ 🦶 |
-| sportschau.de | 📢 🦶 |
+| sportschau.de | 🔗 📢 🦶 |
 | stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
 | startpage.com | 📢 📬 🦶 |
 | steamdb.info | 📢 🦶 |

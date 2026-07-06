@@ -1,3 +1,17 @@
+## [2026-07-06] - Wöchentlicher Rotations-Audit Bucket 4: n-tv.de, rbb24.de, sportschau.de
+
+### Hinzugefügt
+- **sportschau.de**: Social-Share-Bar am Artikelkopf (`nav.socialbuttons` – Facebook/WhatsApp/E-Mail/Drucken) war bislang ungeblockt.
+- **n-tv.de**: Outbrain-Empfehlungswidget am Artikelende (`div[class*="Outbrain_space"]`) ergänzt – lag außerhalb von `aside`/`footer` und war nicht erfasst.
+
+### Behoben
+- **rbb24.de**: Der Selektor für den Kommentarbereich (`section.container.section--white.section--rounded`) traf inzwischen auch die Artikel-Body-`<section>`, die dieselbe Klassenkombination bekommen hat – dadurch wurde der **gesamte Artikeltext versteckt**. Auf den Kommentar-Container (`:has(> #comments)`) eingeschränkt; der Artikel-Body hat als direktes Kind `div.container__article`, nie `#comments`, und bleibt jetzt sichtbar.
+- **n-tv.de**: n-tv liefert die am 2026-07-02 als „umbenannt" geglaubten Klassen wieder unter den alten Namen aus (`social-share_social-share`, `article-detail-footer_tags`) – offenbar A/B-/Rollout-Varianten. Beide Namensvarianten werden jetzt parallel abgedeckt, damit Share-Bar und Tag-Liste in jedem Bundle getroffen werden.
+
+Rotations-Runde für Bucket 4 (Kalenderwoche 28): macrumors.com, mydealz.de, myhermes.de, n-tv.de, ndr.de, nytimes.com, pcgameshardware.de, rbb24.de, spiegel.de, sportschau.de, startpage.com geprüft. macrumors.com, myhermes.de, ndr.de, nytimes.com, pcgameshardware.de, startpage.com sauber. spiegel.de unverändert (die Feature-Bar-Regel versteckt bewusst alles außer „Artikel verschenken", auf Nutzerwunsch dokumentiert). mydealz.de: zwei tote Selektoren (`[data-t="voteSecondary"]`, `div.bRad--a.bg--main.space--mt-2`) auf dem geprüften Deal nicht auslösbar – vermutlich seitentyp-spezifisch (Gutschein-Deal), nicht sicher retargetbar, daher unverändert belassen.
+
+---
+
 ## [2026-07-02] - Wöchentlicher Rotations-Audit Bucket 5: theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com
 
 ### Hinzugefügt

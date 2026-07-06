@@ -692,8 +692,16 @@ www.n-tv.de##section[class*="widget-teaser"]
 ! BUGFIX 2026-07-02: CSS-Modules-Klassennamen wurden bei Redesign umbenannt
 !         (social-share -> ShareBtn_share-*, article-detail-footer_tags ->
 !         ArticleDetailFooter_tags-*). Alte Selektoren griffen nicht mehr.
+! BUGFIX 2026-07-06: n-tv liefert wieder die alten Namen aus (social-share_social-share,
+!         article-detail-footer_tags) – offenbar A/B-/Rollout-Varianten. Beide
+!         Namensvarianten parallel abdecken, damit die Share-Bar und Tag-Liste in
+!         jedem Bundle getroffen werden. Zusätzlich Outbrain-Empfehlungswidget am
+!         Artikelende ergänzt (Outbrain_space-*).
 www.n-tv.de##div[class*="ShareBtn_share"]
+www.n-tv.de##div[class*="social-share_social-share"]
 www.n-tv.de##div[class*="ArticleDetailFooter_tags"]
+www.n-tv.de##div[class*="article-detail-footer_tags"]
+www.n-tv.de##div[class*="Outbrain_space"]
 www.n-tv.de##div[class*="group-grid-wrapper_article-cols"]:style(display: block !important)
 
 ! --------------------------------------------------------------------------
@@ -808,7 +816,12 @@ www.rbb24.de##.container__article-component:has(> .component-text > p > i)
 ! Tag-Liste am Artikelende
 www.rbb24.de##.container__article-component.tags
 ! Kommentarbereich
-www.rbb24.de##section.container.section--white.section--rounded
+! BUGFIX 2026-07-06: Der Artikel-Body-<section> trägt inzwischen dieselbe
+!         Klassenkombination (container section--white section--rounded) wie der
+!         Kommentar-Wrapper – der ungefilterte Selektor versteckte den ganzen
+!         Artikel. Auf den Kommentar-Container (> #comments) eingeschränkt; der
+!         Artikel-Body hat als direktes Kind div.container__article, nie #comments.
+www.rbb24.de##section.container.section--white.section--rounded:has(> #comments)
 ! „Mehr bei rbb|24" Artikel-Empfehlungen
 www.rbb24.de##section.section__stacked
 ! Footer
@@ -920,6 +933,8 @@ www.sportschau.de##div.layout-content.scrolled > div.columns.twelve.content-wrap
 www.sportschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.sportschau.de##footer
 www.sportschau.de##ul.buttongroup.buttongroup--copytext
+! Hinzugefügt 2026-07-06: Social-Share-Bar am Artikelkopf (Facebook/WhatsApp/E-Mail/Drucken)
+www.sportschau.de##nav.socialbuttons
 
 ! --------------------------------------------------------------------------
 ! Startpage
