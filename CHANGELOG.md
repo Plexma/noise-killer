@@ -1,3 +1,13 @@
+## [2026-07-13] - Wöchentlicher Rotations-Audit Bucket 5: transfermarkt.de, zeit.de
+
+### Behoben
+- **zeit.de**: `div.article-actions.article__item` blockte den kompletten Toolbar-Container inkl. Audio-Player (TTS-Vorlesefunktion) – Kritische Regel „Audio-Player im Artikel nie blockieren" verletzt. Auf den Kommentare-Link (`> a[href="#comments"]`) eingeschränkt, Audio-Player/Verschenken/Zusammenfassen/Merken bleiben sichtbar.
+- **transfermarkt.de**: „Weitere News"-Empfehlungsbox (`div.more-news`) und Newsforum-Diskussionsbox (`div.box:has(a[href*="/newsforum/"])`) auf News-Artikelseiten waren bislang ungeblockt – beides DIVs statt der bereits erfassten SECTION-/ID-Selektoren.
+
+Rotations-Runde für Bucket 5 (Kalenderwoche 29): tracker.gg, transfermarkt.de, wikipedia.org, wiwo.de, wowhead.com, zdfheute.de, zeit.de geprüft. tracker.gg, wikipedia.org, wiwo.de, wowhead.com, zdfheute.de sauber, keine Änderungen.
+
+---
+
 ## [2026-07-06] - Wöchentlicher Rotations-Audit Bucket 4: n-tv.de, rbb24.de, sportschau.de
 
 ### Hinzugefügt

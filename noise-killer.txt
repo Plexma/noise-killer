@@ -1208,6 +1208,11 @@ www.transfermarkt.de##section.box:not(#tm-matches)
 www.transfermarkt.de###recommender
 www.transfermarkt.de###recommender_sidebar
 www.transfermarkt.de##.player-discussions
+! BUGFIX 2026-07-13: "Weitere News"-Empfehlungsbox und Newsforum-Diskussionsbox auf
+!   News-Artikelseiten sind DIVs (nicht wie #recommender/.player-discussions SECTION/Klasse),
+!   waren bisher ungeblockt
+www.transfermarkt.de##div.more-news
+www.transfermarkt.de##div.box:has(a[href*="/newsforum/"])
 
 ! --------------------------------------------------------------------------
 ! WirtschaftsWoche (wiwo.de)
@@ -1320,7 +1325,11 @@ stadt-bremerhaven.de##footer
 ! --------------------------------------------------------------------------
 www.zeit.de##aside.topicbox
 www.zeit.de##aside.volume-teaser
-www.zeit.de##div.article-actions.article__item
+! BUGFIX 2026-07-13: div.article-actions.article__item blockte den kompletten Toolbar-
+!   Container inkl. Audio-Player (TTS-Vorlesefunktion, data-audio-type="tts") - Kritische
+!   Regel "Audio-Player im Artikel nie blockieren" verletzt. Nur noch den Kommentare-Link
+!   gezielt entfernen, Audio-Player/Verschenken/Zusammenfassen/Merken bleiben sichtbar.
+www.zeit.de##div.article-actions.article__item > a[href="#comments"]
 www.zeit.de##div.article-footer.article__item
 www.zeit.de##div.comments-service.comments-service--article
 www.zeit.de##div[data-page-number] > aside[aria-label]
