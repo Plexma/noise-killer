@@ -1,3 +1,24 @@
+## [2026-07-16] - Vollständiger Audit aller Domains (Teil 2)
+
+Fortsetzung des vollständigen Audits (Teil 1 s.u.). Geprüft: derstandard.at, derstandard.de, deutschlandfunk.de, dhl.de, faz.net, focus.de, gamestar.de, golem.de, rbb24.de, spiegel.de, sportdaten.spiegel.de, sportschau.de, stadt-bremerhaven.de, startpage.com, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de, tarnkappe.info, taz.de, theverge.com, tomsguide.com (23 Domains). Damit sind alle 55 Domains der Liste einmal vollständig durchlaufen.
+
+### Hinzugefügt
+- **startpage.com**: Bezahlter "Sponsored"-Ergebnisblock auf der Suchergebnisseite (`.serp-result-preview`) ergänzt.
+
+### Behoben
+- **rbb24.de**: `.container__article-component--small` blockte auch das reguläre Inline-Artikelbild (gleiche Klassenkombination) – auf Elemente mit clinker-Teaser-Kind eingeschränkt.
+- **sportschau.de**: `div.copytext-element-wrapper.columns.twelve` blockte im Artikelkopf die Autorenzeile mit – Autorenzeile ausgeschlossen.
+- **stadt-bremerhaven.de**: `p.post-byline` blockte die komplette Autor-Metazeile inkl. Name und Datum statt nur des Kommentar-Links – auf den Kommentar-Link eingeschränkt. `article table` war zu generisch und hätte reguläre Inhaltstabellen mitblockiert – auf die Amazon-Affiliate-Tabellenklasse eingeschränkt.
+- **sueddeutsche.de**: `[data-manual-remove]` blockte die Anhören-Toolbar, die echten Audio-Player-Elemente und die Teilen-Toolbar mit – diese ausgeschlossen. Zusätzlich blockte `[data-testid="byline"]` fälschlich die Autorenzeile – Regel entfernt.
+- **faz.net**: `[data-external-selector="html-element"]` blockte auch eingebettete Interactive-Content-Elemente (Karten, Datawrapper-Charts) im Artikeltext – auf die zwei tatsächlichen Werbe-Wrapper (Newsletter-Box, Job-Empfehlungen) eingeschränkt.
+- **theverge.com**: `a[href="/subscribe"]` griff nicht mehr, da der Subscribe-Button-Link inzwischen immer Tracking-Query-Parameter trägt – auf Präfix-Match umgestellt.
+
+Sauber, keine Änderung: deutschlandfunk.de, dhl.de, focus.de, gamestar.de, spiegel.de, sportdaten.spiegel.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de, tarnkappe.info, taz.de. Nicht prüfbar (Anti-Adblock-/Consent-Wall verhindert Content-Load in der Testumgebung): derstandard.at, derstandard.de, golem.de – bestehende Regeln unverändert gelassen, Nachprüfung mit echtem Browser/Adblocker-Setup empfohlen.
+
+Hinweis (kein Filterlisten-Fix möglich): tomsguide.com leitete in mehreren unabhängigen Tests reproduzierbar und ohne Nutzerinteraktion zu einer Scareware-Seite (`report.error-report.com`, gefälschte Fehlermeldung) weiter – vermutlich ein kompromittiertes Werbenetzwerk. Da es sich um einen JS-/Netzwerk-Redirect und kein DOM-Element handelt, kann eine Cosmetic-Filterliste dies nicht beheben.
+
+---
+
 ## [2026-07-16] - Vollständiger Audit aller Domains (Teil 1)
 
 Auf Nutzerwunsch vollständige Prüfung sämtlicher Domains statt nur des Wochen-Buckets. Geprüft: 9to5google.com, 9to5mac.com, amazon.de, androidauthority.com, arstechnica.com, buffed.de, computerbase.de, de.ifixit.com, handelsblatt.com, heise.de, hsreplay.net, ifun.de, imgur.com, iphone-ticker.de, lto.de, macrumors.com, my.dpd.de, mydealz.de, myhermes.de, n-tv.de, ndr.de, nytimes.com, pcgameshardware.de, raider.io (24 Domains) sowie tracker.gg, transfermarkt.de, wikipedia.org, wiwo.de, wowhead.com, zdfheute.de, zeit.de (bereits am 2026-07-13 im Rotations-Bucket geprüft). Restliche ~24 Domains (derstandard.at/.de, deutschlandfunk.de, dhl.de, faz.net, focus.de, gamestar.de, golem.de, rbb24.de, spiegel.de, sportdaten.spiegel.de, sportschau.de, stadt-bremerhaven.de, startpage.com, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de, tarnkappe.info, taz.de, theverge.com, tomsguide.com) sind für den nächsten Durchlauf zurückgestellt.

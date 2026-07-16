@@ -361,7 +361,11 @@ www.faz.net##iframe.opinary-iframe
 !   Inline-Box via avenga.snacks (data-fsw="newsletterpromote") in div#nl_footer_widget
 ! BUGFIX 2026-03-30: Äußeren Wrapper [data-external-selector="html-element"] blockieren statt
 !   nur #nl_footer_widget – deckt Newsletter-Box UND "Verlagsangebot"-Marktplatz-Widget ab.
-www.faz.net##[data-external-selector="html-element"]
+! BUGFIX 2026-07-16: Wrapper wird auch für eingebettete Interactive-Content-Elemente
+!   (z.B. Karten via maplibre, Datawrapper-Charts) im Artikeltext wiederverwendet und
+!   blockierte diese fälschlich mit. Auf die zwei unterscheidenden Kind-Elemente eingeschränkt.
+www.faz.net##[data-external-selector="html-element"]:has(#nl_footer_widget)
+www.faz.net##[data-external-selector="html-element"]:has(.job-recommendations--heading)
 ! BUGFIX 2026-03-28: Artikel-Toolbar (Anhören / Merken / Teilen / Drucken / Zusammenfassung)
 !   aside[data-external-selector="upper-toolbar"] – auf expliziten Nutzerwunsch blockiert
 www.faz.net##aside[data-external-selector="upper-toolbar"]
@@ -843,7 +847,9 @@ www.rbb24.de##.bottom-nav-article
 ! Kommentar-Link + Social-Share in Artikel (interaction-bar)
 www.rbb24.de##.interaction-bar
 ! Inline Artikel-Empfehlung im Fließtext (clinker-Teaser)
-www.rbb24.de##.container__article-component--small
+! BUGFIX 2026-07-16: Selektor traf auch das reguläre Inline-Artikelbild
+!         (dieselbe Klassenkombination). Auf Elemente mit clinker-Kind eingeschränkt.
+www.rbb24.de##.container__article-component--small:has(.clinker)
 ! Sendungshinweis (kursiver Absatz am Artikelende)
 www.rbb24.de##.container__article-component:has(> .component-text > p > i)
 ! Tag-Liste am Artikelende
@@ -958,7 +964,9 @@ sportdaten.spiegel.de##div.hs-legal-notice
 ! --------------------------------------------------------------------------
 www.sportschau.de##a.teaser-absatz__link
 www.sportschau.de##aside
-www.sportschau.de##div.copytext-element-wrapper.columns.twelve
+! BUGFIX 2026-07-16: Selektor traf im Artikelkopf auch die Autorenzeile
+!         (div.authorline), die dieselbe Klassenkombination trägt. Ausgeschlossen.
+www.sportschau.de##div.copytext-element-wrapper.columns.twelve:not(:has(.authorline))
 www.sportschau.de##div.copytext-element-wrapper.columns.twelve.copytext-element-wrapper--overlap
 www.sportschau.de##div.copytext__audio
 www.sportschau.de##div.endline
@@ -996,6 +1004,9 @@ www.startpage.com##div.extension-onboarding-serp-toast
 ! Footer
 www.startpage.com##footer
 www.startpage.com##div.footer-container
+! Hinzugefügt: 2026-07-16
+! Bezahlter "Sponsored"-Ergebnisblock auf der Suchergebnisseite
+www.startpage.com##.serp-result-preview
 
 ! --------------------------------------------------------------------------
 ! Sueddeutsche Zeitung
@@ -1043,13 +1054,14 @@ www.sueddeutsche.de##div[data-testid="IframelyEmbed"]:not(:has(iframe))
 www.sueddeutsche.de##a.lp_is_end
 ! Inline-Newsletter-Widget im Artikeltext (Shadow DOM, via data-newsletter-id)
 www.sueddeutsche.de##div[data-newsletter-id]
-! Autorenzeile ("Von Bernd Kastner")
-www.sueddeutsche.de##[data-testid="byline"]
 ! Urheberrechtszeile am Artikelende ("© SZ - Rechte am Artikel können Sie hier erwerben.")
 www.sueddeutsche.de##[data-testid="closing-line"]
 www.sueddeutsche.de##div.teaser-list
 www.sueddeutsche.de##div[data-article-wrapper] > div
-www.sueddeutsche.de##[data-manual-remove]
+! BUGFIX 2026-07-16: [data-manual-remove] traf auch die Anhören-Toolbar
+!         (aside[data-testid="toolbar-top"]), die echten Audio-Player (audio-Elemente)
+!         und die Teilen-Toolbar (div.css-196nsxa). Diese ausgeschlossen.
+www.sueddeutsche.de##[data-manual-remove]:not([data-testid="toolbar-top"]):not(audio):not(.css-196nsxa)
 ! Outer-Separator-Wrapper ausblenden wenn Kind data-manual-remove trägt (Karussell-Sections, h:48 Leerraum)
 www.sueddeutsche.de##.szde-homie-page-content__separator-item--both:has(> [data-manual-remove])
 www.sueddeutsche.de##div[data-test]
@@ -1187,7 +1199,10 @@ www.theverge.com###zephr-anchor > div:has(> span + ul)
 ! Topic/Autoren-Follow-Buttons (○-Kreise neben Themen-Tags und in der Byline)
 www.theverge.com##aside[id^="popover-"]
 ! Subscribe-Button (Top-Navigation)
-www.theverge.com##a[href="/subscribe"]
+! BUGFIX 2026-07-16: exakter Match griff nicht mehr, href trägt inzwischen
+!         immer Tracking-Query-Parameter (z.B. /subscribe?itm_campaign=...).
+!         Auf Präfix-Match umgestellt.
+www.theverge.com##a[href^="/subscribe"]
 ! Autoren-Bio-Box unterhalb des Artikel-Bildes
 www.theverge.com##.duet--ledes--standard-lede-bottom
 ! Inline-"Related"-Artikel im Artikeltext
@@ -1306,8 +1321,10 @@ www.zdfheute.de##section:not(article section):has(> div > div[data-testid="heute
 ! Radikal-Entschlackung: kein Autor, keine Kommentare, keine Sidebar
 ! Bestätigte Selektoren via DOM-Analyse
 ! --------------------------------------------------------------------------
-! Autor-Metazeile im Artikel (von / Datum / Kommentieren-Link)
-stadt-bremerhaven.de##p.post-byline
+! Kommentieren-Link in der Autor-Metazeile (von / Datum / Kommentieren-Link)
+! BUGFIX 2026-07-16: p.post-byline blockierte die komplette Zeile inkl. Autorenname
+!         und Datum. Auf den Kommentar-Link eingeschränkt (a.comments-link).
+stadt-bremerhaven.de##p.post-byline a.comments-link
 ! Autor-Bio unterhalb des Artikels (Avatar + Kurzbiografie)
 stadt-bremerhaven.de##div.author-bio
 ! Post-Navigation (Nächster/Vorheriger Beitrag)
@@ -1334,7 +1351,9 @@ stadt-bremerhaven.de##div.video-container:has(> blockquote.wp-embedded-content)
 ! BUGFIX 2026-03-22: Tag-Liste am Artikelende ("Tags: Testberichte")
 stadt-bremerhaven.de##p.post-tags
 ! Amazon-Affiliate-Produkttabellen
-stadt-bremerhaven.de##article table
+! BUGFIX 2026-07-16: article table war zu generisch und hätte auch reguläre
+!         Inhaltstabellen im Artikeltext geblockt. Auf die Plugin-Klasse eingeschränkt.
+stadt-bremerhaven.de##article table.aawp-table
 ! "Neueste Beiträge" Überschrift + Liste (im Hauptinhalt-Bereich, nicht Sidebar)
 stadt-bremerhaven.de##div.recent-posts__heading
 stadt-bremerhaven.de##ul.recent-posts
