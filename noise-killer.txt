@@ -61,6 +61,10 @@
 9to5mac.com##ul.wp-block-list:has(+ div.google-preferred-source-badge)
 9to5mac.com##div.google-preferred-source-badge
 9to5mac.com##div.ad-disclaimer-container
+! BUGFIX 2026-07-16: Affiliate-Box "Do more with your Apple products" (Amazon-Produktlinks)
+!   liegt in div.wp-block-group direkt vor dem Preferred-Source-Badge, nicht im Heading+UL-
+!   Muster der bisherigen Regeln - war bisher ungeblockt
+9to5mac.com##div.wp-block-group:has(+ div.google-preferred-source-badge)
 
 ! --------------------------------------------------------------------------
 ! Android Authority
@@ -97,6 +101,9 @@ www.androidauthority.com##div:has(+ #comments-section)
 !   AAGooglePreferredSource. Der Header-„Add on Google"-Button (AAGooglePrefSource)
 !   liegt außerhalb des Content-Wrappers und bleibt daher unberührt.
 www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="andauth.co/AAGoogle"])
+! BUGFIX 2026-07-16: "Our top deals of the day"-Affiliate-Widget im Artikeltext (Links zu
+!   clearbuy.com/redirect/...) war bisher ungeblockt
+www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="clearbuy.com/redirect"])
 
 ! --------------------------------------------------------------------------
 ! Ars Technica
@@ -147,11 +154,19 @@ wikipedia.org##div.post-content.footer-content
 ! HSReplay
 ! --------------------------------------------------------------------------
 hsreplay.net##footer
+! BUGFIX 2026-07-16: Ad-Slot auf der Startseite (.bottom-ad-container) und
+!   Eigenwerbungs-Banner im Header (#navbar-notifications-container) waren ungeblockt
+hsreplay.net##.bottom-ad-container
+hsreplay.net###navbar-notifications-container
 
 ! --------------------------------------------------------------------------
 ! Imgur
+! BUGFIX 2026-07-16: div.BottomRecirc war tot (Klasse existiert nach Redesign nicht mehr
+!   im DOM). Stattdessen Kommentarbereich (div.CommentsList) und klebender Bottom-Ad-Banner
+!   (.Ad-adhesive) ergänzt - beide bisher ungeblockt
 ! --------------------------------------------------------------------------
-imgur.com##div.BottomRecirc
+imgur.com##div.CommentsList
+imgur.com##.Ad-adhesive
 
 ! --------------------------------------------------------------------------
 ! DPD
@@ -229,7 +244,8 @@ tracker.gg##div.upsell
 ! --------------------------------------------------------------------------
 www.amazon.de###mobile-dp-ilm_feature_div_01
 www.amazon.de###navFooter
-www.amazon.de###prime-desktop-dp_feature_div_01
+! BUGFIX 2026-07-16: ID-Nummerierung von Amazon geändert (_01 -> _0), Regel griff nicht mehr
+www.amazon.de###prime-desktop-dp_feature_div_0
 www.amazon.de##[id^="sims-"]
 
 ! --------------------------------------------------------------------------
@@ -240,6 +256,9 @@ www.amazon.de##[id^="sims-"]
 ! --------------------------------------------------------------------------
 www.buffed.de##aside
 www.buffed.de##div.wadtag
+! BUGFIX 2026-07-16: Kommentarsektion und Social-Share-Icons waren ungeblockt
+www.buffed.de###article_comment_box
+www.buffed.de##span.artSocialLinks
 
 ! --------------------------------------------------------------------------
 ! ComputerBase
@@ -561,7 +580,9 @@ www.heise.de##div.ad.ad--inread
 ! --------------------------------------------------------------------------
 www.ifun.de###article-single-comments
 www.ifun.de###article-single-stats
-www.ifun.de###viewport-share
+! BUGFIX 2026-07-16: #viewport-share griff nicht mehr (0 Treffer) - Share-Leiste liegt jetzt
+!   in span.socialnetworks
+www.ifun.de##span.socialnetworks
 www.ifun.de##.comments-block
 www.ifun.de##.comments-block-mobile
 www.ifun.de##.consumernotice
@@ -581,7 +602,9 @@ www.ifun.de###article-single-footer-tags
 www.iphone-ticker.de###article-single-comments
 www.iphone-ticker.de###article-single-stats
 www.iphone-ticker.de###verbraucherhinweis-mobile-300x250
-www.iphone-ticker.de###viewport-share
+! BUGFIX 2026-07-16: #viewport-share griff nicht mehr (0 Treffer), gleicher Fix wie ifun.de
+!   (identische Plattform) - Share-Leiste liegt jetzt in span.socialnetworks
+www.iphone-ticker.de##span.socialnetworks
 www.iphone-ticker.de##.comments-block
 www.iphone-ticker.de##.comments-block-mobile
 www.iphone-ticker.de##.consumernotice
@@ -623,7 +646,12 @@ www.lto.de##ul.tags
 !         .js-article .noskim (Artikel-Footer mit „[ 100 comments ]"-Link),
 !         #canvas-sidebar (Slide-Panel mit Videos/Guides/Upcoming/Other Stories).
 ! --------------------------------------------------------------------------
-www.macrumors.com###maincontent > div
+! BUGFIX 2026-07-16: #maincontent > div blockte auf Roundup-/Guide-Seiten (z. B. /roundup/...)
+!   fälschlich die redaktionelle Timeline-Chronik (div.timeline--<hash>, einziges direktes
+!   div-Kind dort) - kompletter Seiteninhalt wurde versteckt (Overblocking!). Timeline anhand
+!   des stabilen Klassen-Präfixes ausgeschlossen, Noise-Divs auf normalen Artikeln (Newsletter-
+!   Box, Popular Stories, #comments) bleiben weiterhin erfasst.
+www.macrumors.com##main#maincontent > div:not([class*="timeline--"])
 www.macrumors.com##div.linkback
 www.macrumors.com##.js-article .noskim
 www.macrumors.com###canvas-sidebar
@@ -667,7 +695,9 @@ www.mydealz.de##[data-t="appDownload"]
 ! "Ähnliche Gutscheine"-Abschnitt
 ! BUGFIX 2026-03-18: :has-text() mit Umlaut wurde nicht zuverlässig ausgewertet.
 !         Ersetzt durch direkten Klassen-Selector (space--mt-2 ist exklusiv für diese Box).
-www.mydealz.de##div.bRad--a.bg--main.space--mt-2
+! BUGFIX 2026-07-16: Klasse bRad--a zu bRad--fromW4-a (responsive Variante) umbenannt,
+!         Regel griff auf normalen Produkt-Deals nicht mehr
+www.mydealz.de##div.bRad--fromW4-a.bg--main.space--mt-2
 ! Footer
 www.mydealz.de###footer-container
 
@@ -767,6 +797,9 @@ www.pcgameshardware.de##aside.innerArticleModule
 www.pcgameshardware.de##aside.rec_box_bottom
 www.pcgameshardware.de##div.header2.footer3
 www.pcgameshardware.de##ul.rowAlt.footer2
+! BUGFIX 2026-07-16: Affiliate-PC-Vergleichstabelle ("PCGH-PCs: Daten, Benchmarks, Preise")
+!   im Artikel war ungeblockt
+www.pcgameshardware.de##aside.rgTable
 
 ! --------------------------------------------------------------------------
 ! Raider.IO

@@ -1,3 +1,26 @@
+## [2026-07-16] - Vollständiger Audit aller Domains (Teil 1)
+
+Auf Nutzerwunsch vollständige Prüfung sämtlicher Domains statt nur des Wochen-Buckets. Geprüft: 9to5google.com, 9to5mac.com, amazon.de, androidauthority.com, arstechnica.com, buffed.de, computerbase.de, de.ifixit.com, handelsblatt.com, heise.de, hsreplay.net, ifun.de, imgur.com, iphone-ticker.de, lto.de, macrumors.com, my.dpd.de, mydealz.de, myhermes.de, n-tv.de, ndr.de, nytimes.com, pcgameshardware.de, raider.io (24 Domains) sowie tracker.gg, transfermarkt.de, wikipedia.org, wiwo.de, wowhead.com, zdfheute.de, zeit.de (bereits am 2026-07-13 im Rotations-Bucket geprüft). Restliche ~24 Domains (derstandard.at/.de, deutschlandfunk.de, dhl.de, faz.net, focus.de, gamestar.de, golem.de, rbb24.de, spiegel.de, sportdaten.spiegel.de, sportschau.de, stadt-bremerhaven.de, startpage.com, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de, tarnkappe.info, taz.de, theverge.com, tomsguide.com) sind für den nächsten Durchlauf zurückgestellt.
+
+### Hinzugefügt
+- **9to5mac.com**: Affiliate-Box "Do more with your Apple products" (Amazon-Produktlinks) im Artikel ergänzt.
+- **androidauthority.com**: "Our top deals of the day"-Affiliate-Widget im Artikeltext ergänzt.
+- **buffed.de**: Kommentarsektion (`#article_comment_box`) und Social-Share-Icons (`span.artSocialLinks`) ergänzt.
+- **hsreplay.net**: Ad-Slot auf der Startseite und Eigenwerbungs-Banner im Header ergänzt.
+- **imgur.com**: Kommentarbereich (`div.CommentsList`) und klebender Bottom-Ad-Banner (`.Ad-adhesive`) ergänzt.
+- **pcgameshardware.de**: Affiliate-PC-Vergleichstabelle im Artikel ergänzt.
+
+### Behoben
+- **amazon.de**: ID-Nummerierung geändert (`_01` → `_0`), Prime-Video-Promo-Regel griff nicht mehr.
+- **ifun.de** / **iphone-ticker.de**: `#viewport-share` griff nicht mehr, Share-Leiste liegt jetzt in `span.socialnetworks`.
+- **imgur.com**: `div.BottomRecirc` war tot (Klasse existiert nach Redesign nicht mehr).
+- **macrumors.com**: `#maincontent > div` blockte auf Roundup-/Guide-Seiten fälschlich die redaktionelle Timeline-Chronik (Overblocking, kompletter Seiteninhalt versteckt) – Timeline anhand des Klassen-Präfixes ausgeschlossen.
+- **mydealz.de**: Klasse `bRad--a` zu `bRad--fromW4-a` umbenannt, Regel griff auf normalen Produkt-Deals nicht mehr.
+
+Sauber, keine Änderung: 9to5google.com, arstechnica.com, computerbase.de, de.ifixit.com, handelsblatt.com, heise.de, lto.de, myhermes.de, n-tv.de, ndr.de, raider.io. Nicht prüfbar (Browser-Tool blockiert/verweigert Zugriff): my.dpd.de, nytimes.com.
+
+---
+
 ## [2026-07-13] - Wöchentlicher Rotations-Audit Bucket 5: transfermarkt.de, zeit.de
 
 ### Behoben

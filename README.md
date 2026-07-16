@@ -43,9 +43,9 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | 9to5google.com | 💬 📰 📢 🛍️ |
 | 9to5mac.com | 💬 📰 📢 🛍️ |
 | amazon.de | 📢 🛍️ 🦶 |
-| androidauthority.com | 💬 📢 🦶 |
+| androidauthority.com | 💬 📢 🛍️ 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
-| buffed.de | 📢 |
+| buffed.de | 💬 🔗 📢 |
 | computerbase.de | 📢 📬 🦶 |
 | de.ifixit.com | 🪧 💬 📰 🦶 |
 | wikipedia.org (alle Sprachversionen) | 🦶 |
@@ -58,9 +58,9 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | golem.de | 💬 📬 📢 🪧 🦶 |
 | handelsblatt.com | 📰 📢 🪧 🦶 |
 | heise.de | 📰 📬 📢 🛍️ 🦶 |
-| hsreplay.net | 🦶 |
+| hsreplay.net | 📢 🪧 🦶 |
 | ifun.de / iphone-ticker.de | 💬 📬 🔗 🏷️ 🦶 |
-| imgur.com | 📰 |
+| imgur.com | 💬 🪧 |
 | lto.de | 📰 📬 📢 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
@@ -69,7 +69,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | n-tv.de | 🔗 📰 📢 🦶 |
 | ndr.de | 🔗 📢 🦶 |
 | nytimes.com | 📰 🦶 |
-| pcgameshardware.de | 💬 📢 🦶 |
+| pcgameshardware.de | 💬 📢 🛍️ 🦶 |
 | raider.io | 📢 🪧 🦶 |
 | rbb24.de | 💬 📱 📰 📬 🏷️ 🦶 |
 | spiegel.de | 📰 📬 🔗 🛍️ 🦶 |
