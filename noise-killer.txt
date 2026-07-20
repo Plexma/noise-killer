@@ -29,6 +29,11 @@
 ! BUGFIX 2026-07-02: Google-Preferred-Source-Badge + Werbe-Disclaimer, die inzwischen an
 !         den „More on …"-Abschnitt angehängt werden, blockiert (div.google-preferred-source-badge,
 !         div.ad-disclaimer-container). Site hat seit Erstanlage neue Elemente ergänzt.
+! BUGFIX 2026-07-20: p:has(> em:only-child) blockierte fälschlich normalen Artikeltext
+!         (jeder Absatz mit genau einem <em>-Kind, z. B. "In a statement to <em>9to5Mac</em>, …").
+!         Präzisiert auf p:has(> em:only-child > strong:first-child) – trifft weiterhin das
+!         "Follow Ben: Twitter/X, Threads, …"-Widget (dessen <em> mit <strong> beginnt), nicht
+!         mehr normalen Fließtext.
 ! --------------------------------------------------------------------------
 9to5google.com##aside.sidebar
 9to5google.com##a.comments
@@ -41,7 +46,7 @@
 9to5google.com##div.infinite-loader
 9to5google.com##h2[id^="h-more-on-"]
 9to5google.com##h2[id^="h-more-on-"] + ul
-9to5google.com##p:has(> em:only-child)
+9to5google.com##p:has(> em:only-child > strong:first-child)
 9to5google.com##div.google-preferred-source-badge
 9to5google.com##div.ad-disclaimer-container
 9to5mac.com##aside.sidebar
@@ -55,7 +60,7 @@
 9to5mac.com##div.infinite-loader
 9to5mac.com##h2[id^="h-more-on-"]
 9to5mac.com##h2[id^="h-more-on-"] + ul
-9to5mac.com##p:has(> em:only-child)
+9to5mac.com##p:has(> em:only-child > strong:first-child)
 ! Hinzugefügt: 2026-07-02
 9to5mac.com##h3.wp-block-heading:has(+ ul.wp-block-list + div.google-preferred-source-badge)
 9to5mac.com##ul.wp-block-list:has(+ div.google-preferred-source-badge)
@@ -134,8 +139,13 @@ arstechnica.com##div.single-most-read
 !         div.related-posts-wrap = Artikel-Empfehlungen, #wppost-comments-container =
 !         gesamter Kommentarbereich, footer = Footer inkl. Newsletter-Box ("Bleib auf
 !         dem Laufenden").
+! BUGFIX 2026-07-20: Seite hat den Werbebanner von .component-WPCampaignBanner auf
+!         .component-RibbonBanner migriert ("Kostenloser Versand ab 65 € Bestellwert*",
+!         sitewide über der Artikelüberschrift) - alte Klasse greift nicht mehr, Banner
+!         war komplett ungeblockt. Neue Klasse ergänzt, alte Regel bleibt für Fallback.
 ! --------------------------------------------------------------------------
 de.ifixit.com##.component-WPCampaignBanner
+de.ifixit.com##.component-RibbonBanner
 de.ifixit.com##li.entry-meta-comments
 de.ifixit.com##div.related-posts-wrap
 de.ifixit.com###wppost-comments-container

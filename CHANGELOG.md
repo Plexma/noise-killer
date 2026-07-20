@@ -1,3 +1,17 @@
+## [2026-07-20] - Wöchentlicher Rotations-Audit Bucket 1
+
+Geprüft (Bucket 1 von 5, Rotation nach ISO-Kalenderwoche): 9to5google.com, 9to5mac.com, arstechnica.com, de.ifixit.com, hsreplay.net, imgur.com, my.dpd.de, raider.io, sportdaten.spiegel.de, stadt-bremerhaven.de, steamdb.info.
+
+### Behoben
+- **9to5google.com** / **9to5mac.com**: `p:has(> em:only-child)` blockte fälschlich normalen Artikeltext (jeder Absatz mit genau einem `<em>`-Kind, z. B. Zitate wie "In a statement to *9to5Mac*, …") – auf `p:has(> em:only-child > strong:first-child)` präzisiert. Trifft weiterhin das "Follow Ben: Twitter/X, Threads, …"-Widget, nicht mehr normalen Fließtext.
+- **de.ifixit.com**: Werbebanner ("Kostenloser Versand ab 65 € Bestellwert*") von `.component-WPCampaignBanner` auf `.component-RibbonBanner` migriert – alte Klasse griff nicht mehr, Banner war sitewide ungeblockt sichtbar. Neue Klasse ergänzt.
+
+Sauber, keine Änderung: arstechnica.com, imgur.com.
+
+Nicht prüfbar (Cloudflare-Bot-Check/Login-Wall verhindert Content-Zugriff in der Testumgebung): hsreplay.net, steamdb.info, my.dpd.de (Paketverfolgung erfordert Sendungsdaten/Login) – bestehende Regeln unverändert gelassen. raider.io: Kern-Selektoren (Footer, Cookie-Banner) bestätigt intakt; die Recruitment-Panel-Selektoren (SLDS-Klassen) konnten mangels erreichbarer Gilden-Recruitment-Seite nicht verifiziert werden. sportdaten.spiegel.de: Heimspiel-Widget erscheint nur an Bundesliga-Spieltagen (aktuell Sommerpause) – nicht testbar.
+
+---
+
 ## [2026-07-16] - Vollständiger Audit aller Domains (Teil 2)
 
 Fortsetzung des vollständigen Audits (Teil 1 s.u.). Geprüft: derstandard.at, derstandard.de, deutschlandfunk.de, dhl.de, faz.net, focus.de, gamestar.de, golem.de, rbb24.de, spiegel.de, sportdaten.spiegel.de, sportschau.de, stadt-bremerhaven.de, startpage.com, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de, tarnkappe.info, taz.de, theverge.com, tomsguide.com (23 Domains). Damit sind alle 55 Domains der Liste einmal vollständig durchlaufen.
