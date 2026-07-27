@@ -1,3 +1,16 @@
+## [2026-07-27] - Wöchentlicher Rotations-Audit Bucket 2
+
+Geprüft (Bucket 2 von 5, Rotation nach ISO-Kalenderwoche): tarnkappe.info, taz.de, tracker.gg, wikipedia.org, amazon.de, androidauthority.com, buffed.de, computerbase.de, derstandard.at, derstandard.de, deutschlandfunk.de, dhl.de.
+
+### Behoben
+- **wikipedia.org**: `div.post-content.footer-content` entfernt – matcht auf de.wikipedia.org und de.m.wikipedia.org (Desktop + Mobile-Skin geprüft) nicht mehr, DE nutzt inzwischen ebenfalls den Vector-Skin-Footer (`mw-footer-container`), der bereits separat geblockt wird.
+
+Sauber, keine Änderung: tarnkappe.info, taz.de, amazon.de, androidauthority.com, computerbase.de, deutschlandfunk.de, dhl.de.
+
+Nicht prüfbar (Cloudflare-Bot-Check bzw. Consent-Wall ohne Content-Load in der Testumgebung): tracker.gg, buffed.de (Artikelseite), derstandard.at, derstandard.de – bestehende Regeln unverändert gelassen.
+
+---
+
 ## [2026-07-20] - Wöchentlicher Rotations-Audit Bucket 1
 
 Geprüft (Bucket 1 von 5, Rotation nach ISO-Kalenderwoche): 9to5google.com, 9to5mac.com, arstechnica.com, de.ifixit.com, hsreplay.net, imgur.com, my.dpd.de, raider.io, sportdaten.spiegel.de, stadt-bremerhaven.de, steamdb.info.

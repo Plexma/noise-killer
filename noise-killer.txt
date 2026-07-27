@@ -155,10 +155,12 @@ de.ifixit.com##footer
 ! Wikipedia (alle Sprachversionen)
 ! Hinzugefügt 2026-03-22: Footer – gilt für alle *.wikipedia.org-Subdomains.
 !         div.mw-footer-container = Vector-Skin-Footer (EN und die meisten Sprachen)
-!         div.post-content.footer-content = alternativem Footer-Layout (z. B. DE)
+! BUGFIX 2026-07-27: div.post-content.footer-content entfernt (Rotations-Audit
+!         Bucket 2) – matcht auf de.wikipedia.org und de.m.wikipedia.org nicht
+!         mehr, DE nutzt inzwischen ebenfalls den Vector-Skin-Footer
+!         (mw-footer-container), der bereits separat geblockt wird.
 ! --------------------------------------------------------------------------
 wikipedia.org##div.mw-footer-container
-wikipedia.org##div.post-content.footer-content
 
 ! --------------------------------------------------------------------------
 ! HSReplay
