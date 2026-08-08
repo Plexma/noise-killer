@@ -36,7 +36,9 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 
 ## Unterstützte Seiten
 
-**Legende:** 📰 Artikelempfehlungen · 📬 Newsletter-Box · 💬 Kommentare · 🔗 Social-/Share-Leiste · 🦶 Footer · 📢 Eigenwerbung/Teaser · 🛍️ Affiliate/Shop-Links · 🪧 Banner/Overlays
+*Letzter vollständiger Audit: 2026-08-08 – jede Domain auf Startseite **und** Artikelseite gegen das DOM geprüft.*
+
+**Legende:** 📰 Artikelempfehlungen · 📬 Newsletter-Box · 💬 Kommentare · 🔗 Social-/Share-Leiste · 🦶 Footer · 📢 Eigenwerbung/Teaser · 🛍️ Affiliate/Shop-Links · 🪧 Banner/Overlays · 🏷️ Tag-Listen
 
 | Seite | Was entfernt wird |
 |---|---|
@@ -71,10 +73,11 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | nytimes.com | 📰 🦶 |
 | pcgameshardware.de | 💬 📢 🛍️ 🦶 |
 | raider.io | 📢 🪧 🦶 |
-| rbb24.de | 💬 📱 📰 📬 🏷️ 🦶 |
+| rbb24.de | 💬 🔗 📰 📬 🏷️ 🦶 |
 | spiegel.de | 📰 📬 🔗 🛍️ 🦶 |
+| sportdaten.spiegel.de (Spielbanner-Widget) | 🛍️ |
 | sportschau.de | 🔗 📢 🦶 |
-| stadt-bremerhaven.de | 💬 🛍️ 📢 🦶 |
+| stadt-bremerhaven.de | 💬 📰 🛍️ 📢 🦶 |
 | startpage.com | 📢 📬 🦶 |
 | steamdb.info | 📢 🦶 |
 | sueddeutsche.de | 📰 📬 📢 🦶 |
@@ -89,7 +92,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | tracker.gg | 📢 🦶 |
 | transfermarkt.de | 💬 📰 📢 🦶 |
 | wiwo.de | 📰 📢 🦶 |
-| wowhead.com | 💬 📰 📢 🦶 |
+| wowhead.com | 💬 📰 📬 📢 🦶 |
 | zdfheute.de | 📰 🔗 🦶 |
 | zeit.de | 💬 📢 🦶 |
 

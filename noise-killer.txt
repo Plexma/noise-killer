@@ -3,7 +3,7 @@
 ! Zweck: Entschlackung von Nachrichtenseiten & anderen Webseiten
 ! Entfernt: Inline-Eigenwerbung, "Mehr zum Thema", Artikel-Empfehlungen,
 !           Footer, Newsletter-Boxen, Kommentarbereiche, Social-Bars
-! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-03-18 (Browser-DOM-Analyse)
+! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-08-08 (Vollaudit: Startseite + Artikel je Domain)
 ! ==========================================================================
 
 ! --------------------------------------------------------------------------
@@ -49,6 +49,14 @@
 9to5google.com##p:has(> em:only-child > strong:first-child)
 9to5google.com##div.google-preferred-source-badge
 9to5google.com##div.ad-disclaimer-container
+! Hinzugefügt 2026-08-08 (Vollaudit): Affiliate-Box vor dem Preferred-Source-Badge
+!   war nur für 9to5mac.com abgedeckt. Beide Sites nutzen dasselbe Theme und
+!   dieselben WordPress-Blöcke – Regeln zur Symmetrie ergänzt. Rein struktur-
+!   verankert (Heading + Liste + Badge in direkter Geschwisterfolge), daher auf
+!   den geprüften Artikeln 0 Fehltreffer.
+9to5google.com##h3.wp-block-heading:has(+ ul.wp-block-list + div.google-preferred-source-badge)
+9to5google.com##ul.wp-block-list:has(+ div.google-preferred-source-badge)
+9to5google.com##div.wp-block-group:has(+ div.google-preferred-source-badge)
 9to5mac.com##aside.sidebar
 9to5mac.com##a.comments
 9to5mac.com###comments
@@ -86,7 +94,13 @@ www.androidauthority.com###comments-section
 ! Deal-Promo-Bar ("🔥 Get X% off ...") – direktes Kind von #__next mit andauth.co-Link
 www.androidauthority.com###__next > div:has(a[href*="andauth.co"])
 ! Affiliate-Disclaimer ("Affiliate links on Android Authority may earn us a commission")
-www.androidauthority.com##main > div:has(a[href*="/external-links/"])
+! BUGFIX 2026-08-08: main > div:has(a[href*="/external-links/"]) traf auf der
+!   Startseite den Wrapper des KOMPLETTEN Artikel-Feeds (h:10467px, Features/
+!   Reviews/The best/In case you missed it/More news) – dort liegt der Disclaimer
+!   eine Ebene tiefer, sodass :has() den äußeren Container erwischte. Die Seite war
+!   damit praktisch leer. Auf den Disclaimer selbst eingegrenzt (Anchor als
+!   Enkelkind über <p>), Artikel-Verhalten unverändert (h:164px, 1 Link).
+www.androidauthority.com##div:has(> p > a[href*="/external-links/"])
 ! Tag-Liste am Artikelende (Links zu /tag/…)
 www.androidauthority.com##[data-content-wrapper="true"] > div:has(a[href*="/tag/"])
 ! Follow-Topics/Authors-Widget (Viafoura)
@@ -128,7 +142,13 @@ arstechnica.com##a.view-comments
 ! Author-Box (Autoren-Bio, Credits) - komplette Box blockieren
 arstechnica.com##div.author-mini-bio
 ! Navigation Buttons (PREV STORY / NEXT STORY)
-arstechnica.com##a.post-navigation-link
+! BUGFIX 2026-08-08: a.post-navigation-link traf auf der Startseite den
+!   "Load more"-Button (href=/page/2/) – die Startseiten-Pagination war damit
+!   unbenutzbar. Der Button trägt denselben Anchor-Klassennamen, sein Wrapper
+!   aber den Modifier .nav-more statt .nav-previous/.nav-next. Auf die beiden
+!   Artikel-Wrapper umgestellt (Artikel: 2 Treffer, Startseite: 0).
+arstechnica.com##div.post-navigation-link-wrapper.nav-previous
+arstechnica.com##div.post-navigation-link-wrapper.nav-next
 ! Artikel-Empfehlungen ("Most Read") Block am Artikelende
 arstechnica.com##div.single-most-read
 
@@ -254,8 +274,13 @@ tracker.gg##div.upsell
 !         Empfehlungs-Carousels ([id^="sims-"]: „Wird oft zusammen gekauft", SIMS-Container),
 !         Prime-Video/Promo-Banner (#prime-desktop-dp_feature_div_01).
 ! --------------------------------------------------------------------------
-www.amazon.de###mobile-dp-ilm_feature_div_01
+! BUGFIX 2026-08-08: ID-Nummerierung wie beim Prime-Banner von _01 auf _0
+!   geändert – die alte Regel griff nicht mehr (Mobile-Viewport verifiziert, 72px)
+www.amazon.de###mobile-dp-ilm_feature_div_0
 www.amazon.de###navFooter
+! BUGFIX 2026-08-08: Auf Mobile heißt der Footer #nav-ftr (851px), #navFooter
+!   existiert dort nicht – der Footer war auf Mobile komplett ungeblockt.
+www.amazon.de###nav-ftr
 ! BUGFIX 2026-07-16: ID-Nummerierung von Amazon geändert (_01 -> _0), Regel griff nicht mehr
 www.amazon.de###prime-desktop-dp_feature_div_0
 www.amazon.de##[id^="sims-"]
@@ -281,7 +306,11 @@ www.buffed.de##span.artSocialLinks
 www.computerbase.de##.podigee-podcast-player
 www.computerbase.de##aside
 www.computerbase.de##div.adbox.adbox-rectangle.adbox--with-label
-www.computerbase.de##div.block1.block1--breakout
+! BUGFIX 2026-08-08: div.block1.block1--breakout ersatzlos entfernt. Auf Artikeln
+!   0 Treffer, auf der Startseite 2 – beide redaktioneller Inhalt:
+!   .js-homepage-teaser-block (739px, Top-Test-Teaser) und .non-critical (273px,
+!   Kaufberatung/Prozessor- und Grafikkarten-Ranglisten). Die Regel blockierte
+!   also ausschließlich Content.
 www.computerbase.de##div.shoutbox-container
 www.computerbase.de##div.text-asset.text-width.support-plea
 www.computerbase.de##div[data-widget-id][data-widget-key][data-widget-definition]
@@ -357,7 +386,14 @@ www.faz.net##div.aside-slot
 www.faz.net##section.nw-htmlbar.social
 ! Newsletter-Slider-Iframe (Startseite)
 www.faz.net###iframenewsletterslider
-www.faz.net##footer
+! BUGFIX 2026-08-08: footer traf auf der Startseite 109 Elemente, 108 davon die
+!   20px-Zeile mit dem AUTORENNAMEN jedes Teasers ("Robert Putzbach, Kiew",
+!   "Reinhard Veser", …) – die Bylines verschwanden auf der ganzen Startseite.
+!   Die beiden gemeinten Footer sind der klassenlose Site-Footer und der
+!   Artikel-Footer footer.meta2 ("Quelle: F.A.Z. | Artikelrechte erwerben").
+!   Startseite jetzt 1 Treffer, Artikel 2 – also exakt die bisherigen Ziele.
+www.faz.net##footer:not([class])
+www.faz.net##footer.meta2
 ! BUGFIX 2026-03-20: F.A.S.-Sonntagszeitung-Eigenwerbung im Artikeltext
 !   „Dieser Text stammt aus der Frankfurter Allgemeinen Sonntagszeitung" + „F.A.S. jetzt lesen"
 !   Element nur für Abonnenten sichtbar (SSR-seitig injiziert). Selector: direkte Kind-Elemente
@@ -546,8 +582,21 @@ www.heise.de##div.a-article-header__service.a-article-header__service--right
 ! Nur Werbe-Module blockieren (nicht TopNaviModule/HeaderModule)
 www.heise.de##div[data-module-name="AdModule"]
 ! "Beliebte Bestenlisten" / Teaser-Empfehlungen am Artikelende
-www.heise.de##div[data-module-name="TeasersModule"]
-www.heise.de##footer
+! BUGFIX 2026-08-08: Ungescoped traf die Regel auf der Startseite 38 Module –
+!   also praktisch die komplette Startseite (IT, Wissenschaft & Forschung,
+!   Mobiles, Entertainment, Wirtschaft, Netzpolitik, Journal, c't, iX, Mac & i,
+!   Make, Foto, Autos, Telepolis …). Startseite und Artikel nutzen verschiedene
+!   Designsysteme: Startseite ho-*, Artikel a-* (div.a-layout: Artikel 7, Start-
+!   seite 0). Auf den Artikel-Layout-Container gescoped – dort weiterhin genau
+!   1 Treffer ("Beliebte Bestenlisten", 1012px).
+www.heise.de##div.a-layout div[data-module-name="TeasersModule"]
+! BUGFIX 2026-08-08: footer traf auf der Startseite 165 Elemente – 164 davon die
+!   Meta-Zeile JEDES Teasers ("vor 6 Stunden | bestenlisten", 14px). Zeitstempel
+!   und Quelle verschwanden dadurch auf der gesamten Startseite. Die Teaser-
+!   Fußzeilen sind exklusiv über .ho-text-muted identifizierbar; der Site-Footer
+!   (Startseite klassenlos, Artikel .footer) und die Artikel-Footer tragen die
+!   Klasse nicht.
+www.heise.de##footer:not(.ho-text-muted)
 ! Inline-Teaser und Empfehlungen
 www.heise.de##div.teaser-list-inline
 www.heise.de##aside.related-articles
@@ -602,7 +651,13 @@ www.ifun.de##span.socialnetworks
 www.ifun.de##.comments-block
 www.ifun.de##.comments-block-mobile
 www.ifun.de##.consumernotice
-www.ifun.de##div > div > div > form[action][method]
+! BUGFIX 2026-08-08: div > div > div > form[action][method] traf auf der Start-
+!   seite das SUCHFELD (form action="/" mit input#searchNewsfeed) – die Suche war
+!   unbenutzbar. Auf dem Artikel traf die Regel das Contact-Form-7-Feedback-
+!   formular ("Deine Anmerkung zum Artikel", 346px) und das Kommentarformular;
+!   letzteres liegt bereits in #article-single-comments. Auf den CF7-Wrapper
+!   eingegrenzt.
+www.ifun.de##div.wpcf7
 www.ifun.de##footer
 ! Hinzugefügt 2026-07-02: Tag-Liste am Artikelende (#article-single-footer-tags)
 www.ifun.de###article-single-footer-tags
@@ -624,7 +679,9 @@ www.iphone-ticker.de##span.socialnetworks
 www.iphone-ticker.de##.comments-block
 www.iphone-ticker.de##.comments-block-mobile
 www.iphone-ticker.de##.consumernotice
-www.iphone-ticker.de##div > div > div > form[action][method]
+! BUGFIX 2026-08-08: identischer Suchfeld-Bug wie ifun.de (gleiche Plattform) –
+!   die alte Regel blockierte auf der Startseite input#searchNewsfeed.
+www.iphone-ticker.de##div.wpcf7
 www.iphone-ticker.de##footer
 ! Hinzugefügt 2026-07-02: Tag-Liste am Artikelende (#article-single-footer-tags),
 !         gleiches Muster wie ifun.de (identische Plattform)
@@ -635,7 +692,11 @@ www.iphone-ticker.de###article-single-footer-tags
 ! --------------------------------------------------------------------------
 www.lto.de##.ad_career_banner
 www.lto.de##.ad_transfer_banner
-www.lto.de##.article-teaser-list
+! BUGFIX 2026-08-08: .article-teaser-list ersatzlos entfernt. Auf der Startseite
+!   ist das die HAUPT-NACHRICHTENLISTE (3533px, 6 Meldungen, 20 Links, in
+!   section.maincontent). Auf Artikeln liegt sie in section.content__related,
+!   das weiter unten bereits eine eigene Regel hat – die Regel war dort also
+!   redundant und auf der Startseite reiner Schaden.
 ! Hinzugefügt: 2026-04-01: "Mehr zum Thema"-Tag-Links am Artikelende
 www.lto.de##.article-text-wrapper > nav
 www.lto.de##.jobwidget
@@ -732,9 +793,18 @@ www.myhermes.de##footer
 !         per :style()-Injection auf display:block gesetzt, damit der Leerraum
 !         rechts (reservierte Grid-Spalte für blockierte aside) kollabiert.
 ! --------------------------------------------------------------------------
-www.n-tv.de##aside
+! BUGFIX 2026-08-08: aside traf auf der Startseite 12 Elemente – nur eines davon
+!   ist die gemeinte Video-Sidebar, die übrigen 11 sind NEWS-SPALTEN mit echten
+!   Artikel-Teasern (1148–1913px, zusammen ~16.000px). Alle tragen dieselbe
+!   CSS-Modules-Klasse, unterscheidbar sind sie nur am Inhalt: die Video-Sidebar
+!   enthält widget-teaser-default_grid, die News-Spalten widget-teaser-box_grid.
+!   Startseite jetzt 1 Treffer (Video-Sidebar), Rubrikseiten unverändert.
+www.n-tv.de##aside:has([class*="widget-teaser-default"])
 www.n-tv.de##footer
-www.n-tv.de##section[class*="widget-teaser"]
+! BUGFIX 2026-08-08: section[class*="widget-teaser"] traf auch
+!   section.widget-teaser-liveticker_section ("Ukraine-Krieg im Liveticker") –
+!   Live-Ticker dürfen laut Kritische Regeln nie geblockt werden. Ausgeschlossen.
+www.n-tv.de##section[class*="widget-teaser"]:not([class*="liveticker"])
 ! BUGFIX 2026-07-02: CSS-Modules-Klassennamen wurden bei Redesign umbenannt
 !         (social-share -> ShareBtn_share-*, article-detail-footer_tags ->
 !         ArticleDetailFooter_tags-*). Alte Selektoren griffen nicht mehr.
@@ -766,6 +836,12 @@ www.ndr.de##div.campaign-banner
 !   Einrichtungsseite (1.ard.de/ndr-bevorzugte-google-quelle) gepinnt, damit
 !   redaktionelle Infoboxen (div.contentbox.infobox) unangetastet bleiben.
 www.ndr.de##div.contentbox.infobox:has(a[href*="ndr-bevorzugte-google-quelle"])
+! Hinzugefügt 2026-08-08 (Vollaudit): WhatsApp-Kanal-Abo-Box am Artikelende
+!   ("News aus deiner Region – jetzt auch direkt per WhatsApp / Abonniere News …",
+!   2535px). Auf den WhatsApp-Link gepinnt – dieselbe Technik wie bei der
+!   Google-Quelle-Regel oben –, damit redaktionelle Infoboxen (auf der Testseite
+!   "Was besagt die Ausgleichsregelung?", 2235px) unangetastet bleiben.
+www.ndr.de##div.contentbox.infobox:has(a[href*="whatsapp"])
 www.ndr.de##div.contentbox.list
 www.ndr.de##div.relatedbroadcast
 www.ndr.de##div.tagbox
@@ -836,9 +912,13 @@ raider.io##button.slds-button--raiderio-gradient
 ! "Support Raider.IO"-Plea) – td.rio-simple-table-cell ist exklusiv für diese Zeilen
 ! Hinzugefügt: 2026-04-08
 raider.io##tr:has(> td.rio-simple-table-cell)
-! Promo-Banner über der Rankings-Tabelle ("Midnight is upon us" etc.)
-! Direkt-Kind des Content-Wrappers – slds-m-bottom--small ist hier exklusiv für Promo
-raider.io###content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small
+! BUGFIX 2026-08-08: Die Promo-Banner-Regel
+!   `#content .slds-col.slds-size--1-of-1 > div > .slds-m-bottom--small`
+!   wurde ersatzlos entfernt. slds-m-bottom--small ist nicht mehr exklusiv für
+!   Promos: Auf der Startseite trifft sie inzwischen die Sektionsüberschrift
+!   "Top Mythic+ Teams / Season 1 (Full)" (h2-Wrapper, 0 Links, 125px), auf der
+!   Rankings-Seite gar nichts mehr. "Midnight is upon us"-Promos sind weiterhin
+!   über die :has(.slds-button--raiderio)-Regel weiter unten abgedeckt.
 ! Startseite – Hinzugefügt: 2026-04-08
 ! Rechte Sidebar: Merch-Banner-Link + YouTube-Embed (section-Tags direkt in rio-right-pane)
 raider.io##.rio-right-pane > section
@@ -874,7 +954,13 @@ www.rbb24.de##.container__article-component.tags
 !         Artikel-Body hat als direktes Kind div.container__article, nie #comments.
 www.rbb24.de##section.container.section--white.section--rounded:has(> #comments)
 ! „Mehr bei rbb|24" Artikel-Empfehlungen
-www.rbb24.de##section.section__stacked
+! BUGFIX 2026-08-08: Ungefiltert traf die Regel auf der Startseite 3 redaktionelle
+!   Content-Module mit Audio-/Video-Playern und echten Schlagzeilen (454/691/529px,
+!   z. B. "Abgeordnetenhauswahl", "Nach CSD-Terrorattacke"). Klassen und Eltern-
+!   knoten sind auf Startseite und Artikel identisch – es gibt keinen reinen
+!   CSS-Unterscheider. Daher auf den Überschriftentext gepinnt; der ist rein
+!   ASCII, das Umlaut-Problem von :has-text() greift hier also nicht.
+www.rbb24.de##section.section__stacked:has-text(Mehr bei rbb)
 ! Footer
 www.rbb24.de##footer.footer
 
@@ -978,14 +1064,20 @@ www.sportschau.de##a.teaser-absatz__link
 www.sportschau.de##aside
 ! BUGFIX 2026-07-16: Selektor traf im Artikelkopf auch die Autorenzeile
 !         (div.authorline), die dieselbe Klassenkombination trägt. Ausgeschlossen.
-www.sportschau.de##div.copytext-element-wrapper.columns.twelve:not(:has(.authorline))
+! BUGFIX 2026-08-08: Der Selektor traf auf Spielberichten auch die Button-Gruppe
+!   "Live-Ticker zum Nachlesen | 1. Spieltag" (Links auf /liveticker bzw.
+!   /spiele-und-ergebnisse) – laut Kritische Regeln dürfen Live-Ticker nie
+!   geblockt werden. Button-Gruppen mit Liveticker-Link ausgeschlossen; die
+!   Kalender-Promo-Gruppe (calovo.de) bleibt geblockt.
+www.sportschau.de##div.copytext-element-wrapper.columns.twelve:not(:has(.authorline)):not(:has(a[href*="/liveticker"]))
 www.sportschau.de##div.copytext-element-wrapper.columns.twelve.copytext-element-wrapper--overlap
 www.sportschau.de##div.copytext__audio
 www.sportschau.de##div.endline
 www.sportschau.de##div.layout-content.scrolled > div.columns.twelve.content-wrapper__group
 www.sportschau.de##div.meldungsfooter.columns.twelve.m-ten.m-offset-one.l-eight.l-offset-two
 www.sportschau.de##footer
-www.sportschau.de##ul.buttongroup.buttongroup--copytext
+! BUGFIX 2026-08-08: gleicher Liveticker-Schutz wie beim Wrapper oben
+www.sportschau.de##ul.buttongroup.buttongroup--copytext:not(:has(a[href*="/liveticker"]))
 ! Hinzugefügt 2026-07-06: Social-Share-Bar am Artikelkopf (Facebook/WhatsApp/E-Mail/Drucken)
 www.sportschau.de##nav.socialbuttons
 
@@ -1076,13 +1168,23 @@ www.sueddeutsche.de##div[data-article-wrapper] > div
 www.sueddeutsche.de##[data-manual-remove]:not([data-testid="toolbar-top"]):not(audio):not(.css-196nsxa)
 ! Outer-Separator-Wrapper ausblenden wenn Kind data-manual-remove trägt (Karussell-Sections, h:48 Leerraum)
 www.sueddeutsche.de##.szde-homie-page-content__separator-item--both:has(> [data-manual-remove])
-www.sueddeutsche.de##div[data-test]
+! BUGFIX 2026-08-08: div[data-test] ersatzlos entfernt. Die Regel traf auf BEIDEN
+!   Seitentypen ausschließlich die Site-Navigation: [data-test="product-switch"]
+!   (SZ.de/Zeitung/Magazin/Jetzt, 40px), [data-test="department-navigation"]
+!   (Menü/Suchen/SZ Plus/Nachrichten, 34px) und [data-test="more-products"]
+!   (Menü-Dialog). Sie blockierte damit ausschließlich Navigation, keinen Noise.
 www.sueddeutsche.de##div[data-testid="topics"]
 www.sueddeutsche.de##div[data-testid] > div[aria-hidden]
 www.sueddeutsche.de##er-footer
 www.sueddeutsche.de##er-newsletter
 www.sueddeutsche.de##er-recommendations[excludelist][data-active]
-www.sueddeutsche.de##footer
+! BUGFIX 2026-08-08: footer traf auf der Startseite 115 Elemente – 114 davon die
+!   Teaser-Fußzeile "SZ Plus | Von <Autor> | Artikel <Länge>" (70px). Auf dem
+!   Artikel traf es zusätzlich footer.css-1i5xheg (98px) = Byline plus
+!   "Artikel merken"-Toolbar und verletzte damit die Kritische Regel
+!   "Artikel-Toolbar bleibt". Alle diese Fußzeilen liegen in <article>, die
+!   echten Ziele (Recirculation-Block 2572px, Site-Footer 933px) nicht.
+www.sueddeutsche.de##footer:not(article footer)
 ! Hinzugefügt: 2026-06-14
 !   „SZ bei Google bevorzugen" – Google-Preferred-Source-Promo im Artikel (Link zu
 !   google.com/preferences/source). Der äußere Wrapper trägt 24px/16px Margin – daher
@@ -1127,8 +1229,12 @@ www.t-online.de##[data-testid="PageFooter"]
 www.t-online.de##div[data-testid="Page.PageStages"]
 ! Hinzugefügt: 2026-04-14: Inline-Artikelteaser (Magenta-Aufzählung im Fließtext)
 www.t-online.de##[data-testid="StageLayout.StreamItem"]:has(> ul[class*="before:bg-magenta"])
-! Hinzugefügt: 2026-04-14: Post-Artikel-Teaserboxen nach dem Artikelende
-www.t-online.de##[data-testid="StageLayout.StreamItem"]:has(> article)
+! BUGFIX 2026-08-08: [data-testid="StageLayout.StreamItem"]:has(> article) ersatzlos
+!   entfernt. Auf der Startseite traf die Regel 78 Nachrichten-Einträge (145–185px,
+!   echte Schlagzeilen). Auf Artikeln traf sie 10 Empfehlungs-Items – die liegen
+!   aber ausnahmslos in div[data-testid="Page.PageStages"], das direkt darunter
+!   bereits geblockt wird (Kette: StreamItem < StreamLayout.Stream < SECTION[Stage]
+!   < Page.PageStages). Page.PageStages existiert auf der Startseite nicht.
 ! Hinzugefügt: 2026-04-14: Taboola-Feed
 www.t-online.de##[data-testid="TaboolaFeed"]
 www.t-online.de##[data-testid="TaboolaFeeds.Feed"]
@@ -1183,7 +1289,11 @@ www.tagesspiegel.de###outbrain-container
 www.tagesspiegel.de###sitefooter-container
 www.tagesspiegel.de##aside
 www.tagesspiegel.de##button[data-gtm-class="open-community"]
-www.tagesspiegel.de##footer
+! BUGFIX 2026-08-08: footer ersatzlos entfernt. Auf der Startseite 98 Treffer,
+!   97 davon die Teaser-Bylines ("Von Pascal Bartosz | 0 Kommentare", 320–435px
+!   pro Karte) – die Autorenangabe verschwand auf der gesamten Startseite. Auf
+!   Artikeln nur 1 Treffer, und der liegt in #sitefooter-container, das oben
+!   bereits eine eigene Regel hat.
 www.tagesspiegel.de##p:has(> a[data-gtm-class="article-home-link"])
 www.tagesspiegel.de##p:has(> a[data-gtm-class="article-home-link"]) ~ ul
 www.tagesspiegel.de##ul:has([data-gtm-class="article-social-link"])
@@ -1203,10 +1313,13 @@ www.theverge.com##.duet--layout--article-recirc-color-container
 www.theverge.com##.duet--cta--newsletter
 ! Kommentar-Links (Byline-Kopf, Artikel-Recirc)
 www.theverge.com##.duet--article--comments-link
-! "12 Comments"-Schaltfläche am Artikelende (Zephr-Wrapper-Span)
-www.theverge.com###zephr-anchor > span
-! "Follow topics and authors"-Widget (Zephr, struktureller Selector)
-www.theverge.com###zephr-anchor > div:has(> span + ul)
+! BUGFIX 2026-08-08: #zephr-anchor ist inzwischen der ARTIKELTEXT-Container
+!   (direkte Kinder = div.duet--article--article-body-component mit den Absätzen),
+!   nicht mehr der Zephr-CTA-Anker. Beide Regeln trafen auf zwei geprüften
+!   Artikeln nichts mehr; `#zephr-anchor > div:has(> span + ul)` war zudem aktiv
+!   gefährlich, weil ein Body-Component mit span+ul Artikeltext versteckt hätte.
+!   Entfernt – der Kommentar-Link bleibt über .duet--article--comments-link
+!   abgedeckt (6 Treffer auf dem Testartikel).
 ! Hinzugefügt: 2026-04-03
 ! Topic/Autoren-Follow-Buttons (○-Kreise neben Themen-Tags und in der Byline)
 www.theverge.com##aside[id^="popover-"]
@@ -1240,7 +1353,13 @@ www.tomsguide.com##.socialite-widget
 www.tomsguide.com##a.block-link.full
 www.tomsguide.com##div > a[data-mrf-recirculation]
 www.tomsguide.com##div > aside[data-component-name][data-nosnippet]
-www.tomsguide.com##div > ul
+! BUGFIX 2026-08-08: div > ul war ein Totalschaden und wurde ersatzlos entfernt.
+!   Startseite: traf JEDE Artikel-Widget-Liste (ul.wdn-listv2-items, u.a. 3152px,
+!   2392px, 1547px, 1443px, 1385px …) – die Startseite blieb praktisch leer.
+!   Artikel: traf als einziges sichtbares Element die Artikel-Sprungnavigation
+!   ("Specs Compared | Design | Displays | S Pen | Cameras | Performance", 48px),
+!   also das Inhaltsverzeichnis – verboten laut Kritische Regeln.
+!   Nutzen der Regel: keiner. Noise ist über die übrigen Selektoren abgedeckt.
 www.tomsguide.com##div.exit-intent.exit-intent__background
 www.tomsguide.com##div.newsletter-form__wrapper
 www.tomsguide.com##section.mx-2.my-5
@@ -1312,6 +1431,10 @@ www.wowhead.com##footer
 www.wowhead.com###premium-house-block
 www.wowhead.com##div.news-recent
 www.wowhead.com###news-comments-wrapper
+! Hinzugefügt 2026-08-08 (Vollaudit): Newsletter-Box "Subscribe to our Newsletters!"
+!   (div#newsletter-cta.news-post-newsletter, 376px) – liegt als Schwester von
+!   #premium-house-block in .news-post-ctas und war bisher ungeblockt.
+www.wowhead.com###newsletter-cta
 
 ! --------------------------------------------------------------------------
 ! ZDF heute
@@ -1371,6 +1494,14 @@ stadt-bremerhaven.de##div.recent-posts__heading
 stadt-bremerhaven.de##ul.recent-posts
 ! Einzelner "Datenschutzerklärung"-Link zwischen Neueste Beiträge und Kommentaren
 stadt-bremerhaven.de##div.pad.group > a
+! Hinzugefügt 2026-08-08 (Vollaudit): Artikel-Empfehlungsbox am Artikelende
+!   (div#cb-related-box, 1108px, ul.cb-related-grid mit 6x a.cb-related-card) –
+!   neues Element, war komplett ungeblockt.
+stadt-bremerhaven.de###cb-related-box
+! Hinzugefügt 2026-08-08 (Vollaudit): "Auf Google folgen" – Google-Preferred-
+!   Source-Promo (27px) in div.post-category. Nur den Anchor blockieren, da die
+!   Kategorie in derselben Zeile steht und erhalten bleiben soll.
+stadt-bremerhaven.de##a.cb-google-follow-meta
 ! Kommentare (Formular komplett)
 stadt-bremerhaven.de###comments
 ! Kommentarregeln / Moderationshinweis (außerhalb von #comments!)

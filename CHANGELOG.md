@@ -1,3 +1,41 @@
+## [2026-08-08] - Vollaudit aller Domains: Startseite + Artikel
+
+Vollständiger Audit aller 55 Domains. Neu gegenüber früheren Audits: **jede Domain wurde auf Startseite UND Artikelseite geprüft** – bisher lag der Fokus auf Artikelseiten. Genau dort lagen die schwersten Fehler: mehrere Selektoren, die auf Artikeln sauber greifen, haben auf der Startseite den kompletten Inhalt versteckt. Zusätzlich wurde jeder Selektor per DOM-Query gegen eine echte Browser-Engine geprüft (437 reine CSS-Selektoren, 0 Syntaxfehler).
+
+### Behoben – Overblocking (versteckter Inhalt)
+- **tomsguide.com**: `div > ul` ersatzlos entfernt. Auf der Startseite traf die Regel jede Artikel-Widget-Liste (u. a. 3152px, 2392px, 1547px) – die Startseite blieb praktisch leer. Auf Artikeln traf sie als einziges sichtbares Element die Sprungnavigation ("Specs Compared | Design | Displays | …"), also das Inhaltsverzeichnis. Die Regel hat nur Inhalt blockiert.
+- **heise.de**: `div[data-module-name="TeasersModule"]` traf auf der Startseite 38 Module – praktisch die komplette Startseite (IT, Wissenschaft & Forschung, Mobiles, Entertainment, Wirtschaft, Netzpolitik, Journal, c't, iX, Mac & i, Make, Foto, Autos, Telepolis). Auf den Artikel-Layout-Container gescoped (`div.a-layout`), dort weiterhin genau 1 Treffer.
+- **heise.de**: `footer` traf auf der Startseite 165 Elemente, 164 davon die Meta-Zeile jedes Teasers ("vor 6 Stunden | bestenlisten"). Auf `footer:not(.ho-text-muted)` präzisiert – Zeitstempel und Quelle sind wieder sichtbar.
+- **sueddeutsche.de**: `div[data-test]` ersatzlos entfernt – die Regel traf auf beiden Seitentypen ausschließlich die Site-Navigation (Produktwechsler, Ressort-Navigation, Menü-Dialog).
+- **sueddeutsche.de**: `footer` traf auf der Startseite 115 Elemente, 114 davon die Teaser-Zeile "SZ Plus | Von <Autor> | Artikel <Länge>"; auf Artikeln zusätzlich die Byline samt "Artikel merken"-Toolbar. Auf `footer:not(article footer)` präzisiert.
+- **n-tv.de**: `aside` traf auf der Startseite 12 Elemente – nur eines ist die gemeinte Video-Sidebar, die übrigen 11 sind News-Spalten mit echten Artikel-Teasern (zusammen ~16.000px). Auf `aside:has([class*="widget-teaser-default"])` eingegrenzt.
+- **n-tv.de**: `section[class*="widget-teaser"]` traf auch den **Ukraine-Liveticker** – Live-Ticker dürfen nie geblockt werden. Liveticker-Variante ausgeschlossen.
+- **t-online.de**: `[data-testid="StageLayout.StreamItem"]:has(> article)` traf auf der Startseite 78 Nachrichten-Einträge. Auf Artikeln lagen alle 10 Treffer ohnehin in `Page.PageStages`, das bereits geblockt wird – die Regel war dort redundant und wurde entfernt.
+- **faz.net**: `footer` traf auf der Startseite 109 Elemente, 108 davon die Zeile mit dem Autorennamen jedes Teasers. Auf `footer:not([class])` plus `footer.meta2` aufgeteilt – Startseite 1 Treffer, Artikel unverändert 2.
+- **tagesspiegel.de**: `footer` ersatzlos entfernt – auf der Startseite 97 Teaser-Bylines ("Von <Autor> | 0 Kommentare"), auf Artikeln nur 1 Treffer, der bereits von `#sitefooter-container` abgedeckt ist.
+- **lto.de**: `.article-teaser-list` ersatzlos entfernt – auf der Startseite ist das die Haupt-Nachrichtenliste; auf Artikeln liegt sie in `section.content__related`, das bereits eine eigene Regel hat.
+- **computerbase.de**: `div.block1.block1--breakout` ersatzlos entfernt – auf Artikeln 0 Treffer, auf der Startseite 2, beide redaktioneller Inhalt (Top-Test-Teaser, Kaufberatung/Ranglisten).
+- **rbb24.de**: `section.section__stacked` traf auf der Startseite 3 redaktionelle Content-Module mit Audio-/Video-Playern. Da Klassen und Elternknoten auf beiden Seitentypen identisch sind, auf den Überschriftentext "Mehr bei rbb" gepinnt.
+- **androidauthority.com**: `main > div:has(a[href*="/external-links/"])` versteckte auf der Startseite den kompletten Artikel-Feed (10467px), weil der Affiliate-Disclaimer dort eine Ebene tiefer liegt. Auf `div:has(> p > a[href*="/external-links/"])` eingegrenzt.
+- **arstechnica.com**: `a.post-navigation-link` blockierte auf der Startseite den "Load more"-Button und damit die Pagination. Auf die Artikel-Wrapper `.nav-previous` / `.nav-next` umgestellt.
+- **ifun.de** / **iphone-ticker.de**: `div > div > div > form[action][method]` blockierte auf der Startseite das Suchfeld. Auf den Contact-Form-7-Wrapper `div.wpcf7` eingegrenzt; das Kommentarformular ist ohnehin über `#article-single-comments` abgedeckt.
+- **sportschau.de**: Die Button-Gruppe "Live-Ticker zum Nachlesen" wurde mitgeblockt – Live-Ticker dürfen nie geblockt werden. Button-Gruppen mit Liveticker-Link ausgeschlossen, die Kalender-Promo bleibt geblockt.
+- **raider.io**: Promo-Banner-Regel entfernt – `slds-m-bottom--small` ist nicht mehr exklusiv für Promos und traf auf der Startseite die Sektionsüberschrift "Top Mythic+ Teams".
+- **theverge.com**: Beide `#zephr-anchor`-Regeln entfernt – das Element ist inzwischen der Artikeltext-Container, nicht mehr der CTA-Anker. `#zephr-anchor > div:has(> span + ul)` hätte Artikeltext verstecken können.
+
+### Behoben – Underblocking (Noise war sichtbar)
+- **stadt-bremerhaven.de**: Artikel-Empfehlungsbox (`#cb-related-box`, 6 Karten) und "Auf Google folgen"-Promo (`a.cb-google-follow-meta`) waren komplett ungeblockt.
+- **wowhead.com**: Newsletter-Box "Subscribe to our Newsletters!" (`#newsletter-cta`) war ungeblockt.
+- **ndr.de**: WhatsApp-Kanal-Abo-Box ("News aus deiner Region – jetzt auch direkt per WhatsApp") war ungeblockt. Auf den WhatsApp-Link gepinnt, damit redaktionelle Infoboxen unangetastet bleiben.
+- **amazon.de**: Auf Mobile heißt der Footer `#nav-ftr`, nicht `#navFooter` – der Footer war auf Mobile komplett ungeblockt. Zusätzlich `#mobile-dp-ilm_feature_div_01` auf `_0` korrigiert (gleiche ID-Umnummerierung wie zuvor beim Prime-Banner).
+- **9to5google.com**: Die Affiliate-Box-Regeln von 9to5mac.com ergänzt – beide Seiten nutzen dasselbe Theme, die Regeln fehlten hier bisher.
+
+Sauber, keine Änderung: 9to5mac.com, arstechnica.com (Artikel), de.ifixit.com, macrumors.com, tarnkappe.info, gamestar.de, golem.de, spiegel.de, zeit.de, taz.de, focus.de, handelsblatt.com, wiwo.de, tagesschau.de, zdfheute.de, deutschlandfunk.de, derstandard.at, derstandard.de, imgur.com, startpage.com, wikipedia.org, dhl.de, mydealz.de, myhermes.de, my.dpd.de, sz-magazin.sueddeutsche.de, sportdaten.spiegel.de.
+
+Nicht prüfbar in der Testumgebung (bestehende Regeln unverändert gelassen): buffed.de und pcgameshardware.de (Cloudflare-Bot-Check auf Artikelseiten), hsreplay.net, steamdb.info, tracker.gg (Cloudflare-Bot-Check), transfermarkt.de (Wartungsmodus), nytimes.com (im Browser der Testumgebung gesperrt).
+
+---
+
 ## [2026-07-27] - Wöchentlicher Rotations-Audit Bucket 2
 
 Geprüft (Bucket 2 von 5, Rotation nach ISO-Kalenderwoche): tarnkappe.info, taz.de, tracker.gg, wikipedia.org, amazon.de, androidauthority.com, buffed.de, computerbase.de, derstandard.at, derstandard.de, deutschlandfunk.de, dhl.de.
