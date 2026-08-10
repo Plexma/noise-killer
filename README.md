@@ -89,7 +89,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | taz.de | 🪧 🦶 |
 | theverge.com | 💬 📰 📬 📢 🦶 |
 | tomsguide.com | 💬 📬 🛍️ 🦶 🏷️ |
-| tracker.gg | 📢 🦶 |
+| tracker.gg | 📢 🪧 🦶 |
 | transfermarkt.de | 💬 📰 📢 🦶 |
 | wiwo.de | 📰 📢 🦶 |
 | wowhead.com | 💬 📰 📬 📢 🦶 |

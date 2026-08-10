@@ -267,6 +267,14 @@ taz.de##section.outerwrapper.contains-module-article > section:not([x-data])
 ! --------------------------------------------------------------------------
 tracker.gg##div.footer-content
 tracker.gg##div.upsell
+! Hinzugefügt 2026-08-11: Mobile-App-Promo-Banner auf der Startseite,
+!         Desktop-App-Overlay-Popup ("Stop missing out...") auf Profilseiten
+!         (scoped auf teleport-backdrop mit Overwolf-Download-Link, um andere
+!         Modals im selben Portal nicht zu treffen) und Inline-Promo-Karte
+!         "Check out our desktop app!" auf Profilseiten.
+tracker.gg##div.mobile-promo
+tracker.gg###trn-teleport-backdrop:has(a[href*="download.overwolf.com"])
+tracker.gg##a.profile-hint
 
 ! --------------------------------------------------------------------------
 ! Amazon DE

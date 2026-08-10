@@ -1,3 +1,10 @@
+## [2026-08-11] - tracker.gg: Eigenwerbung auf Startseite und Profilseite
+
+### Hinzugefügt
+- **tracker.gg**: Mobile-App-Promo-Banner auf der Startseite (`div.mobile-promo`) war ungeblockt.
+- **tracker.gg**: Vollbild-Overlay-Popup "Stop missing out on potential insights!" (Desktop-App-Werbung) auf Profilseiten war ungeblockt. Auf den Teleport-Backdrop mit Overwolf-Download-Link gescoped, um andere Modals im selben Portal (z. B. Login) nicht zu treffen.
+- **tracker.gg**: Inline-Promo-Karte "Check out our desktop app!" auf Profilseiten (`a.profile-hint`) war ungeblockt.
+
 ## [2026-08-08] - Vollaudit aller Domains: Startseite + Artikel
 
 Vollständiger Audit aller 55 Domains. Neu gegenüber früheren Audits: **jede Domain wurde auf Startseite UND Artikelseite geprüft** – bisher lag der Fokus auf Artikelseiten. Genau dort lagen die schwersten Fehler: mehrere Selektoren, die auf Artikeln sauber greifen, haben auf der Startseite den kompletten Inhalt versteckt. Zusätzlich wurde jeder Selektor per DOM-Query gegen eine echte Browser-Engine geprüft (437 reine CSS-Selektoren, 0 Syntaxfehler).
