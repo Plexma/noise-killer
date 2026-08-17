@@ -1348,6 +1348,9 @@ www.theverge.com##.duet--navigation--footer
 !   Auf der Testseite ausschließlich für Recirc-/Empfehlungs-Boxen verwendet, nicht
 !   für echte Artikel-Zwischenüberschriften.
 www.theverge.com##div.duet--layout--header-pattern
+! BUGFIX 2026-08-17: Affiliate-Produkt-Slider ("Partner Content From...") wird
+!   direkt in den Artikel-Flow injiziert, bisher ungeblockt.
+www.theverge.com##.duet--article--boosted-post-wrapper
 
 ! --------------------------------------------------------------------------
 ! Tom's Guide
@@ -1540,3 +1543,7 @@ www.zeit.de##div[itemprop] > aside[aria-label]
 www.zeit.de##footer.footer
 www.zeit.de##section#comments
 www.zeit.de##section[data-page-number][data-restricted-access] > aside[aria-label]
+! BUGFIX 2026-08-17: Outbrain-Leseempfehlungen-Widget und Google-Preferred-Source-
+!   Eigenwerbebanner waren ungeblockt.
+www.zeit.de###outbrain
+www.zeit.de##aside.zps-widget

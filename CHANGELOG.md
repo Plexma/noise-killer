@@ -1,3 +1,11 @@
+## [2026-08-17] - Wöchentlicher Rotations-Audit Bucket 5 (theverge.com, zeit.de)
+
+### Behoben
+- **theverge.com**: Affiliate-Produkt-Slider ("Partner Content From...") wird direkt in den Artikel-Flow injiziert – bisher ungeblockt.
+- **zeit.de**: Outbrain-Leseempfehlungen-Widget (`#outbrain`) und Google-Preferred-Source-Eigenwerbebanner (`aside.zps-widget`) waren ungeblockt.
+
+Hinweis: **transfermarkt.de** (ebenfalls Bucket 5) konnte diese Woche nicht geprüft werden – CloudFront blockiert Zugriffe aus dieser Umgebung mit 403. Erneuter Check in einer künftigen Rotation nötig. tomsguide.com, wiwo.de, wowhead.com und zdfheute.de wurden geprüft und sind sauber (nur harmlose tote Selektoren ohne Auswirkung notiert).
+
 ## [2026-08-11] - tracker.gg: Eigenwerbung auf Startseite und Profilseite
 
 ### Hinzugefügt
