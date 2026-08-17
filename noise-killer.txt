@@ -170,6 +170,8 @@ de.ifixit.com##li.entry-meta-comments
 de.ifixit.com##div.related-posts-wrap
 de.ifixit.com###wppost-comments-container
 de.ifixit.com##footer
+! Hinzugefügt 2026-08-17: Newsletter-Box auf der Startseite war ungeblockt.
+de.ifixit.com##div.newsletter-sub
 
 ! --------------------------------------------------------------------------
 ! Wikipedia (alle Sprachversionen)
@@ -199,6 +201,8 @@ hsreplay.net###navbar-notifications-container
 ! --------------------------------------------------------------------------
 imgur.com##div.CommentsList
 imgur.com##.Ad-adhesive
+! Hinzugefügt 2026-08-17: Sticky "Get the App"-Eigenwerbeleiste am Seitenfuß war ungeblockt.
+imgur.com##div.Footer-wrapper
 
 ! --------------------------------------------------------------------------
 ! DPD
@@ -323,6 +327,9 @@ www.computerbase.de##div.shoutbox-container
 www.computerbase.de##div.text-asset.text-width.support-plea
 www.computerbase.de##div[data-widget-id][data-widget-key][data-widget-definition]
 www.computerbase.de##footer
+! Hinzugefügt 2026-08-17: "X Kommentare"-Links (Byline + Artikelfuß, Forum-Verweis) waren
+!   ungeblockt, auch auf der Startseite/im Ticker.
+www.computerbase.de##a.js-thread-link
 
 ! --------------------------------------------------------------------------
 ! Der Standard
@@ -365,7 +372,10 @@ www.derstandard.de##footer.site-footer
 www.deutschlandfunk.de##footer.b-footer
 www.deutschlandfunk.de##article.b-thema-teaser-list
 www.deutschlandfunk.de##h2.article-details-title:has(+ div.article-details-text > a:only-child)
-www.deutschlandfunk.de##section.b-article-details div.article-details-text:has(> a:only-child)
+! BUGFIX 2026-08-17: div.article-details-text:has(> a:only-child) (ohne Heading-Bindung) blockte
+!   echten Artikeltext – :only-child zählt nur Element-Kinder, nicht Textknoten, daher traf die
+!   Regel auch normale Absätze mit einem einzelnen Inline-Audio-Link umgeben von Fließtext.
+!   Entfernt; die Heading-gebundene Variante oben deckt den eigentlichen Hörtipp-Fall sicher ab.
 www.deutschlandfunk.de##div.article-details-text.u-text-italic
 
 ! --------------------------------------------------------------------------
@@ -518,7 +528,9 @@ www.golem.de##div.go-newsletter-box-container
 www.golem.de##div.go-teaser-block.go-teaser-block--career
 www.golem.de##div.go-teaser-block.go-teaser-block--carousel
 www.golem.de##div.go-teaser-block.go-teaser-block--small-text
-www.golem.de##div.go-toolbar
+! BUGFIX 2026-08-17: div.go-toolbar entfernt – traf die primäre Kategorie-Navigation
+!   ("Deals · Karriere · Spiele & Rätsel · Forum · Souveränität · Security · KI · Energie"),
+!   nicht die Artikel-Toolbar. Verstieß gegen "Navigation nie blockieren".
 www.golem.de##footer
 www.golem.de##main > div.go-tag-list
 ! Hinzugefügt: 2026-05-23
@@ -604,7 +616,10 @@ www.heise.de##div.a-layout div[data-module-name="TeasersModule"]
 !   Fußzeilen sind exklusiv über .ho-text-muted identifizierbar; der Site-Footer
 !   (Startseite klassenlos, Artikel .footer) und die Artikel-Footer tragen die
 !   Klasse nicht.
-www.heise.de##footer:not(.ho-text-muted)
+! BUGFIX 2026-08-17: Zweiter False-Positive derselben Regel – 23 weitere Footer auf der
+!   Startseite sind "Alle Meldungen aus …"/"Mehr Artikel laden"-Sektions-Sprunglinks
+!   (Klasse mt-6, kein Site-Footer). Auf .mt-6 zusätzlich ausgeschlossen.
+www.heise.de##footer:not(.ho-text-muted):not(.mt-6)
 ! Inline-Teaser und Empfehlungen
 www.heise.de##div.teaser-list-inline
 www.heise.de##aside.related-articles
@@ -938,6 +953,10 @@ raider.io##.rio-recruitment-pane
 raider.io###content .slds-m-top--large:has(.slds-button--raiderio)
 ! „Raider.IO is a WoW site"-Selbstbeschreibungs-Blurb
 raider.io##.slds-grid.align-justify
+! Hinzugefügt 2026-08-17: "Get your Personalized ... Recap!"-Upsell-Banner war ungeblockt.
+!   Element nutzt Inline-style (nicht als Selector verwendet), stattdessen auf den
+!   Tracking-Query-Parameter im href gescoped.
+raider.io##a[href*="utm_source=raiderio_upsell"]
 
 ! --------------------------------------------------------------------------
 ! rbb24
@@ -1101,6 +1120,11 @@ www.startpage.com##div.blog-menu
 www.startpage.com##div.app-banner-promo-container
 ! Extension + App-Widget im Hero
 www.startpage.com##div.privacy-extension-and-app-widget
+! BUGFIX 2026-08-17: Nach Redesign greifen beide Regeln oben nicht mehr (0 Treffer) – die
+!   Selbstbeschreibungs-Karten ("Nutze Startpage als Standardsuchmaschine" / "Surfen Sie
+!   privat mit unserer mobilen App") stecken jetzt in einem gemeinsamen Wrapper. Alte
+!   Regeln als Fallback belassen, neue Klasse ergänzt.
+www.startpage.com##div.middle-promo-row
 ! Marketing-Tagline im Hero ("Die sicherste Suchmaschine der Welt")
 www.startpage.com##p.startpage-hero-tagline
 ! Scroll-Down-Pfeil unter der Suchleiste
@@ -1377,6 +1401,9 @@ www.tomsguide.com##section.mx-2.my-5
 ! Hinzugefügt 2026-07-02: Tag-Liste ("TOPICS") und Autoren-Bio-Box am Artikelende
 www.tomsguide.com###articleTag
 www.tomsguide.com##div.slice-author-bio
+! Hinzugefügt 2026-08-17: "Tom's Guide Club"-Mitgliedschaft-Eigenwerbung war ungeblockt
+!   (Slide-out-Banner, Top-Sticky-Banner, Bottom-Corner-Signup-Popup – gemeinsamer ID-Präfix).
+www.tomsguide.com##div[id^="membership-"]
 
 ! --------------------------------------------------------------------------
 ! Transfermarkt
@@ -1547,3 +1574,6 @@ www.zeit.de##section[data-page-number][data-restricted-access] > aside[aria-labe
 !   Eigenwerbebanner waren ungeblockt.
 www.zeit.de###outbrain
 www.zeit.de##aside.zps-widget
+! Hinzugefügt 2026-08-17: Inline-Newsletter-Box im Artikeltext ("Was jetzt?"-Morgenüberblick
+!   u.a.) war ungeblockt, liegt nicht im bereits geblockten article-footer.
+www.zeit.de##aside.newsletter-signup

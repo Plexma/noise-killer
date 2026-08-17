@@ -1,3 +1,28 @@
+## [2026-08-17] - Vollaudit aller 55 Domains (Startseite + Artikel), 10 Domains gefixt
+
+Vollständiger Audit aller 55 Domains, parallel in 5 Gruppen à 11 Domains, jeweils Startseite UND aktueller Artikel geprüft.
+
+### Behoben – Overblocking (versteckter Inhalt, kritisch)
+- **deutschlandfunk.de**: `div.article-details-text:has(> a:only-child)` (ohne Heading-Bindung) blockte echten Artikeltext – `:only-child` zählt nur Element-Kinder, traf daher auch normale Absätze mit einem einzelnen Inline-Audio-Link. Entfernt, die Heading-gebundene Variante deckt den eigentlichen Hörtipp-Fall weiterhin ab.
+- **golem.de**: `div.go-toolbar` blockte die primäre Kategorie-Navigation ("Deals · Karriere · Spiele & Rätsel · Forum · Souveränität · Security · KI · Energie"), nicht die Artikel-Toolbar. Entfernt.
+- **heise.de**: `footer:not(.ho-text-muted)` blockte auf der Startseite zusätzlich 23 "Alle Meldungen aus …"/"Mehr Artikel laden"-Sprunglinks (Klasse `mt-6`). Auf `:not(.mt-6)` erweitert.
+
+### Hinzugefügt – Underblocking (fehlender Filter)
+- **de.ifixit.com**: Newsletter-Box auf der Startseite war ungeblockt.
+- **imgur.com**: Sticky "Get the App"-Eigenwerbeleiste am Seitenfuß war ungeblockt.
+- **raider.io**: "Get your Personalized Recap!"-Upsell-Banner war ungeblockt.
+- **computerbase.de**: "X Kommentare"-Links (Byline, Artikelfuß, Startseiten-Ticker) waren ungeblockt.
+- **tomsguide.com**: "Tom's Guide Club"-Mitgliedschaft-Eigenwerbung (Slide-out-Banner, Sticky-Banner, Signup-Popup) war ungeblockt.
+- **zeit.de**: Inline-Newsletter-Box im Artikeltext ("Was jetzt?"-Morgenüberblick) war ungeblockt.
+- **startpage.com**: Nach Redesign griffen zwei Selbstbeschreibungs-Regeln nicht mehr – "Nutze Startpage als Standardsuchmaschine" / "Surfen Sie privat mit unserer mobilen App"-Karten waren wieder sichtbar. Neuer gemeinsamer Wrapper-Selektor ergänzt.
+
+### Hinweise
+- **my.dpd.de**: nicht prüfbar (Login-geschütztes Portal).
+- **steamdb.info**, **tracker.gg**, **buffed.de** (Artikelseite), **pcgameshardware.de**: nicht prüfbar (Cloudflare-Bot-Check, nicht umgangen).
+- **nytimes.com**: Artikelseiten nicht prüfbar (403/Bot-Schutz), Startseite geprüft und sauber.
+- **transfermarkt.de**: nicht prüfbar (CloudFront-403 in dieser Umgebung, bereits letzte Woche aufgefallen).
+- Alle übrigen 41 Domains geprüft und sauber (Startseite + Artikel), keine Änderung nötig.
+
 ## [2026-08-17] - Wöchentlicher Rotations-Audit Bucket 5 (theverge.com, zeit.de)
 
 ### Behoben

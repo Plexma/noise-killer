@@ -48,8 +48,8 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | androidauthority.com | 💬 📢 🛍️ 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
 | buffed.de | 💬 🔗 📢 |
-| computerbase.de | 📢 📬 🦶 |
-| de.ifixit.com | 🪧 💬 📰 🦶 |
+| computerbase.de | 💬 📢 📬 🦶 |
+| de.ifixit.com | 🪧 💬 📰 📬 🦶 |
 | wikipedia.org (alle Sprachversionen) | 🦶 |
 | derstandard.at / derstandard.de | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 📰 |
@@ -62,7 +62,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | heise.de | 📰 📬 📢 🛍️ 🦶 |
 | hsreplay.net | 📢 🪧 🦶 |
 | ifun.de / iphone-ticker.de | 💬 📬 🔗 🏷️ 🦶 |
-| imgur.com | 💬 🪧 |
+| imgur.com | 💬 🪧 📢 |
 | lto.de | 📰 📬 📢 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
@@ -88,13 +88,13 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | tarnkappe.info | 📬 📢 🦶 |
 | taz.de | 🪧 🦶 |
 | theverge.com | 💬 📰 📬 📢 🛍️ 🦶 |
-| tomsguide.com | 💬 📬 🛍️ 🦶 🏷️ |
+| tomsguide.com | 💬 📬 📢 🛍️ 🦶 🏷️ |
 | tracker.gg | 📢 🪧 🦶 |
 | transfermarkt.de | 💬 📰 📢 🦶 |
 | wiwo.de | 📰 📢 🦶 |
 | wowhead.com | 💬 📰 📬 📢 🦶 |
 | zdfheute.de | 📰 🔗 🦶 |
-| zeit.de | 💬 📰 📢 🦶 |
+| zeit.de | 💬 📰 📬 📢 🦶 |
 
 ---
 
