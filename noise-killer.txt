@@ -203,6 +203,11 @@ imgur.com##div.CommentsList
 imgur.com##.Ad-adhesive
 ! Hinzugefügt 2026-08-17: Sticky "Get the App"-Eigenwerbeleiste am Seitenfuß war ungeblockt.
 imgur.com##div.Footer-wrapper
+! BUGFIX 2026-09-13: Werbe-Banner in Galerien (.BannerAd-cont, mehrfach) und am Galerie-Ende
+!   (.Gallery-Content-BottomAd) waren ungeblockt - .Ad-adhesive deckt nur den klebenden
+!   Banner ab, nicht diese Slots.
+imgur.com##.BannerAd-cont
+imgur.com##.Gallery-Content-BottomAd
 
 ! --------------------------------------------------------------------------
 ! DPD
@@ -725,6 +730,10 @@ www.lto.de##.article-text-wrapper > nav
 www.lto.de##.jobwidget
 ! Hinzugefügt: 2026-04-14
 www.lto.de##.newsletter-subscription-block
+! BUGFIX 2026-09-13: .newsletter-subscription-block greift nicht mehr (Klasse umbenannt).
+!   Fixiertes Newsletter-Popup (position: fixed, sichtbar) läuft jetzt unter
+!   .newsletter-layer.newsletter-layer--eloqua.
+www.lto.de##.newsletter-layer.newsletter-layer--eloqua
 ! Hinzugefügt: 2026-04-14: Inline-Podcast-Player (letscast.fm)
 www.lto.de##div:has(> script[src*="letscast.fm"])
 ! Hinzugefügt: 2026-05-13: Opinary-Live-Abstimmungs-Widget (Inline-Umfrage im Artikel)
@@ -800,6 +809,9 @@ www.mydealz.de##[data-t="appDownload"]
 www.mydealz.de##div.bRad--fromW4-a.bg--main.space--mt-2
 ! Footer
 www.mydealz.de###footer-container
+! BUGFIX 2026-09-13: Kommentarbereich unter Deals war ungeblockt - bisherige Regeln decken
+!   nur den Comments-Link und das Kommentarformular ab, nicht die Kommentarliste selbst.
+www.mydealz.de##div#comments
 
 ! --------------------------------------------------------------------------
 ! MyHermes
@@ -1172,8 +1184,15 @@ www.sueddeutsche.de##[data-qa="meine_sz"]
 www.sueddeutsche.de###meineSZ
 ! Gutschein-Widget (Affiliate-Werbung, separates Element)
 www.sueddeutsche.de##[data-qa="voucher_widget"]
+! BUGFIX 2026-09-13: [data-qa="voucher_widget"] greift nicht mehr, Gutschein-Box läuft
+!   jetzt über data-hydration-component-name.
+www.sueddeutsche.de##div[data-hydration-component-name="VoucherWidget"]
 ! SZ-Stellenmarkt-Eigenwerbung
 www.sueddeutsche.de##[data-qa="stellenmarkt"]
+! BUGFIX 2026-09-13: [data-qa="stellenmarkt"] greift nicht mehr. Box liegt jetzt als
+!   footer[data-pay-team-id] INNERHALB von <article>, daher auch nicht durch
+!   footer:not(article footer) erfasst.
+www.sueddeutsche.de##footer[data-pay-team-id="end-of-article-footer"]
 ! Personalisierungs-Gruppen Outer-Wrapper (alle hp-Varianten)
 www.sueddeutsche.de##[data-qa^="personalization_group_hp_"]
 ! "Für Sie ausgewählt" innere Section (Fallback, falls data-qa-Wrapper fehlt)
@@ -1303,6 +1322,10 @@ www.tagesschau.de##div.promo-box.promo-box--highlight
 
 ! Footer
 www.tagesschau.de##footer.footer
+! BUGFIX 2026-09-13: Kommentar-Link ("Kommentare zur Meldung (…)") im Artikel war
+!   ungeblockt. href-Substring statt Klasse, da generischer "Ihre Meinung"-Footer-Link
+!   dieselbe Zieldomain ohne /id/ nutzt und nicht mitblockt werden soll.
+www.tagesschau.de##a[href*="meta.tagesschau.de/id/"]
 
 ! --------------------------------------------------------------------------
 ! Tagesspiegel
@@ -1319,7 +1342,10 @@ www.tagesspiegel.de###opinary-root
 www.tagesspiegel.de###opinary-iframe
 www.tagesspiegel.de###outbrain-container
 www.tagesspiegel.de###sitefooter-container
-www.tagesspiegel.de##aside
+! BUGFIX 2026-09-13: aside war zu generisch und versteckte auch aside[data-qa-hook=
+!   "story-infobox"] - eine legitime Fakten-Box im Artikeltext (z.B. Kosten-Aufstellung).
+!   Die Noise-Aside trägt data-qa-hook="story-related-content-list".
+www.tagesspiegel.de##aside:not([data-qa-hook="story-infobox"])
 www.tagesspiegel.de##button[data-gtm-class="open-community"]
 ! BUGFIX 2026-08-08: footer ersatzlos entfernt. Auf der Startseite 98 Treffer,
 !   97 davon die Teaser-Bylines ("Von Pascal Bartosz | 0 Kommentare", 320–435px
@@ -1486,8 +1512,10 @@ www.zdfheute.de##footer[data-testid="footer"]
 www.zdfheute.de##div[data-testid="heute-übersichtmodul"]
 ! Themen-Tag-Links unter dem Artikel
 www.zdfheute.de##div[data-testid="topic-tags"]
-! Empfehlungssektion (außerhalb article, kein data-testid)
-www.zdfheute.de##section:not(article section):has(> div > div[data-testid="heute-übersichtmodul"])
+! BUGFIX 2026-09-13: section:not(article section):has(...)-Regel ersatzlos entfernt.
+!   div[data-testid="heute-übersichtmodul"] liegt jetzt direkt unter <main>, nicht mehr
+!   unter einem section-Wrapper - Selector traf 0 Treffer und war durch die direkte
+!   Regel oben (Zeile "heute-übersichtmodul") ohnehin redundant.
 
 ! --------------------------------------------------------------------------
 ! Stadt-Bremerhaven (Caschys Blog)

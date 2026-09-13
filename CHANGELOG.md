@@ -1,3 +1,27 @@
+## [2026-09-13] - Vollaudit aller 55 Domains (Startseite + Artikel), 7 Domains gefixt
+
+Vollständiger Audit aller 55 Domains, parallel in 5 Gruppen à 11 Domains, jeweils Startseite UND aktueller Artikel geprüft.
+
+### Behoben – Overblocking (versteckter Inhalt, kritisch)
+- **tagesspiegel.de**: `aside` (ohne Einschränkung) blockte auch `aside[data-qa-hook="story-infobox"]` – eine legitime Fakten-Box im Artikeltext (z. B. Kosten-Aufstellung). Auf `:not([data-qa-hook="story-infobox"])` eingeschränkt.
+
+### Hinzugefügt – Underblocking (fehlender Filter)
+- **imgur.com**: Werbe-Banner in Galerien (`.BannerAd-cont`, mehrfach) und am Galerie-Ende (`.Gallery-Content-BottomAd`) waren ungeblockt.
+- **mydealz.de**: Kommentarbereich unter Deals (`div#comments`) war ungeblockt – bisherige Regeln deckten nur Comments-Link und -Formular ab.
+- **tagesschau.de**: Kommentar-Link ("Kommentare zur Meldung (…)") im Artikel war ungeblockt.
+
+### Behoben – kaputte Selektoren
+- **lto.de**: `.newsletter-subscription-block` griff nicht mehr (Klasse umbenannt). Fixiertes Newsletter-Popup läuft jetzt unter `.newsletter-layer.newsletter-layer--eloqua`.
+- **sueddeutsche.de**: `[data-qa="voucher_widget"]` und `[data-qa="stellenmarkt"]` griffen nicht mehr. Ersatzselektoren (`div[data-hydration-component-name="VoucherWidget"]`, `footer[data-pay-team-id="end-of-article-footer"]`) ergänzt.
+- **zdfheute.de**: toter, redundanter `section:has(...)`-Selektor entfernt (Zielelement liegt jetzt direkt unter `<main>`, war bereits durch die direkte Regel abgedeckt).
+
+### Hinweise
+- **my.dpd.de**: nicht prüfbar (Login-/Sendungsnummer-geschützt).
+- **steamdb.info**: nicht prüfbar (Cloudflare-Bot-Check, nicht umgangen).
+- **nytimes.com**: Domain in dieser Browser-Umgebung aus Sicherheitsgründen gesperrt, nicht prüfbar.
+- **spiegel.de**: Vermeintliches Overblocking der Artikel-Toolbar geprüft – ist eine bereits dokumentierte, bewusste Ausnahme auf explizitem Nutzerwunsch (siehe Kommentar in noise-killer.txt), kein Fix nötig.
+- Alle übrigen 47 Domains geprüft und sauber (Startseite + Artikel), keine Änderung nötig.
+
 ## [2026-08-17] - Vollaudit aller 55 Domains (Startseite + Artikel), 10 Domains gefixt
 
 Vollständiger Audit aller 55 Domains, parallel in 5 Gruppen à 11 Domains, jeweils Startseite UND aktueller Artikel geprüft.

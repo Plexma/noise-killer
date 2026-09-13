@@ -36,7 +36,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 
 ## Unterstützte Seiten
 
-*Letzter vollständiger Audit: 2026-08-08 – jede Domain auf Startseite **und** Artikelseite gegen das DOM geprüft.*
+*Letzter vollständiger Audit: 2026-09-13 – jede Domain auf Startseite **und** Artikelseite gegen das DOM geprüft.*
 
 **Legende:** 📰 Artikelempfehlungen · 📬 Newsletter-Box · 💬 Kommentare · 🔗 Social-/Share-Leiste · 🦶 Footer · 📢 Eigenwerbung/Teaser · 🛍️ Affiliate/Shop-Links · 🪧 Banner/Overlays · 🏷️ Tag-Listen
 
@@ -66,7 +66,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | lto.de | 📰 📬 📢 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
-| mydealz.de | 🪧 🦶 |
+| mydealz.de | 💬 🪧 🦶 |
 | myhermes.de | 🦶 |
 | n-tv.de | 🔗 📰 📢 🦶 |
 | ndr.de | 🔗 📢 🦶 |
@@ -80,7 +80,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | stadt-bremerhaven.de | 💬 📰 🛍️ 📢 🦶 |
 | startpage.com | 📢 📬 🦶 |
 | steamdb.info | 📢 🦶 |
-| sueddeutsche.de | 📰 📬 📢 🦶 |
+| sueddeutsche.de | 📰 📬 📢 🛍️ 🦶 |
 | sz-magazin.sueddeutsche.de | 📰 🦶 |
 | t-online.de | 📰 📢 🦶 |
 | tagesschau.de | 💬 📢 🦶 |
