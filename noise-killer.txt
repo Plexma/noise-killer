@@ -1262,7 +1262,10 @@ www.sueddeutsche.de##div.tik4-sharing
 ! Schlagzeilen-Ticker-Box (Inline im Artikel)
 ! BUGFIX 2026-04-06: div.rounded-8.bg-alpine.p-12 traf falschen Tag (ist ein aside).
 !                   Ersetzt durch stabilen data-testid-Selektor.
-www.t-online.de##aside[data-testid="Stage.Schlagzeilen.Inline"]
+! BUGFIX 2026-09-14: aside[data-testid="Stage.Schlagzeilen.Inline"] greift nicht mehr -
+!   Element ist inzwischen ein div (Desktop: display:none via md:hidden-Klasse, auf
+!   Mobile aber voll sichtbar und ungeblockt). Auf tag-agnostischen Selektor umgestellt.
+www.t-online.de##[data-testid="Stage.Schlagzeilen.Inline"]
 ! Verwandte Artikel Sidebar-Liste
 www.t-online.de##ul[data-testid="RelatedArticles.List"]
 ! Empfehlungsboxen

@@ -1,3 +1,14 @@
+## [2026-09-14] - Rotierender Wartungs-Check, Bucket 4/5 (12 Domains)
+
+Rotierender Wochen-Check (ISO-Woche 38, Bucket-Index 3 von 5): n-tv.de, ndr.de, nytimes.com, pcgameshardware.de, rbb24.de, spiegel.de, sportschau.de, startpage.com, sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de – jeweils aktueller Artikel geprüft.
+
+### Behoben – kaputte Selektoren
+- **t-online.de**: `aside[data-testid="Stage.Schlagzeilen.Inline"]` griff nicht mehr – Element ist inzwischen ein `div` (auf Desktop per `md:hidden` unsichtbar, auf Mobile aber voll sichtbar und ungeblockt). Auf tag-agnostischen Selektor umgestellt.
+
+### Hinweise
+- **nytimes.com**: nicht prüfbar (Browser-Pane blockt die Domain aus Sicherheitsgründen).
+- Alle übrigen 10 Domains im Bucket: sauber, keine Findings.
+
 ## [2026-09-13] - Vollaudit aller 55 Domains (Startseite + Artikel), 7 Domains gefixt
 
 Vollständiger Audit aller 55 Domains, parallel in 5 Gruppen à 11 Domains, jeweils Startseite UND aktueller Artikel geprüft.
