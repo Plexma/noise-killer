@@ -1,3 +1,13 @@
+## [2026-09-21] - Rotierender Wartungs-Check, Bucket 5/5 (7 Domains)
+
+Rotierender Wochen-Check (ISO-Woche 39, Bucket-Index 4 von 5): theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com, zdfheute.de, zeit.de – jeweils aktueller Artikel geprüft.
+
+### Behoben – Underblocking (fehlender Filter)
+- **wiwo.de**: Outbrain-Recommendation-Widget (`app-outbrain`) am Artikelende war ungeblockt.
+
+### Hinweise
+- Alle übrigen 6 Domains im Bucket: sauber, keine Findings.
+
 ## [2026-09-14] - Rotierender Wartungs-Check, Bucket 4/5 (12 Domains)
 
 Rotierender Wochen-Check (ISO-Woche 38, Bucket-Index 3 von 5): n-tv.de, ndr.de, nytimes.com, pcgameshardware.de, rbb24.de, spiegel.de, sportschau.de, startpage.com, sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de – jeweils aktueller Artikel geprüft.

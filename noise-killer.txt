@@ -1484,6 +1484,9 @@ www.wiwo.de##app-vg-wort
 ! Hinzugefügt 2026-07-02: Inline-Artikel-Teaser im Fließtext, gleiches Muster wie
 !   handelsblatt.com (Wrapper-Pattern, damit kein Leerraum bleibt)
 www.wiwo.de##app-storyline-element:has(> app-storyline-teaser)
+! BUGFIX 2026-09-21: Outbrain-Recommendation-Widget (app-outbrain) am Artikelende
+!   war ungeblockt - Underblocking, siehe "Immer entfernen": Outbrain-Widgets.
+www.wiwo.de##app-outbrain
 
 ! --------------------------------------------------------------------------
 ! Wowhead
