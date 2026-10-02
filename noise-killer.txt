@@ -3,7 +3,7 @@
 ! Zweck: Entschlackung von Nachrichtenseiten & anderen Webseiten
 ! Entfernt: Inline-Eigenwerbung, "Mehr zum Thema", Artikel-Empfehlungen,
 !           Footer, Newsletter-Boxen, Kommentarbereiche, Social-Bars
-! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-08-08 (Vollaudit: Startseite + Artikel je Domain)
+! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-10-02 (Vollaudit: Startseite + Artikel je Domain)
 ! ==========================================================================
 
 ! --------------------------------------------------------------------------
@@ -78,6 +78,9 @@
 !   liegt in div.wp-block-group direkt vor dem Preferred-Source-Badge, nicht im Heading+UL-
 !   Muster der bisherigen Regeln - war bisher ungeblockt
 9to5mac.com##div.wp-block-group:has(+ div.google-preferred-source-badge)
+! Hinzugefügt 2026-10-02: Startseiten-Banner "Early Fall Prime Day deals" (Amazon-Affiliate), aside.sidebar
+!   trifft ihn nicht (heißt aside.featured-posts-banner)
+9to5mac.com##div.featured-posts-banner-container
 
 ! --------------------------------------------------------------------------
 ! Android Authority
@@ -151,6 +154,9 @@ arstechnica.com##div.post-navigation-link-wrapper.nav-previous
 arstechnica.com##div.post-navigation-link-wrapper.nav-next
 ! Artikel-Empfehlungen ("Most Read") Block am Artikelende
 arstechnica.com##div.single-most-read
+! BUGFIX 2026-10-02: div.component-most-read ("Most Read" auf der Startseite) war ungeblockt,
+!   die Regel div.single-most-read deckt nur die Artikelvariante ab
+arstechnica.com##div.component-most-read
 
 ! --------------------------------------------------------------------------
 ! iFixit
@@ -172,6 +178,8 @@ de.ifixit.com###wppost-comments-container
 de.ifixit.com##footer
 ! Hinzugefügt 2026-08-17: Newsletter-Box auf der Startseite war ungeblockt.
 de.ifixit.com##div.newsletter-sub
+! Hinzugefügt 2026-10-02: Shop-Produktwerbung (a.js-product-ad, "Jetzt kaufen") auf der Startseite
+de.ifixit.com##a.js-product-ad
 
 ! --------------------------------------------------------------------------
 ! Wikipedia (alle Sprachversionen)
@@ -183,6 +191,8 @@ de.ifixit.com##div.newsletter-sub
 !         (mw-footer-container), der bereits separat geblockt wird.
 ! --------------------------------------------------------------------------
 wikipedia.org##div.mw-footer-container
+! Hinzugefügt 2026-10-02: CentralNotice-Kampagnenbanner (Spenden-/Wiki-Loves-Aktionen) war ungeblockt
+wikipedia.org###centralNotice
 
 ! --------------------------------------------------------------------------
 ! HSReplay
@@ -208,6 +218,15 @@ imgur.com##div.Footer-wrapper
 !   Banner ab, nicht diese Slots.
 imgur.com##.BannerAd-cont
 imgur.com##.Gallery-Content-BottomAd
+! BUGFIX 2026-10-02: ungeblockt waren Empfehlungs-Feed ("Explore Posts", div.BottomRecirc ist nach dem
+!   Scrollen wieder im DOM), Sidebar "Newest in most viral", Kommentar-Zähler-Button, Tag-Liste,
+!   leere Ad-Zellen im Startseiten-Raster (.fast-grid-ad) und Bottom-Ad-Container
+imgur.com##div.BottomRecirc
+imgur.com##div.Gallery-Sidebar
+imgur.com##div.Gallery-CommentsCounter
+imgur.com##div.Gallery-Content--tags
+imgur.com##div.fast-grid-ad
+imgur.com##div.BottomAd-container
 
 ! --------------------------------------------------------------------------
 ! DPD
@@ -267,7 +286,11 @@ tarnkappe.info##section.mobile-only
 !         contains-module-article-Outerwrappern, die kein x-data haben.
 ! --------------------------------------------------------------------------
 taz.de###tzi-paywahl-fg
-taz.de##article[x-data] > div[x-data]
+! BUGFIX 2026-10-02: article[x-data] > div[x-data] hatte 0 Treffer (Startseite + Artikel). Nachfolger der
+!   Artikelfuß-Spendenbox ist aside.tzi-bottom-container; außerdem Verlags-Eigenwerbung auf der
+!   Startseite (Abo-Aktion, Unterstützer:in, taz-Verlag-Events, Stellenanzeige)
+taz.de##aside.tzi-bottom-container
+taz.de##section.outerwrapper.contains-module-linklist_article_teaser_verlagsriegel_container
 taz.de##footer
 taz.de##section.outerwrapper.contains-module-article > section:not([x-data])
 
@@ -301,6 +324,10 @@ www.amazon.de###nav-ftr
 ! BUGFIX 2026-07-16: ID-Nummerierung von Amazon geändert (_01 -> _0), Regel griff nicht mehr
 www.amazon.de###prime-desktop-dp_feature_div_0
 www.amazon.de##[id^="sims-"]
+! Hinzugefügt 2026-10-02: Produktseiten: Kreditkarten-Eigenwerbung ("Punkte sammeln, 0 EUR Jahresgebühr") und
+!   "Einen ähnlichen Artikel in Betracht ziehen"-Empfehlungsbox
+www.amazon.de###maplePriceblockAmabot_feature_div
+www.amazon.de###valuePick_feature_div
 
 ! --------------------------------------------------------------------------
 ! Buffed
@@ -313,6 +340,8 @@ www.buffed.de##div.wadtag
 ! BUGFIX 2026-07-16: Kommentarsektion und Social-Share-Icons waren ungeblockt
 www.buffed.de###article_comment_box
 www.buffed.de##span.artSocialLinks
+! Hinzugefügt 2026-10-02: Kommentar-Zähler-Badges an Teasern (span.commentBox, "N Kommentare")
+www.buffed.de##span.commentBox
 
 ! --------------------------------------------------------------------------
 ! ComputerBase
@@ -331,7 +360,13 @@ www.computerbase.de##div.adbox.adbox-rectangle.adbox--with-label
 www.computerbase.de##div.shoutbox-container
 www.computerbase.de##div.text-asset.text-width.support-plea
 www.computerbase.de##div[data-widget-id][data-widget-key][data-widget-definition]
-www.computerbase.de##footer
+! BUGFIX 2026-10-02: footer blockte auch footer.article-view__footer inkl. div.article-view__subfooter
+!   (Quellenangabe "Quelle: ..." bzw. "Bildübersicht") - Overblocking. Jetzt nur Seiten-Footer
+!   und die Footer-Kinder ausser dem Subfooter (Kommentare/Teilen, Themen-Tags, Autorenliste).
+!   Zusätzlich: Eigenwerbebalken "ComputerBase Pro" auf der Startseite (div.promobar)
+www.computerbase.de##footer.footer
+www.computerbase.de##footer.article-view__footer > :not(.article-view__subfooter)
+www.computerbase.de##div.promobar
 ! Hinzugefügt 2026-08-17: "X Kommentare"-Links (Byline + Artikelfuß, Forum-Verweis) waren
 !   ungeblockt, auch auf der Startseite/im Ticker.
 www.computerbase.de##a.js-thread-link
@@ -451,6 +486,11 @@ www.faz.net##aside[data-external-selector="upper-toolbar"]
 www.faz.net###overscroll-article
 www.faz.net##[data-external-selector="overscroll-article"]
 www.faz.net##[class*="overscroll-article"]
+! Hinzugefügt 2026-10-02: Startseite: Verlags-/Anzeigen-Slider (Empfehlungen des Verlags, Stellenmarkt, Reise-/Immobilienmarkt),
+!   Kaufkompass-Affiliate-Blöcke und "Meine F.A.Z."-Widget
+www.faz.net##main section.bg-grey-900:has(> div > button[aria-label="Zurück"])
+www.faz.net##section:has(div[data-selector="product-review-title"])
+www.faz.net##main > div > div:has(figure[aria-label="Verfügbares Angebot an Themen"])
 
 ! --------------------------------------------------------------------------
 ! Focus.de
@@ -467,6 +507,12 @@ www.focus.de##div.Article-Comments-Button
 www.focus.de##div.Article-Comments
 www.focus.de##div.Article-LinkBox
 www.focus.de##footer
+! Hinzugefügt 2026-10-02: Artikel: Share-Leiste (Kommentare/Facebook/Mail/Print/Feedback) und Google-Preferred-Button;
+!   Startseite: native Anzeigen (Admanager) und Shopping-Deals-Block
+www.focus.de##div[data-island="SocialSharing"]
+www.focus.de##div[data-island="GooglePreferredSourcesButton"]
+www.focus.de##div.Grid-Article-Container:has(article[data-element-tracking-property*="Admanager"])
+www.focus.de##div.Grid-Article-Container:has(> section[aria-label="Deals"])
 
 ! --------------------------------------------------------------------------
 ! GameStar
@@ -518,6 +564,9 @@ www.gamestar.de##div.custom-info
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
 www.gamestar.de##ul.taglist
+! Hinzugefügt 2026-10-02: Kommentar-Zähler-Links an Teasern (a[href$=".html#comments"], Startseite 114 Treffer;
+!   a[href="#comments"] greift dort nicht)
+www.gamestar.de##a[href$=".html#comments"]
 
 ! --------------------------------------------------------------------------
 ! Golem
@@ -588,6 +637,9 @@ www.handelsblatt.com##app-special-advertisement
 www.handelsblatt.com##app-storyline-advertisement
 www.handelsblatt.com##app-storyline-related-topics
 www.handelsblatt.com##app-vg-wort
+! Hinzugefügt 2026-10-02: "Bei Google bevorzugen"-Link in der Artikel-Toolbar (Toolbar bleibt) und App-Install-Banner
+www.handelsblatt.com##hmg-button-link:has(a[href*="google.com/preferences/source"])
+www.handelsblatt.com##app-raw-html:has(a[href*="apps.apple.com"])
 
 ! --------------------------------------------------------------------------
 ! Heise
@@ -603,7 +655,9 @@ www.heise.de##.nav-bottom
 www.heise.de##a-opt-in.a-u-inline
 www.heise.de##a.a-button
 www.heise.de##aside.affiliate-info
-www.heise.de##div.a-article-header__service.a-article-header__service--right
+! BUGFIX 2026-10-02: die ganze Service-Box blockte auch "vorlesen" (ReadSpeaker = Anhören) und "Druckansicht",
+!   beides Artikel-Toolbar-Funktionen (NIEMALS blockieren). Jetzt nur der Foren-Kommentar-Link.
+www.heise.de##div.a-article-header__service--right a[href*="/forum/heise-online/Kommentare/"]
 ! Nur Werbe-Module blockieren (nicht TopNaviModule/HeaderModule)
 www.heise.de##div[data-module-name="AdModule"]
 ! "Beliebte Bestenlisten" / Teaser-Empfehlungen am Artikelende
@@ -662,6 +716,10 @@ www.heise.de##details.notice-banner
 !   div.ad.ad--inread = „Videos by heise"-Eigenwerbungs-Widget im Artikeltext
 !     (Inline-Block mit „c't 3003 / heise & ct / Peertube"-Tabs, eingebettete heise-Videos)
 www.heise.de##div.ad.ad--inread
+! Hinzugefügt 2026-10-02: Startseiten-Module ohne a-layout-Wrapper: Newsletter, Social-Media-Links, Themen-A-Z (Sitemap-Footer)
+www.heise.de##div[data-module-name="NewsletterModule"]
+www.heise.de##div[data-module-name="SocialMediaModule"]
+www.heise.de##div[data-module-name="SitemapFooterModule"]
 
 ! --------------------------------------------------------------------------
 ! iFun
@@ -689,6 +747,12 @@ www.ifun.de##div.wpcf7
 www.ifun.de##footer
 ! Hinzugefügt 2026-07-02: Tag-Liste am Artikelende (#article-single-footer-tags)
 www.ifun.de###article-single-footer-tags
+! BUGFIX 2026-10-02: Startseite: #viewport-share (Share-Leisten je Teaser, 20 Treffer) ist wieder im DOM; span.socialnetworks
+!   deckt nur Artikel ab. Zusätzlich App-Werbung, Follow-Widget und Schwesterseiten-Empfehlungsliste im Footer
+www.ifun.de###viewport-share
+www.ifun.de###footer-app
+www.ifun.de###footer-networks
+www.ifun.de###newsfeed-footer
 
 ! --------------------------------------------------------------------------
 ! iPhone-Ticker
@@ -714,6 +778,12 @@ www.iphone-ticker.de##footer
 ! Hinzugefügt 2026-07-02: Tag-Liste am Artikelende (#article-single-footer-tags),
 !         gleiches Muster wie ifun.de (identische Plattform)
 www.iphone-ticker.de###article-single-footer-tags
+! BUGFIX 2026-10-02: Startseite: #viewport-share (Share-Leisten je Teaser, 20 Treffer) ist wieder im DOM; span.socialnetworks
+!   deckt nur Artikel ab. Zusätzlich App-Werbung, Follow-Widget und Schwesterseiten-Empfehlungsliste im Footer
+www.iphone-ticker.de###viewport-share
+www.iphone-ticker.de###footer-app
+www.iphone-ticker.de###footer-networks
+www.iphone-ticker.de###newsfeed-footer
 
 ! --------------------------------------------------------------------------
 ! LTO (Legal Tribune Online)
@@ -745,6 +815,8 @@ www.lto.de##footer
 www.lto.de##section.content__related
 ! Hinzugefügt: 2026-04-14: Schlagwort-Tags am Artikelende
 www.lto.de##ul.tags
+! Hinzugefügt 2026-10-02: fixierter Push-Opt-In-Button (.push__management) auf Start- und Artikelseiten
+www.lto.de##.push__management
 
 ! --------------------------------------------------------------------------
 ! MacRumors
@@ -760,11 +832,17 @@ www.lto.de##ul.tags
 !   div-Kind dort) - kompletter Seiteninhalt wurde versteckt (Overblocking!). Timeline anhand
 !   des stabilen Klassen-Präfixes ausgeschlossen, Noise-Divs auf normalen Artikeln (Newsletter-
 !   Box, Popular Stories, #comments) bleiben weiterhin erfasst.
-www.macrumors.com##main#maincontent > div:not([class*="timeline--"])
+! BUGFIX 2026-10-02: #maincontent > div blankte auf Listenseiten (/how-to/, /review/, /guide/, /roundup/) die
+!   Excerpt-Teaser div.block--<hash> (20 bzw. 151 Treffer, Seiteninhalt weg) - Overblocking.
+!   Jetzt auch block--* ausgeschlossen; Artikel: Newsletter, Popular Stories, #comments bleiben erfasst.
+www.macrumors.com##main#maincontent > div:not([class*="timeline--"]):not([class*="block--"])
 www.macrumors.com##div.linkback
 www.macrumors.com##.js-article .noskim
 www.macrumors.com###canvas-sidebar
 www.macrumors.com##footer
+! Hinzugefügt 2026-10-02: Startseiten-Sidebar #sidebar-content (Videos, Guides, Upcoming, Recent Comments, Other Stories);
+!   #canvas-sidebar ist nur das Slide-Panel
+www.macrumors.com###sidebar-content
 
 ! --------------------------------------------------------------------------
 ! MyDealz
@@ -885,6 +963,8 @@ www.ndr.de##nav#breadcrumb
 www.ndr.de##nav.sharebox
 www.ndr.de##section.contentbox
 www.ndr.de##section[data-showdefault]
+! Hinzugefügt 2026-10-02: Startseiten-Eigenwerbung "Täglich frisch: Watt'n Quiz" (a.teaser.bannerteaser)
+www.ndr.de##a.teaser.bannerteaser
 
 ! --------------------------------------------------------------------------
 ! New York Times
@@ -927,6 +1007,12 @@ www.pcgameshardware.de##ul.rowAlt.footer2
 ! BUGFIX 2026-07-16: Affiliate-PC-Vergleichstabelle ("PCGH-PCs: Daten, Benchmarks, Preise")
 !   im Artikel war ungeblockt
 www.pcgameshardware.de##aside.rgTable
+! Hinzugefügt 2026-10-02: "N Kommentare"-Links an Teasern (Startseite 48, Rubrik 25 Treffer), "Als bevorzugte Quelle auf
+!   Google hinzufügen"-Follow-Link und Gamesplanet-Affiliate-Preislink in der Test-Infobar.
+!   NICHT blocken: das untere .artSocialLinks liegt in div.pgn (Pagination)
+www.pcgameshardware.de##a.commentsText
+www.pcgameshardware.de##a.googleSourceBtn
+www.pcgameshardware.de##span.shopLink
 
 ! --------------------------------------------------------------------------
 ! Raider.IO
@@ -1080,6 +1166,8 @@ www.spiegel.de##section[data-area="html-embed"]:has(iframe[src*="gruppenkonto"])
 ! BUGFIX 2026-03-30: „Geschichten, die wir Ihnen heute empfehlen:" – redaktionelle
 !   Empfehlungsbox (H3 + UL mit externen Links), eingebettet als body_element-Block
 www.spiegel.de##div[data-sara-click-el="body_element"]:has(> div > h3:has-text(/Geschichten/))
+! Hinzugefügt 2026-10-02: "SPIEGEL bei Google bevorzugen"-Box unter der Toolbar (1 Treffer auf 3/3 Artikeln)
+www.spiegel.de##div[data-area="preferred-sources"]
 
 ! --------------------------------------------------------------------------
 ! sportdaten.spiegel.de (Spiegel-Spielbanner-Widget)
@@ -1095,6 +1183,10 @@ www.spiegel.de##div[data-sara-click-el="body_element"]:has(> div > h3:has-text(/
 !   Disclaimer steckt jetzt in div.hs-legal-notice. Disclaimer leakte sichtbar durch.
 sportdaten.spiegel.de##.hs-ad
 sportdaten.spiegel.de##div.hs-legal-notice
+! Hinzugefügt 2026-10-02: auf eigenständigen sportdaten-Seiten (nicht im Widget-Iframe) waren Footer und
+!   "Mehr zum Thema"-Newsliste ungeblockt (aside#hs-sidebar bleibt, dort liegen Torjäger-/Fahrerwertung)
+sportdaten.spiegel.de##footer[data-area="footer"]
+sportdaten.spiegel.de##div.hs-news-list
 
 ! --------------------------------------------------------------------------
 ! Sportschau
@@ -1267,7 +1359,9 @@ www.sueddeutsche.de##div.tik4-sharing
 !   Mobile aber voll sichtbar und ungeblockt). Auf tag-agnostischen Selektor umgestellt.
 www.t-online.de##[data-testid="Stage.Schlagzeilen.Inline"]
 ! Verwandte Artikel Sidebar-Liste
-www.t-online.de##ul[data-testid="RelatedArticles.List"]
+! BUGFIX 2026-10-02: data-testid RelatedArticles.List hatte 0 Treffer; die Liste trägt jetzt aria-label="Verwandte Artikel".
+!   Auf den umgebenden StreamItem-Wrapper bezogen, damit kein Leerraum bleibt
+www.t-online.de##div[data-testid="StageLayout.StreamItem"]:has(> ul[aria-label="Verwandte Artikel"])
 ! Empfehlungsboxen
 www.t-online.de##div[data-testid="recommendation"]
 ! Rechte Inhalts-Sidebar (Empfehlungen, Werbung)
@@ -1292,6 +1386,8 @@ www.t-online.de##[data-testid="StageLayout.StreamItem"]:has(> ul[class*="before:
 ! Hinzugefügt: 2026-04-14: Taboola-Feed
 www.t-online.de##[data-testid="TaboolaFeed"]
 www.t-online.de##[data-testid="TaboolaFeeds.Feed"]
+! Hinzugefügt 2026-10-02: "Shopping ANZEIGEN"-Wrapper (Nativendo.ArticleFeed*) blieb trotz nativendo-container-Regel stehen
+www.t-online.de##[data-testid^="Nativendo.ArticleFeed"]
 
 ! --------------------------------------------------------------------------
 ! Tagesschau
@@ -1358,6 +1454,13 @@ www.tagesspiegel.de##button[data-gtm-class="open-community"]
 www.tagesspiegel.de##p:has(> a[data-gtm-class="article-home-link"])
 www.tagesspiegel.de##p:has(> a[data-gtm-class="article-home-link"]) ~ ul
 www.tagesspiegel.de##ul:has([data-gtm-class="article-social-link"])
+! Hinzugefügt 2026-10-02: Abo-Footerbar (Piano), "Lesermeinungen"-Infobox mit Diskussionslink (echte Infoboxen bleiben),
+!   Umfrage-Embed (participaid) und Kommentarzahl an Teasern
+www.tagesspiegel.de###piano-footerbar
+www.tagesspiegel.de##iframe[aria-label="Tagesspiegel Footer Bar"]
+www.tagesspiegel.de##aside[data-qa-hook="story-infobox"]:has(a[href*="?commentId="])
+www.tagesspiegel.de##iframe[src*="participaid.urbanjournalism.org"]
+www.tagesspiegel.de##span[data-qa-hook="comment-count"]
 
 ! --------------------------------------------------------------------------
 ! The Verge
@@ -1404,6 +1507,16 @@ www.theverge.com##div.duet--layout--header-pattern
 ! BUGFIX 2026-08-17: Affiliate-Produkt-Slider ("Partner Content From...") wird
 !   direkt in den Artikel-Flow injiziert, bisher ungeblockt.
 www.theverge.com##.duet--article--boosted-post-wrapper
+! Hinzugefügt 2026-10-02: Coral-Kommentare (#comments), Follow-topics/authors am Artikelende, Zephr-Paywall-Popups (Zonen
+!   einzeln - NIE [id^="zephr"], das trifft #zephr-anchor = Artikeltext) und Startseiten-Rankings
+!   "Most Popular"/"Most Discussed"
+www.theverge.com###comments
+www.theverge.com##div:has(> ul > li > div[id^="follow-category-article_footer"])
+www.theverge.com###zephr-zone-footer
+www.theverge.com###zephr-overlay
+www.theverge.com###zephr-inline-container
+www.theverge.com##section.duet--homepage--most-popular
+www.theverge.com##section.duet--homepage--most-discussed
 
 ! --------------------------------------------------------------------------
 ! Tom's Guide
@@ -1415,7 +1528,9 @@ www.tomsguide.com###popular-data
 www.tomsguide.com###viafoura-comments-container
 www.tomsguide.com##.socialite-widget
 www.tomsguide.com##a.block-link.full
-www.tomsguide.com##div > a[data-mrf-recirculation]
+! BUGFIX 2026-10-02: div > a[data-mrf-recirculation] traf auch die Listing-Pagination (/news: 9 Links inkl. "Archives")
+!   und den Header-Link "Newsletters" - Overblocking. Pagination-Variante ausgenommen.
+www.tomsguide.com##div > a[data-mrf-recirculation]:not([data-mrf-recirculation="pagination"])
 www.tomsguide.com##div > aside[data-component-name][data-nosnippet]
 ! BUGFIX 2026-08-08: div > ul war ein Totalschaden und wurde ersatzlos entfernt.
 !   Startseite: traf JEDE Artikel-Widget-Liste (ul.wdn-listv2-items, u.a. 3152px,
@@ -1433,6 +1548,17 @@ www.tomsguide.com##div.slice-author-bio
 ! Hinzugefügt 2026-08-17: "Tom's Guide Club"-Mitgliedschaft-Eigenwerbung war ungeblockt
 !   (Slide-out-Banner, Top-Sticky-Banner, Bottom-Corner-Signup-Popup – gemeinsamer ID-Präfix).
 www.tomsguide.com##div[id^="membership-"]
+! Hinzugefügt 2026-10-02: Artikel: Kommentar-Zähler-Link (Viafoura), Newsletter-Button der Utility-Bar, Video-Karussell,
+!   "More from Tom's Guide"-Liste; Startseite: Deal-/Voucher-/Autoren-Widgets
+www.tomsguide.com##a#viafoura-comment-count-link
+www.tomsguide.com##button#utilitybar__button--newsletter
+www.tomsguide.com##[data-component-name="JwPlayer:Carousel"]
+www.tomsguide.com##h3#section-more-from-tom-s-guide
+www.tomsguide.com##h3#section-more-from-tom-s-guide + ul
+www.tomsguide.com##div.widget[id^="deal"]
+www.tomsguide.com##div.widget[id^="voucher"]
+www.tomsguide.com##div.widget[id*="author-card"]
+www.tomsguide.com##div.authors-widget__wrapper
 
 ! --------------------------------------------------------------------------
 ! Transfermarkt
@@ -1459,6 +1585,8 @@ www.transfermarkt.de##.player-discussions
 !   waren bisher ungeblockt
 www.transfermarkt.de##div.more-news
 www.transfermarkt.de##div.box:has(a[href*="/newsforum/"])
+! BUGFIX 2026-10-02: Google-Link war geblockt, der umgebende Hinweistext (div.news-google-preferences-hint) blieb stehen
+www.transfermarkt.de##div.news-google-preferences-hint
 
 ! --------------------------------------------------------------------------
 ! WirtschaftsWoche (wiwo.de)
@@ -1518,6 +1646,8 @@ www.zdfheute.de##footer[data-testid="footer"]
 www.zdfheute.de##div[data-testid="heute-übersichtmodul"]
 ! Themen-Tag-Links unter dem Artikel
 www.zdfheute.de##div[data-testid="topic-tags"]
+! Hinzugefügt 2026-10-02: Startseiten-Newsletter-Box (Formular mit aria-label Newsletter)
+www.zdfheute.de##div:has(> div > div > form[aria-label*="Newsletter"])
 ! BUGFIX 2026-09-13: section:not(article section):has(...)-Regel ersatzlos entfernt.
 !   div[data-testid="heute-übersichtmodul"] liegt jetzt direkt unter <main>, nicht mehr
 !   unter einem section-Wrapper - Selector traf 0 Treffer und war durch die direkte
@@ -1586,6 +1716,14 @@ stadt-bremerhaven.de##.sidebar
 stadt-bremerhaven.de##div.main-inner.group > div.content:style(width: 100% !important; max-width: 100% !important; float: none !important)
 ! Site-Footer
 stadt-bremerhaven.de##footer
+! Hinzugefügt 2026-10-02: Kommentarzähler an Teasern (a.post-comments), Amazon-Produktbox im Artikel
+!   (div.aawp, die Regel auf table.aawp-table trifft sie nicht), interne Empfehlungskarten im
+!   Artikel (a.cb-internal-link-card) und Wrapper der "Neueste Beiträge"-Liste (Leerraum durch
+!   content-visibility-Platzhalter)
+stadt-bremerhaven.de##a.post-comments
+stadt-bremerhaven.de##article div.aawp
+stadt-bremerhaven.de##a.cb-internal-link-card
+stadt-bremerhaven.de##div.recent-posts-container
 
 ! --------------------------------------------------------------------------
 ! ZEIT Online

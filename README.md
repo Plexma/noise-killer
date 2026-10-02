@@ -36,7 +36,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 
 ## Unterstützte Seiten
 
-*Letzter vollständiger Audit: 2026-09-13 – jede Domain auf Startseite **und** Artikelseite gegen das DOM geprüft.*
+*Letzter vollständiger Audit: 2026-10-02 – 42 von 55 Domains auf Startseite **und** Artikelseite gegen das DOM geprüft; 13 Domains waren wegen Bot-Schutz, Consent-Wall oder Sperre nicht prüfbar (Details im CHANGELOG).*
 
 **Legende:** 📰 Artikelempfehlungen · 📬 Newsletter-Box · 💬 Kommentare · 🔗 Social-/Share-Leiste · 🦶 Footer · 📢 Eigenwerbung/Teaser · 🛍️ Affiliate/Shop-Links · 🪧 Banner/Overlays · 🏷️ Tag-Listen
 
@@ -44,26 +44,26 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 |---|---|
 | 9to5google.com | 💬 📰 📢 🛍️ |
 | 9to5mac.com | 💬 📰 📢 🛍️ |
-| amazon.de | 📢 🛍️ 🦶 |
+| amazon.de | 📰 📢 🛍️ 🦶 |
 | androidauthority.com | 💬 📢 🛍️ 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
 | buffed.de | 💬 🔗 📢 |
 | computerbase.de | 💬 📢 📬 🦶 |
-| de.ifixit.com | 🪧 💬 📰 📬 🦶 |
-| wikipedia.org (alle Sprachversionen) | 🦶 |
+| de.ifixit.com | 🪧 💬 📰 📬 🛍️ 🦶 |
+| wikipedia.org (alle Sprachversionen) | 🪧 🦶 |
 | derstandard.at / derstandard.de | 💬 📢 🦶 |
 | deutschlandfunk.de | 🦶 📰 |
 | dhl.de | 🪧 🦶 |
-| faz.net | 📰 📬 📢 🦶 |
-| focus.de | 💬 📢 🦶 |
+| faz.net | 📰 📬 📢 🛍️ 🦶 |
+| focus.de | 💬 🔗 📢 🦶 |
 | gamestar.de | 💬 📬 📰 📢 🦶 |
 | golem.de | 💬 📬 📢 🪧 🦶 |
 | handelsblatt.com | 📰 📢 🪧 🦶 |
-| heise.de | 📰 📬 📢 🛍️ 🦶 |
+| heise.de | 📰 📬 🔗 📢 🛍️ 🦶 |
 | hsreplay.net | 📢 🪧 🦶 |
-| ifun.de / iphone-ticker.de | 💬 📬 🔗 🏷️ 🦶 |
-| imgur.com | 💬 🪧 📢 |
-| lto.de | 📰 📬 📢 🦶 |
+| ifun.de / iphone-ticker.de | 💬 📰 📬 🔗 📢 🏷️ 🦶 |
+| imgur.com | 💬 📰 🪧 📢 🏷️ |
+| lto.de | 📰 📬 📢 🪧 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
 | mydealz.de | 💬 🪧 🦶 |
@@ -74,8 +74,8 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | pcgameshardware.de | 💬 📢 🛍️ 🦶 |
 | raider.io | 📢 🪧 🦶 |
 | rbb24.de | 💬 🔗 📰 📬 🏷️ 🦶 |
-| spiegel.de | 📰 📬 🔗 🛍️ 🦶 |
-| sportdaten.spiegel.de (Spielbanner-Widget) | 🛍️ |
+| spiegel.de | 📰 📬 🔗 📢 🛍️ 🦶 |
+| sportdaten.spiegel.de (Spielbanner-Widget und eigenständige Seiten) | 🛍️ 📰 🦶 |
 | sportschau.de | 🔗 📢 🦶 |
 | stadt-bremerhaven.de | 💬 📰 🛍️ 📢 🦶 |
 | startpage.com | 📢 📬 🦶 |
@@ -84,16 +84,16 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | sz-magazin.sueddeutsche.de | 📰 🦶 |
 | t-online.de | 📰 📢 🦶 |
 | tagesschau.de | 💬 📢 🦶 |
-| tagesspiegel.de | 💬 📰 📢 🦶 |
+| tagesspiegel.de | 💬 📰 📢 🪧 🦶 |
 | tarnkappe.info | 📬 📢 🦶 |
-| taz.de | 🪧 🦶 |
-| theverge.com | 💬 📰 📬 📢 🛍️ 🦶 |
-| tomsguide.com | 💬 📬 📢 🛍️ 🦶 🏷️ |
+| taz.de | 📢 🪧 🦶 |
+| theverge.com | 💬 📰 📬 📢 🛍️ 🪧 🦶 |
+| tomsguide.com | 💬 📰 📬 📢 🛍️ 🦶 🏷️ |
 | tracker.gg | 📢 🪧 🦶 |
 | transfermarkt.de | 💬 📰 📢 🦶 |
 | wiwo.de | 📰 📢 🦶 |
 | wowhead.com | 💬 📰 📬 📢 🦶 |
-| zdfheute.de | 📰 🔗 🦶 |
+| zdfheute.de | 📰 📬 🔗 🦶 |
 | zeit.de | 💬 📰 📬 📢 🦶 |
 
 ---

@@ -1,3 +1,56 @@
+## [2026-10-02] - Vollaudit aller 55 Domains (Startseite + Artikel), 29 Domains gefixt
+
+Vollständiger Audit aller 55 Domains auf Nutzerwunsch, parallel in 5 Gruppen à 11 Domains, jeweils Startseite UND aktueller Artikel geprüft. Kritische Selektoren (Overblocking-Fixes, Zephr-Popups, Verlagsmodule) wurden zusätzlich vor der Übernahme unabhängig im DOM nachgeprüft.
+
+### Behoben – Overblocking (versteckter Inhalt, kritisch)
+- **macrumors.com**: `#maincontent > div` blankte auf Listenseiten (`/how-to/`, `/review/`, `/guide/`, `/roundup/`) die Excerpt-Teaser `div.block--<hash>` (20 bzw. 151 Treffer, praktisch der gesamte Seiteninhalt). `block--*` ausgenommen; Newsletter-Box, Popular Stories und `#comments` im Artikel bleiben erfasst.
+- **computerbase.de**: `footer` blockte auch `footer.article-view__footer` inkl. `div.article-view__subfooter` (Quellenangabe "Quelle: …" bzw. "Bildübersicht"). Jetzt nur Seiten-Footer plus die Footer-Kinder außer dem Subfooter.
+- **heise.de**: Die komplette Service-Box im Artikelkopf blockte auch "vorlesen" (ReadSpeaker, Anhören) und "Druckansicht" (Artikel-Toolbar). Jetzt nur noch der Foren-Kommentar-Link.
+- **tomsguide.com**: `div > a[data-mrf-recirculation]` traf auch die Listing-Pagination (`/news`: 9 Links inkl. "Archives") und den Header-Link "Newsletters". Pagination-Variante ausgenommen.
+
+### Behoben – kaputte Selektoren
+- **taz.de**: `article[x-data] > div[x-data]` hatte 0 Treffer; Nachfolger der Spendenbox am Artikelende ist `aside.tzi-bottom-container`.
+- **t-online.de**: `ul[data-testid="RelatedArticles.List"]` hatte 0 Treffer; die Liste trägt jetzt `aria-label="Verwandte Artikel"`, geblockt wird der umgebende StreamItem-Wrapper (kein Leerraum).
+- **arstechnica.com**: `div.component-most-read` (Startseiten-Variante von "Most Read") war nicht abgedeckt, nur die Artikelvariante `single-most-read`.
+- **transfermarkt.de**: Google-Link war geblockt, der umgebende Hinweistext (`div.news-google-preferences-hint`) blieb stehen.
+- **ifun.de** / **iphone-ticker.de**: `#viewport-share` ist auf der Startseite wieder im DOM (20 Share-Leisten); `span.socialnetworks` deckt nur Artikel ab. Beide Regeln stehen jetzt nebeneinander.
+
+### Hinzugefügt – Underblocking (fehlender Filter)
+- **9to5mac.com**: Startseiten-Banner "Early Fall Prime Day deals" (Amazon-Affiliate, `div.featured-posts-banner-container`).
+- **amazon.de**: Kreditkarten-Eigenwerbung (`#maplePriceblockAmabot_feature_div`) und Empfehlungsbox "Einen ähnlichen Artikel in Betracht ziehen" (`#valuePick_feature_div`) auf Produktseiten.
+- **buffed.de**: Kommentar-Zähler-Badges an Teasern (`span.commentBox`, 65 Treffer auf der Startseite).
+- **computerbase.de**: Eigenwerbebalken "ComputerBase Pro" auf der Startseite (`div.promobar`).
+- **de.ifixit.com**: Shop-Produktwerbung auf der Startseite (`a.js-product-ad`).
+- **faz.net**: Startseite – vier Verlags-/Anzeigen-Slider (Empfehlungen des Verlags, Stellenmarkt, Reise-/Immobilienmarkt), zwei Kaufkompass-Affiliate-Blöcke, Widget "Meine F.A.Z.".
+- **focus.de**: Artikel – Share-Leiste und Google-Preferred-Button; Startseite – native Anzeigen (Admanager) und Shopping-Deals-Block.
+- **gamestar.de**: Kommentar-Zähler-Links an Teasern (`a[href$=".html#comments"]`, 114 Treffer Startseite).
+- **handelsblatt.com**: "Bei Google bevorzugen"-Link in der Artikel-Toolbar (Toolbar bleibt) und App-Install-Banner.
+- **heise.de**: Startseiten-Module Newsletter, Social-Media-Links und Themen-A-Z (Sitemap-Footer) ohne `a-layout`-Wrapper.
+- **ifun.de** / **iphone-ticker.de**: App-Werbung, Follow-Widget und Schwesterseiten-Empfehlungsliste im Footer (`#footer-app`, `#footer-networks`, `#newsfeed-footer`).
+- **imgur.com**: Empfehlungs-Feed "Explore Posts" (`div.BottomRecirc`, ist nach dem Scrollen wieder im DOM), Sidebar "Newest in most viral", Kommentar-Zähler-Button, Tag-Liste, leere Ad-Zellen im Startseiten-Raster (`div.fast-grid-ad`) und `div.BottomAd-container`.
+- **lto.de**: Fixierter Push-Opt-In-Button (`.push__management`).
+- **macrumors.com**: Startseiten-Sidebar `#sidebar-content` (Videos, Guides, Upcoming, Recent Comments, Other Stories).
+- **ndr.de**: Startseiten-Eigenwerbung "Täglich frisch: Watt'n Quiz".
+- **pcgameshardware.de**: "N Kommentare"-Links an Teasern, "Als bevorzugte Quelle auf Google hinzufügen"-Follow-Link und Gamesplanet-Affiliate-Preislink in der Test-Infobar.
+- **spiegel.de**: "SPIEGEL bei Google bevorzugen"-Box unter der Artikel-Toolbar.
+- **sportdaten.spiegel.de**: Auf eigenständigen Seiten (nicht im Widget-Iframe) Footer und "Mehr zum Thema"-Newsliste.
+- **stadt-bremerhaven.de**: Kommentarzähler an Teasern, Amazon-Produktbox im Artikel (`div.aawp`), interne Empfehlungskarten (`a.cb-internal-link-card`) und Wrapper der "Neueste Beiträge"-Liste (Leerraum durch Platzhalter).
+- **t-online.de**: "Shopping ANZEIGEN"-Wrapper (`Nativendo.ArticleFeed*`) blieb trotz nativendo-container-Regel stehen.
+- **tagesspiegel.de**: Abo-Footerbar (Piano), "Lesermeinungen"-Infobox mit Diskussionslink (echte Infoboxen bleiben), Umfrage-Embed und Kommentarzahl an Teasern.
+- **taz.de**: Verlags-Eigenwerbung auf der Startseite (Abo-Aktion, Unterstützer:in, taz-Verlag-Events, Stellenanzeige; 7 Sektionen).
+- **theverge.com**: Coral-Kommentare, Follow-topics/authors am Artikelende, Zephr-Paywall-Popups (Zonen einzeln, nie `[id^="zephr"]` – würde `#zephr-anchor` = Artikeltext treffen), Startseiten-Rankings "Most Popular"/"Most Discussed".
+- **tomsguide.com**: Kommentar-Zähler-Link (Viafoura), Newsletter-Button der Utility-Bar, Video-Karussell, "More from Tom's Guide"-Liste; Startseite – Deal-, Voucher- und Autoren-Widgets.
+- **wikipedia.org**: CentralNotice-Kampagnenbanner (Spenden-/Wiki-Loves-Aktionen).
+- **zdfheute.de**: Newsletter-Box auf der Startseite.
+
+### Hinweise
+- **Nicht prüfbar (13 Domains)**: **hsreplay.net**, **tracker.gg**, **wowhead.com**, **steamdb.info** (Cloudflare-/CloudFront-Block bzw. IP-Bann), **androidauthority.com** (Cloudflare-Hardblock), **mydealz.de**, **zeit.de**, **nytimes.com**, **startpage.com** (Bot-Check/Sperre), **derstandard.at** / **derstandard.de** / **golem.de** (Consent-Wall ohne Ablehnen-Option, nicht zugestimmt), **my.dpd.de** (Verbindungsabbruch/Login). Keine dieser Sperren wurde umgangen.
+- **tomsguide.com**: Fixes aus dem Gruppen-Audit übernommen, im Headless-Browser lud die Seite für die Nachprüfung nicht (Timeout).
+- **Bewusst unverändert, Rückfrage offen**: `lto.de` `.toolbar.boxed` (Drucken/Senden/Zitieren am Artikelende, Regel aus dem Initial-Release, evtl. Artikel-Toolbar); `dhl.de` `div.stripe.bg--grey` blockt auf `/pakete-versenden.html` den Inhaltsblock "Deutschlandweit versenden".
+- **tarnkappe.info**: Eigene Anti-Adblock-Wand (Blur + Overlay, wenn `cdntrf.com/tarnkappe-info.js` fehlt) – lässt sich mit Cosmetic-Filtern allein nicht entfernen.
+- **faz.net**: Google-"bevorzugen"-Box im Artikeltext nicht übernommen (in der Nachprüfung auf keinem Artikel reproduzierbar).
+- Sauber, keine Änderung: **9to5google.com**, **raider.io**, **sz-magazin.sueddeutsche.de**, **tarnkappe.info**, **dhl.de**, **deutschlandfunk.de**, **myhermes.de**, **n-tv.de**, **rbb24.de**, **sportschau.de**, **sueddeutsche.de**, **tagesschau.de**, **wiwo.de**.
+
 ## [2026-09-21] - Rotierender Wartungs-Check, Bucket 5/5 (7 Domains)
 
 Rotierender Wochen-Check (ISO-Woche 39, Bucket-Index 4 von 5): theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com, zdfheute.de, zeit.de – jeweils aktueller Artikel geprüft.
