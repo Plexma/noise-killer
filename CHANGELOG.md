@@ -1,3 +1,23 @@
+## [2026-10-02] - Nach-Audit der 13 zuvor nicht prüfbaren Domains, 9 Domains gefixt
+
+Die im Vollaudit vom selben Tag nicht prüfbaren Domains wurden nachgeholt: Browser-Pane und Chrome-Plugin der laufenden Sitzung (kein Bot-Schutz umgangen, Consent-Entscheidungen lagen bereits im Browser). Jeweils Startseite UND Artikel bzw. Unterseite geprüft; Underblocking über die Vereinigung aller Regel-Treffer ermittelt, Overblocking an den abgedeckten Absätzen.
+
+### Hinzugefügt – Underblocking (fehlender Filter)
+- **tracker.gg**: `<footer>` der Startseite (Advertise/Privacy/Terms) war ungeblockt, `div.footer-content` greift nur auf Spielseiten.
+- **hsreplay.net**: Ankündigungsbanner im Header ("View the latest card reveals …", `#navbar-card-reveal-page-banner-container`).
+- **mydealz.de**: Startseiten-Sidebar-Widgets Shop-Gutscheine, Aktuelle Neuigkeiten und Heißeste Deals (`topMerchantsWidget`, `latestNewsWidget`, `hottestOnboardingWidget`).
+- **zeit.de**: Abo-Dialog "Testen Sie die ZEIT" (`dialog.footerbar`), ZEIT-Shop-Block sowie Stellenmarkt- und Studienmarkt-Kästen auf der Startseite.
+- **startpage.com**: Firefox-Werbebanner auf der Ergebnisseite (`section.firefox-promo-banner`).
+- **wowhead.com**: Newsletter-Wrapper `#newsletter-cta-wrapper` (1130 px Leerraum, `#newsletter-cta` greift nur im Artikel) und Promo-Karten für Push-Benachrichtigungen/Newsletter.
+- **golem.de**: Affiliate-Teaser ("Deal …") und gesponserte Teaser ("Anzeige") im Nachrichtenstrom, Startseite und Artikel.
+- **derstandard.at**: Kommentar-Zähler an Teasern (`div.teaser-postingcount`) und Forum-Widget "Mein Forum" auf der Startseite.
+- **derstandard.de**: Kommentar-Zähler an Teasern (77 Treffer auf der Startseite).
+
+### Hinweise
+- Sauber, keine Änderung: **androidauthority.com**, **steamdb.info**, **nytimes.com** (Startseite + Artikel, alle Regeln greifen, kein Artikeltext betroffen).
+- **my.dpd.de**: weiterhin nicht prüfbar – ohne Sendungsnummer/Login leitet die Domain auf dpd.com um.
+- Damit sind 54 von 55 Domains im Vollaudit vom 2026-10-02 geprüft.
+
 ## [2026-10-02] - Vollaudit aller 55 Domains (Startseite + Artikel), 29 Domains gefixt
 
 Vollständiger Audit aller 55 Domains auf Nutzerwunsch, parallel in 5 Gruppen à 11 Domains, jeweils Startseite UND aktueller Artikel geprüft. Kritische Selektoren (Overblocking-Fixes, Zephr-Popups, Verlagsmodule) wurden zusätzlich vor der Übernahme unabhängig im DOM nachgeprüft.

@@ -202,6 +202,8 @@ hsreplay.net##footer
 !   Eigenwerbungs-Banner im Header (#navbar-notifications-container) waren ungeblockt
 hsreplay.net##.bottom-ad-container
 hsreplay.net###navbar-notifications-container
+! Hinzugefügt 2026-10-02: Ankündigungsbanner im Header ("View the latest card reveals ...") neben #navbar-notifications-container
+hsreplay.net###navbar-card-reveal-page-banner-container
 
 ! --------------------------------------------------------------------------
 ! Imgur
@@ -307,6 +309,9 @@ tracker.gg##div.upsell
 tracker.gg##div.mobile-promo
 tracker.gg###trn-teleport-backdrop:has(a[href*="download.overwolf.com"])
 tracker.gg##a.profile-hint
+! Hinzugefügt 2026-10-02: Startseite: <footer> (Advertise/Privacy/Terms/Press Kit) war ungeblockt - die Regel div.footer-content
+!   greift nur auf Spielseiten
+tracker.gg##footer
 
 ! --------------------------------------------------------------------------
 ! Amazon DE
@@ -392,12 +397,18 @@ www.derstandard.at##div.story-tool
 www.derstandard.at##section.story-community
 www.derstandard.at##section.story-recommended
 www.derstandard.at##footer.site-footer
+! Hinzugefügt 2026-10-02: Startseite: Kommentar-Zähler an Teasern (div.teaser-postingcount, "Diskussion N Postings") und
+!   Forum-Widget "Mein Forum" (a.article-postingcount greift nur im Artikel)
+www.derstandard.at##div.teaser-postingcount
+www.derstandard.at##div.widget-type-communitytopics
 www.derstandard.de##aside
 www.derstandard.de##a.article-postingcount
 www.derstandard.de##div.story-tool
 www.derstandard.de##section.story-community
 www.derstandard.de##section.story-recommended
 www.derstandard.de##footer.site-footer
+! Hinzugefügt 2026-10-02: Startseite: Kommentar-Zähler an Teasern (div.teaser-postingcount, 77 Treffer)
+www.derstandard.de##div.teaser-postingcount
 
 ! --------------------------------------------------------------------------
 ! Deutschlandfunk
@@ -592,6 +603,9 @@ www.golem.de##main > div.go-tag-list
 !     mit Coaching-/Karriere-Greetings; Host nutzt display:contents – die eigentliche
 !     Bubble + #widget-chat-button + #bubble-icon stecken im Shadow-DOM)
 www.golem.de###zipchat-shadow-host
+! Hinzugefügt 2026-10-02: Affiliate-Teaser ("Deal ...") und gesponserte Teaser ("Anzeige") im Nachrichtenstrom, Startseite und Artikel
+www.golem.de##article.go-teaser--item-variant-affiliate
+www.golem.de##article.go-teaser--item-variant-sponsored
 
 ! --------------------------------------------------------------------------
 ! Handelsblatt
@@ -890,6 +904,10 @@ www.mydealz.de###footer-container
 ! BUGFIX 2026-09-13: Kommentarbereich unter Deals war ungeblockt - bisherige Regeln decken
 !   nur den Comments-Link und das Kommentarformular ab, nicht die Kommentarliste selbst.
 www.mydealz.de##div#comments
+! Hinzugefügt 2026-10-02: Startseiten-Sidebar-Widgets: Shop-Gutscheine (Affiliate), Aktuelle Neuigkeiten, Heißeste Deals (Empfehlungsbox)
+www.mydealz.de##[data-t="topMerchantsWidget"]
+www.mydealz.de##[data-t="latestNewsWidget"]
+www.mydealz.de##[data-t="hottestOnboardingWidget"]
 
 ! --------------------------------------------------------------------------
 ! MyHermes
@@ -1247,6 +1265,8 @@ www.startpage.com##div.footer-container
 ! Hinzugefügt: 2026-07-16
 ! Bezahlter "Sponsored"-Ergebnisblock auf der Suchergebnisseite
 www.startpage.com##.serp-result-preview
+! Hinzugefügt 2026-10-02: Firefox-Werbebanner auf der Ergebnisseite ("Deine Suche ist privat. Der Rest deines Browsers auch?")
+www.startpage.com##section.firefox-promo-banner
 
 ! --------------------------------------------------------------------------
 ! Sueddeutsche Zeitung
@@ -1633,6 +1653,10 @@ www.wowhead.com###news-comments-wrapper
 !   (div#newsletter-cta.news-post-newsletter, 376px) – liegt als Schwester von
 !   #premium-house-block in .news-post-ctas und war bisher ungeblockt.
 www.wowhead.com###newsletter-cta
+! Hinzugefügt 2026-10-02: Newsletter-Wrapper (#newsletter-cta-wrapper, 1130 px Leerraum; #newsletter-cta greift nur im Artikel)
+!   und Promo-Karten für Push-Benachrichtigungen/Newsletter
+www.wowhead.com###newsletter-cta-wrapper
+www.wowhead.com##div.wh-promotional-card
 
 ! --------------------------------------------------------------------------
 ! ZDF heute
@@ -1749,3 +1773,9 @@ www.zeit.de##aside.zps-widget
 ! Hinzugefügt 2026-08-17: Inline-Newsletter-Box im Artikeltext ("Was jetzt?"-Morgenüberblick
 !   u.a.) war ungeblockt, liegt nicht im bereits geblockten article-footer.
 www.zeit.de##aside.newsletter-signup
+! Hinzugefügt 2026-10-02: Abo-Dialog "Testen Sie die ZEIT" (dialog.footerbar), ZEIT-Shop-Block sowie Stellenmarkt- und
+!   Studienmarkt-Kästen (Academics/HeyStudium) auf der Startseite
+www.zeit.de##dialog.footerbar
+www.zeit.de##section.cp-area--shop
+www.zeit.de##aside.joblisting
+www.zeit.de##aside.studylisting

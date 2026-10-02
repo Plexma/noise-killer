@@ -36,7 +36,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 
 ## Unterstützte Seiten
 
-*Letzter vollständiger Audit: 2026-10-02 – 42 von 55 Domains auf Startseite **und** Artikelseite gegen das DOM geprüft; 13 Domains waren wegen Bot-Schutz, Consent-Wall oder Sperre nicht prüfbar (Details im CHANGELOG).*
+*Letzter vollständiger Audit: 2026-10-02 – 54 von 55 Domains auf Startseite **und** Artikelseite gegen das DOM geprüft; nur my.dpd.de war nicht prüfbar (Sendungsnummer/Login nötig, Details im CHANGELOG).*
 
 **Legende:** 📰 Artikelempfehlungen · 📬 Newsletter-Box · 💬 Kommentare · 🔗 Social-/Share-Leiste · 🦶 Footer · 📢 Eigenwerbung/Teaser · 🛍️ Affiliate/Shop-Links · 🪧 Banner/Overlays · 🏷️ Tag-Listen
 
@@ -57,7 +57,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | faz.net | 📰 📬 📢 🛍️ 🦶 |
 | focus.de | 💬 🔗 📢 🦶 |
 | gamestar.de | 💬 📬 📰 📢 🦶 |
-| golem.de | 💬 📬 📢 🪧 🦶 |
+| golem.de | 💬 📬 📢 🛍️ 🪧 🦶 |
 | handelsblatt.com | 📰 📢 🪧 🦶 |
 | heise.de | 📰 📬 🔗 📢 🛍️ 🦶 |
 | hsreplay.net | 📢 🪧 🦶 |
@@ -66,7 +66,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | lto.de | 📰 📬 📢 🪧 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
-| mydealz.de | 💬 🪧 🦶 |
+| mydealz.de | 💬 📰 📢 🛍️ 🪧 🦶 |
 | myhermes.de | 🦶 |
 | n-tv.de | 🔗 📰 📢 🦶 |
 | ndr.de | 🔗 📢 🦶 |
@@ -94,7 +94,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | wiwo.de | 📰 📢 🦶 |
 | wowhead.com | 💬 📰 📬 📢 🦶 |
 | zdfheute.de | 📰 📬 🔗 🦶 |
-| zeit.de | 💬 📰 📬 📢 🦶 |
+| zeit.de | 💬 📰 📬 📢 🛍️ 🪧 🦶 |
 
 ---
 
