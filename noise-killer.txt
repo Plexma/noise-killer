@@ -432,6 +432,8 @@ www.deutschlandfunk.de##div.article-details-text.u-text-italic
 ! --------------------------------------------------------------------------
 ! DHL
 ! --------------------------------------------------------------------------
+! Bewusste Ausnahme auf Nutzerwunsch (2026-10-02): graue Stripe-Blöcke bleiben geblockt, auch der Block
+!   "Deutschlandweit versenden" auf /pakete-versenden.html - kein Overblocking, nicht erneut zur Prüfung vorschlagen.
 www.dhl.de##div.stripe.bg--grey
 www.dhl.de##footer.footer
 
@@ -669,9 +671,9 @@ www.heise.de##.nav-bottom
 www.heise.de##a-opt-in.a-u-inline
 www.heise.de##a.a-button
 www.heise.de##aside.affiliate-info
-! BUGFIX 2026-10-02: die ganze Service-Box blockte auch "vorlesen" (ReadSpeaker = Anhören) und "Druckansicht",
-!   beides Artikel-Toolbar-Funktionen (NIEMALS blockieren). Jetzt nur der Foren-Kommentar-Link.
-www.heise.de##div.a-article-header__service--right a[href*="/forum/heise-online/Kommentare/"]
+! Bewusste Ausnahme auf Nutzerwunsch (2026-10-02): die ganze Service-Box im Artikelkopf wird geblockt, inkl.
+!   "vorlesen" (ReadSpeaker) und "Druckansicht" - kein Overblocking, nicht erneut einschränken.
+www.heise.de##div.a-article-header__service.a-article-header__service--right
 ! Nur Werbe-Module blockieren (nicht TopNaviModule/HeaderModule)
 www.heise.de##div[data-module-name="AdModule"]
 ! "Beliebte Bestenlisten" / Teaser-Empfehlungen am Artikelende
@@ -822,6 +824,8 @@ www.lto.de##.newsletter-layer.newsletter-layer--eloqua
 www.lto.de##div:has(> script[src*="letscast.fm"])
 ! Hinzugefügt: 2026-05-13: Opinary-Live-Abstimmungs-Widget (Inline-Umfrage im Artikel)
 www.lto.de##div#opinary-root
+! Bewusste Ausnahme auf Nutzerwunsch (2026-10-02): die Leiste "Drucken / Senden / Zitieren" am Artikelende bleibt
+!   geblockt - kein Overblocking, nicht erneut zur Prüfung vorschlagen.
 www.lto.de##.toolbar.boxed
 www.lto.de##.tx-lto-events
 www.lto.de##div[novalidate][x-data]

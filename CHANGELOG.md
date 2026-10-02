@@ -1,3 +1,11 @@
+## [2026-10-02] - Bewusste Ausnahmen dokumentiert, heise.de-Service-Box wieder komplett geblockt
+
+### Behoben
+- **heise.de**: Die im Vollaudit (v21.0.0) auf den Foren-Kommentar-Link verengte Regel ist zurückgenommen. Die ganze Service-Box im Artikelkopf (inkl. "vorlesen" und "Druckansicht") bleibt auf Nutzerwunsch geblockt.
+
+### Hinweise
+- Auf Nutzerwunsch bewusst geblockt und im Listenkommentar als Ausnahme markiert (kein Overblocking, bei Audits nicht erneut melden): **heise.de** Service-Box, **lto.de** `.toolbar.boxed` (Drucken/Senden/Zitieren), **dhl.de** `div.stripe.bg--grey`.
+
 ## [2026-10-02] - Nach-Audit der 13 zuvor nicht prüfbaren Domains, 9 Domains gefixt
 
 Die im Vollaudit vom selben Tag nicht prüfbaren Domains wurden nachgeholt: Browser-Pane und Chrome-Plugin der laufenden Sitzung (kein Bot-Schutz umgangen, Consent-Entscheidungen lagen bereits im Browser). Jeweils Startseite UND Artikel bzw. Unterseite geprüft; Underblocking über die Vereinigung aller Regel-Treffer ermittelt, Overblocking an den abgedeckten Absätzen.
