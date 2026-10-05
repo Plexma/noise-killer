@@ -1,3 +1,14 @@
+## [2026-10-05] - Rotierender Wartungs-Check (Bucket 2 von 5): golem.de-Affiliate-Box gefixt
+
+Wöchentlicher Rotations-Audit (KW 41, Bucket 2/5): dhl.de, faz.net, focus.de, gamestar.de, golem.de, handelsblatt.com, heise.de, hsreplay.net, ifun.de, imgur.com, iphone-ticker.de geprüft.
+
+### Hinzugefügt – Underblocking (fehlender Filter)
+- **golem.de**: Inline-Affiliate-Hinweis-Box ("ANZEIGE ... bei Amazon", `ul.go-alink-list`) im Artikeltext war ungeblockt.
+
+### Hinweise
+- Sauber, keine Änderung: **faz.net**, **focus.de**, **gamestar.de**, **handelsblatt.com**, **heise.de**, **hsreplay.net**, **ifun.de**, **imgur.com**, **iphone-ticker.de**.
+- **dhl.de**: nicht erneut geprüft – auf Nutzerwunsch bewusst ausgenommen (siehe Eintrag 2026-10-02).
+
 ## [2026-10-02] - Bewusste Ausnahmen dokumentiert, heise.de-Service-Box wieder komplett geblockt
 
 ### Behoben

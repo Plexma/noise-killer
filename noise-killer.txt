@@ -608,6 +608,9 @@ www.golem.de###zipchat-shadow-host
 ! Hinzugefügt 2026-10-02: Affiliate-Teaser ("Deal ...") und gesponserte Teaser ("Anzeige") im Nachrichtenstrom, Startseite und Artikel
 www.golem.de##article.go-teaser--item-variant-affiliate
 www.golem.de##article.go-teaser--item-variant-sponsored
+! Hinzugefügt 2026-10-05: Inline-Affiliate-Hinweis-Box ("ANZEIGE ... bei Amazon") im Artikeltext,
+!   eigene Ul-Liste go-alink-list innerhalb von article.go-richtext.go-article, bisher nicht erfasst
+www.golem.de##ul.go-alink-list
 
 ! --------------------------------------------------------------------------
 ! Handelsblatt
