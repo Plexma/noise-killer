@@ -1,3 +1,15 @@
+## [2026-10-19] - Rotierender Wartungs-Check (Bucket 4 von 5): drei kaputte Selektoren gefixt
+
+Wöchentlicher Rotations-Audit (KW 43, Bucket 4/5): spiegel.de, sportdaten.spiegel.de, sportschau.de, stadt-bremerhaven.de, startpage.com, steamdb.info, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de geprüft.
+
+### Behoben
+- **sportschau.de**: `a.teaser-absatz__link` griff nicht mehr (ARD-Redesign hat die Klasse in `teaser-xs__link` umbenannt). Einziges Vorkommen liegt in der bereits per Blanket-Regel geblockten `aside.container`-Empfehlungsbox – Regel ersatzlos entfernt.
+- **startpage.com**: `.serp-result-preview` für den "Sponsored"-Ergebnisblock griff nicht mehr (Label ist jetzt ein SVG-Icon statt Text). Neue Regel auf das stabile `data-identifier="affilizz-impression"`-Attribut im generischen `div.result`-Wrapper ergänzt.
+- **steamdb.info**: `a.support-above-footer` griff nicht mehr – der Support-Banner über dem Footer wurde entfernt (getestet auf Homepage und App-Seite). Verbliebenes Donate-Element ist nur noch ein unauffälliger Navbar-Icon-Link, kein Eigenwerbungs-Banner mehr – Regel ersatzlos entfernt.
+
+### Hinweise
+- Sauber, keine Änderung: **spiegel.de**, **sportdaten.spiegel.de**, **stadt-bremerhaven.de**, **sueddeutsche.de**, **sz-magazin.sueddeutsche.de** (Redirect auf sueddeutsche.de weiterhin bestätigt), **t-online.de**, **tagesschau.de**, **tagesspiegel.de**.
+
 ## [2026-10-05] - Rotierender Wartungs-Check (Bucket 2 von 5): golem.de-Affiliate-Box gefixt
 
 Wöchentlicher Rotations-Audit (KW 41, Bucket 2/5): dhl.de, faz.net, focus.de, gamestar.de, golem.de, handelsblatt.com, heise.de, hsreplay.net, ifun.de, imgur.com, iphone-ticker.de geprüft.

@@ -240,8 +240,12 @@ my.dpd.de##.footerContainer
 ! SteamDB
 ! Hinzugefügt 2026-03-18: a.support-above-footer (fetter Support-Button
 !         über dem Footer auf App/Game-Seiten).
+! BUGFIX 2026-10-19 (Rotations-Audit): a.support-above-footer greift nicht mehr (0 Treffer,
+!   getestet auf Homepage UND App-Seite steamdb.info/app/730/). Der Support-Banner über dem
+!   Footer wurde entfernt; einziges verbliebenes Donate-Element ist ein unauffälliger
+!   Icon-Link in der Navbar (a.navbar-support) – kein Eigenwerbungs-Banner mehr, daher kein
+!   Ersatzbedarf. Regel ersatzlos entfernt.
 ! --------------------------------------------------------------------------
-steamdb.info##a.support-above-footer
 steamdb.info##footer
 
 ! --------------------------------------------------------------------------
@@ -1216,7 +1220,10 @@ sportdaten.spiegel.de##div.hs-news-list
 ! --------------------------------------------------------------------------
 ! Sportschau
 ! --------------------------------------------------------------------------
-www.sportschau.de##a.teaser-absatz__link
+! BUGFIX 2026-10-19 (Rotations-Audit): a.teaser-absatz__link griff nicht mehr – ARD-Redesign
+!   hat die Teaser-Klasse in "teaser-xs__link" umbenannt. Einziges aktuelles Vorkommen liegt in
+!   aside.container ("Mehr vom hr/wdr/…"-Empfehlungsbox), die bereits per aside-Blanket-Regel
+!   darunter geblockt wird – kein Ersatzbedarf, Regel ersatzlos entfernt.
 www.sportschau.de##aside
 ! BUGFIX 2026-07-16: Selektor traf im Artikelkopf auch die Autorenzeile
 !         (div.authorline), die dieselbe Klassenkombination trägt. Ausgeschlossen.
@@ -1271,7 +1278,15 @@ www.startpage.com##footer
 www.startpage.com##div.footer-container
 ! Hinzugefügt: 2026-07-16
 ! Bezahlter "Sponsored"-Ergebnisblock auf der Suchergebnisseite
+! BUGFIX 2026-10-19 (Rotations-Audit): .serp-result-preview greift nicht mehr (0 Treffer,
+!   auch bei kommerziellen Suchanfragen mit bestätigt vorhandenen Sponsored-Resultaten).
+!   Sponsored-Kennzeichnung ist jetzt ein SVG-Icon (kein Text, :has-text() scheidet ohnehin
+!   aus), Wrapper-Klasse ist generisches div.result (für alle Treffer, nicht pauschal
+!   blockbar). Auf unterscheidendes Kind-Attribut data-identifier="affilizz-impression"
+!   eingeschränkt (Affiliate-Ad-Network-Kennung, stabiler als Hash-Klassen). Alte Regel als
+!   Fallback belassen.
 www.startpage.com##.serp-result-preview
+www.startpage.com##div.result:has([data-identifier="affilizz-impression"])
 ! Hinzugefügt 2026-10-02: Firefox-Werbebanner auf der Ergebnisseite ("Deine Suche ist privat. Der Rest deines Browsers auch?")
 www.startpage.com##section.firefox-promo-banner
 
