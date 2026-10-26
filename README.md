@@ -93,7 +93,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | transfermarkt.de | 💬 📰 📢 🦶 |
 | wiwo.de | 📰 📢 🦶 |
 | wowhead.com | 💬 📰 📬 📢 🦶 |
-| zdfheute.de | 📰 📬 🔗 🦶 |
+| zdfheute.de | 📰 📬 📢 🔗 🦶 |
 | zeit.de | 💬 📰 📬 📢 🛍️ 🪧 🦶 |
 
 ---

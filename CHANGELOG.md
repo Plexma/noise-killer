@@ -1,3 +1,14 @@
+## [2026-10-26] - Rotierender Wartungs-Check (Bucket 5 von 5): zdfheute.de-Google-Banner geblockt
+
+Wöchentlicher Rotations-Audit (KW 44, Bucket 5/5): tracker.gg, transfermarkt.de, wikipedia.org, wiwo.de, wowhead.com, zdfheute.de, zeit.de geprüft.
+
+### Hinzugefügt – Underblocking (fehlender Filter)
+- **zdfheute.de**: Eigenwerbe-Banner "Lassen Sie sich Beiträge von ZDFheute bevorzugt bei Google anzeigen" (`div[data-testid="dismissable-callout"]`) unter dem Artikeltext war ungeblockt. Auf den Google-Preferences-Link eingeschränkt (generischer Container).
+
+### Hinweise
+- Sauber, keine Änderung: **tracker.gg**, **transfermarkt.de**, **wikipedia.org**, **wiwo.de**, **wowhead.com**, **zeit.de**.
+- **zeit.de**: Artikel hinter Consent-Wall geprüft; leerer Ad-Platzhalter `div.iqdcontainer` bleibt sichtbar (Werbung, kein Content).
+
 ## [2026-10-19] - Rotierender Wartungs-Check (Bucket 4 von 5): drei kaputte Selektoren gefixt
 
 Wöchentlicher Rotations-Audit (KW 43, Bucket 4/5): spiegel.de, sportdaten.spiegel.de, sportschau.de, stadt-bremerhaven.de, startpage.com, steamdb.info, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de geprüft.

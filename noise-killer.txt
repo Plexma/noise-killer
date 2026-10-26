@@ -1694,6 +1694,9 @@ www.zdfheute.de##div[data-testid="heute-übersichtmodul"]
 www.zdfheute.de##div[data-testid="topic-tags"]
 ! Hinzugefügt 2026-10-02: Startseiten-Newsletter-Box (Formular mit aria-label Newsletter)
 www.zdfheute.de##div:has(> div > div > form[aria-label*="Newsletter"])
+! Hinzugefügt 2026-10-26: "Beiträge bevorzugt bei Google anzeigen"-Eigenwerbebanner (div[data-testid="dismissable-callout"]),
+!   auf Artikelseiten unter dem Text; auf den Google-Preferred-Source-Link eingeschränkt, da der Container generisch ist
+www.zdfheute.de##div[data-testid="dismissable-callout"]:has(a[href*="google.com/preferences/source"])
 ! BUGFIX 2026-09-13: section:not(article section):has(...)-Regel ersatzlos entfernt.
 !   div[data-testid="heute-übersichtmodul"] liegt jetzt direkt unter <main>, nicht mehr
 !   unter einem section-Wrapper - Selector traf 0 Treffer und war durch die direkte
