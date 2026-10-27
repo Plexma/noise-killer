@@ -1629,6 +1629,10 @@ www.transfermarkt.de##div.more-news
 www.transfermarkt.de##div.box:has(a[href*="/newsforum/"])
 ! BUGFIX 2026-10-02: Google-Link war geblockt, der umgebende Hinweistext (div.news-google-preferences-hint) blieb stehen
 www.transfermarkt.de##div.news-google-preferences-hint
+! BUGFIX 2026-10-27: Autor-Box ("AUTOR / TM-Username / Alle Beiträge des Autors", Foto + Kurzprofil) in der Sidebar
+!   sowie die redaktionelle Forums-Linkbox im Artikeltext ("Jetzt mitdiskutieren! Zur Marktwert Analyse") waren ungeblockt
+www.transfermarkt.de##div.box:has(> div.news__author)
+www.transfermarkt.de##a[href*="/forum/"]:has(> div.newsansicht-linkbox)
 
 ! --------------------------------------------------------------------------
 ! WirtschaftsWoche (wiwo.de)
@@ -1679,6 +1683,9 @@ www.wowhead.com###newsletter-cta
 !   und Promo-Karten für Push-Benachrichtigungen/Newsletter
 www.wowhead.com###newsletter-cta-wrapper
 www.wowhead.com##div.wh-promotional-card
+! BUGFIX 2026-10-27: Autoren-Bio-Box unter dem Artikel heißt inzwischen #authorembed (section.author-embed-section);
+!   die alte Regel div.author-bio greift nicht mehr (0 Treffer)
+www.wowhead.com###authorembed
 
 ! --------------------------------------------------------------------------
 ! ZDF heute
@@ -1697,6 +1704,9 @@ www.zdfheute.de##div:has(> div > div > form[aria-label*="Newsletter"])
 ! Hinzugefügt 2026-10-26: "Beiträge bevorzugt bei Google anzeigen"-Eigenwerbebanner (div[data-testid="dismissable-callout"]),
 !   auf Artikelseiten unter dem Text; auf den Google-Preferred-Source-Link eingeschränkt, da der Container generisch ist
 www.zdfheute.de##div[data-testid="dismissable-callout"]:has(a[href*="google.com/preferences/source"])
+! BUGFIX 2026-10-27: Dieselbe Google-Eigenwerbung erscheint auf Artikelseiten zusätzlich als Akkordeon "Hinweis" im Fließtext
+!   (div > h2 > button[aria-expanded]); auf den Google-Preferences-Link eingeschränkt, da Akkordeons generisch sind
+www.zdfheute.de##div:has(> h2 > button[aria-expanded]):has(a[href*="google.com/preferences/source"])
 ! BUGFIX 2026-09-13: section:not(article section):has(...)-Regel ersatzlos entfernt.
 !   div[data-testid="heute-übersichtmodul"] liegt jetzt direkt unter <main>, nicht mehr
 !   unter einem section-Wrapper - Selector traf 0 Treffer und war durch die direkte

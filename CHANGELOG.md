@@ -1,3 +1,15 @@
+## [2026-10-27] - Rotierender Wartungs-Check (Bucket 5 von 5): transfermarkt.de, wowhead.com, zdfheute.de
+
+Wöchentlicher Rotations-Audit (KW 44, Bucket-Index 4): theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com, zdfheute.de, zeit.de – jeweils aktueller Artikel gegen das DOM geprüft.
+
+### Behoben – Underblocking (fehlender Filter)
+- **transfermarkt.de**: Autor-Box ("Autor / TM-Username / Alle Beiträge des Autors", `div.box:has(> div.news__author)`) und die redaktionelle Forums-Linkbox im Artikeltext ("Jetzt mitdiskutieren!", `a[href*="/forum/"]:has(> div.newsansicht-linkbox)`) waren ungeblockt.
+- **wowhead.com**: Autoren-Bio-Box unter dem Artikel heißt inzwischen `#authorembed`; die alte Regel `div.author-bio` hatte 0 Treffer.
+- **zdfheute.de**: Die Google-Eigenwerbung erscheint auf Artikelseiten zusätzlich als Akkordeon "Hinweis" im Fließtext; auf den Google-Preferences-Link eingeschränkt, da Akkordeons generisch sind.
+
+### Hinweise
+- Sauber, keine Änderung: **theverge.com**, **tomsguide.com** (Seite lädt im Pane ohne `<body>`, geprüft per `fetch` + DOMParser gegen das statische HTML; Newsletter-Asides liegen in einem versteckten Modal), **wiwo.de**, **zeit.de** (leere Ad-Platzhalter `div.iqdcontainer` bleiben, Werbung, kein Content).
+
 ## [2026-10-26] - Rotierender Wartungs-Check (Bucket 5 von 5): zdfheute.de-Google-Banner geblockt
 
 Wöchentlicher Rotations-Audit (KW 44, Bucket 5/5): tracker.gg, transfermarkt.de, wikipedia.org, wiwo.de, wowhead.com, zdfheute.de, zeit.de geprüft.
