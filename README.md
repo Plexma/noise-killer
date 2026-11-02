@@ -47,7 +47,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | amazon.de | 📰 📢 🛍️ 🦶 |
 | androidauthority.com | 💬 📢 🛍️ 🦶 |
 | arstechnica.com | 💬 📰 📢 🦶 |
-| buffed.de | 💬 🔗 📢 |
+| buffed.de | 💬 🔗 📢 🦶 |
 | computerbase.de | 💬 📢 📬 🦶 |
 | de.ifixit.com | 🪧 💬 📰 📬 🛍️ 🦶 |
 | wikipedia.org (alle Sprachversionen) | 🪧 🦶 |
@@ -61,7 +61,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | handelsblatt.com | 📰 📢 🪧 🦶 |
 | heise.de | 📰 📬 🔗 📢 🛍️ 🦶 |
 | hsreplay.net | 📢 🪧 🦶 |
-| ifun.de / iphone-ticker.de | 💬 📰 📬 🔗 📢 🏷️ 🦶 |
+| ifun.de / iphone-ticker.de | 💬 📰 📬 🔗 📢 🛍️ 🏷️ 🦶 |
 | imgur.com | 💬 📰 🪧 📢 🏷️ |
 | lto.de | 📰 📬 📢 🪧 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
@@ -73,7 +73,7 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | nytimes.com | 📰 🦶 |
 | pcgameshardware.de | 💬 📢 🛍️ 🦶 |
 | raider.io | 📢 🪧 🦶 |
-| rbb24.de | 💬 🔗 📰 📬 🏷️ 🦶 |
+| rbb24.de | 💬 🔗 📰 📬 📢 🏷️ 🦶 |
 | spiegel.de | 📰 📬 🔗 📢 🛍️ 🦶 |
 | sportdaten.spiegel.de (Spielbanner-Widget und eigenständige Seiten) | 🛍️ 📰 🦶 |
 | sportschau.de | 🔗 📢 🦶 |

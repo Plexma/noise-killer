@@ -1,3 +1,25 @@
+## [2026-11-02] - Vollaudit aller Domains (KW 45): 11 Domains ergänzt
+
+Vollständiger Lauf über alle Domains der Liste (zusätzlich zum Rotations-Bucket 0): jeweils aktueller Artikel gegen das DOM geprüft, Regeln einzeln auf Treffer getestet.
+
+### Behoben – Underblocking (fehlender Filter)
+- **amazon.de**: Recommendation-Footer (`#rhf`, Bestseller/Zuletzt angesehen) und Sponsored-Anzeigen auf Produktseiten (`ad-endcap`, `dp-ads-center-promo`, `desktop-dp-ilm`).
+- **buffed.de**: Footer inkl. Top-Listen und Print/Abo-Block (`div.module.disrupter`) sowie Kommentar-Sprechblasen (`div.commentIcon`).
+- **focus.de**: Share-Leiste inkl. Kommentar-Button heißt jetzt `div.Social-Sharing-Container` (alte `data-island`-Regel griff nicht mehr); Anzeigen-Slots mit "ANZEIGE"-Label (`aside.Ad-Slot`).
+- **iphone-ticker.de**: Affiliate-Hinweis "Dieser Artikel enthält Affiliate-Links" (`div.content__hint`).
+- **lto.de**: Karriere-Banner "Bereit für Karriere?" in der Sidebar (`div.ad_banner-wrap`).
+- **n-tv.de**: Werbe-Linkliste "Partner-Service / Anzeige" (Produktvergleiche, Sportwetten-, Casino-Vergleich) am Artikelende.
+- **pcgameshardware.de**: Kommentar-/Follow-Aufforderung ("Wie stehen Sie zu diesem Thema? … Folgen Sie gerne PCGH …") am Artikelende.
+- **rbb24.de**: Google-Preferred-Source-Eigenwerbung unter dem Artikel.
+- **tagesspiegel.de**: Google-Preferred-Source-Hinweis im Artikelkopf.
+- **tomsguide.com**: "Follow us on Google News"-Widget (nur im statischen HTML verifiziert, die Seite rendert im Pane ohne `<body>`).
+- **tracker.gg**: Sponsoren-Logoleiste "Our Partners" auf der Startseite.
+
+### Hinweise
+- Sauber, keine Änderung: **9to5google.com**, **arstechnica.com**, **de.ifixit.com**, **deutschlandfunk.de**, **dhl.de**, **faz.net** (nur Liveblog-Artikel verfügbar, Live-Ticker bleibt erhalten), **gamestar.de**, **handelsblatt.com**, **heise.de**, **hsreplay.net**, **ifun.de**, **imgur.com**, **macrumors.com**, **mydealz.de**, **myhermes.de**, **ndr.de**, **raider.io**, **spiegel.de**, **sportdaten.spiegel.de**, **sportschau.de**, **stadt-bremerhaven.de**, **startpage.com**, **sueddeutsche.de**, **t-online.de**, **tagesschau.de**, **taz.de**, **tarnkappe.info**, **theverge.com**, **transfermarkt.de**, **wikipedia.org**, **wiwo.de**, **wowhead.com**, **zdfheute.de**, **zeit.de**.
+- Nicht prüfbar: **derstandard.at**, **derstandard.de**, **golem.de** (Consent-Wall ohne Ablehnen-Option, nicht akzeptiert), **nytimes.com** (im Browser-Pane gesperrt), **steamdb.info** (Cloudflare-Browserprüfung, nicht umgangen).
+- Bewusst nicht geändert: SZ-Paywall-Angebot (`#sz-paywall`) auf **sueddeutsche.de** (Paywall, kein Eigenwerbe-Banner).
+
 ## [2026-11-02] - Rotierender Wartungs-Check (Bucket 1 von 5): 9to5mac.com Underblocking gefixt
 
 Wöchentlicher Rotations-Audit (KW 45, Bucket-Index 0): 9to5google.com, 9to5mac.com, arstechnica.com, de.ifixit.com, hsreplay.net, imgur.com, my.dpd.de, raider.io, sportdaten.spiegel.de, stadt-bremerhaven.de, steamdb.info, sz-magazin.sueddeutsche.de – jeweils aktuelle Seite gegen das DOM geprüft.
