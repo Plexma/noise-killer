@@ -1,3 +1,14 @@
+## [2026-11-02] - Rotierender Wartungs-Check (Bucket 1 von 5): 9to5mac.com Underblocking gefixt
+
+Wöchentlicher Rotations-Audit (KW 45, Bucket-Index 0): 9to5google.com, 9to5mac.com, arstechnica.com, de.ifixit.com, hsreplay.net, imgur.com, my.dpd.de, raider.io, sportdaten.spiegel.de, stadt-bremerhaven.de, steamdb.info, sz-magazin.sueddeutsche.de – jeweils aktuelle Seite gegen das DOM geprüft.
+
+### Behoben – Underblocking (fehlender Filter)
+- **9to5mac.com**: "Follow Michael: X/Twitter, Bluesky, Instagram"-Zeile (`<em>` ohne `<strong>`, bestehende Follow-Regel griff nicht; jetzt auf den Bluesky-Profil-Link gescoped) und Amazon-Affiliate-Liste "My favorite Apple accessory recommendations:" (Überschrift + `ul` mit amzn.to-Links) waren ungeblockt.
+
+### Hinweise
+- Sauber, keine Änderung: **9to5google.com**, **arstechnica.com**, **de.ifixit.com**, **hsreplay.net**, **imgur.com**, **my.dpd.de** (Startseite leitet auf dpd.com um, Tracking-Seite geprüft), **raider.io**, **sportdaten.spiegel.de**, **stadt-bremerhaven.de**, **sz-magazin.sueddeutsche.de** (Redirect auf sueddeutsche.de weiterhin aktiv).
+- Nicht prüfbar: **steamdb.info** (Cloudflare-Browserprüfung, nicht umgangen).
+
 ## [2026-10-27] - Rotierender Wartungs-Check (Bucket 5 von 5): transfermarkt.de, wowhead.com, zdfheute.de
 
 Wöchentlicher Rotations-Audit (KW 44, Bucket-Index 4): theverge.com, tomsguide.com, transfermarkt.de, wiwo.de, wowhead.com, zdfheute.de, zeit.de – jeweils aktueller Artikel gegen das DOM geprüft.

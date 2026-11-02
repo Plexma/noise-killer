@@ -81,6 +81,15 @@
 ! Hinzugefügt 2026-10-02: Startseiten-Banner "Early Fall Prime Day deals" (Amazon-Affiliate), aside.sidebar
 !   trifft ihn nicht (heißt aside.featured-posts-banner)
 9to5mac.com##div.featured-posts-banner-container
+! BUGFIX 2026-11-02 (Rotations-Audit): (1) "Follow Michael: X/Twitter, Bluesky, Instagram"-Zeile
+!   hat ein <em> ohne <strong> – die Regel p:has(> em:only-child > strong:first-child) griff nicht;
+!   auf den Bluesky-Profil-Link im <em> gescoped (Fließtext-<em> enthält nie einen Bsky-Profil-Link).
+!   (2) Amazon-Affiliate-Liste "My favorite Apple accessory recommendations:" (p>strong + ul mit
+!   amzn.to-Links) lag nicht direkt vor dem Preferred-Source-Badge (Follow-Zeile dazwischen) und
+!   war ungeblockt.
+9to5mac.com##p:has(> em:only-child > a[href*="bsky.app/profile"])
+9to5mac.com##ul.wp-block-list:has(> li > a[href*="amzn.to"])
+9to5mac.com##p:has(> strong:only-child):has(+ ul.wp-block-list > li > a[href*="amzn.to"])
 
 ! --------------------------------------------------------------------------
 ! Android Authority
