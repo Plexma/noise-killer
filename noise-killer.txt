@@ -3,7 +3,7 @@
 ! Zweck: Entschlackung von Nachrichtenseiten & anderen Webseiten
 ! Entfernt: Inline-Eigenwerbung, "Mehr zum Thema", Artikel-Empfehlungen,
 !           Footer, Newsletter-Boxen, Kommentarbereiche, Social-Bars
-! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-10-02 (Vollaudit: Startseite + Artikel je Domain)
+! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-11-09 (Vollaudit: Startseite + Artikel je Domain)
 ! ==========================================================================
 
 ! --------------------------------------------------------------------------
@@ -238,6 +238,9 @@ imgur.com##div.Gallery-CommentsCounter
 imgur.com##div.Gallery-Content--tags
 imgur.com##div.fast-grid-ad
 imgur.com##div.BottomAd-container
+! BUGFIX 2026-11-09 (Rotations-Audit): Share-Dropdown (Gallery-Share) und Follow-Button (Following) in der Post-Leiste waren ungeblockt
+imgur.com##div.Gallery-Share
+imgur.com##div.Following
 
 ! --------------------------------------------------------------------------
 ! DPD
@@ -605,6 +608,9 @@ www.gamestar.de##div.custom-info
 www.gamestar.de##footer
 www.gamestar.de##iframe.wbd-toolbox.js-ga-view
 www.gamestar.de##ul.taglist
+! BUGFIX 2026-11-09 (Rotations-Audit): Spiele-Infokasten in der Artikel-Sidebar (Titel, Genre, Release) mit
+!   Preisvergleich-Affiliate-Button war ungeblockt (Preisvergleichs-Box)
+www.gamestar.de##div.teaser > div.row:has(a[data-label="info.spiel.button.preisvergleich"])
 ! Hinzugefügt 2026-10-02: Kommentar-Zähler-Links an Teasern (a[href$=".html#comments"], Startseite 114 Treffer;
 !   a[href="#comments"] greift dort nicht)
 www.gamestar.de##a[href$=".html#comments"]
@@ -800,6 +806,12 @@ www.ifun.de###viewport-share
 www.ifun.de###footer-app
 www.ifun.de###footer-networks
 www.ifun.de###newsfeed-footer
+! BUGFIX 2026-11-09 (Rotations-Audit): Neues Layout (r26): Archiv-Empfehlungen "Passend dazu aus dem Archiv", "Zuletzt auf ifun.de"-
+!   Liste und Vorheriger-Artikel-Link waren ungeblockt; Affiliate-Hinweis (div.content__hint) fehlte (identisch zu iphone-ticker.de)
+www.ifun.de##section.r26-weiterlesen
+www.ifun.de##section.r26-artikelbox
+www.ifun.de##nav.r26-vor-zurueck
+www.ifun.de##div.content__hint:has(a[href*="#affiliate"])
 
 ! --------------------------------------------------------------------------
 ! iPhone-Ticker
@@ -832,7 +844,12 @@ www.iphone-ticker.de###footer-app
 www.iphone-ticker.de###footer-networks
 www.iphone-ticker.de###newsfeed-footer
 ! BUGFIX 2026-11-02 (Rotations-Audit, Vollauf): Affiliate-Hinweis "Dieser Artikel enthält Affiliate-Links" (div.content__hint) war ungeblockt
-www.iphone-ticker.de##div.content__hint:has(a[href*="datenschutz#affiliate"])
+! BUGFIX 2026-11-09 (Rotations-Audit): Selektor griff nicht (href lautet "/datenschutz/#affiliate", nicht "datenschutz#affiliate")
+www.iphone-ticker.de##div.content__hint:has(a[href*="#affiliate"])
+! Hinzugefügt 2026-11-09: Neues Layout (r26): Archiv-Empfehlungen, "Zuletzt auf iphone-ticker.de"-Liste und Vorheriger-Artikel-Link (identisch zu ifun.de)
+www.iphone-ticker.de##section.r26-weiterlesen
+www.iphone-ticker.de##section.r26-artikelbox
+www.iphone-ticker.de##nav.r26-vor-zurueck
 
 ! --------------------------------------------------------------------------
 ! LTO (Legal Tribune Online)
@@ -896,6 +913,8 @@ www.macrumors.com##footer
 ! Hinzugefügt 2026-10-02: Startseiten-Sidebar #sidebar-content (Videos, Guides, Upcoming, Recent Comments, Other Stories);
 !   #canvas-sidebar ist nur das Slide-Panel
 www.macrumors.com###sidebar-content
+! BUGFIX 2026-11-09 (Rotations-Audit): "Next Article"-Empfehlung in der Sticky-Sidebar lag außerhalb von .js-article und war ungeblockt
+www.macrumors.com##div.noskim[class*="nextarticle--"]
 
 ! --------------------------------------------------------------------------
 ! MyDealz

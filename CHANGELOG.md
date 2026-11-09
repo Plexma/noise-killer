@@ -1,3 +1,20 @@
+## [2026-11-09] - Rotierender Wartungs-Check (Bucket 2 von 5): 5 Domains nachgebessert
+
+Wöchentlicher Rotations-Audit (KW 46, Bucket-Index 1): faz.net, focus.de, gamestar.de, golem.de, handelsblatt.com, heise.de, hsreplay.net, ifun.de, imgur.com, iphone-ticker.de, lto.de, macrumors.com – jeweils aktueller Artikel gegen das DOM geprüft, Regeln einzeln auf Treffer getestet.
+
+### Behoben – Underblocking (fehlender Filter)
+- **gamestar.de**: Spiele-Infokasten in der Artikel-Sidebar mit Preisvergleich-Affiliate-Button (`div.teaser > div.row:has(a[data-label="info.spiel.button.preisvergleich"])`).
+- **ifun.de**: Neues Layout (r26): Archiv-Empfehlungen (`section.r26-weiterlesen`), "Zuletzt auf ifun.de"-Liste (`section.r26-artikelbox`), Vorheriger-Artikel-Link (`nav.r26-vor-zurueck`) und Affiliate-Hinweis (`div.content__hint`).
+- **iphone-ticker.de**: Gleiche r26-Empfehlungsboxen wie ifun.de.
+- **imgur.com**: Share-Dropdown (`div.Gallery-Share`) und Follow-Button (`div.Following`) in der Post-Leiste.
+- **macrumors.com**: "Next Article"-Empfehlung in der Sticky-Sidebar (`div.noskim[class*="nextarticle--"]`), lag außerhalb von `.js-article`.
+
+### Behoben – Kaputter Selektor
+- **iphone-ticker.de**: Affiliate-Hinweis-Regel vom 2026-11-02 griff nicht (Link lautet `/datenschutz/#affiliate`); jetzt `a[href*="#affiliate"]`.
+
+### Hinweise
+- Sauber, keine Änderung: **faz.net** (Consent-Wall, nur Selektor-Trefferzahlen geprüft, kein Overblocking erkennbar), **focus.de**, **golem.de** (Consent-Wall ohne Ablehnen-Option nicht akzeptiert, nur statisches HTML geprüft), **handelsblatt.com**, **heise.de**, **hsreplay.net**, **lto.de**.
+
 ## [2026-11-02] - Vollaudit aller Domains (KW 45): 11 Domains ergänzt
 
 Vollständiger Lauf über alle Domains der Liste (zusätzlich zum Rotations-Bucket 0): jeweils aktueller Artikel gegen das DOM geprüft, Regeln einzeln auf Treffer getestet.

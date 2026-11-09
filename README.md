@@ -56,13 +56,13 @@ Kompatibel mit **uBlock Origin**, **AdBlock Plus**, **AdGuard**, **Brave** und *
 | dhl.de | 🪧 🦶 |
 | faz.net | 📰 📬 📢 🛍️ 🦶 |
 | focus.de | 💬 🔗 📢 🦶 |
-| gamestar.de | 💬 📬 📰 📢 🦶 |
+| gamestar.de | 💬 📬 📰 📢 🛍️ 🦶 |
 | golem.de | 💬 📬 📢 🛍️ 🪧 🦶 |
 | handelsblatt.com | 📰 📢 🪧 🦶 |
 | heise.de | 📰 📬 🔗 📢 🛍️ 🦶 |
 | hsreplay.net | 📢 🪧 🦶 |
 | ifun.de / iphone-ticker.de | 💬 📰 📬 🔗 📢 🛍️ 🏷️ 🦶 |
-| imgur.com | 💬 📰 🪧 📢 🏷️ |
+| imgur.com | 💬 🔗 📰 🪧 📢 🏷️ |
 | lto.de | 📰 📬 📢 🪧 🦶 |
 | macrumors.com | 💬 📰 📬 🦶 |
 | my.dpd.de | 📢 🦶 |
