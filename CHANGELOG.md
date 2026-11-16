@@ -1,3 +1,10 @@
+## [2026-11-16] - Rotierender Wartungs-Check (KW 47): mydealz.de Event-Banner
+
+Wöchentlicher Rotations-Audit (KW 47, Bucket-Index 2): faz.net, focus.de, gamestar.de, handelsblatt.com, heise.de, ifun.de, iphone-ticker.de, lto.de, macrumors.com, mydealz.de, myhermes.de – aktueller Artikel gegen das DOM geprüft, Regeln einzeln auf Treffer getestet. golem.de nicht prüfbar (Consent-Wall ohne Zustimmung), unverändert.
+
+### Behoben
+- **mydealz.de**: Saisonaler Event-Promo-Banner mit Countdown ("Black Friday naht") über dem Deal (`[data-t="eventPromotionHeader"]`).
+
 ## [2026-11-09] - Rotierender Wartungs-Check (Bucket 2 von 5): 5 Domains nachgebessert
 
 Wöchentlicher Rotations-Audit (KW 46, Bucket-Index 1): faz.net, focus.de, gamestar.de, golem.de, handelsblatt.com, heise.de, hsreplay.net, ifun.de, imgur.com, iphone-ticker.de, lto.de, macrumors.com – jeweils aktueller Artikel gegen das DOM geprüft, Regeln einzeln auf Treffer getestet.

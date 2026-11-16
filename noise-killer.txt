@@ -3,7 +3,7 @@
 ! Zweck: Entschlackung von Nachrichtenseiten & anderen Webseiten
 ! Entfernt: Inline-Eigenwerbung, "Mehr zum Thema", Artikel-Empfehlungen,
 !           Footer, Newsletter-Boxen, Kommentarbereiche, Social-Bars
-! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-11-09 (Vollaudit: Startseite + Artikel je Domain)
+! Erstellt: 2026-03-15 | Letzte Prüfung: 2026-11-16 (Vollaudit: Startseite + Artikel je Domain)
 ! ==========================================================================
 
 ! --------------------------------------------------------------------------
@@ -966,6 +966,8 @@ www.mydealz.de##div#comments
 www.mydealz.de##[data-t="topMerchantsWidget"]
 www.mydealz.de##[data-t="latestNewsWidget"]
 www.mydealz.de##[data-t="hottestOnboardingWidget"]
+! BUGFIX 2026-11-16 (Rotations-Audit): saisonaler Event-Promo-Banner (z. B. "Black Friday naht" mit Countdown) über dem Deal war ungeblockt (Eigenwerbungs-Banner)
+www.mydealz.de##[data-t="eventPromotionHeader"]
 
 ! --------------------------------------------------------------------------
 ! MyHermes
