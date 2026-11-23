@@ -968,6 +968,8 @@ www.mydealz.de##[data-t="latestNewsWidget"]
 www.mydealz.de##[data-t="hottestOnboardingWidget"]
 ! BUGFIX 2026-11-16 (Rotations-Audit): saisonaler Event-Promo-Banner (z. B. "Black Friday naht" mit Countdown) über dem Deal war ungeblockt (Eigenwerbungs-Banner)
 www.mydealz.de##[data-t="eventPromotionHeader"]
+! BUGFIX 2026-11-23 (Rotations-Audit): Prospekte-Widget ("Aktuelle Lidl Prospekte in ...", Händler-Prospekt-Karten) unter dem Deal war ungeblockt (Eigenwerbung/Empfehlungs-Box)
+www.mydealz.de##[data-t="leafletsWidget"]
 
 ! --------------------------------------------------------------------------
 ! MyHermes
@@ -1137,6 +1139,8 @@ raider.io##.slds-grid.align-justify
 !   Element nutzt Inline-style (nicht als Selector verwendet), stattdessen auf den
 !   Tracking-Query-Parameter im href gescoped.
 raider.io##a[href*="utm_source=raiderio_upsell"]
+! BUGFIX 2026-11-23 (Rotations-Audit): Eigenwerbungs-Masthead "Raider.IO Forever" (Showcase-Teaser mit "Download the Raider.IO App"-CTA, 350px) oben auf der Startseite war ungeblockt
+raider.io##section.rio-forever-launch-masthead
 
 ! --------------------------------------------------------------------------
 ! rbb24
@@ -1660,6 +1664,10 @@ www.tomsguide.com##div.widget[id*="author-card"]
 www.tomsguide.com##div.authors-widget__wrapper
 ! BUGFIX 2026-11-02 (Rotations-Audit, Vollauf): "Follow us on Google News"-Widget (#follow-us-on-google-news) war ungeblockt (nur im statischen HTML verifiziert, Seite rendert im Pane ohne <body>)
 www.tomsguide.com###follow-us-on-google-news
+! BUGFIX 2026-11-23 (Rotations-Audit): Hawk-Affiliate-Deal-Widgets im Artikeltext (SPONSORED-Label, Produktkarte mit Haendler/Preis, VIEW-DEAL-Button) waren ungeblockt – der alte Selektor div.widget[id^="deal"] greift nicht mehr. Nur die Blattelemente blocken: der Wrapper (.hawk-deal-widget-main/-wrap) umschliesst im DOM den restlichen Artikeltext (Overblocking).
+www.tomsguide.com##.hawk-promos-dealwidget
+www.tomsguide.com##.hawk-affiliate-link-container
+www.tomsguide.com##.hawk-deal-widget-footer
 
 ! --------------------------------------------------------------------------
 ! Transfermarkt

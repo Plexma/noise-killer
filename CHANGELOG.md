@@ -1,3 +1,16 @@
+## [2026-11-23] - Rotierender Wartungs-Check (KW 48): 3 Domains nachgebessert
+
+Wöchentlicher Rotations-Audit (KW 48, Bucket-Index 3): stadt-bremerhaven.de, startpage.com, steamdb.info, sueddeutsche.de, sz-magazin.sueddeutsche.de, t-online.de, tagesschau.de, tagesspiegel.de, tarnkappe.info, taz.de, theverge.com, tomsguide.com. Zusätzlich (Bucket-Rechenfehler zu Beginn des Laufs) geprüft: mydealz.de, myhermes.de, n-tv.de, ndr.de, pcgameshardware.de, raider.io, rbb24.de, spiegel.de, sportdaten.spiegel.de, sportschau.de.
+
+### Behoben – Underblocking (fehlender Filter)
+- **tomsguide.com**: Hawk-Affiliate-Deal-Widgets im Artikeltext (SPONSORED-Label, Produktkarte mit Händler/Preis, „VIEW DEAL"-Button): `.hawk-promos-dealwidget`, `.hawk-affiliate-link-container`, `.hawk-deal-widget-footer`. Der Wrapper umschließt im DOM den Artikeltext und wird bewusst nicht geblockt.
+- **mydealz.de**: Prospekte-Widget unter dem Deal (`[data-t="leafletsWidget"]`).
+- **raider.io**: Eigenwerbungs-Masthead „Raider.IO Forever" mit App-Download-CTA auf der Startseite (`section.rio-forever-launch-masthead`).
+
+### Hinweise
+- Sauber, keine Änderung: **stadt-bremerhaven.de**, **startpage.com** (nur Startseite), **sueddeutsche.de**, **sz-magazin.sueddeutsche.de** (Redirect auf sueddeutsche.de weiterhin bestätigt), **t-online.de**, **tagesschau.de**, **tagesspiegel.de**, **tarnkappe.info**, **taz.de**, **theverge.com**, **myhermes.de**, **n-tv.de**, **ndr.de**, **pcgameshardware.de**, **rbb24.de**, **spiegel.de** (Feature-Bar-Regel bewusst auf Nutzerwunsch), **sportdaten.spiegel.de**, **sportschau.de**.
+- Nicht prüfbar: **steamdb.info** (Cloudflare-Challenge), **nytimes.com** (im Browser gesperrt), **my.dpd.de** (Startseite leitet auf dpd.com um, Tracking-Seite ohne Sendungsnummer nicht erreichbar).
+
 ## [2026-11-16] - Rotierender Wartungs-Check (KW 47): mydealz.de Event-Banner
 
 Wöchentlicher Rotations-Audit (KW 47, Bucket-Index 2): faz.net, focus.de, gamestar.de, handelsblatt.com, heise.de, ifun.de, iphone-ticker.de, lto.de, macrumors.com, mydealz.de, myhermes.de – aktueller Artikel gegen das DOM geprüft, Regeln einzeln auf Treffer getestet. golem.de nicht prüfbar (Consent-Wall ohne Zustimmung), unverändert.
